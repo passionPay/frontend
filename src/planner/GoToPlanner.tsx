@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
+import LottieView from 'lottie-react-native'
 
 export default function GoToPlanner() {
     const navi = useNavigation<any>()

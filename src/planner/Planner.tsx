@@ -88,7 +88,7 @@ export default function Planner() {
     const navi = useNavigation<any>()
     return <View style={styles.container}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}>
-            <TouchableOpacity onPress={() => { navi.replace('Tab') }} style={styles.icon}>
+            <TouchableOpacity onPress={() => { navi.goBack() }} style={styles.icon}>
                 <Icon name='chevron-left' size={30} color='#5E5E64' /></TouchableOpacity>
             <TouchableOpacity onPress={() => { navi.navigate('Add') }} style={styles.icon}>
                 <Icon name='plus' size={30} color='#5E5E64' /></TouchableOpacity>

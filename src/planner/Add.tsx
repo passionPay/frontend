@@ -16,7 +16,7 @@ export default function Add() {
                 <Text style={styles.date}>21.01.23 월요일</Text>
                 <View style={styles.playlist}>
                     <Icon name='playlist-music' size={23} color='#65666D' />
-                    <Text style={{ fontSize: 15, color: '#65666D', marginHorizontal: 10, fontWeight: 'bold' }}>See Your Eyes - 잔나비</Text></View>
+                    <Text style={{ fontSize: 15, color: '#65666D', marginHorizontal: 10, fontWeight: 'bold', fontFamily: 'GodoM' }}>See Your Eyes - 잔나비</Text></View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: '#B7B7B7' }}>
                     <Text style={[styles.tasks, { flex: 1 }]}>TASKS</Text>
                     <Text style={[styles.tasks, { flex: 1, textAlign: 'right' }]}>목표 시간   <Text style={{ fontSize: 14, color: '#65666D' }}>08H 40MIN</Text></Text>
@@ -24,11 +24,7 @@ export default function Add() {
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: '#B7B7B7' }}>
                     <View style={{ flex: 3 }}>
                         {tasks.map((v, i) => <View style={{ flexDirection: 'row' }}>
-                            <Text style={{
-                                flex: 1, borderRightWidth: 1, paddingHorizontal: 10,
-                                textAlignVertical: 'center', textAlign: 'center', borderColor: '#DDDDDD',
-                                borderBottomWidth: 1
-                            }}>{v.subject}</Text>
+                            <Text style={styles.subject}>{v.subject}</Text>
                             <View style={{ flex: 6 }}>
                                 {v.tasks.map((taskName, i) => <View style={{
                                     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 5, paddingLeft: 7, borderBottomWidth: 1,
@@ -74,7 +70,8 @@ const styles = StyleSheet.create({
     },
     date: {
         fontSize: 24, color: '#65666D',
-        padding: 10, borderBottomWidth: 1, borderColor: '#B7B7B7'
+        padding: 10, borderBottomWidth: 1, borderColor: '#B7B7B7',
+        fontFamily: 'GodoM'
     },
     playlist: {
         padding: 8, borderBottomWidth: 1,
@@ -84,11 +81,19 @@ const styles = StyleSheet.create({
     tasks: {
         fontSize: 11, color: '#65666D',
         paddingVertical: 3, paddingHorizontal: 10,
-        fontWeight: 'bold', textAlignVertical: 'center'
+        fontWeight: 'bold', textAlignVertical: 'center',
+        fontFamily: 'GodoM'
     },
     taskDetail: {
         fontsize: 11, color: '#65666D',
-        flex: 5
+        flex: 5, fontFamily: 'GodoM'
+    },
+    subject: {
+        flex: 1, borderRightWidth: 1, paddingHorizontal: 10,
+        textAlignVertical: 'center', textAlign: 'center', borderColor: '#DDDDDD',
+        borderBottomWidth: 1, fontFamily: 'GodoM'
+    
+
     }
 })
 

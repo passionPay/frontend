@@ -30,6 +30,10 @@
 		F3D4376BE3124A8BA1DD9C6F /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3668989DEF5470C874BC0A9 /* Octicons.ttf */; };
 		F2958A62F24944C3B5646519 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D96C285FAC24CAF9D56A6FE /* SimpleLineIcons.ttf */; };
 		C33F7D3873A24045828970C5 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D90B8FC9086B4991B5D63DD2 /* Zocial.ttf */; };
+		C1C3E96303304E46B113A28B /* GodoB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42E3CDE165444F60BC84CC4E /* GodoB.otf */; };
+		94CC8488DDED4D56BD3F2DC1 /* GodoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */; };
+		17D516B665D54C8190E0A74D /* GodoM.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1938EF165A6E4909A3966513 /* GodoM.otf */; };
+		422D0081DDB9448B9E5DF295 /* GodoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E52B09398BA40849AE3130F /* GodoM.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		F3668989DEF5470C874BC0A9 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9D96C285FAC24CAF9D56A6FE /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D90B8FC9086B4991B5D63DD2 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		42E3CDE165444F60BC84CC4E /* GodoB.otf */ = {isa = PBXFileReference; name = "GodoB.otf"; path = "../font/godoFont/godoFont/GodoB.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */ = {isa = PBXFileReference; name = "GodoB.ttf"; path = "../font/godoFont/godoFont/GodoB.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1938EF165A6E4909A3966513 /* GodoM.otf */ = {isa = PBXFileReference; name = "GodoM.otf"; path = "../font/godoFont/godoFont/GodoM.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5E52B09398BA40849AE3130F /* GodoM.ttf */ = {isa = PBXFileReference; name = "GodoM.ttf"; path = "../font/GodoM.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +209,10 @@
 				F3668989DEF5470C874BC0A9 /* Octicons.ttf */,
 				9D96C285FAC24CAF9D56A6FE /* SimpleLineIcons.ttf */,
 				D90B8FC9086B4991B5D63DD2 /* Zocial.ttf */,
+				42E3CDE165444F60BC84CC4E /* GodoB.otf */,
+				36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */,
+				1938EF165A6E4909A3966513 /* GodoM.otf */,
+				5E52B09398BA40849AE3130F /* GodoM.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -318,6 +330,10 @@
 				F3D4376BE3124A8BA1DD9C6F /* Octicons.ttf in Resources */,
 				F2958A62F24944C3B5646519 /* SimpleLineIcons.ttf in Resources */,
 				C33F7D3873A24045828970C5 /* Zocial.ttf in Resources */,
+				C1C3E96303304E46B113A28B /* GodoB.otf in Resources */,
+				94CC8488DDED4D56BD3F2DC1 /* GodoB.ttf in Resources */,
+				17D516B665D54C8190E0A74D /* GodoM.otf in Resources */,
+				422D0081DDB9448B9E5DF295 /* GodoM.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
