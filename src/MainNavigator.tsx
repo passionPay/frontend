@@ -4,6 +4,7 @@ import { AnimatedTabBarNavigator } from "react-native-animated-nav-tab-bar"
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Discover from './discover/Discover'
 import GridNavigator from './grid/GridNavigator'
+import GoToPlanner from './planner/GoToPlanner'
 import PlannerNavigator from './planner/PlannerNavigator'
 
 export default function MainNavigator() {
@@ -19,4 +20,5 @@ const Tab = AnimatedTabBarNavigator();
 const TabBar = () => <Tab.Navigator appearance={{ topPadding: 10 }}>
   <Tab.Screen name="Discover" component={Discover} options={{tabBarIcon: () => <Icon name='home' size={17} color='black'/>}} />
   <Tab.Screen name="GridNavigator" component={GridNavigator} options={{tabBarIcon: () => <Icon name='home' size={17} color='black'/>}} />
+  <Tab.Screen name='GoToPlanner' component={GoToPlanner} options={{tabBarIcon: () => <Icon name='home' size={17} color='black'/>}} />
 </Tab.Navigator>

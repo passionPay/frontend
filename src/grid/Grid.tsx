@@ -436,7 +436,8 @@
 // }
 // });
 
-import React, { Component } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import React, { Component, useState } from 'react'
 import {
     View,
     Text,
@@ -453,67 +454,63 @@ const childrenWidth = deviceWidth / 2
 const childrenHeight = deviceWidth / 2
 const sortWidth = deviceWidth
 const items = [
-    {title: '타이틀1', content: '내용1'},
-    {title: '타이틀2', content: '내용2'},
-    {title: '타이틀3', content: '내용3'},
-    {title: '타이틀4', content: '내용4'},
-    {title: '타이틀5', content: '내용5'},
-    {title: '타이틀6', content: '내용6'},
-    {title: '타이틀7', content: '내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7'},
-    {title: '타이틀8', content: '내용8'},
+    { title: '타이틀1', content: '내용1' },
+    { title: '타이틀2', content: '내용2' },
+    { title: '타이틀3', content: '내용3' },
+    { title: '타이틀4', content: '내용4' },
+    { title: '타이틀5', content: '내용5' },
+    { title: '타이틀6', content: '내용6' },
+    { title: '타이틀7', content: '내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7' },
+    { title: '타이틀8', content: '내용8' },
 ]
 
-export default class Grid extends Component {
-    state
+export default function Grid() {
+    const [state, setState] = useState({
+        scrollEnabled: true,
+        items: items
+    })
+    const navi = useNavigation<any>()
 
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            scrollEnabled: true,
-            items: items
-        }
-    }
-
-    render() {
-        return (
-            <ImageBackground source={require('../../images/gridBack.png')} style={{ flex: 1 }}>
-                <TouchableOpacity style={styles.addTouchable}>
-                    <Text style={styles.addText}>클릭하여 메모 추가하기</Text>
-                    <Text style={styles.addBtn}><Text>Sticker Pack Market</Text></Text>
-                </TouchableOpacity>
-                <ScrollView
-                    scrollEnabled={this.state.scrollEnabled}
-                    style={styles.container}>
-                    <DragSortableView
-                        dataSource={this.state.items}
-                        parentWidth={sortWidth}
-                        childrenWidth={childrenWidth - marginChildrenLeft}
-                        childrenHeight={childrenHeight}
-                        marginChildrenTop={10}
-                        marginChildrenLeft={marginChildrenLeft}
-                        onDragStart={this.onSelectedDragStart}
-                        onDragEnd={this.onSelectedDragEnd}
-                        onDataChange={(data) => { this.setState({ items: data }) }}
-                        keyExtractor={(item, index) => index}
-                        renderItem={this.renderItem} />
-                </ScrollView>
-            </ImageBackground>
-        )
-    }
-
-    renderItem = (item, index) => <View style={styles.note}>
+    const renderItem = (item, index) => <View style={styles.note}>
         <Text style={styles.noteTitle}>{item.title}</Text>
         <Text style={styles.noteContent} ellipsizeMode='tail' numberOfLines={8}>{item.content}</Text>
     </View>
 
-    onSelectedDragEnd = () => this.setState({ scrollEnabled: true })
-
-    onSelectedDragStart = () => {
-        this.setState({
-            scrollEnabled: false
+    const onSelectedDragEnd = () => {
+        setState((prev) => {
+            return { scrollEnabled: true, items: prev.items }
         })
     }
+
+    const onSelectedDragStart = () => {
+        setState((prev) => {
+            return { scrollEnabled: false, items: prev.items }
+        })
+    }
+    return (
+        <ImageBackground source={require('../../images/gridBack.png')} style={{ flex: 1 }}>
+            <TouchableOpacity style={styles.addTouchable} onPress={() => {navi.navigate('Edit')}}>
+                <Text style={styles.addText}>클릭하여 메모 추가하기</Text>
+                <Text style={styles.addBtn}><Text>Sticker Pack Market</Text></Text>
+            </TouchableOpacity>
+            <ScrollView
+                scrollEnabled={state.scrollEnabled}
+                style={styles.container}>
+                <DragSortableView
+                    dataSource={state.items}
+                    parentWidth={sortWidth}
+                    childrenWidth={childrenWidth - marginChildrenLeft}
+                    childrenHeight={childrenHeight}
+                    marginChildrenTop={10}
+                    marginChildrenLeft={marginChildrenLeft}
+                    onDragStart={onSelectedDragStart}
+                    onDragEnd={onSelectedDragEnd}
+                    onDataChange={(data) => { setState((prev) => { return { scrollEnabled: prev.scrollEnabled, items: data }}) }}
+                    keyExtractor={(item, index) => index}
+                    renderItem={renderItem} />
+            </ScrollView>
+        </ImageBackground>
+    )
 
 }
 
