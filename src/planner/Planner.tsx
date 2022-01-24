@@ -1,7 +1,9 @@
 import React, { Component, useEffect, useState } from "react";
-import { Animated, Dimensions, Easing, ImageBackground, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, Text, View } from "react-native"
+import { Animated, Dimensions, Easing, ImageBackground, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import LinearGradient from 'react-native-linear-gradient';
 import InsetShadow from 'react-native-inset-shadow'
+import { useNavigation } from "@react-navigation/native";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
@@ -82,8 +84,15 @@ const bottomAnim = {
 
 const SPACING_FOR_CARD_INSET = SCREEN_WIDTH * 0.15
 
-export default function HomeReal() {
+export default function Planner() {
+    const navi = useNavigation<any>()
     return <View style={styles.container}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}>
+            <TouchableOpacity onPress={() => { navi.replace('Tab') }} style={styles.icon}>
+                <Icon name='chevron-left' size={30} color='#5E5E64' /></TouchableOpacity>
+            <TouchableOpacity onPress={() => { navi.navigate('Add') }} style={styles.icon}>
+                <Icon name='plus' size={30} color='#5E5E64' /></TouchableOpacity>
+        </View>
         <Text style={styles.title}>PLANNER</Text>
         <Text style={styles.date}>22.01.20</Text>
         <View style={{ height: '55%' }}>
@@ -139,7 +148,7 @@ const chart = (text) => {
             style={{ borderRadius: 10, height: 18, borderWidth: 0, width: '100%', alignSelf: 'center' }}>
             <LinearGradient colors={['#2152f0', '#40c0dc']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
                 style={[{
-                    backgroundColor: "#6667AB66", borderRadius: 10, height: '100%', width: '80%', 
+                    backgroundColor: "#6667AB66", borderRadius: 10, height: '100%', width: '80%',
                     overflow: 'hidden', borderWidth: 3, borderColor: '#00000000'
                 }]} />
         </LinearGradient>
@@ -173,8 +182,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 25,
         color: 'black',
-        fontWeight: '300',
-        marginTop: '12%'
+        fontWeight: '300'
     },
     date: {
         fontSize: 16,
@@ -197,7 +205,13 @@ const styles = StyleSheet.create({
     bottomView: {
         backgroundColor: '#D8E0E7', height: '50%',
         width: '82%', borderRadius: 30,
-        paddingTop: 8, marginTop: '5%',
+        paddingTop: 8, marginTop: '2%',
         elevation: 5, borderWidth: 7, borderColor: '#DFE3EA'
     },
+    icon: {
+        alignSelf: 'flex-start', backgroundColor: '#D8E0E7',
+        marginTop: '5%', marginLeft: '5%', borderRadius: 5,
+        borderWidth: 0, borderColor: '#DFE3EA', elevation: 5,
+        overflow: 'hidden', marginRight: '5%'
+    }
 })
