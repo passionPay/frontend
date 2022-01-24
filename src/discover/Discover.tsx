@@ -11,14 +11,15 @@ export default function Discover() {
         {/* <TouchableOpacity onPress={() => { navi.navigate('PlannerNavigator') }} style={styles.icon}>
                 <Icon name='chevron-left' size={30} color='#5E5E64' /></TouchableOpacity> */}
         <View style={styles.topView}>
-            <Text style={{ color: 'grey', fontSize: 14, fontFamily: 'GodoM', marginBottom: 5 }}>Find your</Text>
-            <Text style={{ color: 'black', fontSize: 24, fontFamily: 'GodoM' }}>STUDY MATES</Text>
+            <Text style={{ color: 'grey', fontSize: 17, fontFamily: 'GodoM', fontWeight: 'bold' }}>Find your</Text>
+            <Text style={{ color: 'black', fontSize: 25, fontFamily: 'GodoM', fontWeight: 'bold' }}>STUDY MATES</Text>
             <TouchableOpacity style={styles.findView} onPress={() => { navi.navigate('Search') }} activeOpacity={1}>
                 <Icon name='magnify' size={25} style={{ padding: 5, }} color='grey' />
                 <TextInput placeholder='What are you looking for?' style={styles.textInput} editable={false}
                     placeholderTextColor='grey' /></TouchableOpacity>
         </View>
-        <ScrollView horizontal={true} style={{ marginTop: 20 }}>
+        <View style={{height: 275}}>
+        <ScrollView horizontal={true} style={{ marginTop: 35 }}>
             <LinearGradient colors={['#C4C3C300', '#C4C3C3']} style={{ flexDirection: 'row', paddingVertical: 20 }}>
                 <Image source={require('../../images/white.png')} style={styles.book} />
                 <Image source={require('../../images/white.png')} style={styles.book} />
@@ -27,10 +28,10 @@ export default function Discover() {
                 <Image source={require('../../images/white.png')} style={styles.book} />
                 <Image source={require('../../images/white.png')} style={styles.book} />
             </LinearGradient>
-        </ScrollView>
+        </ScrollView></View>
         <View style={styles.bottom}>
             <Text style={styles.bottomTitle}><Image source={require('../../images/book.png')} style={{ width: 20, height: 20 }} />  금주의 TOP 50</Text>
-            <ScrollView style={{ height: '27%' }}>
+            <ScrollView>
                 {top50.map((v, i) => <Text style={styles.top50Name} key={i}>{i + 1}.  {v.name}</Text>)}
             </ScrollView>
         </View>
@@ -48,12 +49,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: 20,
         borderBottomLeftRadius: 20, borderBottomRightRadius: 20,
-        elevation: 5, paddingTop: 40
+        elevation: 5, paddingTop: 50
     },
     findView: {
         flexDirection: 'row', alignItems: 'center',
         backgroundColor: '#F5F5F5', borderRadius: 10,
-        marginTop: 10
+        marginTop: '5%'
     },
     textInput: {
         paddingVertical: 5

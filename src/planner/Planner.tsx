@@ -94,7 +94,7 @@ export default function Planner() {
                 <Icon name='plus' size={30} color='#5E5E64' /></TouchableOpacity>
         </View>
         <Text style={styles.title}>PLANNER</Text>
-        <Text style={styles.date}>22.01.20</Text>
+        {/* <Text style={styles.date}>22.01.20</Text> */}
         <View style={{ height: '55%' }}>
             <Animated.ScrollView
                 scrollEventThrottle={16}
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
         alignItems: 'center', borderWidth: 0,
     },
     screen: {
-        height: '100%',
+        height: '90%',
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 20,
@@ -176,27 +176,27 @@ const styles = StyleSheet.create({
         width: '100%', padding: 12, elevation: 7,
     },
     text: {
-        fontSize: 20, flex: 1, color: 'black',
+        fontSize: 20, flex: 1, color: 'black', fontFamily: 'GodoM',
         fontWeight: "bold", textAlign: 'center', textAlignVertical: 'center'
     },
     title: {
         fontSize: 25,
-        color: 'black',
-        fontWeight: '300'
+        color: '#43444b', fontFamily: 'GodoM',
+        marginBottom: '13%', marginTop: '4%'
     },
     date: {
-        fontSize: 16,
+        fontSize: 16, fontFamily: 'GodoM',
         color: 'black',
         fontWeight: '300', marginBottom: 15
     },
     tag: {
         fontSize: 14, paddingVertical: 5,
-        marginHorizontal: 10,
+        marginHorizontal: 10, fontFamily: 'GodoM',
         fontWeight: '400', color: '#65666D'
     },
     time: {
         fontSize: 23, color: '#65666D', fontWeight: '300',
-        paddingVertical: 5, alignSelf: 'center'
+        paddingVertical: 5, alignSelf: 'center', fontFamily: 'GodoM',
     },
     planner: {
         backgroundColor: 'white', borderRadius: 10,
@@ -205,13 +205,13 @@ const styles = StyleSheet.create({
     bottomView: {
         backgroundColor: '#D8E0E7', height: '50%',
         width: '82%', borderRadius: 30,
-        paddingTop: 8, marginTop: '2%',
+        paddingTop: 8,// marginTop: '1%',
         elevation: 5, borderWidth: 7, borderColor: '#DFE3EA'
     },
     icon: {
         alignSelf: 'flex-start', backgroundColor: '#D8E0E7',
-        marginTop: '5%', marginLeft: '5%', borderRadius: 5,
+        marginTop: '7%', marginLeft: '7%', borderRadius: 5,
         borderWidth: 0, borderColor: '#DFE3EA', elevation: 5,
-        overflow: 'hidden', marginRight: '5%'
+        overflow: 'hidden', marginRight: '7%'
     }
 })
