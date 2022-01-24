@@ -1,7 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
 import { AnimatedTabBarNavigator } from "react-native-animated-nav-tab-bar"
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Discover from './discover/Discover'
+import GridNavigator from './grid/GridNavigator'
 import PlannerNavigator from './planner/PlannerNavigator'
 
 export default function MainNavigator() {
@@ -15,5 +17,6 @@ export default function MainNavigator() {
 const Tab = AnimatedTabBarNavigator();
 
 const TabBar = () => <Tab.Navigator appearance={{ topPadding: 10 }}>
-  <Tab.Screen name="Discover" component={Discover} />
+  <Tab.Screen name="Discover" component={Discover} options={{tabBarIcon: () => <Icon name='home' size={17} color='black'/>}} />
+  <Tab.Screen name="GridNavigator" component={GridNavigator} options={{tabBarIcon: () => <Icon name='home' size={17} color='black'/>}} />
 </Tab.Navigator>
