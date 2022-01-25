@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import MainNavigator from './src/MainNavigator'
 import { Provider, useContextOfAll } from './src/Provider'
-import { AsyncStorage } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import LoginNavigator from './src/login/LoginNavigator'
 
 // export default function App() {

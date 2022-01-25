@@ -12,12 +12,12 @@ export default function Discover() {
         const reload = navi.addListener('focus', () => {
             TopVal.setValue(0)
             Animated.timing(TopVal, {
-                toValue: 1, duration: 1000, easing: Easing.elastic(4)
+                toValue: 1, duration: 1000, easing: Easing.elastic(1)
             }).start()
         })
         return reload
     }, [navi])
-    return <>
+    return <View style={{ flex: 1 }}>
         {/* <TouchableOpacity onPress={() => { navi.navigate('PlannerNavigator') }} style={styles.icon}>
                 <Icon name='chevron-left' size={30} color='#5E5E64' /></TouchableOpacity> */}
         <Animated.View style={[styles.topView, TopAnim]}>
@@ -39,13 +39,13 @@ export default function Discover() {
                     <Image source={require('../../images/white.png')} style={styles.book} />
                 </LinearGradient>
             </ScrollView></View>
-        <View style={styles.bottom}>
-            <Text style={styles.bottomTitle}><Image source={require('../../images/book.png')} style={{ width: 20, height: 20 }} />  금주의 TOP 50</Text>
-            <ScrollView>
+        <ScrollView>
+            <View style={styles.bottom}>
+                <Text style={styles.bottomTitle}><Image source={require('../../images/book.png')} style={{ width: 20, height: 20 }} />  금주의 TOP 50</Text>
                 {top50.map((v, i) => <Text style={styles.top50Name} key={i}>{i + 1}.  {v.name}</Text>)}
-            </ScrollView>
-        </View>
-    </>
+            </View>
+        </ScrollView>
+    </View>
 }
 
 const TopVal = new Animated.Value(0);
@@ -130,6 +130,36 @@ const getTop50 = () => {
         },
         {
             name: 'Study_Mates22'
+        },
+        {
+            name: 'Yoon_yess33'
+        },
+        {
+            name: 'YeRIm_Park33'
+        },
+        {
+            name: 'Sana_Kang33'
+        },
+        {
+            name: 'Hermione Granger33'
+        },
+        {
+            name: 'Study_Mates33'
+        },
+        {
+            name: 'Yoon_yess2233'
+        },
+        {
+            name: 'YeRIm_Park2233'
+        },
+        {
+            name: 'Sana_Kang2233'
+        },
+        {
+            name: 'Hermione Granger2233'
+        },
+        {
+            name: 'Study_Mates2233'
         }
     ]
 }

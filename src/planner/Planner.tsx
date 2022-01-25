@@ -1,7 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import { Animated, Dimensions, Easing, ImageBackground, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import LinearGradient from 'react-native-linear-gradient';
-import InsetShadow from 'react-native-inset-shadow'
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 

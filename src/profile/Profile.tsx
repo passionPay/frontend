@@ -3,7 +3,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
 export default function Profile() {
-    return <View>
+    return <View style={{backgroundColor: 'white', flex: 1}}>
         <Text style={styles.title}>STUDYGRAM</Text>
         <ScrollView>
             <View style={styles.rateView}>
