@@ -6181,6 +6181,13 @@
     "react-native-page-control" "^1.1.1"
     "react-native-snap-carousel" "^3.7.5"
 
+"react-native-stopwatch-timer@^0.0.21":
+  "integrity" "sha512-qFFsD85NkBT1nxo32HMGq3XAtQyMC09p9ZDIEuOED2BOxgs0UpWg/FSTA0MmEoIKMyXUwSE5VxEzBaGP3z1HFw=="
+  "resolved" "https://registry.npmjs.org/react-native-stopwatch-timer/-/react-native-stopwatch-timer-0.0.21.tgz"
+  "version" "0.0.21"
+  dependencies:
+    "prop-types" "^15.7.2"
+
 "react-native-vector-icons@*", "react-native-vector-icons@^9.0.0":
   "integrity" "sha512-qKX5d5/TafHmI4B7UOSZCL3BAGh7ZfF30iLwRgxBkKfZl2lKSuHp8Ottj9OyWh9b5fFtlg+LtyvZrns3g2kh+w=="
   "resolved" "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-9.0.0.tgz"

@@ -1,23 +1,18 @@
-import React, { Component, useEffect, useState } from "react";
-import { Animated, Dimensions, Easing, ImageBackground, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import React, { useEffect, useState } from "react";
+import { Animated, Dimensions, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from "@react-navigation/native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons"
+import { getTimeBlock } from "./someUtils";
+import axios from "axios";
+import { serverIPaddress } from "../Util";
+import { useContextOfAll } from "../Provider";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 
 const xOffset = new Animated.Value(0);
 
-const Screen = props => {
-    return <View style={styles.scrollPage}>
-        <Animated.View style={[styles.screen, transitionAnimation(props.index)]}>
-            <View style={styles.planner}>
-                <Text style={styles.text}>{props.text}</Text>
-            </View>
-        </Animated.View>
-    </View>
-};
 
 const transitionAnimation = index => {
     return {
@@ -84,7 +79,48 @@ const bottomAnim = {
 const SPACING_FOR_CARD_INSET = SCREEN_WIDTH * 0.15
 
 export default function Planner() {
+    const [planners, setPlanners] = useState([{
+        id: 1,
+        date: '21.01.23 월요일', // string
+        comment: 'See Your Eyes - 잔나비', // 명언(또는 platlist), string
+        targetTime: '08H 40MIN', // string
+        totalTime: 3490, // number (msec 단위)
+        timeRate: '80', // string (0 ~ 100 사이의 정수를 문자열로)
+        taskRate: '90' // string (0 ~ 100 사이의 정수를 문자열로)
+    }
+    ])
+    const [timeRate, setTimeRate] = useState('0')
+    const [taskRate, setTaskRate] = useState('0')
     const navi = useNavigation<any>()
+    const cont = useContextOfAll()
+
+    useEffect(() => {
+        const reload = navi.addListener('focus', () => {
+            axios({
+                url: serverIPaddress + '/planner',
+                method: 'get',
+                headers: {
+                    'Authorization': 'Bearer ' + cont.user.token
+                }
+            }).then(function (res) {
+                console.log(res.data)
+                setPlanners(res.data)
+            }).catch(function (error) {
+                console.log(error)
+            })
+        })
+        return reload
+    }, [navi])
+
+    const Screen = props => {
+        return <View style={styles.scrollPage}>
+            <Animated.View style={[styles.screen, transitionAnimation(props.index)]}>
+                <TouchableOpacity style={styles.planner} onPress={() => { navi.navigate('Edit') }}>
+                    <Text style={styles.text}>{props.date}</Text>
+                </TouchableOpacity>
+            </Animated.View>
+        </View>
+    }
     return <View style={styles.container}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}>
             <TouchableOpacity onPress={() => { navi.goBack() }} style={styles.icon}>
@@ -93,7 +129,6 @@ export default function Planner() {
                 <Icon name='plus' size={30} color='#5E5E64' /></TouchableOpacity>
         </View>
         <Text style={styles.title}>PLANNER</Text>
-        {/* <Text style={styles.date}>22.01.20</Text> */}
         <View style={{ height: '55%' }}>
             <Animated.ScrollView
                 scrollEventThrottle={16}
@@ -104,6 +139,14 @@ export default function Planner() {
                             const { contentOffset } = event.nativeEvent
                             const div = contentOffset.x % (SCREEN_WIDTH * 0.7)
                             if (div < 1 || div > (SCREEN_WIDTH * 0.7) - 1) {
+                                if (div < 1) {
+                                    setTimeRate(planners[Math.floor(contentOffset.x / (SCREEN_WIDTH * 0.7))].timeRate)
+                                    setTaskRate(planners[Math.floor(contentOffset.x / (SCREEN_WIDTH * 0.7))].taskRate)
+                                }
+                                else {
+                                    setTimeRate(planners[Math.floor((contentOffset.x + 1) / (SCREEN_WIDTH * 0.7))].timeRate)
+                                    setTaskRate(planners[Math.floor((contentOffset.x + 1) / (SCREEN_WIDTH * 0.7))].taskRate)
+                                }
                                 Animated.timing(bottomVal, {
                                     toValue: 0, duration: 1000, useNativeDriver: true
                                 }).start()
@@ -124,30 +167,33 @@ export default function Planner() {
                 snapToAlignment='center'
                 contentContainerStyle={{ paddingHorizontal: SPACING_FOR_CARD_INSET }}
             >
-                <Screen text="Screen 1" index={0} />
-                <Screen text="Screen 2" index={1} />
-                <Screen text="Screen 3" index={2} />
-                <Screen text="Screen 4" index={3} />
-                <Screen text="Screen 5" index={4} />
-                <Screen text="Screen 6" index={5} />
+                {planners.map((v, i) => <Screen date={v.date} index={i} key={i} />)}
+                {/* <Screen date="Screen 1" index={0} />
+                <Screen date="Screen 2" index={1} />
+                <Screen date="Screen 3" index={2} />
+                <Screen date="Screen 4" index={3} />
+                <Screen date="Screen 5" index={4} />
+                <Screen date="Screen 6" index={5} /> */}
             </Animated.ScrollView>
         </View>
         <Animated.View style={[styles.bottomView, bottomAnim]}>
             <Text style={styles.time}>06H 45M</Text>
-            {chart('시간')}
-            {chart('개수')}
+            {chart('시간', timeRate)}
+            {chart('개수', taskRate)}
         </Animated.View>
     </View>
 }
 
-const chart = (text) => {
+const chart = (text, rateStr:string) => {
+    const rate = Number(rateStr)
+    console.log(rate)
     return <View style={{ width: '90%', alignSelf: 'center', marginBottom: 7 }}>
         <Text style={styles.tag}>달성률 ({text})</Text>
         <LinearGradient colors={['#CACED5', '#D0D2D8', '#E3E5EC']} start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }}
             style={{ borderRadius: 10, height: 18, borderWidth: 0, width: '100%', alignSelf: 'center' }}>
             <LinearGradient colors={['#2152f0', '#40c0dc']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
                 style={[{
-                    backgroundColor: "#6667AB66", borderRadius: 10, height: '100%', width: '80%',
+                    backgroundColor: "#6667AB66", borderRadius: 10, height: '100%', width: rate+'%',
                     overflow: 'hidden', borderWidth: 3, borderColor: '#00000000'
                 }]} />
         </LinearGradient>
@@ -165,6 +211,7 @@ const styles = StyleSheet.create({
     scrollPage: {
         width: SCREEN_WIDTH * 0.7, marginVertical: 10,
         alignItems: 'center', borderWidth: 0,
+        justifyContent: 'center'
     },
     screen: {
         height: '90%',
@@ -181,7 +228,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 25,
         color: '#43444b', fontFamily: 'GodoM',
-        marginBottom: '13%', marginTop: '4%'
+        marginBottom: '11%', marginTop: '4%'
     },
     date: {
         fontSize: 16, fontFamily: 'GodoM',
@@ -212,5 +259,15 @@ const styles = StyleSheet.create({
         marginTop: '7%', marginLeft: '7%', borderRadius: 5,
         borderWidth: 0, borderColor: '#DFE3EA', elevation: 5,
         overflow: 'hidden', marginRight: '7%'
-    }
+    },
 })
+
+
+const getTask = () => {
+    return [
+        {
+            subject: '국어',
+            tasks: ['윤혜정T 나비효과 입문편 5강', '씨리얼 문학 현대시 6일차']
+        }
+    ]
+}

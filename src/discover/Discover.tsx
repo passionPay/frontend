@@ -4,6 +4,7 @@ import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View 
 import LinearGradient from 'react-native-linear-gradient'
 import Animated, { Easing } from 'react-native-reanimated'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import LottieView from 'lottie-react-native'
 
 export default function Discover() {
     const [top50, setTop50] = useState(getTop50())
@@ -28,23 +29,22 @@ export default function Discover() {
                 <TextInput placeholder='What are you looking for?' style={styles.textInput} editable={false}
                     placeholderTextColor='grey' /></TouchableOpacity>
         </Animated.View>
+        <View style={{height: '45%', borderWidth: 0}}>
+        <LottieView
+            source={require("../../images/13.json")}
+            loop
+            autoPlay /></View>
         <View style={{ height: 275 }}>
-            <ScrollView horizontal={true} style={{ marginTop: 35 }}>
+            <ScrollView horizontal={true} style={{ marginTop: 0/*35*/ }}>
                 <LinearGradient colors={['#6667AB00', '#6667AB33']} style={{ flexDirection: 'row', paddingVertical: 20 }}>
-                    <Image source={require('../../images/white.png')} style={styles.book} />
-                    <Image source={require('../../images/white.png')} style={styles.book} />
-                    <Image source={require('../../images/white.png')} style={styles.book} />
-                    <Image source={require('../../images/white.png')} style={styles.book} />
-                    <Image source={require('../../images/white.png')} style={styles.book} />
-                    <Image source={require('../../images/white.png')} style={styles.book} />
+                    <Image source={require('../../images/textbook/1.jpg')} style={styles.book} />
+                    <Image source={require('../../images/textbook/2.jpg')} style={styles.book} />
+                    <Image source={require('../../images/textbook/3.jpg')} style={styles.book} />
+                    <Image source={require('../../images/textbook/1.jpg')} style={styles.book} />
+                    <Image source={require('../../images/textbook/2.jpg')} style={styles.book} />
+                    <Image source={require('../../images/textbook/3.jpg')} style={styles.book} />
                 </LinearGradient>
             </ScrollView></View>
-        <ScrollView>
-            <View style={styles.bottom}>
-                <Text style={styles.bottomTitle}><Image source={require('../../images/book.png')} style={{ width: 20, height: 20 }} />  금주의 TOP 50</Text>
-                {top50.map((v, i) => <Text style={styles.top50Name} key={i}>{i + 1}.  {v.name}</Text>)}
-            </View>
-        </ScrollView>
     </View>
 }
 
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: 20,
         borderBottomLeftRadius: 20, borderBottomRightRadius: 20,
-        elevation: 5, paddingTop: 50
+        elevation: 5, paddingTop: 70
     },
     findView: {
         flexDirection: 'row', alignItems: 'center',
