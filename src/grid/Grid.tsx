@@ -20,7 +20,7 @@ const childrenHeight = deviceWidth / 2
 const sortWidth = deviceWidth
 const itemsInit = [
     { title: '타이틀1', content: '내용1' },
-    // { title: '타이틀2', content: '내용2' },
+    { title: '타이틀2', content: '내용2' },
     // { title: '타이틀3', content: '내용3' },
     // { title: '타이틀4', content: '내용4' },
     // { title: '타이틀5', content: '내용5' },
@@ -45,7 +45,7 @@ export default function Grid() {
     }, [navi])
 
     const renderItem = (item, index) => <TouchableOpacity style={styles.note}
-        onPress={() => { navi.navigate('MemoDetail', {title: item.title, content: item.content, memoId: item.id}) }}>
+        onPress={() => { navi.navigate('MemoDetail', { title: item.title, content: item.content, memoId: item.id }) }}>
         <Text style={styles.noteTitle}>{item.title}</Text>
         <Text style={styles.noteContent} ellipsizeMode='tail' numberOfLines={8}>{item.content}</Text>
     </TouchableOpacity>
@@ -54,12 +54,14 @@ export default function Grid() {
         setState((prev) => {
             return { scrollEnabled: true }
         })
+        setItems((prev) => [...prev])
     }
 
     const onSelectedDragStart = () => {
         setState((prev) => {
             return { scrollEnabled: false }
         })
+        setItems((prev) => [...prev])
     }
     return (
         <ImageBackground source={require('../../images/gridBack.png')} style={{ flex: 1 }}>
@@ -79,7 +81,10 @@ export default function Grid() {
                     marginChildrenLeft={marginChildrenLeft}
                     onDragStart={onSelectedDragStart}
                     onDragEnd={onSelectedDragEnd}
-                    onDataChange={(data) => { setState((prev) => { return { scrollEnabled: prev.scrollEnabled, items: data } }) }}
+                    onDataChange={(data) => {
+                        setItems(() => [...data]);
+                        setState((prev) => { return { scrollEnabled: prev.scrollEnabled } })
+                    }}
                     keyExtractor={(item, index) => index}
                     renderItem={renderItem} />
             </ScrollView>
