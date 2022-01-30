@@ -89,19 +89,20 @@ export default function Add() {
                     <Text style={[styles.tasks, { flex: 1 }]}>TASKS</Text>
                     <Text style={[styles.tasks, { flex: 1, textAlign: 'right' }]}>{'목표 시간'}</Text>
                     <TextInput style={styles.targetTime}
-                        placeholder='00' placeholderTextColor='#65666D44' value={targetTimeH} onChangeText={setTargetTimeH} keyboardType='decimal-pad' />
+                        placeholder='0' placeholderTextColor='#65666D44' value={targetTimeH} onChangeText={setTargetTimeH} keyboardType='decimal-pad' />
                     <Text style={styles.targetTime}>H</Text>
                     <TextInput style={styles.targetTime}
-                        placeholder='00' placeholderTextColor='#65666D44' value={targetTimeM} onChangeText={setTargetTimeM} keyboardType='decimal-pad' />
-                    <Text style={styles.targetTime}>MIN</Text>
+                        placeholder='0' placeholderTextColor='#65666D44' value={targetTimeM} onChangeText={setTargetTimeM} keyboardType='decimal-pad' />
+                    <Text style={[styles.targetTime, {marginRight: 10}]}>MIN</Text>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: '#B7B7B7' }}>
                     <View style={{ flex: 3 }}>
-                        {tasks.map((v, i) => <View style={{ flexDirection: 'row' }}>
+                        {tasks.map((v, i) => <View style={{ flexDirection: 'row', borderBottomWidth: 1, alignItems: 'center', borderColor: '#DDDDDD', }} key={i}>
                             <Text style={styles.subject}>{v.subject}</Text>
                             <View style={{ flex: 6 }}>
                                 {v.titles.map((taskName, i) => <View style={{
-                                    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 5, paddingLeft: 7, borderBottomWidth: 1,
+                                    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 5, paddingLeft: 7,
+                                    borderBottomWidth: i == v.titles.length - 1 ? 0 : 1,
                                     borderColor: '#DDDDDD', marginRight: 7
                                 }}>
                                     <Text style={styles.taskDetail}>{taskName}</Text>
@@ -199,7 +200,7 @@ const styles = StyleSheet.create({
     subject: {
         flex: 1, borderRightWidth: 1, paddingHorizontal: 10,
         textAlignVertical: 'center', textAlign: 'center', borderColor: '#DDDDDD',
-        borderBottomWidth: 1, fontFamily: 'GodoM', color: '#65666D'
+        fontFamily: 'GodoM', color: '#65666D'
     },
     currentTime: {
         fontSize: 18, color: '#65666D', fontFamily: 'GodoM',
@@ -215,7 +216,8 @@ const styles = StyleSheet.create({
     },
     targetTime: {
         fontSize: 14, color: '#65666D', fontFamily: 'GodoM',
-        paddingVertical: 0, textAlignVertical: 'center', marginHorizontal: 5
+        paddingVertical: 0, textAlignVertical: 'center',//, marginHorizontal: 5
+        textAlign: 'right'
 
     },
 

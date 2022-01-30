@@ -1,6 +1,6 @@
 
 
-export const getTimeBlock = () => {
+export const getTimeBlockInit = () => {
     let ret = [{
         hour: "6",
         minutes: [
@@ -52,11 +52,11 @@ export const getTimeBlock = () => {
                 },
                 {
                     minute: "40",
-                    color: "#A5AED500"
+                    color: "#A5AED50000"
                 },
                 {
                     minute: "50",
-                    color: "#A5AED500"
+                    color: "#A5AED50000"
                 }
             ]
         })

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Animated, Dimensions, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Animated, Dimensions, Image, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
-import { getTimeBlock } from "./someUtils";
 import axios from "axios";
 import { serverIPaddress } from "../Util";
 import { useContextOfAll } from "../Provider";
@@ -12,6 +11,11 @@ const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 
 const xOffset = new Animated.Value(0);
+
+const covers = [require('../../images/cover/1.png'), require('../../images/cover/2.png'), require('../../images/cover/3.png'),
+require('../../images/cover/4.png'), require('../../images/cover/5.png'), require('../../images/cover/6.png'),
+require('../../images/cover/7.png'), require('../../images/cover/8.png'), require('../../images/cover/9.png'),
+require('../../images/cover/10.png'), require('../../images/cover/11.png')]
 
 
 const transitionAnimation = index => {
@@ -103,8 +107,11 @@ export default function Planner() {
                     'Authorization': 'Bearer ' + cont.user.token
                 }
             }).then(function (res) {
-                console.log(res.data)
                 setPlanners(res.data)
+                if (res.data.length > 0) {
+                    setTimeRate(res.data[0].timeRate)
+                    setTaskRate(res.data[0].taskRate)
+                }
             }).catch(function (error) {
                 console.log(error)
             })
@@ -115,7 +122,8 @@ export default function Planner() {
     const Screen = props => {
         return <View style={styles.scrollPage}>
             <Animated.View style={[styles.screen, transitionAnimation(props.index)]}>
-                <TouchableOpacity style={styles.planner} onPress={() => { navi.navigate('Edit') }}>
+                <TouchableOpacity style={styles.planner} onPress={() => { navi.navigate('Edit', { id: props.id }) }}>
+                    <Image source={covers[props.index % 11]} style={{ width: SCREEN_WIDTH * 0.35, height: SCREEN_WIDTH * 0.35, marginTop: SCREEN_WIDTH * 0.05 }} />
                     <Text style={styles.text}>{props.date}</Text>
                 </TouchableOpacity>
             </Animated.View>
@@ -167,7 +175,7 @@ export default function Planner() {
                 snapToAlignment='center'
                 contentContainerStyle={{ paddingHorizontal: SPACING_FOR_CARD_INSET }}
             >
-                {planners.map((v, i) => <Screen date={v.date} index={i} key={i} />)}
+                {planners.map((v, i) => <Screen date={v.date} index={i} key={i} id={v.id} />)}
                 {/* <Screen date="Screen 1" index={0} />
                 <Screen date="Screen 2" index={1} />
                 <Screen date="Screen 3" index={2} />
@@ -184,16 +192,15 @@ export default function Planner() {
     </View>
 }
 
-const chart = (text, rateStr:string) => {
+const chart = (text, rateStr: string) => {
     const rate = Number(rateStr)
-    console.log(rate)
     return <View style={{ width: '90%', alignSelf: 'center', marginBottom: 7 }}>
         <Text style={styles.tag}>달성률 ({text})</Text>
         <LinearGradient colors={['#CACED5', '#D0D2D8', '#E3E5EC']} start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }}
             style={{ borderRadius: 10, height: 18, borderWidth: 0, width: '100%', alignSelf: 'center' }}>
             <LinearGradient colors={['#2152f0', '#40c0dc']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
                 style={[{
-                    backgroundColor: "#6667AB66", borderRadius: 10, height: '100%', width: rate+'%',
+                    backgroundColor: "#6667AB66", borderRadius: 10, height: '100%', width: rate + '%',
                     overflow: 'hidden', borderWidth: 3, borderColor: '#00000000'
                 }]} />
         </LinearGradient>
@@ -217,18 +224,19 @@ const styles = StyleSheet.create({
         height: '90%',
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 20,
-        backgroundColor: "#D8E0E7",
-        width: '100%', padding: 12, elevation: 7,
+        borderRadius: 30,
+        backgroundColor: "#DFE3EA",
+        width: '90%', padding: 7, elevation: 7,
     },
     text: {
-        fontSize: 20, flex: 1, color: 'black', fontFamily: 'GodoM',
-        fontWeight: "bold", textAlign: 'center', textAlignVertical: 'center'
+        fontSize: 22, color: '#595959', fontFamily: 'Lobster',
+        textAlign: 'center', textAlignVertical: 'center',
+        marginTop: SCREEN_WIDTH * 0.11
     },
     title: {
-        fontSize: 25,
+        fontSize: 30,
         color: '#43444b', fontFamily: 'GodoM',
-        marginBottom: '11%', marginTop: '4%'
+        marginBottom: '5%', marginTop: '7%'
     },
     date: {
         fontSize: 16, fontFamily: 'GodoM',
@@ -245,12 +253,13 @@ const styles = StyleSheet.create({
         paddingVertical: 5, alignSelf: 'center', fontFamily: 'GodoM',
     },
     planner: {
-        backgroundColor: 'white', borderRadius: 10,
-        width: '100%', height: '100%'
+        backgroundColor: '#D8E0E7', borderRadius: 30,
+        width: '100%', height: '100%', justifyContent: 'center',
+        alignItems: 'center'
     },
     bottomView: {
         backgroundColor: '#D8E0E7', height: '50%',
-        width: '82%', borderRadius: 30,
+        width: '78%', borderRadius: 30,
         paddingTop: 8,// marginTop: '1%',
         elevation: 5, borderWidth: 7, borderColor: '#DFE3EA'
     },

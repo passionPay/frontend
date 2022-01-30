@@ -73,6 +73,26 @@
 		<string>GodoB.ttf</string>
 		<string>GodoM.otf</string>
 		<string>GodoM.ttf</string>
+		<string>dokdo.ttf</string>
+		<string>Hahmlet-VariableFont_wght.ttf</string>
+		<string>Hahmlet-Black.ttf</string>
+		<string>Hahmlet-Bold.ttf</string>
+		<string>Hahmlet-ExtraBold.ttf</string>
+		<string>Hahmlet-ExtraLight.ttf</string>
+		<string>Hahmlet-Light.ttf</string>
+		<string>Hahmlet-Medium.ttf</string>
+		<string>Hahmlet-Regular.ttf</string>
+		<string>Hahmlet-SemiBold.ttf</string>
+		<string>Hahmlet-Thin.ttf</string>
+		<string>IBMPlexSansKR-Bold.ttf</string>
+		<string>IBMPlexSansKR-ExtraLight.ttf</string>
+		<string>IBMPlexSansKR-Light.ttf</string>
+		<string>IBMPlexSansKR-Medium.ttf</string>
+		<string>IBMPlexSansKR-Regular.ttf</string>
+		<string>IBMPlexSansKR-SemiBold.ttf</string>
+		<string>IBMPlexSansKR-Thin.ttf</string>
+		<string>Lobster.ttf</string>
+		<string>SedgwickAve.ttf</string>
 	</array>
 </dict>
 </plist>

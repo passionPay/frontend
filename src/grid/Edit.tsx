@@ -3,6 +3,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { ImageBackground, StyleSheet, Text, ToastAndroid, TouchableOpacity, View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
+import LinearGradient from 'react-native-linear-gradient'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useContextOfAll } from '../Provider'
 import { serverIPaddress } from '../Util'
@@ -12,18 +13,20 @@ export default function Edit() {
     const [content, setContent] = useState('')
     const navi = useNavigation<any>()
     const cont = useContextOfAll()
-    return <ImageBackground source={require('../../images/gridBack.png')} style={{ flex: 1 }}>
+    return <View style={{ flex: 1, backgroundColor: 'white' }}>
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
             <TouchableOpacity onPress={() => { navi.goBack() }} style={styles.icon}>
-                <Icon name='chevron-left' size={30} color='#5E5E64' /></TouchableOpacity>
+                <Icon name='chevron-left' size={30} color='#5E5E6499' /></TouchableOpacity>
             <TouchableOpacity onPress={() => { save(title, content, cont, navi) }} style={styles.icon}>
-                <Icon name='content-save-outline' size={30} color='#5E5E64' /></TouchableOpacity>
+                <Icon name='content-save-outline' size={30} color='#5E5E6499' /></TouchableOpacity>
         </View>
-        <View style={{padding: 20}}>
-            <TextInput style={styles.title} placeholder='제목' placeholderTextColor='grey' value={title} onChangeText={setTitle} />
-            <TextInput style={styles.content} placeholder='내용' placeholderTextColor='grey' multiline={true} value={content} onChangeText={setContent} />
+        <View style={{ padding: 20 }}>
+            <TextInput style={styles.title} placeholder='새로운 메모' placeholderTextColor='#595959' value={title} onChangeText={setTitle} />
+            <LinearGradient colors={['#f5f7fa','#c3cfe2']}>
+                <TextInput style={styles.content} multiline={true} value={content} onChangeText={setContent} />
+            </LinearGradient>
         </View>
-    </ImageBackground>
+    </View>
 }
 
 function save(title, content, cont, navi) {
@@ -47,15 +50,18 @@ function save(title, content, cont, navi) {
 
 const styles = StyleSheet.create({
     title: {
-        borderBottomWidth: 1,
-        borderBottomColor: 'black',
+        // borderBottomWidth: 1,
+        // borderBottomColor: 'black',
         marginHorizontal: '5%',
-        color: 'black'
+        color: '#59595999', textAlign: 'center',
+        fontSize: 25, marginBottom: '10%',
+        marginTop: '5%', fontFamily: 'GodoM'
     },
     content: {
-        marginHorizontal: '5%',
+        // marginHorizontal: '5%',
         color: 'black', minHeight: '50%',
-        textAlignVertical: 'top'
+        textAlignVertical: 'center',// backgroundColor: 'red'
+        textAlign: 'center', fontFamily: 'GodoM'
     },
     icon: {
         alignSelf: 'flex-start', backgroundColor: 'white',

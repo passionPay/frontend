@@ -1,23 +1,32 @@
 import { useNavigation } from '@react-navigation/native'
-import React from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { useState } from 'react'
-import { Alert, ImageBackground, Modal, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native'
+import { ImageBackground, Modal, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import DropDownPicker from 'react-native-dropdown-picker';
 import { Stopwatch } from 'react-native-stopwatch-timer';
 import LottieView from 'lottie-react-native'
-import { getTimeBlock } from './someUtils'
+import axios from 'axios'
+import { serverIPaddress } from '../Util'
+import { useContextOfAll } from '../Provider'
+import { addTask, getTimeBlock, getTimerInit, removePlanner, setServerTimeBlock, setTaskComplete, updateStartTime } from './usingAxios'
+import { getTimeBlockInit } from './someUtils'
 
-export default function Edit() {
+export default function Edit({ route }) {
     const [date, setDate] = useState('')
     const [comment, setComment] = useState('')
-    const [targetTime, setTargetTime] = useState('')
+    const [targetTimeH, setTargetTimeH] = useState('')
+    const [targetTimeM, setTargetTimeM] = useState('')
     const [tasks, setTasks] = useState(getTask())
+    const [rate, setRate] = useState('0')
 
     const [modalVisible, setModalVisible] = useState(false);
     const [modalVisible2, setModalVisible2] = useState(false);
+    const [modalVisible_delete, setModalVisible_delete] = useState(false);
     const navi = useNavigation<any>()
-    const timeblock = getTimeBlock()
+    const cont = useContextOfAll()
+    const [timeblockInit, setTimeBlockInit] = useState(getTimeBlockInit())
+
 
     const [textToAdd, setTextToAdd] = useState('')
     const [open, setOpen] = useState(false);
@@ -25,22 +34,73 @@ export default function Edit() {
 
     const [start, setStart] = useState(false);
     const [reset, setReset] = useState(false);
-    let timerStartTime = 3782
+    const [timerStartTimeInit, setTimerStartInit] = useState(-1) // 초기 시간 받아오기
+    let timerTotalTime = 3782, timeblock = useMemo(() => getTimeBlockInit(), []);
+
     const toggleStopwatch = () => {
         setStart(!start);
         setReset(false);
+        if (start) {
+            // 시간 업데이트
+            updateStartTime(route.params.id, cont.user.token, timerTotalTime)
+        }
     }
 
-    const resetStopwatch = () => {
-        setStart(false);
-        setReset(true);
-    }
+    useEffect(() => {
+        axios({
+            url: serverIPaddress + '/planner/' + route.params.id,
+            method: 'get',
+            headers: {
+                'Authorization': 'Bearer ' + cont.user.token
+            }
+        }).then(function (res) {
+            // console.log(res.data.tasks)
+            setDate(res.data.date)
+            setComment(res.data.comment)
+            setTargetTimeH(res.data.targetTimeH)
+            setTargetTimeM(res.data.targetTimeM)
+            setTasks(res.data.tasks)
+            setTimerStartInit(res.data.totalTime)
+            setRate(res.data.taskRate)
+        }).catch(function (error) {
+            console.log(error)
+        })
+        getTimeBlock(cont.user.token, route.params.id, setTimeBlockInit)
+    }, [])
 
-    // let tmp = ''
-    // for (let i = 0; i < subjectList.length; ++i) {
-    //     tmp += '{ label: \''+ subjectList[i] + '\', value: \''+ subjectList[i] + '\' },'
-    // }
-    // console.log(tmp)
+    useEffect(() => {
+        axios({
+            url: serverIPaddress + '/planner/' + route.params.id,
+            method: 'get',
+            headers: {
+                'Authorization': 'Bearer ' + cont.user.token
+            }
+        }).then(function (res) {
+            setTasks(res.data.tasks)
+            setRate(res.data.taskRate)
+        }).catch(function (error) {
+            console.log(error)
+        })
+        getTimeBlock(cont.user.token, route.params.id, setTimeBlockInit)
+    }, [modalVisible])
+
+    useEffect(() => {
+        axios({
+            url: serverIPaddress + '/planner/' + route.params.id,
+            method: 'get',
+            headers: {
+                'Authorization': 'Bearer ' + cont.user.token
+            }
+        }).then(function (res) {
+            setTasks(res.data.tasks)
+            setRate(res.data.taskRate)
+        }).catch(function (error) {
+            console.log(error)
+        })
+        getTimeBlock(cont.user.token, route.params.id, setTimeBlockInit)
+    }, [modalVisible2])
+
+    let currentSuccessTask = useMemo(() => { return { subject: '과목명', titleIndex: 0 } }, [])
 
     return <ImageBackground source={require('../../images/plannerBack.png')} style={{ flex: 1 }} imageStyle={{ opacity: 0.7 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: '5%', paddingBottom: 3 }}>
@@ -52,42 +112,55 @@ export default function Edit() {
         </View>
         <ScrollView>
             <View style={styles.view}>
-                <TextInput style={styles.date} placeholder='00.00.00 O요일' placeholderTextColor='#65666D44' value={date} onChangeText={setDate} />
+                <Text style={styles.date}>{date}</Text>
                 <View style={styles.playlist}>
                     <Icon name='playlist-music' size={23} color='#65666D' />
                     <TextInput style={styles.playlistText} placeholder='playlist' placeholderTextColor='#65666D44' value={comment} onChangeText={setComment} /></View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: '#B7B7B7' }}>
                     <Text style={[styles.tasks, { flex: 1 }]}>TASKS</Text>
                     <Text style={[styles.tasks, { flex: 1, textAlign: 'right' }]}>{'목표 시간'}</Text>
-                    <TextInput style={{
-                        fontSize: 14, color: '#65666D', fontFamily: 'GodoM',
-                        paddingVertical: 0, textAlignVertical: 'center', marginHorizontal: 5
-                    }}
-                        placeholder='00H 00MIN ' placeholderTextColor='#65666D44' value={targetTime} onChangeText={setTargetTime} />
+                    <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                        <Text style={{
+                            fontSize: 14, color: '#65666D', fontFamily: 'GodoM',
+                            paddingVertical: 3, textAlignVertical: 'center', marginLeft: 5
+                        }}>{targetTimeH}H {targetTimeM}MIN  </Text>
+                    </View>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: '#B7B7B7' }}>
                     <View style={{ flex: 3 }}>
-                        {tasks.map((v, i) => <View style={{ flexDirection: 'row' }}>
+                        {tasks.map((v, i) => <View style={{ flexDirection: 'row', borderBottomWidth: 1, alignItems: 'center', borderColor: '#DDDDDD', }} key={i}>
                             <Text style={styles.subject}>{v.subject}</Text>
                             <View style={{ flex: 6 }}>
-                                {v.tasks.map((taskName, i) => <View style={{
-                                    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 5, paddingLeft: 7, borderBottomWidth: 1,
+                                {v.titles.map((taskNameObj, i) => <View style={{
+                                    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 5, paddingLeft: 7,
+                                    borderBottomWidth: i == v.titles.length - 1 ? 0 : 1,
                                     borderColor: '#DDDDDD', marginRight: 7
                                 }}>
-                                    <Text style={styles.taskDetail}>{taskName}</Text>
-                                    <TouchableOpacity style={{ flex: 1 }} onPress={() => setModalVisible2(!modalVisible2)}>
-                                        <View style={{ width: 15, height: 15, borderColor: '#AAAAAA', borderWidth: 1, marginLeft: 5 }} />
+                                    <Text style={styles.taskDetail}>{taskNameObj.title}</Text>
+                                    <TouchableOpacity style={{ flex: 1 }} onPress={() => {
+                                        console.log('prev ' + currentSuccessTask.subject)
+                                        currentSuccessTask['subject'] = v.subject
+                                        currentSuccessTask['titleIndex'] = i
+                                        // currentSuccessTask = { subject: v.subject, titleIndex: i };
+
+                                        console.log('after ' + currentSuccessTask.subject)
+                                        setModalVisible2(!modalVisible2)
+                                    }}>
+                                        <View style={{
+                                            width: 15, height: 15, borderColor: '#AAAAAA', borderWidth: 1, marginLeft: 5,
+                                            backgroundColor: taskNameObj.isFinished ? '#A5AED5' : '#0000'
+                                        }} />
                                     </TouchableOpacity>
                                 </View>)}
                             </View>
                         </View>)}
-                        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+                        <TouchableOpacity onPress={() => { setModalVisible(!modalVisible) }}>
                             <Text style={{ color: '#65666D', fontSize: 13, fontFamily: 'GodoM', alignSelf: 'center', marginVertical: 10 }}>
                                 + 추가하기</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={{ flex: 2, marginVertical: '1%' }}>
-                        {timeblock.map((vRow, i) => <View key={vRow.hour} style={{
+                        {timeblockInit.map((vRow, i) => <View key={vRow.hour} style={{
                             flexDirection: 'row',
                             borderTopWidth: i == 0 ? 0 : 1, borderColor: '#DDDDDD'
                         }}>
@@ -102,21 +175,29 @@ export default function Edit() {
                 </View>
                 <View style={{ flexDirection: 'row', borderBottomWidth: 1, borderColor: '#B7B7B7', alignItems: 'center' }}>
                     <View style={{ flex: 6, flexDirection: 'row', alignItems: 'center', paddingVertical: 15 }}>
-                        <View style={styles.rateBack}><View style={[styles.rate, { width: '81%' }]} /></View>
-                        <Text style={{ color: '#89DBDC', fontFamily: 'GodoM' }}>81%</Text>
+                        <View style={styles.rateBack}><View style={[styles.rate, { width: rate + '%' }]} /></View>
+                        <Text style={{ color: '#A5AED5', fontFamily: 'GodoM' }}>{rate}%</Text>
                     </View>
                     <View style={{ flex: 4 }}>
-                        <Stopwatch laps start={start}
-                            reset={reset}
-                            options={options}
-                            getMsecs={(time) => {
-                                if (timerStartTime != time)
-                                    console.log((new Date()).getMinutes(), (new Date()).getHours())
-                                timerStartTime = time;
-                            }}
-                            startTime={timerStartTime} />
+                        {timerStartTimeInit == -1 ? <View /> :
+                            <Stopwatch laps start={start}
+                                reset={reset}
+                                options={options}
+                                getMsecs={(time) => {
+                                    if (timerStartTimeInit != time) {
+                                        const h = (new Date()).getHours(), m = (new Date()).getMinutes()
+                                        if (timeblock[(h + 18) % 24].minutes[Math.floor(m / 10)].color != '#A5AED5')
+                                            setServerTimeBlock(cont.user.token, route.params.id, h, Number(Math.floor(m / 10) + '0').toString(), setTimeBlockInit)
+                                        timeblock[(h + 18) % 24].minutes[Math.floor(m / 10)].color = '#A5AED5'
+                                    }
+                                    timerTotalTime = time;
+                                }}
+                                startTime={timerStartTimeInit} />}
                     </View>
                 </View>
+                <TouchableOpacity onPress={() => {setModalVisible_delete(!modalVisible_delete)}}>
+                    <Icon name='delete-outline' size={35} color='tomato' style={{ alignSelf: 'center', marginVertical: '15%' }} />
+                </TouchableOpacity>
             </View>
         </ScrollView>
 
@@ -154,7 +235,10 @@ export default function Edit() {
                             paddingHorizontal: 10, fontFamily: 'GodoM', color: 'black'
                         }} />
 
-                    <TouchableOpacity onPress={() => { setValue(null); setModalVisible(!modalVisible) }} activeOpacity={0}>
+                    <TouchableOpacity onPress={() => {
+                        addTask(route.params.id, value, textToAdd, cont.user.token);
+                        setValue(null); setModalVisible(!modalVisible)
+                    }} activeOpacity={0}>
                         <Text style={styles.button}>추가하기</Text>
                     </TouchableOpacity>
                 </View>
@@ -180,8 +264,41 @@ export default function Edit() {
                         <TouchableOpacity onPress={() => { setModalVisible2(!modalVisible2) }} activeOpacity={0}>
                             <Text style={{ color: 'black', fontFamily: 'GodoM', marginTop: 30, textAlignVertical: 'center' }}>취소</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => { setModalVisible2(!modalVisible2) }} activeOpacity={0}>
+                        <TouchableOpacity onPress={() => {
+                            console.log('Modal2 ' + currentSuccessTask.subject)
+                            setTaskComplete(currentSuccessTask, cont.user.token, route.params.id);
+                            setModalVisible2(!modalVisible2)
+                        }} activeOpacity={0}>
                             <Text style={styles.button}>완료</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </View>
+        </Modal>
+
+
+        <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible_delete}
+            onRequestClose={() => {
+                // Alert.alert("Modal has been closed.");
+                setModalVisible_delete(!modalVisible_delete);
+            }}
+        >
+            <View style={styles.centeredView}>
+                <View style={styles.modalView}>
+                    <View style={{ height: 100 }}>
+                        <LottieView
+                            source={require("../../images/delete.json")}
+                            loop
+                            autoPlay /></View>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
+                        <TouchableOpacity onPress={() => { setModalVisible_delete(!modalVisible_delete) }} activeOpacity={0}>
+                            <Text style={{ color: 'black', fontFamily: 'GodoM', marginTop: 30, textAlignVertical: 'center' }}>취소</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => { removePlanner(route.params.id, cont, navi); setModalVisible_delete(!modalVisible_delete) }} activeOpacity={0}>
+                            <Text style={styles.button}>삭제</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -189,6 +306,7 @@ export default function Edit() {
         </Modal>
     </ImageBackground>
 }
+
 const options = {
     container: {
         backgroundColor: '#0000',
@@ -249,11 +367,11 @@ const styles = StyleSheet.create({
         textAlign: 'center', fontWeight: 'bold'
     },
     rateBack: {
-        height: 25, width: '80%', backgroundColor: '#D3F3F3', marginHorizontal: '5%',
+        height: 25, width: '80%', backgroundColor: '#A5AED533', marginHorizontal: '5%',
         borderRadius: 5
     },
     rate: {
-        backgroundColor: '#89DBDC',
+        backgroundColor: '#A5AED5',
         borderRadius: 5, height: '100%'
     },
 
@@ -274,7 +392,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingVertical: 10, paddingHorizontal: 15,
         elevation: 2,
-        backgroundColor: "#B8F589",
+        backgroundColor: "#A5AED5",
         color: "white",
         textAlign: "center",
         fontFamily: 'GodoM', alignSelf: 'center',
@@ -290,7 +408,7 @@ const getTask = () => {
     return [
         {
             subject: '국어',
-            tasks: ['윤혜정T 나비효과 입문편 5강', '씨리얼 문학 현대시 6일차']
+            titles: [{ title: '윤혜정T 나비효과 입문편 5강', isFinished: false, id: 0 }, { title: '씨리얼 문학 현대시 6일차', isFinished: false, id: 1 }]
         }
     ]
 }

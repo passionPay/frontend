@@ -26,7 +26,7 @@ function getJSON(setResult) {
 const styles = StyleSheet.create({
     findView: {
         flexDirection: 'row', alignItems: 'center',
-        backgroundColor: '#777777', borderRadius: 10,
+        backgroundColor: '#44444411', borderRadius: 10,
         marginVertical: 20, marginHorizontal: 10,
         paddingHorizontal: 7
     },

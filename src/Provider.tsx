@@ -24,7 +24,7 @@ const ContextOfAll = createContext<FontSizeContextType>(defaultContext)
 
 export const Provider: FC<{}> = ({ children }) => {
     const [user, setUser] = useState({
-        token: '', username: ''
+        token: '', username: '', profile: 0
     })
     const [tabbarVisible, setTabbarVisible] = useState(true)
     const value = { user, setUser, tabbarVisible, setTabbarVisible }

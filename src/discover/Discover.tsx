@@ -7,7 +7,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import LottieView from 'lottie-react-native'
 
 export default function Discover() {
-    const [top50, setTop50] = useState(getTop50())
     const navi = useNavigation<any>()
     useEffect(() => {
         const reload = navi.addListener('focus', () => {
@@ -29,11 +28,11 @@ export default function Discover() {
                 <TextInput placeholder='What are you looking for?' style={styles.textInput} editable={false}
                     placeholderTextColor='grey' /></TouchableOpacity>
         </Animated.View>
-        <View style={{height: '45%', borderWidth: 0}}>
-        <LottieView
-            source={require("../../images/13.json")}
-            loop
-            autoPlay /></View>
+        <View style={{ height: '45%', borderWidth: 0 }}>
+            <LottieView
+                source={require("../../images/rocket.json")}
+                loop
+                autoPlay /></View>
         <View style={{ height: 275 }}>
             <ScrollView horizontal={true} style={{ marginTop: 0/*35*/ }}>
                 <LinearGradient colors={['#6667AB00', '#6667AB33']} style={{ flexDirection: 'row', paddingVertical: 20 }}>
@@ -76,7 +75,7 @@ const styles = StyleSheet.create({
     },
     findView: {
         flexDirection: 'row', alignItems: 'center',
-        backgroundColor: '#7575ff33', borderRadius: 10,
+        backgroundColor: '#44444411', borderRadius: 10,
         marginTop: '5%'
     },
     textInput: {

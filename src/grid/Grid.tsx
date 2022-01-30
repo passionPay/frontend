@@ -11,12 +11,13 @@ import {
     ImageBackground
 } from 'react-native'
 import { DragSortableView } from 'react-native-drag-sort'
+import LinearGradient from 'react-native-linear-gradient'
 import { useContextOfAll } from '../Provider'
 import { serverIPaddress } from '../Util'
 
 const deviceWidth = Dimensions.get('window').width
 const childrenWidth = deviceWidth / 2
-const childrenHeight = deviceWidth / 2
+const childrenHeight = deviceWidth / 3
 const sortWidth = deviceWidth
 const itemsInit = [
     { title: '타이틀1', content: '내용1' },
@@ -28,6 +29,10 @@ const itemsInit = [
     // { title: '타이틀7', content: '내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7내용7' },
     // { title: '타이틀8', content: '내용8' },
 ]
+
+const gradientColors = [['#e0c3fc', '#8ec5fc'], ['#ddd6f3', '#faaca8'], ['#f5f7fa', '#c3cfe2'], ['#a8edea', '#fed6e3',],
+['#f6d365', '#fda085'], ['#96fbc4', '#f9f586'], ['#fff1eb', '#ace0f9']]
+const colorsSize = 7
 
 export default function Grid() {
     const [items, setItems] = useState(itemsInit)
@@ -44,30 +49,29 @@ export default function Grid() {
         return reload
     }, [navi])
 
-    const renderItem = (item, index) => <TouchableOpacity style={styles.note}
-        onPress={() => { navi.navigate('MemoDetail', { title: item.title, content: item.content, memoId: item.id }) }}>
+    const renderItem = (item, index) => <LinearGradient style={styles.note} colors={gradientColors[item.content.length % colorsSize]} >
         <Text style={styles.noteTitle}>{item.title}</Text>
-        <Text style={styles.noteContent} ellipsizeMode='tail' numberOfLines={8}>{item.content}</Text>
-    </TouchableOpacity>
+        <TouchableOpacity onPress={() => { navi.navigate('MemoDetail', { title: item.title, content: item.content, memoId: item.id }) }}>
+            <Text style={styles.noteContent} ellipsizeMode='tail' numberOfLines={4}>{item.content}</Text></TouchableOpacity>
+    </LinearGradient>
 
     const onSelectedDragEnd = () => {
         setState((prev) => {
             return { scrollEnabled: true }
         })
-        setItems((prev) => [...prev])
+        // setItems((prev) => [...prev])
     }
 
     const onSelectedDragStart = () => {
         setState((prev) => {
             return { scrollEnabled: false }
         })
-        setItems((prev) => [...prev])
+        // setItems((prev) => [...prev])
     }
     return (
-        <ImageBackground source={require('../../images/gridBack.png')} style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
             <TouchableOpacity style={styles.addTouchable} onPress={() => { navi.navigate('Edit') }}>
                 <Text style={styles.addText}>클릭하여 메모 추가하기</Text>
-                <Text style={styles.addBtn}><Text>Sticker Pack Market</Text></Text>
             </TouchableOpacity>
             <ScrollView
                 scrollEnabled={state.scrollEnabled}
@@ -77,7 +81,7 @@ export default function Grid() {
                     parentWidth={sortWidth}
                     childrenWidth={childrenWidth - marginChildrenLeft}
                     childrenHeight={childrenHeight}
-                    marginChildrenTop={10}
+                    marginChildrenTop={20}
                     marginChildrenLeft={marginChildrenLeft}
                     onDragStart={onSelectedDragStart}
                     onDragEnd={onSelectedDragEnd}
@@ -88,7 +92,7 @@ export default function Grid() {
                     keyExtractor={(item, index) => index}
                     renderItem={renderItem} />
             </ScrollView>
-        </ImageBackground>
+        </View>
     )
 
 }
@@ -111,12 +115,13 @@ const marginChildrenLeft = 10
 
 const styles = StyleSheet.create({
     addTouchable: {
-        marginHorizontal: 10, borderBottomWidth: 1,
+        marginHorizontal: '5%', borderBottomWidth: 1,
         flexDirection: 'row', justifyContent: 'space-between',
-        padding: 7, backgroundColor: 'white', marginTop: 20
+        padding: 7, backgroundColor: 'white', marginTop: 45,
+        borderColor: '#3333', marginBottom: 20
     },
     addText: {
-        color: 'grey', fontSize: 12
+        color: 'grey', fontSize: 12, fontFamily: 'GodoM'
     },
     addBtn: {
         color: 'white', backgroundColor: 'black',
@@ -127,12 +132,12 @@ const styles = StyleSheet.create({
         flex: 1, padding: 17
     },
     note: {
-        backgroundColor: '#CAD9CC', borderRadius: 5,
+        borderRadius: 5,
         width: childrenWidth - marginChildrenLeft * 2,
         height: childrenHeight
     },
     noteTitle: {
-        backgroundColor: '#A7C2AA', width: '100%',
+        width: '100%',
         paddingHorizontal: 10, borderTopRightRadius: 5, borderTopLeftRadius: 5,
         fontWeight: 'bold', paddingVertical: 7, fontSize: 13
     },

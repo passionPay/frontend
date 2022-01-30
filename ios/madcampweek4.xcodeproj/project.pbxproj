@@ -34,6 +34,26 @@
 		94CC8488DDED4D56BD3F2DC1 /* GodoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */; };
 		17D516B665D54C8190E0A74D /* GodoM.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1938EF165A6E4909A3966513 /* GodoM.otf */; };
 		422D0081DDB9448B9E5DF295 /* GodoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E52B09398BA40849AE3130F /* GodoM.ttf */; };
+		E015504A63A0482CB7202B1B /* dokdo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B134F85F503E4205A4967018 /* dokdo.ttf */; };
+		34D307845DAB41EA9759112F /* Hahmlet-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */; };
+		23A37EAB3CDC4C90A73F35D4 /* Hahmlet-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32F17E2C0A134053AD877B0D /* Hahmlet-Black.ttf */; };
+		BE9ADBCEBA7742B3B1E9EB74 /* Hahmlet-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B0F7BEB414914A5429E6E /* Hahmlet-Bold.ttf */; };
+		B3287A45387A424AB39AD020 /* Hahmlet-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751954B600D24510A8F68BAA /* Hahmlet-ExtraBold.ttf */; };
+		46213CA6D16040C6A1E2D4FD /* Hahmlet-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C83B0E742CF84F17BC64816A /* Hahmlet-ExtraLight.ttf */; };
+		4AC1DF6962DD4A65B96208A9 /* Hahmlet-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C207F6AFA2A24019AC53C656 /* Hahmlet-Light.ttf */; };
+		0C4FF948AEEF45CCB4DB6F00 /* Hahmlet-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 274205DF23EA4ADEAF0E120D /* Hahmlet-Medium.ttf */; };
+		AD7571C4EE164BE39BA56F82 /* Hahmlet-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4AFFCF82F214403BF354F25 /* Hahmlet-Regular.ttf */; };
+		8C85879AB126415A823B1BB0 /* Hahmlet-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E36333417E546A89BD97A6B /* Hahmlet-SemiBold.ttf */; };
+		EBD5814B1BC84F4CAC8792FE /* Hahmlet-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22D0105460914CB9BC3C9479 /* Hahmlet-Thin.ttf */; };
+		D928CBA3FA144692955E3CF8 /* IBMPlexSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5AABE53A6B14629A0483E3C /* IBMPlexSansKR-Bold.ttf */; };
+		539C44FAE6014341AB80CB54 /* IBMPlexSansKR-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 314931AD641E4934B7DA6475 /* IBMPlexSansKR-ExtraLight.ttf */; };
+		41B8DC920F79480BA5505811 /* IBMPlexSansKR-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68CDB8AC8D484EB2B305039D /* IBMPlexSansKR-Light.ttf */; };
+		5EF4A48A6E4544A1B2644D7B /* IBMPlexSansKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A5267E23846638C9B378A /* IBMPlexSansKR-Medium.ttf */; };
+		CCCB9016FAA2458593170F83 /* IBMPlexSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9386BEB535F7465793B7D752 /* IBMPlexSansKR-Regular.ttf */; };
+		B859CE64BFE24F388E9E8EFF /* IBMPlexSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E1AE3F6AC4BE5880602E3 /* IBMPlexSansKR-SemiBold.ttf */; };
+		60347438875B4534B9E62806 /* IBMPlexSansKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */; };
+		B8EDABACFD1942F0B4A065D6 /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EC465E8271F4040B71C118F /* Lobster.ttf */; };
+		5DCB41887905422FB80322C0 /* SedgwickAve.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +104,26 @@
 		36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */ = {isa = PBXFileReference; name = "GodoB.ttf"; path = "../font/godoFont/godoFont/GodoB.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1938EF165A6E4909A3966513 /* GodoM.otf */ = {isa = PBXFileReference; name = "GodoM.otf"; path = "../font/godoFont/godoFont/GodoM.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5E52B09398BA40849AE3130F /* GodoM.ttf */ = {isa = PBXFileReference; name = "GodoM.ttf"; path = "../font/GodoM.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B134F85F503E4205A4967018 /* dokdo.ttf */ = {isa = PBXFileReference; name = "dokdo.ttf"; path = "../font/dokdo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Hahmlet-VariableFont_wght.ttf"; path = "../font/Hahmlet/Hahmlet-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		32F17E2C0A134053AD877B0D /* Hahmlet-Black.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Black.ttf"; path = "../font/Hahmlet/static/Hahmlet-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3D5B0F7BEB414914A5429E6E /* Hahmlet-Bold.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Bold.ttf"; path = "../font/Hahmlet/static/Hahmlet-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		751954B600D24510A8F68BAA /* Hahmlet-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Hahmlet-ExtraBold.ttf"; path = "../font/Hahmlet/static/Hahmlet-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C83B0E742CF84F17BC64816A /* Hahmlet-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Hahmlet-ExtraLight.ttf"; path = "../font/Hahmlet/static/Hahmlet-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C207F6AFA2A24019AC53C656 /* Hahmlet-Light.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Light.ttf"; path = "../font/Hahmlet/static/Hahmlet-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		274205DF23EA4ADEAF0E120D /* Hahmlet-Medium.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Medium.ttf"; path = "../font/Hahmlet/static/Hahmlet-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D4AFFCF82F214403BF354F25 /* Hahmlet-Regular.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Regular.ttf"; path = "../font/Hahmlet/static/Hahmlet-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7E36333417E546A89BD97A6B /* Hahmlet-SemiBold.ttf */ = {isa = PBXFileReference; name = "Hahmlet-SemiBold.ttf"; path = "../font/Hahmlet/static/Hahmlet-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		22D0105460914CB9BC3C9479 /* Hahmlet-Thin.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Thin.ttf"; path = "../font/Hahmlet/static/Hahmlet-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E5AABE53A6B14629A0483E3C /* IBMPlexSansKR-Bold.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Bold.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		314931AD641E4934B7DA6475 /* IBMPlexSansKR-ExtraLight.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-ExtraLight.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		68CDB8AC8D484EB2B305039D /* IBMPlexSansKR-Light.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Light.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F03A5267E23846638C9B378A /* IBMPlexSansKR-Medium.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Medium.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9386BEB535F7465793B7D752 /* IBMPlexSansKR-Regular.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Regular.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3A2E1AE3F6AC4BE5880602E3 /* IBMPlexSansKR-SemiBold.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-SemiBold.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Thin.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3EC465E8271F4040B71C118F /* Lobster.ttf */ = {isa = PBXFileReference; name = "Lobster.ttf"; path = "../font/Lobster.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */ = {isa = PBXFileReference; name = "SedgwickAve.ttf"; path = "../font/SedgwickAve.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +253,26 @@
 				36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */,
 				1938EF165A6E4909A3966513 /* GodoM.otf */,
 				5E52B09398BA40849AE3130F /* GodoM.ttf */,
+				B134F85F503E4205A4967018 /* dokdo.ttf */,
+				7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */,
+				32F17E2C0A134053AD877B0D /* Hahmlet-Black.ttf */,
+				3D5B0F7BEB414914A5429E6E /* Hahmlet-Bold.ttf */,
+				751954B600D24510A8F68BAA /* Hahmlet-ExtraBold.ttf */,
+				C83B0E742CF84F17BC64816A /* Hahmlet-ExtraLight.ttf */,
+				C207F6AFA2A24019AC53C656 /* Hahmlet-Light.ttf */,
+				274205DF23EA4ADEAF0E120D /* Hahmlet-Medium.ttf */,
+				D4AFFCF82F214403BF354F25 /* Hahmlet-Regular.ttf */,
+				7E36333417E546A89BD97A6B /* Hahmlet-SemiBold.ttf */,
+				22D0105460914CB9BC3C9479 /* Hahmlet-Thin.ttf */,
+				E5AABE53A6B14629A0483E3C /* IBMPlexSansKR-Bold.ttf */,
+				314931AD641E4934B7DA6475 /* IBMPlexSansKR-ExtraLight.ttf */,
+				68CDB8AC8D484EB2B305039D /* IBMPlexSansKR-Light.ttf */,
+				F03A5267E23846638C9B378A /* IBMPlexSansKR-Medium.ttf */,
+				9386BEB535F7465793B7D752 /* IBMPlexSansKR-Regular.ttf */,
+				3A2E1AE3F6AC4BE5880602E3 /* IBMPlexSansKR-SemiBold.ttf */,
+				67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */,
+				3EC465E8271F4040B71C118F /* Lobster.ttf */,
+				34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -334,6 +394,26 @@
 				94CC8488DDED4D56BD3F2DC1 /* GodoB.ttf in Resources */,
 				17D516B665D54C8190E0A74D /* GodoM.otf in Resources */,
 				422D0081DDB9448B9E5DF295 /* GodoM.ttf in Resources */,
+				E015504A63A0482CB7202B1B /* dokdo.ttf in Resources */,
+				34D307845DAB41EA9759112F /* Hahmlet-VariableFont_wght.ttf in Resources */,
+				23A37EAB3CDC4C90A73F35D4 /* Hahmlet-Black.ttf in Resources */,
+				BE9ADBCEBA7742B3B1E9EB74 /* Hahmlet-Bold.ttf in Resources */,
+				B3287A45387A424AB39AD020 /* Hahmlet-ExtraBold.ttf in Resources */,
+				46213CA6D16040C6A1E2D4FD /* Hahmlet-ExtraLight.ttf in Resources */,
+				4AC1DF6962DD4A65B96208A9 /* Hahmlet-Light.ttf in Resources */,
+				0C4FF948AEEF45CCB4DB6F00 /* Hahmlet-Medium.ttf in Resources */,
+				AD7571C4EE164BE39BA56F82 /* Hahmlet-Regular.ttf in Resources */,
+				8C85879AB126415A823B1BB0 /* Hahmlet-SemiBold.ttf in Resources */,
+				EBD5814B1BC84F4CAC8792FE /* Hahmlet-Thin.ttf in Resources */,
+				D928CBA3FA144692955E3CF8 /* IBMPlexSansKR-Bold.ttf in Resources */,
+				539C44FAE6014341AB80CB54 /* IBMPlexSansKR-ExtraLight.ttf in Resources */,
+				41B8DC920F79480BA5505811 /* IBMPlexSansKR-Light.ttf in Resources */,
+				5EF4A48A6E4544A1B2644D7B /* IBMPlexSansKR-Medium.ttf in Resources */,
+				CCCB9016FAA2458593170F83 /* IBMPlexSansKR-Regular.ttf in Resources */,
+				B859CE64BFE24F388E9E8EFF /* IBMPlexSansKR-SemiBold.ttf in Resources */,
+				60347438875B4534B9E62806 /* IBMPlexSansKR-Thin.ttf in Resources */,
+				B8EDABACFD1942F0B4A065D6 /* Lobster.ttf in Resources */,
+				5DCB41887905422FB80322C0 /* SedgwickAve.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
