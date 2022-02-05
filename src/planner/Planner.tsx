@@ -1,84 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Animated, Dimensions, Image, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import React, { useState } from "react";
+import { Animated, Image, NativeScrollEvent, NativeSyntheticEvent, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
-import axios from "axios";
-import { serverIPaddress } from "../Util";
-import { useContextOfAll } from "../Provider";
-
-const SCREEN_WIDTH = Dimensions.get("window").width;
-const SCREEN_HEIGHT = Dimensions.get("window").height;
-
-const xOffset = new Animated.Value(0);
+import { SCREEN_WIDTH, transitionAnimation, xOffset, bottomVal, SCREEN_HEIGHT, bottomAnim } from "./Animations";
 
 const covers = [require('../../images/cover/1.png'), require('../../images/cover/2.png'), require('../../images/cover/3.png'),
 require('../../images/cover/4.png'), require('../../images/cover/5.png'), require('../../images/cover/6.png'),
 require('../../images/cover/7.png'), require('../../images/cover/8.png'), require('../../images/cover/9.png'),
 require('../../images/cover/10.png'), require('../../images/cover/11.png')]
-
-
-const transitionAnimation = index => {
-    return {
-        transform: [
-            { perspective: 800 },
-            {
-                scale: xOffset.interpolate({
-                    inputRange: [
-                        (index - 1) * (SCREEN_WIDTH * 0.7),
-                        index * (SCREEN_WIDTH * 0.7),
-                        (index + 1) * (SCREEN_WIDTH * 0.7)
-                    ],
-                    outputRange: [0.8, 1, 0.8]
-                })
-            },
-            {
-                rotateY: xOffset.interpolate({
-                    inputRange: [
-                        -20000,
-                        (index - 1) * (SCREEN_WIDTH * 0.7),
-                        index * (SCREEN_WIDTH * 0.7),
-                        (index + 1) * (SCREEN_WIDTH * 0.7),
-                        20000
-                    ],
-                    outputRange: ["0deg", "-60deg", "0deg", "60deg", "0deg"]
-                })
-            },
-            {
-                translateX: xOffset.interpolate({
-                    inputRange: [
-                        (index - 1) * (SCREEN_WIDTH * 0.7),
-                        index * (SCREEN_WIDTH * 0.7) - (SCREEN_WIDTH * 0.6),
-                        index * (SCREEN_WIDTH * 0.7),
-                        index * (SCREEN_WIDTH * 0.7) + (SCREEN_WIDTH * 0.6),
-                        (index + 1) * (SCREEN_WIDTH * 0.7)
-                    ],
-                    outputRange: [-SCREEN_WIDTH * 0.7, -SCREEN_WIDTH * 0.2, 0, SCREEN_WIDTH * 0.2, SCREEN_WIDTH * 0.7]
-                })
-            },
-            {
-                scaleY: xOffset.interpolate({
-                    inputRange: [
-                        (index - 1) * (SCREEN_WIDTH * 0.7),
-                        index * (SCREEN_WIDTH * 0.7),
-                        (index + 1) * (SCREEN_WIDTH * 0.7)
-                    ],
-                    outputRange: [1.5, 1, 1.5]
-                })
-            }
-        ],
-    };
-};
-
-const bottomVal = new Animated.Value(0);
-
-const bottomAnim = {
-    transform: [
-        {
-            translateY: bottomVal
-        },
-    ],
-};
 
 const SPACING_FOR_CARD_INSET = SCREEN_WIDTH * 0.15
 
@@ -86,38 +16,19 @@ export default function Planner() {
     const [planners, setPlanners] = useState([{
         id: 1,
         date: '21.01.23 월요일', // string
-        comment: 'See Your Eyes - 잔나비', // 명언(또는 platlist), string
-        targetTime: '08H 40MIN', // string
-        totalTime: 3490, // number (msec 단위)
         timeRate: '80', // string (0 ~ 100 사이의 정수를 문자열로)
         taskRate: '90' // string (0 ~ 100 사이의 정수를 문자열로)
+    },
+    {
+        id: 2,
+        date: '21.01.23 월요일',
+        timeRate: '80',
+        taskRate: '90'
     }
     ])
     const [timeRate, setTimeRate] = useState('0')
     const [taskRate, setTaskRate] = useState('0')
     const navi = useNavigation<any>()
-    const cont = useContextOfAll()
-
-    useEffect(() => {
-        const reload = navi.addListener('focus', () => {
-            axios({
-                url: serverIPaddress + '/planner',
-                method: 'get',
-                headers: {
-                    'Authorization': 'Bearer ' + cont.user.token
-                }
-            }).then(function (res) {
-                setPlanners(res.data)
-                if (res.data.length > 0) {
-                    setTimeRate(res.data[0].timeRate)
-                    setTaskRate(res.data[0].taskRate)
-                }
-            }).catch(function (error) {
-                console.log(error)
-            })
-        })
-        return reload
-    }, [navi])
 
     const Screen = props => {
         return <View style={styles.scrollPage}>
@@ -130,7 +41,7 @@ export default function Planner() {
         </View>
     }
     return <View style={styles.container}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}>
+        <View style={styles.topIconView}>
             <TouchableOpacity onPress={() => { navi.goBack() }} style={styles.icon}>
                 <Icon name='chevron-left' size={30} color='#5E5E64' /></TouchableOpacity>
             <TouchableOpacity onPress={() => { navi.navigate('Add') }} style={styles.icon}>
@@ -148,12 +59,12 @@ export default function Planner() {
                             const div = contentOffset.x % (SCREEN_WIDTH * 0.7)
                             if (div < 1 || div > (SCREEN_WIDTH * 0.7) - 1) {
                                 if (div < 1) {
-                                    setTimeRate(planners[Math.floor(contentOffset.x / (SCREEN_WIDTH * 0.7))].timeRate)
-                                    setTaskRate(planners[Math.floor(contentOffset.x / (SCREEN_WIDTH * 0.7))].taskRate)
+                                    setTimeRate(planners[Math.floor(Math.max(contentOffset.x, 0) / (SCREEN_WIDTH * 0.7))].timeRate)
+                                    setTaskRate(planners[Math.floor(Math.max(contentOffset.x, 0) / (SCREEN_WIDTH * 0.7))].taskRate)
                                 }
                                 else {
-                                    setTimeRate(planners[Math.floor((contentOffset.x + 1) / (SCREEN_WIDTH * 0.7))].timeRate)
-                                    setTaskRate(planners[Math.floor((contentOffset.x + 1) / (SCREEN_WIDTH * 0.7))].taskRate)
+                                    setTimeRate(planners[Math.floor((Math.max(contentOffset.x, 0) + 1) / (SCREEN_WIDTH * 0.7))].timeRate)
+                                    setTaskRate(planners[Math.floor((Math.max(contentOffset.x, 0) + 1) / (SCREEN_WIDTH * 0.7))].taskRate)
                                 }
                                 Animated.timing(bottomVal, {
                                     toValue: 0, duration: 1000, useNativeDriver: true
@@ -176,12 +87,6 @@ export default function Planner() {
                 contentContainerStyle={{ paddingHorizontal: SPACING_FOR_CARD_INSET }}
             >
                 {planners.map((v, i) => <Screen date={v.date} index={i} key={i} id={v.id} />)}
-                {/* <Screen date="Screen 1" index={0} />
-                <Screen date="Screen 2" index={1} />
-                <Screen date="Screen 3" index={2} />
-                <Screen date="Screen 4" index={3} />
-                <Screen date="Screen 5" index={4} />
-                <Screen date="Screen 6" index={5} /> */}
             </Animated.ScrollView>
         </View>
         <Animated.View style={[styles.bottomView, bottomAnim]}>
@@ -211,6 +116,9 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#D8E0E7",
         flex: 1, alignItems: 'center'
+    },
+    topIconView: {
+        flexDirection: 'row', justifyContent: 'space-between', width: '100%'
     },
     scrollView: {
         flexDirection: "row",
@@ -270,13 +178,3 @@ const styles = StyleSheet.create({
         overflow: 'hidden', marginRight: '7%'
     },
 })
-
-
-const getTask = () => {
-    return [
-        {
-            subject: '국어',
-            tasks: ['윤혜정T 나비효과 입문편 5강', '씨리얼 문학 현대시 6일차']
-        }
-    ]
-}

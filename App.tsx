@@ -1,15 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import MainNavigator from './src/MainNavigator'
 import { Provider, useContextOfAll } from './src/Provider'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import LoginNavigator from './src/login/LoginNavigator'
 
-// export default function App() {
-//   return <NavigationContainer>
-//     <MainNavigator />
-//   </NavigationContainer>
-// }
 export default function App() {
   return <NavigationContainer>
     <Provider>
@@ -19,18 +14,18 @@ export default function App() {
 }
 
 const MainPage = () => {
-  const cont = useContextOfAll()
-  useEffect(() => {
-    let token: String | undefined = ''
-    AsyncStorage.getItem('token', (err, result) => {
-      token = result
-    });
+  // const cont = useContextOfAll()
+  // useEffect(() => {
+  //   let token: String | undefined = ''
+  //   AsyncStorage.getItem('token', (err, result) => {
+  //     token = result
+  //   });
     
-    cont.setUser({ token: token })
+  //   cont.setUser({ token: token })
 
-    console.log(cont.user)
-  }, [])
-  if (cont.user.token == '' || (typeof cont.user.token) === undefined)
-    return <LoginNavigator />
+  //   console.log(cont.user)
+  // }, [])
+  // if (cont.user.token == '' || (typeof cont.user.token) === undefined)
+  //   return <LoginNavigator />
   return <MainNavigator />
 }

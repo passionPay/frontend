@@ -34,16 +34,16 @@ export default function Edit({ route }) {
 
     const [start, setStart] = useState(false);
     const [reset, setReset] = useState(false);
-    const [timerStartTimeInit, setTimerStartInit] = useState(-1) // 초기 시간 받아오기
+    const [timerStartTimeInit, setTimerStartInit] = useState(0) // 초기 시간 받아오기
     let timerTotalTime = 3782, timeblock = useMemo(() => getTimeBlockInit(), []);
 
     const toggleStopwatch = () => {
         setStart(!start);
         setReset(false);
-        if (start) {
-            // 시간 업데이트
-            updateStartTime(route.params.id, cont.user.token, timerTotalTime)
-        }
+        // if (start) {
+        //     // 시간 업데이트
+        //     updateStartTime(route.params.id, cont.user.token, timerTotalTime)
+        // }
     }
 
     useEffect(() => {
@@ -60,7 +60,7 @@ export default function Edit({ route }) {
             setTargetTimeH(res.data.targetTimeH)
             setTargetTimeM(res.data.targetTimeM)
             setTasks(res.data.tasks)
-            setTimerStartInit(res.data.totalTime)
+            // setTimerStartInit(res.data.totalTime)
             setRate(res.data.taskRate)
         }).catch(function (error) {
             console.log(error)
