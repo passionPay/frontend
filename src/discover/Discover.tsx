@@ -18,32 +18,6 @@ export default function Discover() {
         return reload
     }, [navi])
     return <View style={{ flex: 1 }}>
-        {/* <TouchableOpacity onPress={() => { navi.navigate('PlannerNavigator') }} style={styles.icon}>
-                <Icon name='chevron-left' size={30} color='#5E5E64' /></TouchableOpacity> */}
-        <Animated.View style={[styles.topView, TopAnim]}>
-            <Text style={{ color: 'grey', fontSize: 17, fontFamily: 'GodoM', fontWeight: 'bold' }}>Find your</Text>
-            <Text style={{ color: 'black', fontSize: 25, fontFamily: 'GodoM', fontWeight: 'bold' }}>STUDY MATES</Text>
-            <TouchableOpacity style={styles.findView} onPress={() => { navi.navigate('Search') }} activeOpacity={1}>
-                <Icon name='magnify' size={25} style={{ padding: 5, }} color='grey' />
-                <TextInput placeholder='What are you looking for?' style={styles.textInput} editable={false}
-                    placeholderTextColor='grey' /></TouchableOpacity>
-        </Animated.View>
-        <View style={{ height: '45%', borderWidth: 0 }}>
-            <LottieView
-                source={require("../../images/rocket.json")}
-                loop
-                autoPlay /></View>
-        <View style={{ height: 275 }}>
-            <ScrollView horizontal={true} style={{ marginTop: 0/*35*/ }}>
-                <LinearGradient colors={['#6667AB00', '#6667AB33']} style={{ flexDirection: 'row', paddingVertical: 20 }}>
-                    <Image source={require('../../images/textbook/1.jpg')} style={styles.book} />
-                    <Image source={require('../../images/textbook/2.jpg')} style={styles.book} />
-                    <Image source={require('../../images/textbook/3.jpg')} style={styles.book} />
-                    <Image source={require('../../images/textbook/1.jpg')} style={styles.book} />
-                    <Image source={require('../../images/textbook/2.jpg')} style={styles.book} />
-                    <Image source={require('../../images/textbook/3.jpg')} style={styles.book} />
-                </LinearGradient>
-            </ScrollView></View>
     </View>
 }
 
