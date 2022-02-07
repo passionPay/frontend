@@ -18,21 +18,23 @@ const MyGroupCard = () => {
                     <Image source={require('../../../images/5.png')} style={styles.memberImage} />
                     <Image source={require('../../../images/5.png')} style={styles.memberImage} />
                     <Image source={require('../../../images/5.png')} style={styles.memberImage} />
+                    <Image source={require('../../../images/5.png')} style={styles.memberImage} />
+                    <Image source={require('../../../images/5.png')} style={styles.memberImage} />
                 </View>
             </View>
             <View>
                 <View style={styles.progressBarContainer}>
-                    <Text style={styles.progressText}>안녕안녕안녕</Text>
+                    <Text style={styles.progressText}>평균 목표 달성률(시간)</Text>
                     <View style={styles.progressBar}>
                     </View>
                 </View>
                 <View style={styles.progressBarContainer}>
-                    <Text style={styles.progressText}>안녕안녕안녕</Text>
+                    <Text style={styles.progressText}>평균 목표 달성률(미션)</Text>
 
                     <View style={styles.progressBar}>
                     </View>
                 </View>
-                
+
             </View>
             <View>
                 <Text style={styles.mission}>{`${currentData.firstMission} 외 목표 ${currentData.missionCount-1}개`}</Text>
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({
         // backgroundColor: '#ddd',
     },
     progressBarContainer:{
+        marginTop:1,
         marginBottom: 3,
     },
     progressBar:{
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#000000',
     },
     progressText:{
-        fontSize: 10,
+        fontSize: 9,
         marginBottom:2,
         alignSelf:'flex-end',
     },
