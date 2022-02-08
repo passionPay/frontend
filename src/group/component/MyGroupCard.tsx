@@ -25,7 +25,7 @@ const MyGroupCard = () => {
                     <Image source={require('../../../images/5.png')} style={styles.memberImage} />
                 </View>
             </View>
-            <View>
+            <View style={styles.progressContainer}>
                 <View style={styles.progressBarContainer}>
                     <Text style={styles.progressText}>평균 목표 달성률(시간)</Text>
                     <View style={styles.progressBar}>
@@ -38,8 +38,11 @@ const MyGroupCard = () => {
                     </View>
                 </View>
             </View>
-            <View>
-                <Text style={styles.mission}>{`${currentData.firstMission} 외 목표 ${currentData.missionCount-1}개`}</Text>
+            <View style={styles.groupMissionContainer}>
+                <View style={{paddingTop:0, paddingRight:3}}>
+                    <Image style={{width:10,height:10}}source={require('../../../images/group/trophy.png')} />
+                </View>
+                    <Text style={styles.mission}>{`${currentData.firstMission} 외 목표 ${currentData.missionCount-1}개`}</Text>
             </View>
             
         </TouchableOpacity>
@@ -76,7 +79,7 @@ const styles = StyleSheet.create({
 
         borderWidth: 0,
         backgroundColor:'#f9f9f9',
-        paddingVertical: 8, paddingHorizontal: 20,
+        paddingVertical: 20, paddingHorizontal: 20,
         flex:1,
         shadowColor: "#000",
         shadowOffset: {
@@ -87,23 +90,30 @@ const styles = StyleSheet.create({
         // backgroundColor:'#E5E5E5',
     },
     title:{
-        fontSize: 13, paddingBottom: 5, fontWeight: 'bold',
+        fontFamily: 'GodoM',
+        fontSize: 17, paddingBottom: 10, fontWeight: '500',
     },
     content:{
-        fontSize: 10, paddingBottom: 5, marginBottom: 'auto',
+        fontFamily: 'GodoM',
+        fontWeight: 'normal',
+        fontSize: 14, paddingBottom: 8, marginBottom: 'auto',
     },
     memberContainer:{
         flex: 1,
         flexDirection: 'row', // 혹은 'column'
     },
     memberTitle:{
-        fontSize: 10, paddingBottom: 5, marginBottom: 'auto',
+        fontFamily: 'GodoM',
+        fontSize: 12, paddingBottom: 5, marginBottom: 'auto',
     },
     memberImage:{
         width: 24, height: 24, borderWidth: 1,
         borderRadius: 12,
         marginHorizontal:'2%'
         // backgroundColor: '#ddd',
+    },
+    progressContainer:{
+        marginTop:3
     },
     progressBarContainer:{
         marginTop:1,
@@ -119,8 +129,16 @@ const styles = StyleSheet.create({
         alignSelf:'flex-end',
     },
     mission:{
+        fontFamily: 'GodoM',
+
         fontSize: 10,
     },
+    groupMissionContainer:{
+        marginTop:8,
+        paddingTop:3, 
+        flexDirection:'row', 
+        alignItems:'center'
+    }
 })
 
 

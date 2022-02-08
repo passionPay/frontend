@@ -10,6 +10,7 @@ const { width, height } = Dimensions.get('window')
 export default function Group() {
     return (
     <SafeAreaView style={styles.safeContainer}>
+        
         <ScrollView style={styles.container}> 
             <Text style={styles.title}>함께 공부하기</Text>
             <View style={styles.myGroups}>
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     },
 
     container:{
-        paddingHorizontal: '7%',
+        paddingHorizontal: '5%',
         paddingTop: height*0.05,
 
 

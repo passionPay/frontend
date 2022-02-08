@@ -1,14 +1,7 @@
-import React, {useCallback} from 'react'
+import React from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
-import MyGroupCard from './component/MyGroupCard'
-import OtherGroupCard from './component/OtherGroupCard'
-import NoticeBoard from './component/NoticeBoard'
-import SearchBar from './component/SearchBar'
-import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
-
-
 const data ={
     groupName:'3학년 1반 국어 스터디',
     groupDescription:'1학기 매일 공부할 사람만~',
@@ -21,37 +14,49 @@ const data ={
                 my:'1:38:34',},
 }
 
-
-export default function MyGroup() {
-
-    const navigation = useNavigation<any>()
-    const goBack = useCallback(()=>navigation.goBack(),[])
-
+const NoticeBoard = () =>{
     return (
-    <SafeAreaView style={styles.safeContainer}>
-        <View style={styles.container}>
+        <View style={styles.shadow}>
+                    <TouchableOpacity style={styles.noticeContainer}>
+                        <View style={styles.noticeIconContainer}>
+                            <Image style={{width:15,height:15}}source={require('../../../images/group/demostration.png')} />
+                        </View>
+                            
+                            <Text style={{fontSize: 13,
+                                        fontFamily: 'GodoM',}}>
+                                {data.groupNoticeTitle}
+                            </Text>
+                    </TouchableOpacity>
+                    <View style={styles.groupMenuContainer}>
+                        
 
-                <TouchableOpacity style={styles.header} onPress={goBack}>
-                    <Text style={{fontSize: 17,
-                                fontFamily: 'GodoM',
-                                color: '#9F9F9F',
-                                // backgroundColor:'#000000'
-                                
-                                }} >
-                    &lt; 스터디 그룹 </Text>
-                </TouchableOpacity>
-            <ScrollView > 
-                <Text style={styles.title}>{data.groupName}</Text>
-                <Text style={styles.groupDescription}>{data.groupDescription}</Text>
-                
-                
-            </ScrollView>
-            <NoticeBoard></NoticeBoard>
-        </View>
-    </SafeAreaView>
+                        <TouchableOpacity style={styles.groupMenu}>
+                            <Image style={{width:40,height:40}}source={require('../../../images/group/trophy.png')} />
+                            
+                            <Text style={styles.menuText} >그룹목표</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.groupMenu}>
+                            <Image style={{width:40,height:40}}source={require('../../../images/group/analysis.png')} />
+                            
+                            <Text style={styles.menuText}>그룹통계</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.groupMenu}>
+                            <Image style={{width:40,height:40}}source={require('../../../images/group/notebook.png')} />
+                            
+                            <Text style={styles.menuText}>인증게시판</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.groupMenu}>
+                            <Image style={{width:40,height:40}}source={require('../../../images/group/achievement.png')} />
+                            
+                            <Text style={styles.menuText}>그룹랭킹</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                </View>
     )
-
 }
+
+export default NoticeBoard
 
 
 const styles = StyleSheet.create({
@@ -138,4 +143,3 @@ const styles = StyleSheet.create({
 
     
 })
-
