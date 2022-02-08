@@ -2,7 +2,7 @@ import React from 'react'
 import { Platform,Dimensions,StyleSheet, View, Image,Text,ScrollView ,TouchableOpacity} from 'react-native'
 
 const currentData = getJSON()[0];
-const MyGroupCard = () => {
+const OtherGroupCard = () => {
     return (
 
         <TouchableOpacity style={[styles.cardView,styles.shadow]} onPress={() => {
@@ -12,14 +12,13 @@ const MyGroupCard = () => {
             <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>
                 {currentData.content}</Text>
             <View>
-                <Text style={styles.memberTitle}>그룹 멤버</Text>
-                <View style={styles.memberContainer}>
-                    <Image source={require('../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../images/5.png')} style={styles.memberImage} />
+                <View style={styles.groupTime}>
+                    <Text style={{fontSize:10, }}>그룹 평균 공부시간</Text>
+                    <Text style={{fontSize:10, fontWeight:'700', marginLeft:15}}>11:22:33</Text>
+                </View>
+                <View style={styles.groupTime}>
+                    <Text style={{fontSize:10, }}>그룹 평균 공부시간</Text>
+                    <Text style={{fontSize:10, fontWeight:'700', marginLeft:15}}>11:22:33</Text>
                 </View>
             </View>
             <View>
@@ -43,11 +42,23 @@ const MyGroupCard = () => {
     )
 }
 
-export default MyGroupCard
+export default OtherGroupCard
 
 
 
 const styles = StyleSheet.create({
+    cardView: {
+        marginHorizontal:5,
+        width: '100%',
+        borderRadius: 10, 
+        marginRight: 20,
+        marginTop:15,
+        borderWidth: 0,
+        backgroundColor:'#f9f9f9',
+        paddingVertical: 30, paddingHorizontal: 20,
+        flex:1,
+        // backgroundColor:'#E5E5E5',
+    },
     shadow:{
         ...Platform.select({
             ios: {
@@ -62,26 +73,7 @@ const styles = StyleSheet.create({
                 elevation: 3, 
             },
         }
-    )},
-    cardView: {
-        width: 240,
-        borderRadius: 10, 
-        marginLeft:5,
-        marginRight: 15,
-        marginTop:10,
-        marginBottom:10,
-
-        borderWidth: 0,
-        backgroundColor:'#f9f9f9',
-        paddingVertical: 8, paddingHorizontal: 20,
-        flex:1,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.25,
-        // backgroundColor:'#E5E5E5',
+    )
     },
     title:{
         fontSize: 13, paddingBottom: 5, fontWeight: 'bold',
@@ -89,18 +81,10 @@ const styles = StyleSheet.create({
     content:{
         fontSize: 10, paddingBottom: 5, marginBottom: 'auto',
     },
-    memberContainer:{
+    groupTime:{
         flex: 1,
-        flexDirection: 'row', // 혹은 'column'
-    },
-    memberTitle:{
-        fontSize: 10, paddingBottom: 5, marginBottom: 'auto',
-    },
-    memberImage:{
-        width: 24, height: 24, borderWidth: 1,
-        borderRadius: 12,
-        marginHorizontal:'2%'
-        // backgroundColor: '#ddd',
+        flexDirection: 'row',
+        paddingTop:10,
     },
     progressBarContainer:{
         marginTop:1,
@@ -116,7 +100,7 @@ const styles = StyleSheet.create({
         alignSelf:'flex-end',
     },
     mission:{
-        fontSize: 10,
+        fontSize: 10
     },
 })
 
