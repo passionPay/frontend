@@ -8,52 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* madcampweek4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* madcampweek4Tests.m */; };
+		0C4FF948AEEF45CCB4DB6F00 /* Hahmlet-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 274205DF23EA4ADEAF0E120D /* Hahmlet-Medium.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		23A37EAB3CDC4C90A73F35D4 /* Hahmlet-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32F17E2C0A134053AD877B0D /* Hahmlet-Black.ttf */; };
+		34D307845DAB41EA9759112F /* Hahmlet-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */; };
+		41B8DC920F79480BA5505811 /* IBMPlexSansKR-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68CDB8AC8D484EB2B305039D /* IBMPlexSansKR-Light.ttf */; };
+		422D0081DDB9448B9E5DF295 /* GodoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E52B09398BA40849AE3130F /* GodoM.ttf */; };
+		46213CA6D16040C6A1E2D4FD /* Hahmlet-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C83B0E742CF84F17BC64816A /* Hahmlet-ExtraLight.ttf */; };
+		4AC1DF6962DD4A65B96208A9 /* Hahmlet-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C207F6AFA2A24019AC53C656 /* Hahmlet-Light.ttf */; };
+		539C44FAE6014341AB80CB54 /* IBMPlexSansKR-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 314931AD641E4934B7DA6475 /* IBMPlexSansKR-ExtraLight.ttf */; };
+		5DCB41887905422FB80322C0 /* SedgwickAve.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */; };
+		5EF4A48A6E4544A1B2644D7B /* IBMPlexSansKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A5267E23846638C9B378A /* IBMPlexSansKR-Medium.ttf */; };
+		60347438875B4534B9E62806 /* IBMPlexSansKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */; };
 		6172F2D35A4C3AA820D92908 /* libPods-madcampweek4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-madcampweek4.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-madcampweek4-madcampweek4Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-madcampweek4-madcampweek4Tests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		2A84F276F27C4C9EA218D5B1 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 352E68721E2F4C73BB45BE5D /* AntDesign.ttf */; };
-		6CE4C5E5501E4C5E976EB509 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4ED4D53A62D45C0B651D8DD /* Entypo.ttf */; };
-		FBD8EA439FC9462D89BB4781 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BE808BF78C644288F053E1A /* EvilIcons.ttf */; };
-		3B7CB8D8C32D4F40923D73AE /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5913D2E7FF19417D8D553B13 /* Feather.ttf */; };
-		634A82AC2D974D1FB949ED25 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A79F276650048D991EA7121 /* FontAwesome.ttf */; };
-		142C99500CC448EDA371A1D1 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B694D5929A434E69BA9B7E5B /* FontAwesome5_Brands.ttf */; };
-		9131611308174B8DBAE8420F /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94246952B55B4CB09CCCD61E /* FontAwesome5_Regular.ttf */; };
-		EE06E8C3AF4748A28327C733 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80B6C29F43574C8F9BA84B44 /* FontAwesome5_Solid.ttf */; };
-		7D0E60C7EF864F88846F65CF /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECA0FA8610804106A6E40747 /* Fontisto.ttf */; };
-		2888249D807749F2AED1E05E /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82772F26D24647B8A66BD3E8 /* Foundation.ttf */; };
-		FDE371E541954B8591177115 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066134631F174C8695B2D9F1 /* Ionicons.ttf */; };
-		1018629017D0429E8C774F62 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C8109DE91FC490F8F483E85 /* MaterialCommunityIcons.ttf */; };
-		75AACDC221F047B19EE30CC5 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC2C7CCC43234EF7B19A3A76 /* MaterialIcons.ttf */; };
-		F3D4376BE3124A8BA1DD9C6F /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3668989DEF5470C874BC0A9 /* Octicons.ttf */; };
-		F2958A62F24944C3B5646519 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D96C285FAC24CAF9D56A6FE /* SimpleLineIcons.ttf */; };
-		C33F7D3873A24045828970C5 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D90B8FC9086B4991B5D63DD2 /* Zocial.ttf */; };
-		C1C3E96303304E46B113A28B /* GodoB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42E3CDE165444F60BC84CC4E /* GodoB.otf */; };
-		94CC8488DDED4D56BD3F2DC1 /* GodoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */; };
-		17D516B665D54C8190E0A74D /* GodoM.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1938EF165A6E4909A3966513 /* GodoM.otf */; };
-		422D0081DDB9448B9E5DF295 /* GodoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E52B09398BA40849AE3130F /* GodoM.ttf */; };
-		E015504A63A0482CB7202B1B /* dokdo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B134F85F503E4205A4967018 /* dokdo.ttf */; };
-		34D307845DAB41EA9759112F /* Hahmlet-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */; };
-		23A37EAB3CDC4C90A73F35D4 /* Hahmlet-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32F17E2C0A134053AD877B0D /* Hahmlet-Black.ttf */; };
-		BE9ADBCEBA7742B3B1E9EB74 /* Hahmlet-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B0F7BEB414914A5429E6E /* Hahmlet-Bold.ttf */; };
-		B3287A45387A424AB39AD020 /* Hahmlet-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751954B600D24510A8F68BAA /* Hahmlet-ExtraBold.ttf */; };
-		46213CA6D16040C6A1E2D4FD /* Hahmlet-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C83B0E742CF84F17BC64816A /* Hahmlet-ExtraLight.ttf */; };
-		4AC1DF6962DD4A65B96208A9 /* Hahmlet-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C207F6AFA2A24019AC53C656 /* Hahmlet-Light.ttf */; };
-		0C4FF948AEEF45CCB4DB6F00 /* Hahmlet-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 274205DF23EA4ADEAF0E120D /* Hahmlet-Medium.ttf */; };
-		AD7571C4EE164BE39BA56F82 /* Hahmlet-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4AFFCF82F214403BF354F25 /* Hahmlet-Regular.ttf */; };
 		8C85879AB126415A823B1BB0 /* Hahmlet-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E36333417E546A89BD97A6B /* Hahmlet-SemiBold.ttf */; };
-		EBD5814B1BC84F4CAC8792FE /* Hahmlet-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22D0105460914CB9BC3C9479 /* Hahmlet-Thin.ttf */; };
-		D928CBA3FA144692955E3CF8 /* IBMPlexSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5AABE53A6B14629A0483E3C /* IBMPlexSansKR-Bold.ttf */; };
-		539C44FAE6014341AB80CB54 /* IBMPlexSansKR-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 314931AD641E4934B7DA6475 /* IBMPlexSansKR-ExtraLight.ttf */; };
-		41B8DC920F79480BA5505811 /* IBMPlexSansKR-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68CDB8AC8D484EB2B305039D /* IBMPlexSansKR-Light.ttf */; };
-		5EF4A48A6E4544A1B2644D7B /* IBMPlexSansKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A5267E23846638C9B378A /* IBMPlexSansKR-Medium.ttf */; };
-		CCCB9016FAA2458593170F83 /* IBMPlexSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9386BEB535F7465793B7D752 /* IBMPlexSansKR-Regular.ttf */; };
+		AD7571C4EE164BE39BA56F82 /* Hahmlet-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4AFFCF82F214403BF354F25 /* Hahmlet-Regular.ttf */; };
+		B3287A45387A424AB39AD020 /* Hahmlet-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751954B600D24510A8F68BAA /* Hahmlet-ExtraBold.ttf */; };
 		B859CE64BFE24F388E9E8EFF /* IBMPlexSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E1AE3F6AC4BE5880602E3 /* IBMPlexSansKR-SemiBold.ttf */; };
-		60347438875B4534B9E62806 /* IBMPlexSansKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */; };
 		B8EDABACFD1942F0B4A065D6 /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EC465E8271F4040B71C118F /* Lobster.ttf */; };
-		5DCB41887905422FB80322C0 /* SedgwickAve.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */; };
+		BE9ADBCEBA7742B3B1E9EB74 /* Hahmlet-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B0F7BEB414914A5429E6E /* Hahmlet-Bold.ttf */; };
+		CCCB9016FAA2458593170F83 /* IBMPlexSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9386BEB535F7465793B7D752 /* IBMPlexSansKR-Regular.ttf */; };
+		D928CBA3FA144692955E3CF8 /* IBMPlexSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5AABE53A6B14629A0483E3C /* IBMPlexSansKR-Bold.ttf */; };
+		E015504A63A0482CB7202B1B /* dokdo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B134F85F503E4205A4967018 /* dokdo.ttf */; };
+		EBD5814B1BC84F4CAC8792FE /* Hahmlet-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22D0105460914CB9BC3C9479 /* Hahmlet-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,54 +57,38 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = madcampweek4/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = madcampweek4/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = madcampweek4/main.m; sourceTree = "<group>"; };
+		1938EF165A6E4909A3966513 /* GodoM.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GodoM.otf; path = ../font/godoFont/godoFont/GodoM.otf; sourceTree = "<group>"; };
 		1D0AE47A65C8663E3B452821 /* Pods-madcampweek4-madcampweek4Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madcampweek4-madcampweek4Tests.release.xcconfig"; path = "Target Support Files/Pods-madcampweek4-madcampweek4Tests/Pods-madcampweek4-madcampweek4Tests.release.xcconfig"; sourceTree = "<group>"; };
+		22D0105460914CB9BC3C9479 /* Hahmlet-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Thin.ttf"; path = "../font/Hahmlet/static/Hahmlet-Thin.ttf"; sourceTree = "<group>"; };
+		274205DF23EA4ADEAF0E120D /* Hahmlet-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Medium.ttf"; path = "../font/Hahmlet/static/Hahmlet-Medium.ttf"; sourceTree = "<group>"; };
+		314931AD641E4934B7DA6475 /* IBMPlexSansKR-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-ExtraLight.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-ExtraLight.ttf"; sourceTree = "<group>"; };
+		32F17E2C0A134053AD877B0D /* Hahmlet-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Black.ttf"; path = "../font/Hahmlet/static/Hahmlet-Black.ttf"; sourceTree = "<group>"; };
+		34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SedgwickAve.ttf; path = ../font/SedgwickAve.ttf; sourceTree = "<group>"; };
+		36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GodoB.ttf; path = ../font/godoFont/godoFont/GodoB.ttf; sourceTree = "<group>"; };
+		3A2E1AE3F6AC4BE5880602E3 /* IBMPlexSansKR-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-SemiBold.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-SemiBold.ttf"; sourceTree = "<group>"; };
+		3D5B0F7BEB414914A5429E6E /* Hahmlet-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Bold.ttf"; path = "../font/Hahmlet/static/Hahmlet-Bold.ttf"; sourceTree = "<group>"; };
+		3EC465E8271F4040B71C118F /* Lobster.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Lobster.ttf; path = ../font/Lobster.ttf; sourceTree = "<group>"; };
+		42E3CDE165444F60BC84CC4E /* GodoB.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GodoB.otf; path = ../font/godoFont/godoFont/GodoB.otf; sourceTree = "<group>"; };
+		5E52B09398BA40849AE3130F /* GodoM.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GodoM.ttf; path = ../font/GodoM.ttf; sourceTree = "<group>"; };
 		6423831EA8574132BED9D8CC /* libPods-madcampweek4.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-madcampweek4.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Thin.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Thin.ttf"; sourceTree = "<group>"; };
+		68CDB8AC8D484EB2B305039D /* IBMPlexSansKR-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Light.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Light.ttf"; sourceTree = "<group>"; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-madcampweek4-madcampweek4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madcampweek4-madcampweek4Tests.debug.xcconfig"; path = "Target Support Files/Pods-madcampweek4-madcampweek4Tests/Pods-madcampweek4-madcampweek4Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		751954B600D24510A8F68BAA /* Hahmlet-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-ExtraBold.ttf"; path = "../font/Hahmlet/static/Hahmlet-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-VariableFont_wght.ttf"; path = "../font/Hahmlet/Hahmlet-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		7E36333417E546A89BD97A6B /* Hahmlet-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-SemiBold.ttf"; path = "../font/Hahmlet/static/Hahmlet-SemiBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = madcampweek4/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9386BEB535F7465793B7D752 /* IBMPlexSansKR-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Regular.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Regular.ttf"; sourceTree = "<group>"; };
 		ABFE59519B596E51CEFDCCC0 /* libPods-madcampweek4-madcampweek4Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-madcampweek4-madcampweek4Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B134F85F503E4205A4967018 /* dokdo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = dokdo.ttf; path = ../font/dokdo.ttf; sourceTree = "<group>"; };
 		C0A881CF5CF3F2B244570E2A /* Pods-madcampweek4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madcampweek4.debug.xcconfig"; path = "Target Support Files/Pods-madcampweek4/Pods-madcampweek4.debug.xcconfig"; sourceTree = "<group>"; };
+		C207F6AFA2A24019AC53C656 /* Hahmlet-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Light.ttf"; path = "../font/Hahmlet/static/Hahmlet-Light.ttf"; sourceTree = "<group>"; };
+		C83B0E742CF84F17BC64816A /* Hahmlet-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-ExtraLight.ttf"; path = "../font/Hahmlet/static/Hahmlet-ExtraLight.ttf"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-madcampweek4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madcampweek4.release.xcconfig"; path = "Target Support Files/Pods-madcampweek4/Pods-madcampweek4.release.xcconfig"; sourceTree = "<group>"; };
+		D4AFFCF82F214403BF354F25 /* Hahmlet-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Regular.ttf"; path = "../font/Hahmlet/static/Hahmlet-Regular.ttf"; sourceTree = "<group>"; };
+		E5AABE53A6B14629A0483E3C /* IBMPlexSansKR-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Bold.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		352E68721E2F4C73BB45BE5D /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E4ED4D53A62D45C0B651D8DD /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9BE808BF78C644288F053E1A /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5913D2E7FF19417D8D553B13 /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6A79F276650048D991EA7121 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B694D5929A434E69BA9B7E5B /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		94246952B55B4CB09CCCD61E /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		80B6C29F43574C8F9BA84B44 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		ECA0FA8610804106A6E40747 /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		82772F26D24647B8A66BD3E8 /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		066134631F174C8695B2D9F1 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1C8109DE91FC490F8F483E85 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BC2C7CCC43234EF7B19A3A76 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F3668989DEF5470C874BC0A9 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9D96C285FAC24CAF9D56A6FE /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D90B8FC9086B4991B5D63DD2 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		42E3CDE165444F60BC84CC4E /* GodoB.otf */ = {isa = PBXFileReference; name = "GodoB.otf"; path = "../font/godoFont/godoFont/GodoB.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */ = {isa = PBXFileReference; name = "GodoB.ttf"; path = "../font/godoFont/godoFont/GodoB.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1938EF165A6E4909A3966513 /* GodoM.otf */ = {isa = PBXFileReference; name = "GodoM.otf"; path = "../font/godoFont/godoFont/GodoM.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5E52B09398BA40849AE3130F /* GodoM.ttf */ = {isa = PBXFileReference; name = "GodoM.ttf"; path = "../font/GodoM.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B134F85F503E4205A4967018 /* dokdo.ttf */ = {isa = PBXFileReference; name = "dokdo.ttf"; path = "../font/dokdo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Hahmlet-VariableFont_wght.ttf"; path = "../font/Hahmlet/Hahmlet-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		32F17E2C0A134053AD877B0D /* Hahmlet-Black.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Black.ttf"; path = "../font/Hahmlet/static/Hahmlet-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3D5B0F7BEB414914A5429E6E /* Hahmlet-Bold.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Bold.ttf"; path = "../font/Hahmlet/static/Hahmlet-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		751954B600D24510A8F68BAA /* Hahmlet-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Hahmlet-ExtraBold.ttf"; path = "../font/Hahmlet/static/Hahmlet-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C83B0E742CF84F17BC64816A /* Hahmlet-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Hahmlet-ExtraLight.ttf"; path = "../font/Hahmlet/static/Hahmlet-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C207F6AFA2A24019AC53C656 /* Hahmlet-Light.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Light.ttf"; path = "../font/Hahmlet/static/Hahmlet-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		274205DF23EA4ADEAF0E120D /* Hahmlet-Medium.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Medium.ttf"; path = "../font/Hahmlet/static/Hahmlet-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D4AFFCF82F214403BF354F25 /* Hahmlet-Regular.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Regular.ttf"; path = "../font/Hahmlet/static/Hahmlet-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7E36333417E546A89BD97A6B /* Hahmlet-SemiBold.ttf */ = {isa = PBXFileReference; name = "Hahmlet-SemiBold.ttf"; path = "../font/Hahmlet/static/Hahmlet-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		22D0105460914CB9BC3C9479 /* Hahmlet-Thin.ttf */ = {isa = PBXFileReference; name = "Hahmlet-Thin.ttf"; path = "../font/Hahmlet/static/Hahmlet-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E5AABE53A6B14629A0483E3C /* IBMPlexSansKR-Bold.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Bold.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		314931AD641E4934B7DA6475 /* IBMPlexSansKR-ExtraLight.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-ExtraLight.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		68CDB8AC8D484EB2B305039D /* IBMPlexSansKR-Light.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Light.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F03A5267E23846638C9B378A /* IBMPlexSansKR-Medium.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Medium.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9386BEB535F7465793B7D752 /* IBMPlexSansKR-Regular.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Regular.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3A2E1AE3F6AC4BE5880602E3 /* IBMPlexSansKR-SemiBold.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-SemiBold.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Thin.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3EC465E8271F4040B71C118F /* Lobster.ttf */ = {isa = PBXFileReference; name = "Lobster.ttf"; path = "../font/Lobster.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */ = {isa = PBXFileReference; name = "SedgwickAve.ttf"; path = "../font/SedgwickAve.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F03A5267E23846638C9B378A /* IBMPlexSansKR-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Medium.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,37 +183,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
+		A228037870024BF9A4585EAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C0A881CF5CF3F2B244570E2A /* Pods-madcampweek4.debug.xcconfig */,
-				D00AAFFCFCFDA5787532823F /* Pods-madcampweek4.release.xcconfig */,
-				6C97AB639B58BBB4B15BBE30 /* Pods-madcampweek4-madcampweek4Tests.debug.xcconfig */,
-				1D0AE47A65C8663E3B452821 /* Pods-madcampweek4-madcampweek4Tests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		A228037870024BF9A4585EAA /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				352E68721E2F4C73BB45BE5D /* AntDesign.ttf */,
-				E4ED4D53A62D45C0B651D8DD /* Entypo.ttf */,
-				9BE808BF78C644288F053E1A /* EvilIcons.ttf */,
-				5913D2E7FF19417D8D553B13 /* Feather.ttf */,
-				6A79F276650048D991EA7121 /* FontAwesome.ttf */,
-				B694D5929A434E69BA9B7E5B /* FontAwesome5_Brands.ttf */,
-				94246952B55B4CB09CCCD61E /* FontAwesome5_Regular.ttf */,
-				80B6C29F43574C8F9BA84B44 /* FontAwesome5_Solid.ttf */,
-				ECA0FA8610804106A6E40747 /* Fontisto.ttf */,
-				82772F26D24647B8A66BD3E8 /* Foundation.ttf */,
-				066134631F174C8695B2D9F1 /* Ionicons.ttf */,
-				1C8109DE91FC490F8F483E85 /* MaterialCommunityIcons.ttf */,
-				BC2C7CCC43234EF7B19A3A76 /* MaterialIcons.ttf */,
-				F3668989DEF5470C874BC0A9 /* Octicons.ttf */,
-				9D96C285FAC24CAF9D56A6FE /* SimpleLineIcons.ttf */,
-				D90B8FC9086B4991B5D63DD2 /* Zocial.ttf */,
 				42E3CDE165444F60BC84CC4E /* GodoB.otf */,
 				36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */,
 				1938EF165A6E4909A3966513 /* GodoM.otf */,
@@ -276,7 +213,17 @@
 			);
 			name = Resources;
 			sourceTree = "<group>";
-			path = "";
+		};
+		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0A881CF5CF3F2B244570E2A /* Pods-madcampweek4.debug.xcconfig */,
+				D00AAFFCFCFDA5787532823F /* Pods-madcampweek4.release.xcconfig */,
+				6C97AB639B58BBB4B15BBE30 /* Pods-madcampweek4-madcampweek4Tests.debug.xcconfig */,
+				1D0AE47A65C8663E3B452821 /* Pods-madcampweek4-madcampweek4Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -374,25 +321,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				2A84F276F27C4C9EA218D5B1 /* AntDesign.ttf in Resources */,
-				6CE4C5E5501E4C5E976EB509 /* Entypo.ttf in Resources */,
-				FBD8EA439FC9462D89BB4781 /* EvilIcons.ttf in Resources */,
-				3B7CB8D8C32D4F40923D73AE /* Feather.ttf in Resources */,
-				634A82AC2D974D1FB949ED25 /* FontAwesome.ttf in Resources */,
-				142C99500CC448EDA371A1D1 /* FontAwesome5_Brands.ttf in Resources */,
-				9131611308174B8DBAE8420F /* FontAwesome5_Regular.ttf in Resources */,
-				EE06E8C3AF4748A28327C733 /* FontAwesome5_Solid.ttf in Resources */,
-				7D0E60C7EF864F88846F65CF /* Fontisto.ttf in Resources */,
-				2888249D807749F2AED1E05E /* Foundation.ttf in Resources */,
-				FDE371E541954B8591177115 /* Ionicons.ttf in Resources */,
-				1018629017D0429E8C774F62 /* MaterialCommunityIcons.ttf in Resources */,
-				75AACDC221F047B19EE30CC5 /* MaterialIcons.ttf in Resources */,
-				F3D4376BE3124A8BA1DD9C6F /* Octicons.ttf in Resources */,
-				F2958A62F24944C3B5646519 /* SimpleLineIcons.ttf in Resources */,
-				C33F7D3873A24045828970C5 /* Zocial.ttf in Resources */,
-				C1C3E96303304E46B113A28B /* GodoB.otf in Resources */,
-				94CC8488DDED4D56BD3F2DC1 /* GodoB.ttf in Resources */,
-				17D516B665D54C8190E0A74D /* GodoM.otf in Resources */,
 				422D0081DDB9448B9E5DF295 /* GodoM.ttf in Resources */,
 				E015504A63A0482CB7202B1B /* dokdo.ttf in Resources */,
 				34D307845DAB41EA9759112F /* Hahmlet-VariableFont_wght.ttf in Resources */,
@@ -730,7 +658,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -796,7 +724,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
