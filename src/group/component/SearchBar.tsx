@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
    searchBox:{
         marginHorizontal:5,
-
+        width: '97%',
         marginTop:height*0.015,
         marginBottom:height*0.005,
         backgroundColor:'#F4FAFF',

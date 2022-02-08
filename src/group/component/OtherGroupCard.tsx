@@ -1,6 +1,10 @@
 import React from 'react'
 import { Platform,Dimensions,StyleSheet, View, Image,Text,ScrollView ,TouchableOpacity} from 'react-native'
 
+
+const { width, height } = Dimensions.get('window')
+
+
 const currentData = getJSON()[0];
 const OtherGroupCard = () => {
     return (
@@ -48,10 +52,10 @@ export default OtherGroupCard
 
 const styles = StyleSheet.create({
     cardView: {
+        
+        width: '97%',
         marginHorizontal:5,
-        width: '100%',
         borderRadius: 10, 
-        marginRight: 20,
         marginTop:15,
         borderWidth: 0,
         backgroundColor:'#f9f9f9',

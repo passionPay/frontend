@@ -1,13 +1,16 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import { Platform,Dimensions,StyleSheet, View, Image,Text,ScrollView ,TouchableOpacity} from 'react-native'
+import {useNavigation} from '@react-navigation/native'
 
 const currentData = getJSON()[0];
 const MyGroupCard = () => {
+
+    const navigation = useNavigation<any>()
+    const myGroup = useCallback(()=>navigation.navigate('MyGroup'),[])
+
     return (
 
-        <TouchableOpacity style={[styles.cardView,styles.shadow]} onPress={() => {
-
-        }}>
+        <TouchableOpacity style={[styles.cardView,styles.shadow]} onPress={myGroup}>
             <Text style={styles.title}>{currentData.title}</Text>
             <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>
                 {currentData.content}</Text>
