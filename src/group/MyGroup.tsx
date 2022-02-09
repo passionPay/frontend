@@ -1,9 +1,8 @@
 import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
-import MyGroupCard from './component/MyGroupCard'
-import OtherGroupCard from './component/OtherGroupCard'
-import NoticeBoard from './component/NoticeBoard'
-import SearchBar from './component/SearchBar'
+
+import NoticeBoard from './component/myGroup/NoticeBoard'
+
 import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
@@ -44,9 +43,10 @@ export default function MyGroup() {
                 <Text style={styles.title}>{data.groupName}</Text>
                 <Text style={styles.groupDescription}>{data.groupDescription}</Text>
                 
-                
+                <NoticeBoard></NoticeBoard>
+                <Text>sasdfas</Text>
             </ScrollView>
-            <NoticeBoard></NoticeBoard>
+            
         </View>
     </SafeAreaView>
     )

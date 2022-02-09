@@ -1,7 +1,7 @@
 import React from 'react'
 import { Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
-import MyGroupCard from './component/MyGroupCard'
-import OtherGroupCard from './component/OtherGroupCard'
+import MyGroupCard from './component/GroupMain/MyGroupCard'
+import OtherGroupCard from './component/GroupMain/OtherGroupCard'
 import SearchBar from './component/SearchBar'
 
 const { width, height } = Dimensions.get('window')

@@ -19,7 +19,7 @@ const NoticeBoard = () =>{
         <View style={styles.shadow}>
                     <TouchableOpacity style={styles.noticeContainer}>
                         <View style={styles.noticeIconContainer}>
-                            <Image style={{width:15,height:15}}source={require('../../../images/group/demostration.png')} />
+                            <Image style={{width:15,height:15}}source={require('../../../../images/group/demostration.png')} />
                         </View>
                             
                             <Text style={{fontSize: 13,
@@ -31,22 +31,22 @@ const NoticeBoard = () =>{
                         
 
                         <TouchableOpacity style={styles.groupMenu}>
-                            <Image style={{width:40,height:40}}source={require('../../../images/group/trophy.png')} />
+                            <Image style={{width:40,height:40}}source={require('../../../../images/group/trophy.png')} />
                             
                             <Text style={styles.menuText} >그룹목표</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.groupMenu}>
-                            <Image style={{width:40,height:40}}source={require('../../../images/group/analysis.png')} />
+                            <Image style={{width:40,height:40}}source={require('../../../../images/group/analysis.png')} />
                             
                             <Text style={styles.menuText}>그룹통계</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.groupMenu}>
-                            <Image style={{width:40,height:40}}source={require('../../../images/group/notebook.png')} />
+                            <Image style={{width:40,height:40}}source={require('../../../../images/group/notebook.png')} />
                             
                             <Text style={styles.menuText}>인증게시판</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.groupMenu}>
-                            <Image style={{width:40,height:40}}source={require('../../../images/group/achievement.png')} />
+                            <Image style={{width:40,height:40}}source={require('../../../../images/group/achievement.png')} />
                             
                             <Text style={styles.menuText}>그룹랭킹</Text>
                         </TouchableOpacity>
