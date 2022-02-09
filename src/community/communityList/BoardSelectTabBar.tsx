@@ -1,5 +1,5 @@
 import React from 'react'
-import { Animated, Easing, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 export default function BoardSelectTabBar() {
     const tabBarAnimVal = new Animated.Value(0);
@@ -15,14 +15,14 @@ export default function BoardSelectTabBar() {
         <View style={{ flexDirection: 'row', marginTop: 30, width: '100%' }}>
             <TouchableOpacity onPress={() => {
                 Animated.timing(tabBarAnimVal, {
-                    toValue: 0, useNativeDriver: false, duration: 200//, easing: Easing.bezier(.17,-0.34,.29,.38)
+                    toValue: 0, useNativeDriver: false, duration: 200
                 }).start()
             }} style={{flex: 1}}>
                 <Text style={[styles.text, { borderRightWidth: 1 }]}>학습 QnA</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {
                 Animated.timing(tabBarAnimVal, {
-                    toValue: 1, useNativeDriver: false, duration: 200//, easing: Easing.bezier(.17,-0.34,.29,.38)
+                    toValue: 1, useNativeDriver: false, duration: 200
                 }).start()
             }} style={{flex: 1}}>
                 <Text style={[styles.text, { borderLeftWidth: 1 }]}>자유 게시판</Text>

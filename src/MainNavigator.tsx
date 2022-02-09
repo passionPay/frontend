@@ -15,11 +15,11 @@ export default function MainNavigator() {
       topPadding: 10, floating: false, activeTabBackgrounds: '#6667AB66'
     }} initialRouteName='Planner' backBehavior='initialRoute'>
     <Tab.Screen name="Discover" component={DiscoverNavigator}
-      options={{ tabBarIcon: () => getTabBarIcon('home') }} />
+      options={{ tabBarIcon: () => getTabBarIcon('format-list-text') }} />
     <Tab.Screen name="Community" component={CommunityNavigator}
       options={{ tabBarIcon: () => getTabBarIcon('message-processing') }} />
     <Tab.Screen name='Planner' component={PlannerNavigator}
-      options={{ tabBarIcon: () => getTabBarIcon('book-open-page-variant') }} />
+      options={{ tabBarIcon: () => getTabBarIcon('home') }} />
       <Tab.Screen name='Group' component={StudyGroupNavigator}
         options={{ tabBarIcon: () => getTabBarIcon('account-group') }} />
     <Tab.Screen name='Profile' component={ProfileNavigator}

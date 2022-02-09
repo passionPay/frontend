@@ -1,4 +1,5 @@
 import { useNavigation } from '@react-navigation/native'
+import axios from 'axios'
 import React, { useRef, useState } from 'react'
 import { Animated, Image, ImageBackground, NativeScrollEvent, NativeSyntheticEvent, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker'
@@ -7,6 +8,7 @@ import { gradeIcons } from '../../../images/ExportImages'
 import { subjectList } from '../../planner/Add'
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../planner/Animations'
 import BoardSelectTabBar from './BoardSelectTabBar'
+import PostList from './PostList'
 
 export default function CommunityList() {
     const navi = useNavigation<any>()
@@ -16,9 +18,6 @@ export default function CommunityList() {
     const [grade, setGrade] = useState(1)
 
     const [date, setDate] = useState(initData())
-
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
 
     const transitionAnimation = index => {
         return {
@@ -75,13 +74,6 @@ export default function CommunityList() {
                     marginTop: 5,
                     marginBottom: 10,
                 }} />
-
-                {/* <View style={{height: '90%'}}>
-                <LottieView
-                    source={lottieFiles[props.index]}
-                    loop
-                    autoPlay />
-                    </View> */}
                 <Text style={[styles.grade, {}]}>{props.index + 1}학년</Text>
             </Animated.View>
         </View>
@@ -135,71 +127,9 @@ export default function CommunityList() {
             <Text style={styles.school}>창원과학고등학교</Text>
 
         </Animated.View>
-        <Animated.ScrollView
-            nestedScrollEnabled={true}
-            onScroll={Animated.event(
-                [{ nativeEvent: { contentOffset: { y: offset } } }],
-                { useNativeDriver: false }
-            )}
-            style={styles.mainScrollView}>
-            <BoardSelectTabBar />
-            <DropDownPicker
-                textStyle={{ fontFamily: 'GodoM' }}
-                autoScroll={true}
-                open={open}
-                setOpen={setOpen}
-                multiple={false}
-                value={value}
-                setValue={setValue}
-                items={subjectList}
-                containerStyle={{
-                    paddingBottom: 0, minHeight: 500,
-                    marginBottom: -428, width: '90%', alignSelf: 'center',
-                    marginTop: 30
-                }}
-                listMode="SCROLLVIEW"
-                // listItemContainerStyle={{borderTopWidth: 1}}
-                style={{ borderWidth: 0 }}
-                dropDownContainerStyle={{ borderWidth: 0 }}
-            />
-            <View style={{ height: 10000 }} />
-        </Animated.ScrollView>
-        {/* <ScrollView onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: offset } } }],
-            { useNativeDriver: false }
-          )}
-          style={styles.scrollView}>
-            <View style={{height: 10000, backgroundColor: 'yellow'}}/>
-        </ScrollView> */}
+        <PostList offset={offset} />
     </SafeAreaView>
 }
-
-// https://blog.jscrambler.com/how-to-animate-a-header-view-on-scroll-with-react-native-animated/
-
-const AnimatedHeader = ({ animatedValue }) => {
-    // const insets = useSafeAreaInsets();
-    const HEADER_HEIGHT = 200;
-    const headerHeight = animatedValue.interpolate({
-        inputRange: [0, HEADER_HEIGHT],
-        outputRange: [HEADER_HEIGHT, 44],
-        extrapolate: 'clamp'
-    });
-    return (
-        <Animated.View
-            style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 10,
-                height: headerHeight,
-                backgroundColor: 'lightblue'
-            }}
-        >
-
-        </Animated.View>
-    );
-};
 
 function initData() {
     return []
@@ -213,7 +143,6 @@ const styles = StyleSheet.create({
         paddingBottom: 50,
         marginBottom: -50,
         justifyContent: 'flex-end',
-        // backgroundColor: '#eee'
     },
     school: {
         fontSize: 20,
@@ -227,10 +156,6 @@ const styles = StyleSheet.create({
         fontFamily: 'GodoM',
         color: '#000',
         alignSelf: 'center',
-    },
-    mainScrollView: {
-        backgroundColor: '#E0EDFF',
-        borderRadius: 50,
     },
 
 
