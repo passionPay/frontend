@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react'
 import { Platform,Dimensions,StyleSheet, View, Image,Text,ScrollView ,TouchableOpacity} from 'react-native'
 import {useNavigation} from '@react-navigation/native'
-
+import MemberIcon from '../MemberIcon';
 const currentData = getJSON()[0];
 const MyGroupCard = () => {
 
@@ -17,12 +17,12 @@ const MyGroupCard = () => {
             <View>
                 <Text style={styles.memberTitle}>그룹 멤버</Text>
                 <View style={styles.memberContainer}>
-                    <Image source={require('../../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../../images/5.png')} style={styles.memberImage} />
-                    <Image source={require('../../../../images/5.png')} style={styles.memberImage} />
+                    <MemberIcon size={24} margin={'2%'}/>
+                    <MemberIcon size={24} margin={'2%'}/>
+                    <MemberIcon size={24} margin={'2%'}/>
+                    <MemberIcon size={24} margin={'2%'}/>
+                    <MemberIcon size={24} margin={'2%'}/>
+                    <MemberIcon size={24} margin={'2%'}/>
                 </View>
             </View>
             <View style={styles.progressContainer}>

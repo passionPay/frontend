@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
+import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
 const data ={
@@ -15,6 +16,12 @@ const data ={
 }
 
 const NoticeBoard = () =>{
+    const navigation = useNavigation<any>()
+    const myGroupGoal = useCallback(()=>navigation.navigate('MyGroupGoal'),[])
+    const myGroupStat = useCallback(()=>navigation.navigate('MyGroupStat'),[])
+    const myGroupVBoard = useCallback(()=>navigation.navigate('MyGroupVBoard'),[])
+    const myGroupRank = useCallback(()=>navigation.navigate('MyGroupRank'),[])
+
     return (
         <View style={styles.shadow}>
                     <TouchableOpacity style={styles.noticeContainer}>
@@ -30,22 +37,22 @@ const NoticeBoard = () =>{
                     <View style={styles.groupMenuContainer}>
                         
 
-                        <TouchableOpacity style={styles.groupMenu}>
+                        <TouchableOpacity style={styles.groupMenu} onPress={myGroupGoal}>
                             <Image style={{width:40,height:40}}source={require('../../../../images/group/trophy.png')} />
                             
                             <Text style={styles.menuText} >그룹목표</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.groupMenu}>
+                        <TouchableOpacity style={styles.groupMenu} onPress={myGroupStat}>
                             <Image style={{width:40,height:40}}source={require('../../../../images/group/analysis.png')} />
                             
                             <Text style={styles.menuText}>그룹통계</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.groupMenu}>
+                        <TouchableOpacity style={styles.groupMenu} onPress={myGroupVBoard}>
                             <Image style={{width:40,height:40}}source={require('../../../../images/group/notebook.png')} />
                             
                             <Text style={styles.menuText}>인증게시판</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.groupMenu}>
+                        <TouchableOpacity style={styles.groupMenu} onPress={myGroupRank}>
                             <Image style={{width:40,height:40}}source={require('../../../../images/group/achievement.png')} />
                             
                             <Text style={styles.menuText}>그룹랭킹</Text>

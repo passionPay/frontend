@@ -2,15 +2,6 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
-
-import NoticeBoard from './component/myGroup/NoticeBoard'
-import GroupOnlineMembers from './component/myGroup/GroupOnlineMembers'
-import GroupSummary from './component/myGroup/GroupSummary'
-import GroupTodayKing from './component/myGroup/GroupTodayKing'
-import GroupVerifyBoard from './component/myGroup/GroupVerifyBoard'
-
-
-
 const { width, height } = Dimensions.get('window')
 
 
@@ -27,7 +18,7 @@ const data ={
 }
 
 
-export default function MyGroup() {
+export default function MyGroupStat() {
 
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
@@ -36,27 +27,18 @@ export default function MyGroup() {
     <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
 
-            <TouchableOpacity style={styles.header} onPress={goBack}>
-                <Text style={{fontSize: 17,
-                            fontFamily: 'GodoM',
-                            color: '#9F9F9F',
-                            // backgroundColor:'#000000'
-                            
-                            }} >
-                &lt; 스터디 그룹 </Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.header} onPress={goBack}>
+                    <Text style={{fontSize: 17,
+                                fontFamily: 'GodoM',
+                                color: '#9F9F9F',
+                                // backgroundColor:'#000000'
+                                
+                                }} >
+                    &lt; 3학년 1반 국어스터디 </Text>
+                </TouchableOpacity>
             <ScrollView showsVerticalScrollIndicator={false}> 
-                <Text style={styles.title}>{data.groupName}</Text>
+                <Text style={styles.title}>그룹 통계</Text>
                 <Text style={styles.groupDescription}>{data.groupDescription}</Text>
-                <NoticeBoard/>
-                <GroupOnlineMembers/>
-                <GroupSummary/>
-                <GroupVerifyBoard/>
-                <GroupTodayKing/>
-
-
-
-
             </ScrollView>
             
         </View>
@@ -85,10 +67,12 @@ const styles = StyleSheet.create({
     header:{
 
         height:60,
-        width:100,
+
+        // backgroundColor:'#ff0000',
         justifyContent:'center',
-        alignSelf:'baseline'
-        // flexDirection:'row',
+        alignSelf:'baseline',
+
+
     },
     safeContainer: {
         flex: 1,
@@ -103,9 +87,7 @@ const styles = StyleSheet.create({
         color: '#000',
         
     },
-    myGroups:{
-        paddingTop: height*0.02,
-    },
+
     groupDescription: {
         fontSize: 17,
         fontFamily: 'GodoM',
