@@ -29,7 +29,7 @@ export default function Planner() {
             <AnimatedCircularProgress
                 ref={ref}
                 size={width * 0.25}
-                width={13}
+                width={12}
                 fill={userInfo.taskRate}
                 tintColor="#0085FF"
                 // onAnimationComplete={() => console.log('onAnimationComplete')}
@@ -42,24 +42,22 @@ export default function Planner() {
         {StudyTimeRow('16 : 30 : 00', '18 : 00 : 00')}
         <TouchableOpacity onPress={() => { navi.navigate('PlannerList')}}>
         <View style={{
-            height: height * 0.18,
+            height: height * 0.2,
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: '2%',
             borderRadius: height,
-            borderWidth: 1,
             borderColor: '#000',
-            width: height * 0.18,
+            width: height * 0.2,
             alignSelf: 'center',
+            overflow: 'hidden'
         }}>
-            <View style={{ height: '50%', width: '50%' }}>
-                <LottieView
-                    source={require("../../images/planner/planner3.json")}
+            <LottieView
+                    source={require("../../images/planner/planner4.json")}
                     loop
-                    autoPlay />
-            </View>
+                    autoPlay/>
         </View>
-        <Text style={[styles.dDay, { alignSelf: 'center', marginTop: '6%' }]}>공부하러 가기 {'>'}</Text>
+        <Text style={[styles.dDay, { alignSelf: 'center', marginTop: '6%' }]}>플래너 바로가기 {'>'}</Text>
         </TouchableOpacity>
     </ScrollView>
 }

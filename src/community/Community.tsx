@@ -21,7 +21,8 @@ export default function Community() {
                 loop
                 autoPlay />
         </View>
-        <TouchableOpacity style={styles.touchableOpacity}>
+        <TouchableOpacity style={styles.touchableOpacity}
+            onPress={() => { navi.navigate('CommunityList') }}>
             <View style={{ height: '70%' }}>
                 <LottieView
                     ref={ref}
@@ -31,7 +32,8 @@ export default function Community() {
             </View>
             <Text style={styles.text}>우리학교 커뮤니티 입장하기  {'>'}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.touchableOpacity}>
+        <TouchableOpacity style={styles.touchableOpacity}
+            onPress={() => { navi.navigate('CommunityList') }}>
             <View style={{ height: '70%' }}>
                 <LottieView
                     ref={ref2}
