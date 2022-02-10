@@ -4,10 +4,12 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { gradeIcons } from '../../../images/ExportImages';
 import { SCREEN_WIDTH } from '../../planner/Animations';
 import BoardSelectTabBar from './BoardSelectTabBar'
+import { offset } from './PostList';
+import SubjectSelectFilter from './SubjectSelectFilter';
 
-export const HEADER_MAX = 380, HEADER_MIN = 170;
+export const HEADER_MAX = 350, HEADER_MIN = 170;
 
-export default function AnimatedHeader({ offset }) {
+export default function AnimatedHeader({filter, currentTab, setCurrentTab}) {
     const xOffset = useRef(new Animated.Value(0)).current;
     const SPACING_FOR_CARD_INSET = SCREEN_WIDTH * 0.25
 
@@ -49,7 +51,7 @@ export default function AnimatedHeader({ offset }) {
             <Animated.View style={[styles.animatedScreen, transitionAnimation(props.index)]}>
                 <Image source={gradeIcons[props.index]} style={{
                     width: undefined,
-                    height: '70%',
+                    height: '60%',
                     aspectRatio: 1,
                     marginTop: 5,
                     marginBottom: 10,
@@ -86,7 +88,7 @@ export default function AnimatedHeader({ offset }) {
             </Animated.ScrollView>
         </View>
         <Text style={styles.school}>창원과학고등학교</Text>
-        <BoardSelectTabBar />
+        <BoardSelectTabBar filter={filter} currentTab={currentTab} setCurrentTab={setCurrentTab} />
     </Animated.View>
 }
 

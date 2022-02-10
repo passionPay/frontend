@@ -3,6 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
 import Community from './Community'
 import CommunityList from './communityList/CommunityList'
+import PostDetail from './postDetail/PostDetail'
+import QnaDetail from './qnaDetail/QnaDetail'
 
 export default function CommunityNavigator({ navigation, route }) {
     const Stack = createStackNavigator()
@@ -14,5 +16,7 @@ export default function CommunityNavigator({ navigation, route }) {
     return <Stack.Navigator screenOptions={{ headerShown: false }} >
         <Stack.Screen name='CommunityMain' component={Community} />
         <Stack.Screen name='CommunityList' component={CommunityList} />
+        <Stack.Screen name='PostDetail' component={PostDetail} />
+        <Stack.Screen name='QnaDetail' component={QnaDetail} />
     </Stack.Navigator>
 }

@@ -1,12 +1,24 @@
+import { useNavigation } from '@react-navigation/native'
 import React, { useState } from 'react'
-import { Animated, FlatList, Image, StyleSheet, Text, View } from 'react-native'
+import { Animated, FlatList, Image, RefreshControl, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { HEADER_MAX } from './AnimatedHeader'
 
-export default function PostList({ offset }) {
-    const [data, setData] = useState<postList>(initData())
+export const offset = new Animated.Value(0)
 
-    const renderItem = ({ item }: { item: post }) => <View style={styles.post}>
+export default function PostList({currentTab}) {
+    const [data, setData] = useState<postList>(initData())
+    const navi = useNavigation<any>()
+
+    const [refreshing, setRefreshing] = React.useState(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true); setRefreshing(false)
+        // wait(2000).then(() =>);
+    }, []);
+
+    const renderItem = ({ item }: { item: post }) => <TouchableOpacity style={styles.post}
+        onPress={() => { navi.navigate(currentTab == 0 ? 'QnaDetail' : 'PostDetail') }}>
         <Text style={styles.content} numberOfLines={3}>{item.content}</Text>
         <Image source={{
             uri: item.image,
@@ -20,7 +32,7 @@ export default function PostList({ offset }) {
             </View>
             <Icon name='dots-vertical' size={20} color='#000' />
         </View>
-    </View>
+    </TouchableOpacity>
 
     return <FlatList
         contentContainerStyle={{ paddingTop: HEADER_MAX }}
@@ -34,6 +46,13 @@ export default function PostList({ offset }) {
         keyExtractor={item => item.id}
         ListFooterComponent={<View style={{ height: 1000 }} />}
         style={styles.flatList}
+        refreshControl={
+            <RefreshControl
+                refreshing={refreshing}
+                onRefresh={onRefresh}
+                progressViewOffset={HEADER_MAX}
+            />
+        }
     />
 }
 
