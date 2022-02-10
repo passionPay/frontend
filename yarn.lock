@@ -1237,6 +1237,11 @@
   "resolved" "https://registry.npmjs.org/@react-native-community/masked-view/-/masked-view-0.1.11.tgz"
   "version" "0.1.11"
 
+"@react-native-picker/picker@^1.8.3":
+  "integrity" "sha512-pacdQDX6V6EmjF+HoiIh6u++qx4mTK0WnhgUHRc01B+Qt5eoeUwseBqmqfTSXTx/aHDEd6PiIw7UGvKgFoqgFQ=="
+  "resolved" "https://registry.npmjs.org/@react-native-picker/picker/-/picker-1.16.8.tgz"
+  "version" "1.16.8"
+
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
   "resolved" "https://registry.npmjs.org/@react-native/assets/-/assets-1.0.0.tgz"
@@ -6161,7 +6166,7 @@
   "resolved" "https://registry.npmjs.org/react-native-dropdown-picker/-/react-native-dropdown-picker-5.2.3.tgz"
   "version" "5.2.3"
 
-"react-native-gesture-handler@^1.10.3", "react-native-gesture-handler@>= 1.0.0":
+"react-native-gesture-handler@*", "react-native-gesture-handler@^1.10.3", "react-native-gesture-handler@>= 1.0.0":
   "integrity" "sha512-cBGMi1IEsIVMgoox4RvMx7V2r6bNKw0uR1Mu1o7NbuHS6BRSVLq0dP34l2ecnPlC+jpWd3le6Yg1nrdCjby2Mw=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz"
   "version" "1.10.3"
@@ -6214,7 +6219,15 @@
     "color" "^3.1.2"
     "react-native-iphone-x-helper" "^1.3.1"
 
-"react-native-reanimated@^1.13.3", "react-native-reanimated@>= 1.0.0":
+"react-native-picker-select@^8.0.4":
+  "integrity" "sha512-orBjPIwBkV5oipyVw263YNMI56f6Kj3p/ejabZoCYYNSG3AiLVVhC2RqsxMgDA7IayyURAW+AlV+mDJyVqLBkg=="
+  "resolved" "https://registry.npmjs.org/react-native-picker-select/-/react-native-picker-select-8.0.4.tgz"
+  "version" "8.0.4"
+  dependencies:
+    "@react-native-picker/picker" "^1.8.3"
+    "lodash.isequal" "^4.5.0"
+
+"react-native-reanimated@*", "react-native-reanimated@^1.13.3", "react-native-reanimated@>= 1.0.0":
   "integrity" "sha512-i714H24dv6ncpFO7/SZ0PfAMbvjgVbF8Ow2NPtowoZAz8osS54DmTMrkgJ9Za+uEku/s0AEaxqiXG2Xgntvv2g=="
   "resolved" "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-1.13.3.tgz"
   "version" "1.13.3"
@@ -6348,7 +6361,7 @@
     "react-shallow-renderer" "^16.13.1"
     "scheduler" "^0.20.2"
 
-"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.0", "react@>= 16.3.0", "react@>=16.0", "react@>=16.0.0", "react@>=16.3.0", "react@17.0.2":
+"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.0", "react@>= 16.3.0", "react@>=16.0", "react@>=16.0.0", "react@>=16.3.0", "react@16 || 17", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -6401,6 +6414,11 @@
   "integrity" "sha1-xYDXfvLPyHUrEySYBg3JeTp6wBw="
   "resolved" "https://registry.npmjs.org/readline/-/readline-1.3.0.tgz"
   "version" "1.3.0"
+
+"reanimated-bottom-sheet@^1.0.0-alpha.22":
+  "integrity" "sha512-NxecCn+2iA4YzkFuRK5/b86GHHS2OhZ9VRgiM4q18AC20YE/psRilqxzXCKBEvkOjP5AaAvY0yfE7EkEFBjTvw=="
+  "resolved" "https://registry.npmjs.org/reanimated-bottom-sheet/-/reanimated-bottom-sheet-1.0.0-alpha.22.tgz"
+  "version" "1.0.0-alpha.22"
 
 "recast@^0.20.3":
   "integrity" "sha512-E5qICoPoNL4yU0H0NoBDntNB0Q5oMSNh9usFctYniLBluTthi3RsQVBXIJNbApOlvSwW/RGxIuokPcAc59J5fQ=="

@@ -1,23 +1,10 @@
-import axios from 'axios'
 import React, { useState } from 'react'
 import { Animated, FlatList, Image, StyleSheet, Text, View } from 'react-native'
-import DropDownPicker from 'react-native-dropdown-picker'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { subjectList } from '../../planner/Add'
-import BoardSelectTabBar from './BoardSelectTabBar'
+import { HEADER_MAX } from './AnimatedHeader'
 
 export default function PostList({ offset }) {
     const [data, setData] = useState<postList>(initData())
-
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
-
-    // axios({
-    //     method: 'get',
-    //     url: 'http://579a-218-38-170-42.ngrok.io/test'
-    // }).then((res) => {
-    //     console.log(res.data)
-    // })
 
     const renderItem = ({ item }: { item: post }) => <View style={styles.post}>
         <Text style={styles.content} numberOfLines={3}>{item.content}</Text>
@@ -36,53 +23,17 @@ export default function PostList({ offset }) {
     </View>
 
     return <FlatList
+        contentContainerStyle={{ paddingTop: HEADER_MAX }}
         nestedScrollEnabled
         onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { y: offset } } }],
             { useNativeDriver: false }
         )}
-        style={styles.flatList}
-        CellRendererComponent={({ children, index, style, ...props }) => {
-            const cellStyle = [
-                style,
-                {
-                    zIndex: -1,
-                    elevation: -1,
-                },
-            ];
-            return <View style={cellStyle} index={index} {...props}>
-                {children}
-            </View>
-        }}
-
-        // ListHeaderComponentStyle={{ zIndex: 5000, minHeight: 0, paddingBottom: 300, backgroundColor: '#0006' }}
-        ListHeaderComponent={<>
-            <BoardSelectTabBar />
-            <DropDownPicker
-                textStyle={{ fontFamily: 'GodoM' }}
-                autoScroll={true}
-                open={open}
-                setOpen={setOpen}
-                multiple={false}
-                value={value}
-                setValue={setValue}
-                items={subjectList}
-                containerStyle={{
-                    paddingBottom: 0, minHeight: 500,
-                    marginBottom: -428, width: '90%', alignSelf: 'center',
-                    marginTop: 30
-                }}
-                listMode="SCROLLVIEW"
-            // listItemContainerStyle={{borderTopWidth: 1}}
-            style={{ borderWidth: 0 }}
-            dropDownContainerStyle={{ borderWidth: 0 }}
-            />
-            </>}
         data={data}
         renderItem={renderItem}
         keyExtractor={item => item.id}
-        ListFooterComponent={
-            <View style={{ height: 1000 }} />}
+        ListFooterComponent={<View style={{ height: 1000 }} />}
+        style={styles.flatList}
     />
 }
 
@@ -93,9 +44,7 @@ const styles = StyleSheet.create({
         color: '#000',
     },
     flatList: {
-        backgroundColor: '#E0EDFF',
-        borderRadius: 50,
-        zIndex: -1
+        backgroundColor: '#E0EDFF'
     },
     post: {
         backgroundColor: '#fff',
@@ -103,8 +52,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginVertical: 10,
         width: '90%',
-        padding: 30,
-        zIndex: -1
+        padding: 30
     },
     image: {
         width: '100%',
@@ -117,7 +65,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        // backgroundColor: 'green'
     },
     count: {
         fontFamily: 'GodoM',
@@ -125,7 +72,6 @@ const styles = StyleSheet.create({
         color: '#000',
         marginLeft: 3,
         marginRight: 10,
-        // backgroundColor: 'yellow'
     }
 })
 
