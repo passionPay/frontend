@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
-
+import {useNavigation} from '@react-navigation/native'
 import MemberIcon from '../MemberIcon'
 
 const { width, height } = Dimensions.get('window')
@@ -40,6 +40,9 @@ const RankItem = ({data}) =>{
 }
 
 const GroupTodayKing =()=>{
+    const navigation = useNavigation<any>()
+    const myGroupRank = useCallback(()=>navigation.navigate('MyGroupRank'),[])
+
     return (
     <>
         <View style={styles.mainContainer}>
@@ -48,7 +51,8 @@ const GroupTodayKing =()=>{
                 <TouchableOpacity style={{
                     marginLeft:'auto', marginRight:10, marginBottom:2,
                     alignSelf:'flex-end'
-                    }}>
+                    }}
+                    onPress={myGroupRank}>
                     <Text style={styles.seeMore}>랭킹 더보기 &gt;</Text>
                 </TouchableOpacity>
             </View>

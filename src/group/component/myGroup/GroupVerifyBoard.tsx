@@ -1,14 +1,13 @@
-import React from 'react'
+import React ,{useCallback} from 'react'
 import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
 import MemberIcon from '../MemberIcon'
+import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
 
 const VerifyItem = ({hasPhoto}) =>{
 
-    console.log(width/4)
     const imageSize = (width/4<100) ?  width/4 :100
-
     return(
         hasPhoto ?
         <TouchableOpacity style={[itemStyles.mainContainer,styles.shadow]}>
@@ -65,13 +64,18 @@ VerifyItem.defaultProps = {
 }
 
 const GroupVerifyBoard = () =>{
+    const navigation = useNavigation<any>()
+    const myGroupVBoard = useCallback(()=>navigation.navigate('MyGroupVBoard'),[])
+
     return (<View style={styles.mainContainer}>
         <View style={styles.subtitleContainer}>
             <Text style={styles.titleText}>인증게시판</Text>
             <TouchableOpacity style={{
                 marginLeft:'auto', marginRight:10, marginBottom:2,
                 alignSelf:'flex-end'
-                }}>
+                }}
+                onPress={myGroupVBoard}
+                >
                 <Text style={styles.seeMore}>게시글 더보기 &gt;</Text>
             </TouchableOpacity>
         </View>

@@ -16,6 +16,5 @@ export default function StudyGroupNavigator() {
         <Stack.Screen name='MyGroupStat' component={MyGroupStat} />
         <Stack.Screen name='MyGroupVBoard' component={MyGroupVBoard} />
         <Stack.Screen name='MyGroupRank' component={MyGroupRank} />
-
     </Stack.Navigator>
 }

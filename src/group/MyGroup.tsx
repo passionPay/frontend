@@ -28,6 +28,7 @@ const data ={
 
 
 export default function MyGroup() {
+    console.log('hi',width)
 
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
         height:60,
         width:100,
         justifyContent:'center',
-        alignSelf:'baseline'
+        alignSelf:'baseline',
         // flexDirection:'row',
     },
     safeContainer: {
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     container:{
-        paddingHorizontal: '5%',
+        paddingHorizontal: width*0.05,
     },
     title: {
         fontSize: 24,
