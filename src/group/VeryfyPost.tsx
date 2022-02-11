@@ -1,11 +1,45 @@
 import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
-
+import MemberIcon from './component/MemberIcon'
+// import {ReactComponent as CommentIcon}  from '../../images/group/fire.svg'
 
 const { width, height } = Dimensions.get('window')
 
+const data = {
+    author:'김승구',
+    content:'202020202020 공부완료',
+    createdAt : '3분 전',
+}
 
+const CommentItem =()=>{
+    
+
+    return (
+        <View style={{borderTopWidth:1,borderColor:'#0085FF' ,paddingVertical:height*0.02}}>
+            <View style={{flexDirection:'row',}}>
+                    <View style={{flexDirection:'row'}}>
+                        <MemberIcon size={30} isOnline></MemberIcon>
+                        <View style={{paddingLeft:20}}>
+                            <Text style={{flex:2,}}>{data.author}</Text>
+                            <Text style={{flex:1}}>{data.createdAt}</Text>
+                        </View>
+                    </View>
+                    <View style={{flexDirection:'row',marginLeft:'auto',marginRight:width*0.02}}>
+                        <Text>  <Image style={{width:13,height:13}} source={require('../../images/group/fire.png')}></Image> 3  </Text>
+                    </View>
+                </View>
+            <Text style={{marginTop:height*0.01}}>
+                {'댓글댓글'.repeat(100)}
+            </Text>
+        </View>
+        
+    )
+}
+
+
+
+/* paddingVertical for container is deleted here and not applied to comment container */
 
 export default function VerifyPost() {
 
@@ -16,6 +50,7 @@ export default function VerifyPost() {
     <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
 
+
                 <TouchableOpacity style={styles.header} onPress={goBack}>
                     <Text style={{fontSize: 17,
                                 fontFamily: 'GodoM',
@@ -25,10 +60,33 @@ export default function VerifyPost() {
                                 }} >
                     &lt; 인증게시판 </Text>
                 </TouchableOpacity>
-            <ScrollView showsVerticalScrollIndicator={false}> 
-                <Text style={styles.title}></Text>
 
+
+            <ScrollView showsVerticalScrollIndicator={false}> 
+                <View style={{flexDirection:'row',marginHorizontal: '5%',}}>
+                    <View style={{flexDirection:'row'}}>
+                        <MemberIcon size={50} isOnline></MemberIcon>
+                        <View style={{paddingLeft:20}}>
+                            <Text style={{flex:2,}}>{data.author}</Text>
+                            <Text style={{flex:1}}>{data.createdAt}</Text>
+                        </View>
+                    </View>
+                    <View style={{flexDirection:'row',marginLeft:'auto',marginRight:width*0.02}}>
+                        <Text>  <Image style={{width:13,height:13}} source={require('../../images/group/fire.png')}></Image> 3  |</Text>
+                        
+                        {/* <Text>  <CommentIcon width={13} height={13} /> 2  |</Text> */}
+                    </View>
+                </View>
                 
+                <Text style={{marginHorizontal: '5%',marginVertical:height*0.03}}>{data.content}</Text>
+                
+                <View style={[styles.commentsContainer,styles.shadow]}>
+                    <CommentItem/>
+                    <CommentItem/>
+                    <CommentItem/>
+                    <CommentItem/>
+                    <CommentItem/>
+                </View>                
                 
             </ScrollView>
             
@@ -62,6 +120,7 @@ const styles = StyleSheet.create({
         // backgroundColor:'#ff0000',
         justifyContent:'center',
         alignSelf:'baseline',
+        marginHorizontal: '5%',
 
 
     },
@@ -71,21 +130,27 @@ const styles = StyleSheet.create({
     },
     container:{
         flex:1,
-        paddingHorizontal: '5%',
     },
     title: {
         fontSize: 24,
         fontFamily: 'GodoM',
-        color: '#000',
+        marginHorizontal: '5%',
+
         
     },
 
-    groupDescription: {
-        fontSize: 17,
-        fontFamily: 'GodoM',
-        color: '#484848',
-        marginTop: width*0.05,
-    },
+    commentsContainer:{
+        width:'100%',
+        backgroundColor:'#F9F9F9',
+        // backgroundColor:'#ffff00',
+
+        borderTopLeftRadius:width*0.05,
+        borderTopRightRadius:width*0.05,
+        paddingTop:width*0.05,
+        paddingHorizontal: '7%',
+
+        
+    }
     
 
 })

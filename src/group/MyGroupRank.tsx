@@ -31,9 +31,10 @@ export default function MyGroupGoal() {
                                 }} >
                     &lt; 3학년 1반 국어스터디 </Text>
                 </TouchableOpacity>
-            <ScrollView showsVerticalScrollIndicator={false}> 
                 <Text style={styles.title}>그룹 랭킹</Text>
-                <View style={{paddingTop:height*0.02}}>
+
+            <ScrollView showsVerticalScrollIndicator={false}> 
+                <View style={{}}>
                     <RankItem data={data}/>
                     <RankItem data={data}/>
                     <RankItem data={data}/>
@@ -92,6 +93,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontFamily: 'GodoM',
         color: '#000',
+        marginBottom:height*0.02,
         
     },
 

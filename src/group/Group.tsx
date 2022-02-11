@@ -10,9 +10,10 @@ const { width, height } = Dimensions.get('window')
 export default function Group() {
     return (
     <SafeAreaView style={styles.safeContainer}>
-        
-        <ScrollView style={styles.container}> 
+        <View style={styles.container}>
             <Text style={styles.title}>함께 공부하기</Text>
+            
+        <ScrollView> 
             <View style={styles.myGroups}>
                 <Text style={styles.groupTitle}>내 스터디 그룹</Text>
                 <ScrollView horizontal={true}  showsHorizontalScrollIndicator={false}>
@@ -33,6 +34,8 @@ export default function Group() {
                 <OtherGroupCard/>
             </View>
         </ScrollView>
+        </View>
+
     </SafeAreaView>
     )
 
@@ -56,9 +59,11 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontFamily: 'GodoM',
         color: '#000',
+        marginBottom:height*0.02,
+
     },
     myGroups:{
-        paddingTop: height*0.02,
+        // paddingTop: height*0.02,
 
     },
     groupTitle: {

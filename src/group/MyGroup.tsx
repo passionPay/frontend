@@ -28,7 +28,7 @@ const data ={
 
 
 export default function MyGroup() {
-    console.log('hi',width)
+
 
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
@@ -46,8 +46,9 @@ export default function MyGroup() {
                             }} >
                 &lt; 스터디 그룹 </Text>
             </TouchableOpacity>
+            <Text style={styles.title}>{data.groupName}</Text>
+
             <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}> 
-                <Text style={styles.title}>{data.groupName}</Text>
                 <Text style={styles.groupDescription}>{data.groupDescription}</Text>
                 <NoticeBoard/>
                 <GroupOnlineMembers/>
@@ -99,6 +100,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontFamily: 'GodoM',
         color: '#000',
+        marginBottom:height*0.02,
         
     },
     myGroups:{
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         fontFamily: 'GodoM',
         color: '#484848',
-        marginTop: width*0.05,
+
     },
     
 

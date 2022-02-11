@@ -38,9 +38,11 @@ export default function MyGroupVBoard() {
                                 }} >
                     &lt; 3학년 1반 국어스터디 </Text>
                 </TouchableOpacity>
+
+                <Text style={[styles.title]}>인증게시판</Text>
+                
             <ScrollView showsVerticalScrollIndicator={false}> 
-                <Text style={styles.title}>인증게시판</Text>
-                <View style={{paddingTop:height*0.02}}>
+                <View style={{}}>
                     <VerifyItem hasPhoto/>
                     <VerifyItem/>
                     <VerifyItem hasPhoto/>
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontFamily: 'GodoM',
         color: '#000',
-        
+        marginBottom:height*0.02,
     },
 
     groupDescription: {

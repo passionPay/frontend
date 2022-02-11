@@ -26,7 +26,7 @@ const MemberIcon = ({size,margin,backgroundColor, touchable, isOnline}) =>{
     )
     
     const coreItem= (
-        <View style={[{width:size,height:size,position:'relative',marginHorizontal:margin, justifyContent:'center', alignItems:'center',}]}>
+        <View style={[{width:size,height:size,position:'relative',marginHorizontal:margin, justifyContent:'center', alignItems:'center'}]}>
             {coreImage}
             {isOnline ? onlineMark:<></>}
         </View>
