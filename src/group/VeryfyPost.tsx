@@ -1,19 +1,13 @@
 import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
-import RankItem from './component/myGroup/RankItem'
+
+
 const { width, height } = Dimensions.get('window')
 
 
-const data = {
-    rank:1,
-    name:'윤예슬',
-    talk:'24학점은 기본이죠 윙가르디움 레비오우사 ㅁㅇㄴㄹㄴㅇ',
-    time:'22시간 30분'
-}
 
-
-export default function MyGroupGoal() {
+export default function VerifyPost() {
 
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
@@ -29,23 +23,13 @@ export default function MyGroupGoal() {
                                 // backgroundColor:'#000000'
                                 
                                 }} >
-                    &lt; 3학년 1반 국어스터디 </Text>
+                    &lt; 인증게시판 </Text>
                 </TouchableOpacity>
             <ScrollView showsVerticalScrollIndicator={false}> 
-                <Text style={styles.title}>그룹 랭킹</Text>
-                <View style={{paddingTop:height*0.02}}>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                    <RankItem data={data}/>
-                </View>
+                <Text style={styles.title}></Text>
+
+                
+                
             </ScrollView>
             
         </View>
@@ -86,6 +70,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     container:{
+        flex:1,
         paddingHorizontal: '5%',
     },
     title: {

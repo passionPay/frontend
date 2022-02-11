@@ -2,6 +2,8 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
+import VerifyItem from './component/myGroup/VerifyItem'
+
 const { width, height } = Dimensions.get('window')
 
 
@@ -38,7 +40,16 @@ export default function MyGroupVBoard() {
                 </TouchableOpacity>
             <ScrollView showsVerticalScrollIndicator={false}> 
                 <Text style={styles.title}>인증게시판</Text>
-                <Text style={styles.groupDescription}>{data.groupDescription}</Text>
+                <View style={{paddingTop:height*0.02}}>
+                    <VerifyItem hasPhoto/>
+                    <VerifyItem/>
+                    <VerifyItem hasPhoto/>
+                    <VerifyItem hasPhoto/>
+                    <VerifyItem/>
+                    <VerifyItem/>
+                </View>
+                
+                
             </ScrollView>
             
         </View>
@@ -79,6 +90,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     container:{
+        flex:1,
         paddingHorizontal: '5%',
     },
     title: {

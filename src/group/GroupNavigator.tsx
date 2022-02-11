@@ -6,6 +6,7 @@ import MyGroupGoal from './MyGroupGoal'
 import MyGroupStat from './MyGroupStat'
 import MyGroupVBoard from './MyGroupVBoard'
 import MyGroupRank from './MyGroupRank'
+import VerifyPost from './VeryfyPost'
 
 export default function StudyGroupNavigator() {
     const Stack = createStackNavigator()
@@ -16,5 +17,6 @@ export default function StudyGroupNavigator() {
         <Stack.Screen name='MyGroupStat' component={MyGroupStat} />
         <Stack.Screen name='MyGroupVBoard' component={MyGroupVBoard} />
         <Stack.Screen name='MyGroupRank' component={MyGroupRank} />
+        <Stack.Screen name='VerifyPost' component={VerifyPost} />
     </Stack.Navigator>
 }
