@@ -2,31 +2,18 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
+import MyGroupMissionGoal from './component/myGroup/MyGroupMissionGoal'
+
 const { width, height } = Dimensions.get('window')
 
 
-const data ={
-    groupName:'3학년 1반 국어 스터디',
-    groupDescription:'1학기 매일 공부할 사람만~',
-    groupNoticeTitle:'[필독] 지켜야 할 사항',
-    groupMissions:['하루 3시간 이상 국어 공부하기',
-                    '하루 1시간 바보',
-                '저녁은 언제먹지',],
-    groupTimes:{goal:'14:00:00',
-                avg:'9:20:03',
-                my:'1:38:34',},
-}
-
 
 export default function MyGroupGoal() {
-
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
-
     return (
     <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
-
                 <TouchableOpacity style={styles.header} onPress={goBack}>
                     <Text style={{fontSize: 17,
                                 fontFamily: 'GodoM',
@@ -36,17 +23,15 @@ export default function MyGroupGoal() {
                                 }} >
                     &lt; 3학년 1반 국어스터디 </Text>
                 </TouchableOpacity>
-            <ScrollView showsVerticalScrollIndicator={false}> 
+            <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}> 
                 <Text style={styles.title}>그룹 목표</Text>
-                <Text style={styles.groupDescription}>{data.groupDescription}</Text>
+                <MyGroupMissionGoal/>
+
             </ScrollView>
-            
         </View>
     </SafeAreaView>
     )
-
 }
-
 
 const styles = StyleSheet.create({
     shadow:{
@@ -65,20 +50,17 @@ const styles = StyleSheet.create({
         }
     )},
     header:{
-
         height:60,
-
         // backgroundColor:'#ff0000',
         justifyContent:'center',
         alignSelf:'baseline',
-
-
     },
     safeContainer: {
         flex: 1,
         backgroundColor: '#fff',
     },
     container:{
+        flex:1,
         paddingHorizontal: '5%',
     },
     title: {
@@ -87,14 +69,12 @@ const styles = StyleSheet.create({
         color: '#000',
         
     },
-
-    groupDescription: {
-        fontSize: 17,
-        fontFamily: 'GodoM',
-        color: '#484848',
-        marginTop: width*0.05,
+    subContainer:{
+        paddingTop:height*0.04,
     },
-    
-
+    subtitleText:{
+        fontSize: 20,
+        fontFamily: 'GodoM',
+    },
 })
 

@@ -46,7 +46,7 @@ export default function MyGroup() {
                             }} >
                 &lt; 스터디 그룹 </Text>
             </TouchableOpacity>
-            <ScrollView showsVerticalScrollIndicator={false}> 
+            <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}> 
                 <Text style={styles.title}>{data.groupName}</Text>
                 <Text style={styles.groupDescription}>{data.groupDescription}</Text>
                 <NoticeBoard/>
@@ -54,10 +54,6 @@ export default function MyGroup() {
                 <GroupSummary/>
                 <GroupVerifyBoard/>
                 <GroupTodayKing/>
-
-
-
-
             </ScrollView>
             
         </View>
@@ -96,6 +92,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     container:{
+        flex:1,
         paddingHorizontal: width*0.05,
     },
     title: {

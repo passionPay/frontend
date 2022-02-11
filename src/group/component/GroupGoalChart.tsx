@@ -35,10 +35,10 @@ const GroupGoalChart = () =>{
             <View style={[chartStyles.chartContainer,{height:chartSize.height}]}>
                 <View style={[chartStyles.bottomLine,{left:0,bottom:0}]}/>
                 <View style={[chartStyles.dashLine,{left:0,top:-5}]}>
-                    <Text ellipsizeMode="clip" numberOfLines={1} style={{fontSize:10, color:'#0085FF'}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</Text>
+                    <Text ellipsizeMode="clip" numberOfLines={1} style={{fontSize:10, color:'#0085FF'}}>{'- '.repeat(300)}</Text>
                 </View>
                 <View style={[chartStyles.dashLine,{left:0,top:chartSize.height/2-5}]}>
-                    <Text ellipsizeMode="clip" numberOfLines={1} style={{fontSize:10, color:'#0085FF'}}>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</Text>
+                    <Text ellipsizeMode="clip" numberOfLines={1} style={{fontSize:10, color:'#0085FF'}}>{'- '.repeat(300)}</Text>
                 </View>
                 <View style={[chartStyles.dashLine,{left:0,top:chartSize.height/2}]}/>
                 <Text style={{position:'absolute', color:'#0085FF', fontSize:10, top: -5, left:chartSize.width*0.92, }}>100%</Text>
