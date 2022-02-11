@@ -12,14 +12,15 @@ const Members = () =>{
                 <Text style={styles.memberTitleText}>공부 중인 친구들</Text>
 
                 <ScrollView style={styles.memberScrollContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <MemberIcon touchable/>
-                    <MemberIcon touchable/>
-                    <MemberIcon touchable/>
-                    <MemberIcon touchable/>
-                    <MemberIcon touchable/>
-                    <MemberIcon touchable/>
-                    <MemberIcon touchable/>
-                    <MemberIcon touchable/>
+                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
                 </ScrollView>
             </View>
     )

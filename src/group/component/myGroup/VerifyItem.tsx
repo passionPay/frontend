@@ -18,7 +18,7 @@ const VerifyItem = ({hasPhoto}) =>{
             <View style={itemStyles.itemTextContainer}>
                 <View style={itemStyles.authorContainer}>
                     <View style={itemStyles.memberIconContainer}>
-                        <MemberIcon size={40} margin={0}/>
+                        <MemberIcon isOnline size={40} margin={0}/>
                     </View>
                     <View style={itemStyles.memberNameContainer}>
                         <Text>name</Text>
