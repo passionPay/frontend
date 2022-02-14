@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     container:{
+        flex:1,
         paddingHorizontal: '5%',
     },
     title: {

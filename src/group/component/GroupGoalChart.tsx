@@ -32,7 +32,7 @@ const GroupGoalChart = () =>{
                     <Text style={{fontSize:13}}>그룹 평균 목표 달성률</Text>
                 </View>
             </View>
-            <View style={[chartStyles.chartContainer,{height:chartSize.height}]}>
+            <View style={chartStyles.chartContainer}>
                 <View style={[chartStyles.bottomLine,{left:0,bottom:0}]}/>
                 <View style={[chartStyles.dashLine,{left:0,top:-5}]}>
                     <Text ellipsizeMode="clip" numberOfLines={1} style={{fontSize:10, color:'#0085FF'}}>{'- '.repeat(300)}</Text>
@@ -40,7 +40,7 @@ const GroupGoalChart = () =>{
                 <View style={[chartStyles.dashLine,{left:0,top:chartSize.height/2-5}]}>
                     <Text ellipsizeMode="clip" numberOfLines={1} style={{fontSize:10, color:'#0085FF'}}>{'- '.repeat(300)}</Text>
                 </View>
-                <View style={[chartStyles.dashLine,{left:0,top:chartSize.height/2}]}/>
+
                 <Text style={{position:'absolute', color:'#0085FF', fontSize:10, top: -5, left:chartSize.width*0.92, }}>100%</Text>
                 <Text style={{position:'absolute', color:'#0085FF', fontSize:10, top: chartSize.height/2-5, left:chartSize.width*0.92, }}>50%</Text>
                 <LinearGradient style={[chartStyles.myBar,{left:chartSize.width*(1/4)-barWidth-barMargin/2,bottom:0,height:chartSize.height*chartData.myTimeProgress}]}  colors={["#90C8FC","#0085FF", ]}/>
