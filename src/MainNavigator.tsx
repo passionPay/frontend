@@ -1,31 +1,40 @@
 import React from 'react'
-import { AnimatedTabBarNavigator } from "react-native-animated-nav-tab-bar"
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import CommunityNavigator from './community/CommunityNavigator'
 import DiscoverNavigator from './discover/DiscoverNavigator'
 import PlannerNavigator from './planner/PlannerNavigator'
 import ProfileNavigator from './profile/ProfileNavigator'
 import StudyGroupNavigator from './group/GroupNavigator'
+import { ParamListBase, RouteProp } from '@react-navigation/native'
 
 export default function MainNavigator() {
-  const Tab = AnimatedTabBarNavigator()
+  const Tab = createBottomTabNavigator()
 
-  return <Tab.Navigator
-    appearance={{
-      topPadding: 10, floating: false, activeTabBackgrounds: '#6667AB66'
-    }} initialRouteName='Planner' backBehavior='initialRoute'>
-    <Tab.Screen name="Discover" component={DiscoverNavigator}
-      options={{ tabBarIcon: () => getTabBarIcon('format-list-text') }} />
-    <Tab.Screen name="Community" component={CommunityNavigator}
-      options={{ tabBarIcon: () => getTabBarIcon('message-processing') }} />
-    <Tab.Screen name='Planner' component={PlannerNavigator}
-      options={{ tabBarIcon: () => getTabBarIcon('home') }} />
-      <Tab.Screen name='Group' component={StudyGroupNavigator}
-        options={{ tabBarIcon: () => getTabBarIcon('account-group') }} />
-    <Tab.Screen name='Profile' component={ProfileNavigator}
-      options={{ tabBarIcon: () => getTabBarIcon('account') }} />
+  return <Tab.Navigator screenOptions={screenOptions}>
+    <Tab.Screen name="Discover" component={DiscoverNavigator} />
+    <Tab.Screen name="Community" component={CommunityNavigator} />
+    <Tab.Screen name='Planner' component={PlannerNavigator} />
+    <Tab.Screen name='Group' component={StudyGroupNavigator} />
+    <Tab.Screen name='Profile' component={ProfileNavigator} />
   </Tab.Navigator>
 }
 
-const getTabBarIcon = (name: string) =>
-  <Icon name={name} size={20} color='black' />
+const screenOptions = ({ route }: { route: RouteProp<ParamListBase, string> }) => {
+  return {
+    tabBarIcon: ({ focused, color, size }: { focused: boolean, color: string, size: number }) => {
+      const { name } = route
+      return <Icon name={icons[name]} size={focused ? size + 6 : size} color={color} />
+    },
+    headerShown: false,
+    tabBarShowLabel: true,
+  }
+}
+
+const icons: Record<string, string> = {
+  Discover: 'format-list-text',
+  Community: 'message-processing',
+  Planner: 'home',
+  Group: 'account-group',
+  Profile: 'account'
+}

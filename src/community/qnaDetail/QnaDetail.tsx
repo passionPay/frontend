@@ -38,7 +38,7 @@ export default function QnaDetail() {
 
 const BackButton = ({ navi }) => <View style={{
     flexDirection: 'row',
-    backgroundColor: '#F7F9FB',
+    backgroundColor: '#fff',
     alignItems: 'center',
     padding: 15
 }}>
@@ -55,11 +55,11 @@ const BackButton = ({ navi }) => <View style={{
 
 const styles = StyleSheet.create({
     post: {
-        backgroundColor: '#F7F9FB',
+        backgroundColor: '#fff',// '#F7F9FB',
         alignSelf: 'center',
         padding: 20,
         width: '100%',
-        // borderBottomWidth: 1,
+        borderBottomWidth: 1,
         borderColor: '#ddd'
     },
     content: {
@@ -96,12 +96,12 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     commentView: {
-        backgroundColor: '#F7F9FB',
+        backgroundColor: '#fff',
         alignSelf: 'center',
         padding: 20,
         width: '98%',
         marginTop: 5,
-        // borderWidth: 1,
+        borderBottomWidth: 1,
         borderColor: '#ddd',
         borderRadius: 5
     },
