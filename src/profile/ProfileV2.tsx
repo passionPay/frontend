@@ -28,25 +28,27 @@ export default function ProfileV2() {
                         <Text style={[styles.titleText,{fontSize:20,marginTop: 10}]}>고달픈승구</Text>
                     </View>
                     <View style={{flex:1.5,justifyContent:'center'}}>
-                        <View style={{flexDirection:'row',flex:1,justifyContent:'space-between',marginHorizontal:width*0.9*0.66*0.07}}>
+                        <View style={{flexDirection:'row',flex:1,justifyContent:'space-between',marginHorizontal:width*0.9*0.66*0,marginRight:width*0.9*0.66*0.07}}>
                             <TouchableOpacity style={{flex:1,justifyContent:'center',alignItems:'center'}}>
                                 <Text style={{fontSize:24}}>92</Text>
-                                <Text>팔로잉</Text>
+                                <Text style={{marginTop:5, fontSize:12}}>팔로잉</Text>
+                                
                             </TouchableOpacity>
                             <TouchableOpacity style={{flex:1,justifyContent:'center',alignItems:'center'}}>
                                 <Text style={{fontSize:24}}>92</Text>
-                                <Text>팔로잉</Text>
+                                <Text style={{marginTop:5, fontSize:12}}>팔로워</Text>
+
                             </TouchableOpacity>
                         </View>
-                        <View style={{flexDirection:'row',flex:1,justifyContent:'space-between',marginHorizontal:width*0.9*0.66*0.07}}>
+                        <View style={{flexDirection:'row',flex:1,justifyContent:'space-between',marginHorizontal:width*0.9*0.66*0,marginRight:width*0.9*0.66*0.07}}>
 
                             <TouchableOpacity style={{flex:1,justifyContent:'center',alignItems:'center'}}>
                                 <Text style={{fontSize:24}}>92</Text>
-                                <Text>팔로잉</Text>
+                                <Text style={{marginTop:5, fontSize:12}}>내가 쓴 글</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={{flex:1,justifyContent:'center',alignItems:'center'}}>
                                 <Text style={{fontSize:24}}>92</Text>
-                                <Text>팔로잉</Text>
+                                <Text style={{marginTop:5, fontSize:12}}>내가 쓴 댓글/답변</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
