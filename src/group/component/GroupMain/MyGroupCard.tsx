@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react'
 import { Platform,Dimensions,StyleSheet, View, Image,Text,ScrollView ,TouchableOpacity} from 'react-native'
 import {useNavigation} from '@react-navigation/native'
-import MemberIcon from '../MemberIcon';
+import MemberIcon from '../../../component/MemberIcon';
 const currentData = getJSON()[0];
 const MyGroupCard = () => {
 

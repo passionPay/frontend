@@ -1,6 +1,6 @@
 import React ,{useCallback} from 'react'
 import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
-import MemberIcon from '../MemberIcon'
+import MemberIcon from '../../../component/MemberIcon'
 import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')

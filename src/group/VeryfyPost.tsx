@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
-import MemberIcon from './component/MemberIcon'
+import MemberIcon from '../component/MemberIcon'
 // import {ReactComponent as CommentIcon}  from '../../images/group/fire.svg'
 
 const { width, height } = Dimensions.get('window')

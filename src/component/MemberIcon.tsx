@@ -22,7 +22,7 @@ const MemberIcon = ({size,margin,backgroundColor, touchable, isOnline}) =>{
     )
 
     const coreImage = (
-        <Image source={require('../../../images/5.png')} style={[styles.memberImage,{width:iconDiameter,height:iconDiameter,backgroundColor:backgroundColor, borderRadius:iconDiameter/2}]} />
+        <Image source={require('../../images/5.png')} style={[styles.memberImage,{width:iconDiameter,height:iconDiameter,backgroundColor:backgroundColor, borderRadius:iconDiameter/2}]} />
     )
     
     const coreItem= (

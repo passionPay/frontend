@@ -1,7 +1,8 @@
 import React from 'react'
 import { Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
 
-import MemberIcon from '../MemberIcon'
+import MemberIcon from '../../../component/MemberIcon'
+
 
 const { width, height } = Dimensions.get('window')
 
