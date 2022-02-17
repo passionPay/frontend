@@ -2,7 +2,8 @@ import React from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 
 import GroupGoalChart from '../GroupGoalChart'
-import ProgressBar from '../ProgressBar'
+
+import ProgressBar from '../../../component/ProgressBar'
 
 const { width, height } = Dimensions.get('window')
 
