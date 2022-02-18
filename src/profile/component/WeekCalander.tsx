@@ -1,5 +1,6 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect,useCallback} from 'react'
 import { TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView,StyleSheet, Text, View } from 'react-native'
+import moment from 'moment'
 
 const { width, height } = Dimensions.get('window')
 
@@ -15,22 +16,18 @@ const defaultProps = {
         
     },
     date:10,
-    setDate:1,
 }
 
-
-const dayStyle=(width,height)=>({
-    flex:1,
-    borderRadius:height<width? height/2:width/2,
-    backgroundColor:'blue',
-
-})
 
 const weekDays = ['Sun','Mon','Tue','Wed','Thr','Fri','Sat']
 
 //(style) no height, automatically set to width/3
 const WeekCalander = ({style,date,setDate}) =>{
     style = Object.assign({}, defaultProps.style , style)
+
+    const onPressDate = useCallback((newDate)=>{
+        setDate(newDate)
+    },[])
 
     const [day,setDay]=useState(0)
     const [dateList,setDateList] = useState<any[]>([
@@ -72,7 +69,9 @@ const WeekCalander = ({style,date,setDate}) =>{
                 marginTop:style.height*0.1,
                 }}>
                 {dateList.map((item,idx)=>(
-                    <TouchableOpacity key={idx}
+                    <TouchableOpacity 
+                        onPress={()=>{onPressDate(item.date)}}
+                        key={idx}
                         style={{
                             // borderWidth:1,
                             flex:1,

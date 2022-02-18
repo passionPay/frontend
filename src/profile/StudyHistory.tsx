@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react'
+import React, {useCallback,useState} from 'react'
 import { TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView,StyleSheet, Text, View,  } from 'react-native'
 
 import LinearGradient from 'react-native-linear-gradient'
@@ -17,6 +17,7 @@ const StudyHistory = () => {
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
 
+    const [date,setDate] = useState(10)
     return (
         <SafeAreaView style={styles.safeContainer}>
 
@@ -65,7 +66,7 @@ const StudyHistory = () => {
                     
                 </View>
             <ScrollView style={{flex:1,}}>
-                <WeekCalander/>
+                <WeekCalander date={date} setDate={setDate} />
             </ScrollView>
         </SafeAreaView>
     )
