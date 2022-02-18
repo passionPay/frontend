@@ -62,10 +62,10 @@ export default function ProfileV2() {
                             </View>
                         </View>
                     </View>
-                    <View style={{borderBottomWidth:1, borderTopWidth:1,padding:width*0.05}}>
+                    <View style={{borderBottomWidth:0.3, borderTopWidth:0.3,padding:width*0.05}}>
                         <Text 
                             style={{
-                            fontSize:18,
+                            fontSize:13,
                             fontWeight:'300',
                             textAlign:'center'}}>
                                 노력하는 자는 즐기는 자를 이기지 못한다
@@ -95,9 +95,7 @@ export default function ProfileV2() {
                         <WeekChart style={{marginHorizontal:width*0.05,
                             height:150,
                             width:width*0.9}}/>
-                        <MonthChart style={{marginHorizontal:width*0.05,
-                            height:150,
-                            width:width*0.9}}/>
+
 
 
                 </View>

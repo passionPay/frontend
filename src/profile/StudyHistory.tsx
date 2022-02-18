@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react'
-import { TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView,StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView,StyleSheet, Text, View,  } from 'react-native'
 
 import LinearGradient from 'react-native-linear-gradient'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -7,6 +7,8 @@ import MemberIcon from '../component/MemberIcon'
 import WeekChart from '../component/WeekChart'
 import MonthChart from '../component/MonthChart'
 import ProgressBar from '../component/ProgressBar'
+import WeekCalander from './component/WeekCalander'
+
 import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
@@ -63,7 +65,7 @@ const StudyHistory = () => {
                     
                 </View>
             <ScrollView style={{flex:1,}}>
-                
+                <WeekCalander/>
             </ScrollView>
         </SafeAreaView>
     )
