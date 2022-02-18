@@ -15,7 +15,7 @@ const defaultProps = {
         alignSelf:'center',
         
     },
-    date:10,
+    date:'2022.02.18',
 }
 
 
@@ -29,20 +29,27 @@ const WeekCalander = ({style,date,setDate}) =>{
         setDate(newDate)
     },[])
 
-    const [day,setDay]=useState(0)
+    const [day,setDay]=useState()
     const [dateList,setDateList] = useState<any[]>([
     ])
 
     useEffect(()=>{
-        console.log(day)
-        const newDay = Math.round(Math.random()*6)
+        const newDay = date.day()
         setDay(newDay)
-        const dateList:any[] = []
-        for (let i =0; i<7;i++){
-            dateList.push({day:weekDays[i],date:date-day+i,isOn:i==day})
+        const tempDateList:any[] = []
+        const sundayDate = date.subtract(newDay, 'd');
+        let iterDate = sundayDate
+        while (true){
+            const iterDay = iterDate.day()
+            tempDateList.push({
+                date:iterDate.clone(),
+                day:iterDay,
+                isOn:iterDay===newDay
+            })
+            if (iterDay===6) break
+            iterDate.add(1,'d')
         }
-
-        setDateList(dateList)
+        setDateList(tempDateList)
     },[date])
 
 
@@ -60,7 +67,7 @@ const WeekCalander = ({style,date,setDate}) =>{
                 <Text style={{
                     fontSize:style.height*0.17,
                     fontFamily:'GodoM'
-                }}>2022.02</Text>
+                }}>2022.022</Text>
             </View> 
             
 
@@ -80,13 +87,11 @@ const WeekCalander = ({style,date,setDate}) =>{
                     >
                         <Text style={{
                             fontSize:style.height*0.12,
-                    fontFamily:'GodoM'
+                            fontFamily:'GodoM'
 
-                        }
-                        }>{item.day}</Text>
+                        }}>{weekDays[item.day]}</Text>
                         <View style={
                             {
-
                             // marginTop:style.height*0.1,
                             justifyContent:'center',
                             alignItems:'center',
@@ -101,7 +106,7 @@ const WeekCalander = ({style,date,setDate}) =>{
                                 color:item.isOn ? '#ffffff':undefined,
                     fontFamily:'GodoM'
 
-                                }}>{item.date}
+                                }}>{item.date.date()}
                             </Text>
                         </View>
                         

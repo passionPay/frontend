@@ -8,6 +8,7 @@ import WeekChart from '../component/WeekChart'
 import MonthChart from '../component/MonthChart'
 import ProgressBar from '../component/ProgressBar'
 import WeekCalander from './component/WeekCalander'
+import moment from 'moment'
 
 import {useNavigation} from '@react-navigation/native'
 
@@ -17,7 +18,7 @@ const StudyHistory = () => {
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
 
-    const [date,setDate] = useState(10)
+    const [date,setDate] = useState(moment())
     return (
         <SafeAreaView style={styles.safeContainer}>
 
