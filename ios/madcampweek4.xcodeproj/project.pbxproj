@@ -54,6 +54,33 @@
 		60347438875B4534B9E62806 /* IBMPlexSansKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */; };
 		B8EDABACFD1942F0B4A065D6 /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EC465E8271F4040B71C118F /* Lobster.ttf */; };
 		5DCB41887905422FB80322C0 /* SedgwickAve.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */; };
+		49D517F108A74F748FEE21FD /* kita.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5FA8FDF9476440B1818D9944 /* kita.otf */; };
+		DD1D7D0159984B7DAA220CB0 /* kita.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6D096D4921C49B3AB7D1A3E /* kita.ttf */; };
+		10C25CDCE1984EFEA8B3145C /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76BEE73EF0CC4F2BBC15A9CB /* digital.ttf */; };
+		98ACE69224484C4FB927CA5A /* 나눔손글씨.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 235E0C436B31449DA4EE15BA /* 나눔손글씨.ttf */; };
+		44836F2768D0438E92B47D28 /* Gowun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C77D5DC9A58E4ACD999F47ED /* Gowun.ttf */; };
+		604B3DF3CAB84C69BA2F5089 /* nanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF4290309E7E473AA1ACA0B8 /* nanum.ttf */; };
+		17D5A3C7785847F4B1B4705B /* Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 365844FBE85D4AD6A0004F21 /* Digital.ttf */; };
+		956C5B6FCCF14540A0212202 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B94261A4297411491971B64 /* NotoSansKR-Black.otf */; };
+		58F2F7C50DB04792AD92ACE6 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEFE500C95E649EF9CCD3A4A /* NotoSansKR-Light.otf */; };
+		5A9237127BFB41D8A791DBE2 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA9FFFC2135E4E0094AA534A /* NotoSansKR-Medium.otf */; };
+		B5AADB4FAA5D412D8AD333A7 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2FD3D5D304E4C6FAE29DCD4 /* NotoSansKR-Regular.otf */; };
+		ED43A80A5FB741D5A6B316AE /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2462CE0B87493EAF8476A8 /* NotoSansKR-Thin.otf */; };
+		A706F932DC7A4538882670D1 /* Noto.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A87763A8CAE447E936DCEC8 /* Noto.otf */; };
+		415A98187596425A824E7F75 /* KoPubWorld Dotum Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E71999FAD444FBE9B360B2C /* KoPubWorld Dotum Light.ttf */; };
+		33080077F6B24EB099726180 /* KoPub.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1A01EBC55AF4AFC9FF6F096 /* KoPub.ttf */; };
+		9270EAFEF6B043A0AD101170 /* Dodum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F85545877A44C5A4B9A441 /* Dodum.ttf */; };
+		34D28866EC694D91B4B59474 /* GowunDodum-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 067BB423E8274F0A875A04A5 /* GowunDodum-Regular.ttf */; };
+		8CBA6C971039487697223DAA /* NanumHaNaSonGeurSsi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34048AFF1F7C4C41A00FA0CA /* NanumHaNaSonGeurSsi.ttf */; };
+		4CC4F484E5B446B89B8C55C2 /* Cafe2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96FF0C40A92D46AFB5C067E9 /* Cafe2.ttf */; };
+		59E9CAF44E014EE9B7DFB221 /* Cafe24.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D75BB7C5F9674ACAB812DDCF /* Cafe24.ttf */; };
+		12A64B2336B74F71BDF57784 /* Cafe24Ohsquareair.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31721A489E7040CD92CD8A26 /* Cafe24Ohsquareair.ttf */; };
+		7F8827E0E8F64199947B8B1A /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 274E477C17684AD2A4BC7B0E /* Cafe24Oneprettynight.ttf */; };
+		A87B0646344643A892C05CE0 /* 웰컴체 Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABCB382431DB45C59953F5A5 /* 웰컴체 Bold.ttf */; };
+		149C887319BC4B84BA7FFD02 /* 웰컴체 Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDE57845278345419CD196C8 /* 웰컴체 Regular.ttf */; };
+		EE2D65995E0342249004820B /* 웰컴체OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A57125FA4E7A4EC5B67EEEA4 /* 웰컴체OTF Bold.otf */; };
+		8852F413E47446DAA65827F5 /* 웰컴체OTF Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B31800CAD21744A1AE27245F /* 웰컴체OTF Regular.otf */; };
+		9895002E733C401693984246 /* welcome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 457F7199A07045C49005FC80 /* welcome.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +151,33 @@
 		67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansKR-Thin.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3EC465E8271F4040B71C118F /* Lobster.ttf */ = {isa = PBXFileReference; name = "Lobster.ttf"; path = "../font/Lobster.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */ = {isa = PBXFileReference; name = "SedgwickAve.ttf"; path = "../font/SedgwickAve.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5FA8FDF9476440B1818D9944 /* kita.otf */ = {isa = PBXFileReference; name = "kita.otf"; path = "../font/kita.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E6D096D4921C49B3AB7D1A3E /* kita.ttf */ = {isa = PBXFileReference; name = "kita.ttf"; path = "../font/kita.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		76BEE73EF0CC4F2BBC15A9CB /* digital.ttf */ = {isa = PBXFileReference; name = "digital.ttf"; path = "../font/digital.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		235E0C436B31449DA4EE15BA /* 나눔손글씨.ttf */ = {isa = PBXFileReference; name = "나눔손글씨.ttf"; path = "../font/나눔손글씨.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C77D5DC9A58E4ACD999F47ED /* Gowun.ttf */ = {isa = PBXFileReference; name = "Gowun.ttf"; path = "../font/Gowun.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CF4290309E7E473AA1ACA0B8 /* nanum.ttf */ = {isa = PBXFileReference; name = "nanum.ttf"; path = "../font/nanum.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		365844FBE85D4AD6A0004F21 /* Digital.ttf */ = {isa = PBXFileReference; name = "Digital.ttf"; path = "../font/Digital.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0B94261A4297411491971B64 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; name = "NotoSansKR-Black.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DEFE500C95E649EF9CCD3A4A /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; name = "NotoSansKR-Light.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA9FFFC2135E4E0094AA534A /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; name = "NotoSansKR-Medium.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A2FD3D5D304E4C6FAE29DCD4 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; name = "NotoSansKR-Regular.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E2462CE0B87493EAF8476A8 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; name = "NotoSansKR-Thin.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Thin.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8A87763A8CAE447E936DCEC8 /* Noto.otf */ = {isa = PBXFileReference; name = "Noto.otf"; path = "../font/Noto.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E71999FAD444FBE9B360B2C /* KoPubWorld Dotum Light.ttf */ = {isa = PBXFileReference; name = "KoPubWorld Dotum Light.ttf"; path = "../font/20. KoPub World 돋움체 L (KOGL 1유형)/KoPubWorld Dotum Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D1A01EBC55AF4AFC9FF6F096 /* KoPub.ttf */ = {isa = PBXFileReference; name = "KoPub.ttf"; path = "../font/KoPub.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		48F85545877A44C5A4B9A441 /* Dodum.ttf */ = {isa = PBXFileReference; name = "Dodum.ttf"; path = "../font/Dodum.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		067BB423E8274F0A875A04A5 /* GowunDodum-Regular.ttf */ = {isa = PBXFileReference; name = "GowunDodum-Regular.ttf"; path = "../font/Gowun_Dodum/GowunDodum-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		34048AFF1F7C4C41A00FA0CA /* NanumHaNaSonGeurSsi.ttf */ = {isa = PBXFileReference; name = "NanumHaNaSonGeurSsi.ttf"; path = "../font/NanumHaNaSonGeurSsi.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		96FF0C40A92D46AFB5C067E9 /* Cafe2.ttf */ = {isa = PBXFileReference; name = "Cafe2.ttf"; path = "../font/Cafe2.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D75BB7C5F9674ACAB812DDCF /* Cafe24.ttf */ = {isa = PBXFileReference; name = "Cafe24.ttf"; path = "../font/Cafe24.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		31721A489E7040CD92CD8A26 /* Cafe24Ohsquareair.ttf */ = {isa = PBXFileReference; name = "Cafe24Ohsquareair.ttf"; path = "../font/Cafe24OhsquareAir/Cafe24Ohsquareair.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		274E477C17684AD2A4BC7B0E /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; name = "Cafe24Oneprettynight.ttf"; path = "../font/Cafe24Oneprettynight/Cafe24Oneprettynight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ABCB382431DB45C59953F5A5 /* 웰컴체 Bold.ttf */ = {isa = PBXFileReference; name = "웰컴체 Bold.ttf"; path = "../font/welcome_font/웰컴체 Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DDE57845278345419CD196C8 /* 웰컴체 Regular.ttf */ = {isa = PBXFileReference; name = "웰컴체 Regular.ttf"; path = "../font/welcome_font/웰컴체 Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A57125FA4E7A4EC5B67EEEA4 /* 웰컴체OTF Bold.otf */ = {isa = PBXFileReference; name = "웰컴체OTF Bold.otf"; path = "../font/welcome_font/웰컴체OTF Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B31800CAD21744A1AE27245F /* 웰컴체OTF Regular.otf */ = {isa = PBXFileReference; name = "웰컴체OTF Regular.otf"; path = "../font/welcome_font/웰컴체OTF Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		457F7199A07045C49005FC80 /* welcome.ttf */ = {isa = PBXFileReference; name = "welcome.ttf"; path = "../font/welcome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +327,33 @@
 				67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */,
 				3EC465E8271F4040B71C118F /* Lobster.ttf */,
 				34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */,
+				5FA8FDF9476440B1818D9944 /* kita.otf */,
+				E6D096D4921C49B3AB7D1A3E /* kita.ttf */,
+				76BEE73EF0CC4F2BBC15A9CB /* digital.ttf */,
+				235E0C436B31449DA4EE15BA /* 나눔손글씨.ttf */,
+				C77D5DC9A58E4ACD999F47ED /* Gowun.ttf */,
+				CF4290309E7E473AA1ACA0B8 /* nanum.ttf */,
+				365844FBE85D4AD6A0004F21 /* Digital.ttf */,
+				0B94261A4297411491971B64 /* NotoSansKR-Black.otf */,
+				DEFE500C95E649EF9CCD3A4A /* NotoSansKR-Light.otf */,
+				FA9FFFC2135E4E0094AA534A /* NotoSansKR-Medium.otf */,
+				A2FD3D5D304E4C6FAE29DCD4 /* NotoSansKR-Regular.otf */,
+				6E2462CE0B87493EAF8476A8 /* NotoSansKR-Thin.otf */,
+				8A87763A8CAE447E936DCEC8 /* Noto.otf */,
+				6E71999FAD444FBE9B360B2C /* KoPubWorld Dotum Light.ttf */,
+				D1A01EBC55AF4AFC9FF6F096 /* KoPub.ttf */,
+				48F85545877A44C5A4B9A441 /* Dodum.ttf */,
+				067BB423E8274F0A875A04A5 /* GowunDodum-Regular.ttf */,
+				34048AFF1F7C4C41A00FA0CA /* NanumHaNaSonGeurSsi.ttf */,
+				96FF0C40A92D46AFB5C067E9 /* Cafe2.ttf */,
+				D75BB7C5F9674ACAB812DDCF /* Cafe24.ttf */,
+				31721A489E7040CD92CD8A26 /* Cafe24Ohsquareair.ttf */,
+				274E477C17684AD2A4BC7B0E /* Cafe24Oneprettynight.ttf */,
+				ABCB382431DB45C59953F5A5 /* 웰컴체 Bold.ttf */,
+				DDE57845278345419CD196C8 /* 웰컴체 Regular.ttf */,
+				A57125FA4E7A4EC5B67EEEA4 /* 웰컴체OTF Bold.otf */,
+				B31800CAD21744A1AE27245F /* 웰컴체OTF Regular.otf */,
+				457F7199A07045C49005FC80 /* welcome.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -414,6 +495,33 @@
 				60347438875B4534B9E62806 /* IBMPlexSansKR-Thin.ttf in Resources */,
 				B8EDABACFD1942F0B4A065D6 /* Lobster.ttf in Resources */,
 				5DCB41887905422FB80322C0 /* SedgwickAve.ttf in Resources */,
+				49D517F108A74F748FEE21FD /* kita.otf in Resources */,
+				DD1D7D0159984B7DAA220CB0 /* kita.ttf in Resources */,
+				10C25CDCE1984EFEA8B3145C /* digital.ttf in Resources */,
+				98ACE69224484C4FB927CA5A /* 나눔손글씨.ttf in Resources */,
+				44836F2768D0438E92B47D28 /* Gowun.ttf in Resources */,
+				604B3DF3CAB84C69BA2F5089 /* nanum.ttf in Resources */,
+				17D5A3C7785847F4B1B4705B /* Digital.ttf in Resources */,
+				956C5B6FCCF14540A0212202 /* NotoSansKR-Black.otf in Resources */,
+				58F2F7C50DB04792AD92ACE6 /* NotoSansKR-Light.otf in Resources */,
+				5A9237127BFB41D8A791DBE2 /* NotoSansKR-Medium.otf in Resources */,
+				B5AADB4FAA5D412D8AD333A7 /* NotoSansKR-Regular.otf in Resources */,
+				ED43A80A5FB741D5A6B316AE /* NotoSansKR-Thin.otf in Resources */,
+				A706F932DC7A4538882670D1 /* Noto.otf in Resources */,
+				415A98187596425A824E7F75 /* KoPubWorld Dotum Light.ttf in Resources */,
+				33080077F6B24EB099726180 /* KoPub.ttf in Resources */,
+				9270EAFEF6B043A0AD101170 /* Dodum.ttf in Resources */,
+				34D28866EC694D91B4B59474 /* GowunDodum-Regular.ttf in Resources */,
+				8CBA6C971039487697223DAA /* NanumHaNaSonGeurSsi.ttf in Resources */,
+				4CC4F484E5B446B89B8C55C2 /* Cafe2.ttf in Resources */,
+				59E9CAF44E014EE9B7DFB221 /* Cafe24.ttf in Resources */,
+				12A64B2336B74F71BDF57784 /* Cafe24Ohsquareair.ttf in Resources */,
+				7F8827E0E8F64199947B8B1A /* Cafe24Oneprettynight.ttf in Resources */,
+				A87B0646344643A892C05CE0 /* 웰컴체 Bold.ttf in Resources */,
+				149C887319BC4B84BA7FFD02 /* 웰컴체 Regular.ttf in Resources */,
+				EE2D65995E0342249004820B /* 웰컴체OTF Bold.otf in Resources */,
+				8852F413E47446DAA65827F5 /* 웰컴체OTF Regular.otf in Resources */,
+				9895002E733C401693984246 /* welcome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
