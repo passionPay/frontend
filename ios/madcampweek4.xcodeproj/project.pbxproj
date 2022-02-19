@@ -9,32 +9,74 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* madcampweek4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* madcampweek4Tests.m */; };
 		0C4FF948AEEF45CCB4DB6F00 /* Hahmlet-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 274205DF23EA4ADEAF0E120D /* Hahmlet-Medium.ttf */; };
+		10C25CDCE1984EFEA8B3145C /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76BEE73EF0CC4F2BBC15A9CB /* digital.ttf */; };
+		12A64B2336B74F71BDF57784 /* Cafe24Ohsquareair.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31721A489E7040CD92CD8A26 /* Cafe24Ohsquareair.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		154EAFF4BF6F4E47A0FCBADC /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E143B421A304A26BC31A882 /* SourceSansPro-SemiBoldItalic.ttf */; };
+		17D5A3C7785847F4B1B4705B /* Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 365844FBE85D4AD6A0004F21 /* Digital.ttf */; };
+		1CC6772B2702441099040DDC /* LeferiPointSpecial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4766DBD009E4188852E2BEC /* LeferiPointSpecial.ttf */; };
 		23A37EAB3CDC4C90A73F35D4 /* Hahmlet-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32F17E2C0A134053AD877B0D /* Hahmlet-Black.ttf */; };
+		28DADA1527C44136B35DBDED /* LeferiPointWhite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664BFBA32BBE4D3E9AA17321 /* LeferiPointWhite.ttf */; };
+		33080077F6B24EB099726180 /* KoPub.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1A01EBC55AF4AFC9FF6F096 /* KoPub.ttf */; };
+		34D28866EC694D91B4B59474 /* GowunDodum-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 067BB423E8274F0A875A04A5 /* GowunDodum-Regular.ttf */; };
 		34D307845DAB41EA9759112F /* Hahmlet-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */; };
 		41B8DC920F79480BA5505811 /* IBMPlexSansKR-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68CDB8AC8D484EB2B305039D /* IBMPlexSansKR-Light.ttf */; };
 		422D0081DDB9448B9E5DF295 /* GodoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E52B09398BA40849AE3130F /* GodoM.ttf */; };
+		44836F2768D0438E92B47D28 /* Gowun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C77D5DC9A58E4ACD999F47ED /* Gowun.ttf */; };
 		46213CA6D16040C6A1E2D4FD /* Hahmlet-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C83B0E742CF84F17BC64816A /* Hahmlet-ExtraLight.ttf */; };
+		49D517F108A74F748FEE21FD /* kita.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5FA8FDF9476440B1818D9944 /* kita.otf */; };
 		4AC1DF6962DD4A65B96208A9 /* Hahmlet-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C207F6AFA2A24019AC53C656 /* Hahmlet-Light.ttf */; };
+		4CC4F484E5B446B89B8C55C2 /* Cafe2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96FF0C40A92D46AFB5C067E9 /* Cafe2.ttf */; };
 		539C44FAE6014341AB80CB54 /* IBMPlexSansKR-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 314931AD641E4934B7DA6475 /* IBMPlexSansKR-ExtraLight.ttf */; };
+		58F2F7C50DB04792AD92ACE6 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEFE500C95E649EF9CCD3A4A /* NotoSansKR-Light.otf */; };
+		59E9CAF44E014EE9B7DFB221 /* Cafe24.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D75BB7C5F9674ACAB812DDCF /* Cafe24.ttf */; };
+		5A0F7584979E414FA967CF69 /* SourceSansPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABFB750A2CF54A99AFF995F3 /* SourceSansPro-ExtraLightItalic.ttf */; };
+		5A9237127BFB41D8A791DBE2 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA9FFFC2135E4E0094AA534A /* NotoSansKR-Medium.otf */; };
+		5C6FF2EB0C3F4A35A294ACC5 /* LeferiPointBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54D371974AE74E799C943443 /* LeferiPointBlack.ttf */; };
 		5DCB41887905422FB80322C0 /* SedgwickAve.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */; };
 		5EF4A48A6E4544A1B2644D7B /* IBMPlexSansKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03A5267E23846638C9B378A /* IBMPlexSansKR-Medium.ttf */; };
 		60347438875B4534B9E62806 /* IBMPlexSansKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */; };
+		604B3DF3CAB84C69BA2F5089 /* nanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF4290309E7E473AA1ACA0B8 /* nanum.ttf */; };
 		6172F2D35A4C3AA820D92908 /* libPods-madcampweek4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-madcampweek4.a */; };
+		6A1E067583A7482DA6A08BE5 /* SourceSansPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B678CECFB614225A2DAC6BF /* SourceSansPro-LightItalic.ttf */; };
+		7B4ECE9081034C3BABEB493E /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E789C4F0D6304DF591415EE5 /* SourceSansPro-Italic.ttf */; };
 		7EF68E3733C33B6898317E18 /* libPods-madcampweek4-madcampweek4Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-madcampweek4-madcampweek4Tests.a */; };
+		7F8827E0E8F64199947B8B1A /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 274E477C17684AD2A4BC7B0E /* Cafe24Oneprettynight.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		82C442870DA347EC9BB6C2A7 /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7F355695CED408D9CABEED8 /* SourceSansPro-BlackItalic.ttf */; };
 		8C85879AB126415A823B1BB0 /* Hahmlet-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E36333417E546A89BD97A6B /* Hahmlet-SemiBold.ttf */; };
+		8CBA6C971039487697223DAA /* NanumHaNaSonGeurSsi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34048AFF1F7C4C41A00FA0CA /* NanumHaNaSonGeurSsi.ttf */; };
+		8CE925527F6A497ABFF74E50 /* LeferiBaseRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EC799601E514C2B8C1A937E /* LeferiBaseRegular.ttf */; };
+		8EECEEE02ED8449F9D2EE497 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FB7426985084798987FCE7E /* SourceSansPro-Light.ttf */; };
+		9270EAFEF6B043A0AD101170 /* Dodum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48F85545877A44C5A4B9A441 /* Dodum.ttf */; };
+		956C5B6FCCF14540A0212202 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B94261A4297411491971B64 /* NotoSansKR-Black.otf */; };
+		9895002E733C401693984246 /* welcome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 457F7199A07045C49005FC80 /* welcome.ttf */; };
+		9BB41B5CF948418880734827 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5C26F81FE10457CA045CF4F /* SourceSansPro-SemiBold.ttf */; };
+		A706F932DC7A4538882670D1 /* Noto.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A87763A8CAE447E936DCEC8 /* Noto.otf */; };
 		AD7571C4EE164BE39BA56F82 /* Hahmlet-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4AFFCF82F214403BF354F25 /* Hahmlet-Regular.ttf */; };
 		B3287A45387A424AB39AD020 /* Hahmlet-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 751954B600D24510A8F68BAA /* Hahmlet-ExtraBold.ttf */; };
+		B52653F7522745FC86DF8ED7 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1FE2AF5A1FF437E9EAFE3B8 /* SourceSansPro-Regular.ttf */; };
+		B5AADB4FAA5D412D8AD333A7 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2FD3D5D304E4C6FAE29DCD4 /* NotoSansKR-Regular.otf */; };
 		B859CE64BFE24F388E9E8EFF /* IBMPlexSansKR-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E1AE3F6AC4BE5880602E3 /* IBMPlexSansKR-SemiBold.ttf */; };
 		B8EDABACFD1942F0B4A065D6 /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EC465E8271F4040B71C118F /* Lobster.ttf */; };
+		BDFDD35D00324632B4D172BD /* Leferi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9DDE2ADCB544041A48926E7 /* Leferi.ttf */; };
 		BE9ADBCEBA7742B3B1E9EB74 /* Hahmlet-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B0F7BEB414914A5429E6E /* Hahmlet-Bold.ttf */; };
+		C12CBBECA9A8488EB31EAB80 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B5C9FFB92CA42CAAA6D1113 /* SourceSansPro-ExtraLight.ttf */; };
+		C6F3886EC6264A1CA0009BB2 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B77B7B8B656F4DD398CD781C /* SourceSansPro-Bold.ttf */; };
 		CCCB9016FAA2458593170F83 /* IBMPlexSansKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9386BEB535F7465793B7D752 /* IBMPlexSansKR-Regular.ttf */; };
+		CEEA9E10B3A54BC180ED4A39 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DDC964895164C029197D7BF /* SourceSansPro-Black.ttf */; };
+		D1467C04245A482783F28894 /* LeferiPointSpecialItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0357907E21A4658826B3923 /* LeferiPointSpecialItalic.ttf */; };
+		D8980D9473894DE2B25FB811 /* LeferiPointWhiteOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97C0B6F391324F2E823B0647 /* LeferiPointWhiteOblique.ttf */; };
 		D928CBA3FA144692955E3CF8 /* IBMPlexSansKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5AABE53A6B14629A0483E3C /* IBMPlexSansKR-Bold.ttf */; };
+		DD1D7D0159984B7DAA220CB0 /* kita.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6D096D4921C49B3AB7D1A3E /* kita.ttf */; };
 		E015504A63A0482CB7202B1B /* dokdo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B134F85F503E4205A4967018 /* dokdo.ttf */; };
+		E6E0B9A50C594004A359B107 /* LeferiBaseBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16B1C3A8B55B427F98EB023C /* LeferiBaseBold.ttf */; };
+		E9859AA8AEE94D64A01D3D0E /* LeferiPointBlackOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F340F261B6374B119B656386 /* LeferiPointBlackOblique.ttf */; };
 		EBD5814B1BC84F4CAC8792FE /* Hahmlet-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22D0105460914CB9BC3C9479 /* Hahmlet-Thin.ttf */; };
+		ED43A80A5FB741D5A6B316AE /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2462CE0B87493EAF8476A8 /* NotoSansKR-Thin.otf */; };
+		F13709B084B24AAE99089EC4 /* SourceSansPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A050BC35E53495182962F5E /* SourceSansPro-BoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,44 +93,83 @@
 		00E356EE1AD99517003FC87E /* madcampweek4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = madcampweek4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* madcampweek4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = madcampweek4Tests.m; sourceTree = "<group>"; };
+		067BB423E8274F0A875A04A5 /* GowunDodum-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GowunDodum-Regular.ttf"; path = "../font/Gowun_Dodum/GowunDodum-Regular.ttf"; sourceTree = "<group>"; };
+		0B94261A4297411491971B64 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansKR-Black.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* madcampweek4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = madcampweek4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = madcampweek4/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = madcampweek4/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = madcampweek4/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = madcampweek4/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = madcampweek4/main.m; sourceTree = "<group>"; };
-		1938EF165A6E4909A3966513 /* GodoM.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GodoM.otf; path = ../font/godoFont/godoFont/GodoM.otf; sourceTree = "<group>"; };
+		16B1C3A8B55B427F98EB023C /* LeferiBaseBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LeferiBaseBold.ttf; path = ../font/Leferi_TTF/TTF/LeferiBaseBold.ttf; sourceTree = "<group>"; };
 		1D0AE47A65C8663E3B452821 /* Pods-madcampweek4-madcampweek4Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madcampweek4-madcampweek4Tests.release.xcconfig"; path = "Target Support Files/Pods-madcampweek4-madcampweek4Tests/Pods-madcampweek4-madcampweek4Tests.release.xcconfig"; sourceTree = "<group>"; };
 		22D0105460914CB9BC3C9479 /* Hahmlet-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Thin.ttf"; path = "../font/Hahmlet/static/Hahmlet-Thin.ttf"; sourceTree = "<group>"; };
 		274205DF23EA4ADEAF0E120D /* Hahmlet-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Medium.ttf"; path = "../font/Hahmlet/static/Hahmlet-Medium.ttf"; sourceTree = "<group>"; };
+		274E477C17684AD2A4BC7B0E /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Cafe24Oneprettynight.ttf; path = ../font/Cafe24Oneprettynight/Cafe24Oneprettynight.ttf; sourceTree = "<group>"; };
 		314931AD641E4934B7DA6475 /* IBMPlexSansKR-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-ExtraLight.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-ExtraLight.ttf"; sourceTree = "<group>"; };
+		31721A489E7040CD92CD8A26 /* Cafe24Ohsquareair.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Cafe24Ohsquareair.ttf; path = ../font/Cafe24OhsquareAir/Cafe24Ohsquareair.ttf; sourceTree = "<group>"; };
 		32F17E2C0A134053AD877B0D /* Hahmlet-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Black.ttf"; path = "../font/Hahmlet/static/Hahmlet-Black.ttf"; sourceTree = "<group>"; };
+		34048AFF1F7C4C41A00FA0CA /* NanumHaNaSonGeurSsi.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = NanumHaNaSonGeurSsi.ttf; path = ../font/NanumHaNaSonGeurSsi.ttf; sourceTree = "<group>"; };
 		34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SedgwickAve.ttf; path = ../font/SedgwickAve.ttf; sourceTree = "<group>"; };
-		36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GodoB.ttf; path = ../font/godoFont/godoFont/GodoB.ttf; sourceTree = "<group>"; };
+		365844FBE85D4AD6A0004F21 /* Digital.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Digital.ttf; path = ../font/Digital.ttf; sourceTree = "<group>"; };
 		3A2E1AE3F6AC4BE5880602E3 /* IBMPlexSansKR-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-SemiBold.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-SemiBold.ttf"; sourceTree = "<group>"; };
 		3D5B0F7BEB414914A5429E6E /* Hahmlet-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Bold.ttf"; path = "../font/Hahmlet/static/Hahmlet-Bold.ttf"; sourceTree = "<group>"; };
 		3EC465E8271F4040B71C118F /* Lobster.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Lobster.ttf; path = ../font/Lobster.ttf; sourceTree = "<group>"; };
-		42E3CDE165444F60BC84CC4E /* GodoB.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GodoB.otf; path = ../font/godoFont/godoFont/GodoB.otf; sourceTree = "<group>"; };
+		457F7199A07045C49005FC80 /* welcome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = welcome.ttf; path = ../font/welcome.ttf; sourceTree = "<group>"; };
+		48F85545877A44C5A4B9A441 /* Dodum.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Dodum.ttf; path = ../font/Dodum.ttf; sourceTree = "<group>"; };
+		54D371974AE74E799C943443 /* LeferiPointBlack.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LeferiPointBlack.ttf; path = ../font/Leferi_TTF/TTF/LeferiPointBlack.ttf; sourceTree = "<group>"; };
 		5E52B09398BA40849AE3130F /* GodoM.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GodoM.ttf; path = ../font/GodoM.ttf; sourceTree = "<group>"; };
+		5FA8FDF9476440B1818D9944 /* kita.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = kita.otf; path = ../font/kita.otf; sourceTree = "<group>"; };
 		6423831EA8574132BED9D8CC /* libPods-madcampweek4.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-madcampweek4.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		664BFBA32BBE4D3E9AA17321 /* LeferiPointWhite.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LeferiPointWhite.ttf; path = ../font/Leferi_TTF/TTF/LeferiPointWhite.ttf; sourceTree = "<group>"; };
 		67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Thin.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Thin.ttf"; sourceTree = "<group>"; };
 		68CDB8AC8D484EB2B305039D /* IBMPlexSansKR-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Light.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Light.ttf"; sourceTree = "<group>"; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-madcampweek4-madcampweek4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madcampweek4-madcampweek4Tests.debug.xcconfig"; path = "Target Support Files/Pods-madcampweek4-madcampweek4Tests/Pods-madcampweek4-madcampweek4Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E2462CE0B87493EAF8476A8 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansKR-Thin.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		6FB7426985084798987FCE7E /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Light.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
 		751954B600D24510A8F68BAA /* Hahmlet-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-ExtraBold.ttf"; path = "../font/Hahmlet/static/Hahmlet-ExtraBold.ttf"; sourceTree = "<group>"; };
+		76BEE73EF0CC4F2BBC15A9CB /* digital.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = digital.ttf; path = ../font/digital.ttf; sourceTree = "<group>"; };
+		7A050BC35E53495182962F5E /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-BoldItalic.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
 		7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-VariableFont_wght.ttf"; path = "../font/Hahmlet/Hahmlet-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		7E36333417E546A89BD97A6B /* Hahmlet-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-SemiBold.ttf"; path = "../font/Hahmlet/static/Hahmlet-SemiBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = madcampweek4/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8A87763A8CAE447E936DCEC8 /* Noto.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Noto.otf; path = ../font/Noto.otf; sourceTree = "<group>"; };
+		8B5C9FFB92CA42CAAA6D1113 /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-ExtraLight.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		8B678CECFB614225A2DAC6BF /* SourceSansPro-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-LightItalic.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-LightItalic.ttf"; sourceTree = "<group>"; };
+		8E143B421A304A26BC31A882 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-SemiBoldItalic.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		9386BEB535F7465793B7D752 /* IBMPlexSansKR-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Regular.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Regular.ttf"; sourceTree = "<group>"; };
+		96FF0C40A92D46AFB5C067E9 /* Cafe2.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Cafe2.ttf; path = ../font/Cafe2.ttf; sourceTree = "<group>"; };
+		97C0B6F391324F2E823B0647 /* LeferiPointWhiteOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LeferiPointWhiteOblique.ttf; path = ../font/Leferi_TTF/TTF/LeferiPointWhiteOblique.ttf; sourceTree = "<group>"; };
+		9DDC964895164C029197D7BF /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Black.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		9EC799601E514C2B8C1A937E /* LeferiBaseRegular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LeferiBaseRegular.ttf; path = ../font/Leferi_TTF/TTF/LeferiBaseRegular.ttf; sourceTree = "<group>"; };
+		A2FD3D5D304E4C6FAE29DCD4 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansKR-Regular.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		A9DDE2ADCB544041A48926E7 /* Leferi.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Leferi.ttf; path = ../font/Leferi.ttf; sourceTree = "<group>"; };
+		ABFB750A2CF54A99AFF995F3 /* SourceSansPro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-ExtraLightItalic.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		ABFE59519B596E51CEFDCCC0 /* libPods-madcampweek4-madcampweek4Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-madcampweek4-madcampweek4Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B134F85F503E4205A4967018 /* dokdo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = dokdo.ttf; path = ../font/dokdo.ttf; sourceTree = "<group>"; };
+		B77B7B8B656F4DD398CD781C /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Bold.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		C0357907E21A4658826B3923 /* LeferiPointSpecialItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LeferiPointSpecialItalic.ttf; path = ../font/Leferi_TTF/TTF/LeferiPointSpecialItalic.ttf; sourceTree = "<group>"; };
 		C0A881CF5CF3F2B244570E2A /* Pods-madcampweek4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madcampweek4.debug.xcconfig"; path = "Target Support Files/Pods-madcampweek4/Pods-madcampweek4.debug.xcconfig"; sourceTree = "<group>"; };
 		C207F6AFA2A24019AC53C656 /* Hahmlet-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Light.ttf"; path = "../font/Hahmlet/static/Hahmlet-Light.ttf"; sourceTree = "<group>"; };
+		C77D5DC9A58E4ACD999F47ED /* Gowun.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Gowun.ttf; path = ../font/Gowun.ttf; sourceTree = "<group>"; };
 		C83B0E742CF84F17BC64816A /* Hahmlet-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-ExtraLight.ttf"; path = "../font/Hahmlet/static/Hahmlet-ExtraLight.ttf"; sourceTree = "<group>"; };
+		CF4290309E7E473AA1ACA0B8 /* nanum.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = nanum.ttf; path = ../font/nanum.ttf; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-madcampweek4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-madcampweek4.release.xcconfig"; path = "Target Support Files/Pods-madcampweek4/Pods-madcampweek4.release.xcconfig"; sourceTree = "<group>"; };
+		D1A01EBC55AF4AFC9FF6F096 /* KoPub.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = KoPub.ttf; path = ../font/KoPub.ttf; sourceTree = "<group>"; };
+		D4766DBD009E4188852E2BEC /* LeferiPointSpecial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LeferiPointSpecial.ttf; path = ../font/Leferi_TTF/TTF/LeferiPointSpecial.ttf; sourceTree = "<group>"; };
 		D4AFFCF82F214403BF354F25 /* Hahmlet-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Hahmlet-Regular.ttf"; path = "../font/Hahmlet/static/Hahmlet-Regular.ttf"; sourceTree = "<group>"; };
+		D75BB7C5F9674ACAB812DDCF /* Cafe24.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Cafe24.ttf; path = ../font/Cafe24.ttf; sourceTree = "<group>"; };
+		DEFE500C95E649EF9CCD3A4A /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansKR-Light.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		E5AABE53A6B14629A0483E3C /* IBMPlexSansKR-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Bold.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Bold.ttf"; sourceTree = "<group>"; };
+		E6D096D4921C49B3AB7D1A3E /* kita.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = kita.ttf; path = ../font/kita.ttf; sourceTree = "<group>"; };
+		E789C4F0D6304DF591415EE5 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Italic.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F03A5267E23846638C9B378A /* IBMPlexSansKR-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSansKR-Medium.ttf"; path = "../font/IBM_Plex_Sans_KR/IBMPlexSansKR-Medium.ttf"; sourceTree = "<group>"; };
+		F1FE2AF5A1FF437E9EAFE3B8 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Regular.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		F340F261B6374B119B656386 /* LeferiPointBlackOblique.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LeferiPointBlackOblique.ttf; path = ../font/Leferi_TTF/TTF/LeferiPointBlackOblique.ttf; sourceTree = "<group>"; };
+		F5C26F81FE10457CA045CF4F /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-SemiBold.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		F7F355695CED408D9CABEED8 /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-BlackItalic.ttf"; path = "../font/Source_Sans_Pro/SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
+		FA9FFFC2135E4E0094AA534A /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansKR-Medium.otf"; path = "../font/Noto_Sans_KR/NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,9 +267,6 @@
 		A228037870024BF9A4585EAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				42E3CDE165444F60BC84CC4E /* GodoB.otf */,
-				36C8E3D1A5274A7ABAC576E9 /* GodoB.ttf */,
-				1938EF165A6E4909A3966513 /* GodoM.otf */,
 				5E52B09398BA40849AE3130F /* GodoM.ttf */,
 				B134F85F503E4205A4967018 /* dokdo.ttf */,
 				7A3A0C93ABEA4616AEEC7504 /* Hahmlet-VariableFont_wght.ttf */,
@@ -210,6 +288,48 @@
 				67AEA8935DB54C92A6F980C2 /* IBMPlexSansKR-Thin.ttf */,
 				3EC465E8271F4040B71C118F /* Lobster.ttf */,
 				34BCB0509A52463CB419CA0B /* SedgwickAve.ttf */,
+				5FA8FDF9476440B1818D9944 /* kita.otf */,
+				E6D096D4921C49B3AB7D1A3E /* kita.ttf */,
+				76BEE73EF0CC4F2BBC15A9CB /* digital.ttf */,
+				C77D5DC9A58E4ACD999F47ED /* Gowun.ttf */,
+				CF4290309E7E473AA1ACA0B8 /* nanum.ttf */,
+				365844FBE85D4AD6A0004F21 /* Digital.ttf */,
+				0B94261A4297411491971B64 /* NotoSansKR-Black.otf */,
+				DEFE500C95E649EF9CCD3A4A /* NotoSansKR-Light.otf */,
+				FA9FFFC2135E4E0094AA534A /* NotoSansKR-Medium.otf */,
+				A2FD3D5D304E4C6FAE29DCD4 /* NotoSansKR-Regular.otf */,
+				6E2462CE0B87493EAF8476A8 /* NotoSansKR-Thin.otf */,
+				8A87763A8CAE447E936DCEC8 /* Noto.otf */,
+				D1A01EBC55AF4AFC9FF6F096 /* KoPub.ttf */,
+				48F85545877A44C5A4B9A441 /* Dodum.ttf */,
+				067BB423E8274F0A875A04A5 /* GowunDodum-Regular.ttf */,
+				34048AFF1F7C4C41A00FA0CA /* NanumHaNaSonGeurSsi.ttf */,
+				96FF0C40A92D46AFB5C067E9 /* Cafe2.ttf */,
+				D75BB7C5F9674ACAB812DDCF /* Cafe24.ttf */,
+				31721A489E7040CD92CD8A26 /* Cafe24Ohsquareair.ttf */,
+				274E477C17684AD2A4BC7B0E /* Cafe24Oneprettynight.ttf */,
+				457F7199A07045C49005FC80 /* welcome.ttf */,
+				16B1C3A8B55B427F98EB023C /* LeferiBaseBold.ttf */,
+				9EC799601E514C2B8C1A937E /* LeferiBaseRegular.ttf */,
+				54D371974AE74E799C943443 /* LeferiPointBlack.ttf */,
+				F340F261B6374B119B656386 /* LeferiPointBlackOblique.ttf */,
+				D4766DBD009E4188852E2BEC /* LeferiPointSpecial.ttf */,
+				C0357907E21A4658826B3923 /* LeferiPointSpecialItalic.ttf */,
+				664BFBA32BBE4D3E9AA17321 /* LeferiPointWhite.ttf */,
+				97C0B6F391324F2E823B0647 /* LeferiPointWhiteOblique.ttf */,
+				A9DDE2ADCB544041A48926E7 /* Leferi.ttf */,
+				9DDC964895164C029197D7BF /* SourceSansPro-Black.ttf */,
+				F7F355695CED408D9CABEED8 /* SourceSansPro-BlackItalic.ttf */,
+				B77B7B8B656F4DD398CD781C /* SourceSansPro-Bold.ttf */,
+				7A050BC35E53495182962F5E /* SourceSansPro-BoldItalic.ttf */,
+				8B5C9FFB92CA42CAAA6D1113 /* SourceSansPro-ExtraLight.ttf */,
+				ABFB750A2CF54A99AFF995F3 /* SourceSansPro-ExtraLightItalic.ttf */,
+				E789C4F0D6304DF591415EE5 /* SourceSansPro-Italic.ttf */,
+				6FB7426985084798987FCE7E /* SourceSansPro-Light.ttf */,
+				8B678CECFB614225A2DAC6BF /* SourceSansPro-LightItalic.ttf */,
+				F1FE2AF5A1FF437E9EAFE3B8 /* SourceSansPro-Regular.ttf */,
+				F5C26F81FE10457CA045CF4F /* SourceSansPro-SemiBold.ttf */,
+				8E143B421A304A26BC31A882 /* SourceSansPro-SemiBoldItalic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -342,6 +462,48 @@
 				60347438875B4534B9E62806 /* IBMPlexSansKR-Thin.ttf in Resources */,
 				B8EDABACFD1942F0B4A065D6 /* Lobster.ttf in Resources */,
 				5DCB41887905422FB80322C0 /* SedgwickAve.ttf in Resources */,
+				49D517F108A74F748FEE21FD /* kita.otf in Resources */,
+				DD1D7D0159984B7DAA220CB0 /* kita.ttf in Resources */,
+				10C25CDCE1984EFEA8B3145C /* digital.ttf in Resources */,
+				44836F2768D0438E92B47D28 /* Gowun.ttf in Resources */,
+				604B3DF3CAB84C69BA2F5089 /* nanum.ttf in Resources */,
+				17D5A3C7785847F4B1B4705B /* Digital.ttf in Resources */,
+				956C5B6FCCF14540A0212202 /* NotoSansKR-Black.otf in Resources */,
+				58F2F7C50DB04792AD92ACE6 /* NotoSansKR-Light.otf in Resources */,
+				5A9237127BFB41D8A791DBE2 /* NotoSansKR-Medium.otf in Resources */,
+				B5AADB4FAA5D412D8AD333A7 /* NotoSansKR-Regular.otf in Resources */,
+				ED43A80A5FB741D5A6B316AE /* NotoSansKR-Thin.otf in Resources */,
+				A706F932DC7A4538882670D1 /* Noto.otf in Resources */,
+				33080077F6B24EB099726180 /* KoPub.ttf in Resources */,
+				9270EAFEF6B043A0AD101170 /* Dodum.ttf in Resources */,
+				34D28866EC694D91B4B59474 /* GowunDodum-Regular.ttf in Resources */,
+				8CBA6C971039487697223DAA /* NanumHaNaSonGeurSsi.ttf in Resources */,
+				4CC4F484E5B446B89B8C55C2 /* Cafe2.ttf in Resources */,
+				59E9CAF44E014EE9B7DFB221 /* Cafe24.ttf in Resources */,
+				12A64B2336B74F71BDF57784 /* Cafe24Ohsquareair.ttf in Resources */,
+				7F8827E0E8F64199947B8B1A /* Cafe24Oneprettynight.ttf in Resources */,
+				9895002E733C401693984246 /* welcome.ttf in Resources */,
+				E6E0B9A50C594004A359B107 /* LeferiBaseBold.ttf in Resources */,
+				8CE925527F6A497ABFF74E50 /* LeferiBaseRegular.ttf in Resources */,
+				5C6FF2EB0C3F4A35A294ACC5 /* LeferiPointBlack.ttf in Resources */,
+				E9859AA8AEE94D64A01D3D0E /* LeferiPointBlackOblique.ttf in Resources */,
+				1CC6772B2702441099040DDC /* LeferiPointSpecial.ttf in Resources */,
+				D1467C04245A482783F28894 /* LeferiPointSpecialItalic.ttf in Resources */,
+				28DADA1527C44136B35DBDED /* LeferiPointWhite.ttf in Resources */,
+				D8980D9473894DE2B25FB811 /* LeferiPointWhiteOblique.ttf in Resources */,
+				BDFDD35D00324632B4D172BD /* Leferi.ttf in Resources */,
+				CEEA9E10B3A54BC180ED4A39 /* SourceSansPro-Black.ttf in Resources */,
+				82C442870DA347EC9BB6C2A7 /* SourceSansPro-BlackItalic.ttf in Resources */,
+				C6F3886EC6264A1CA0009BB2 /* SourceSansPro-Bold.ttf in Resources */,
+				F13709B084B24AAE99089EC4 /* SourceSansPro-BoldItalic.ttf in Resources */,
+				C12CBBECA9A8488EB31EAB80 /* SourceSansPro-ExtraLight.ttf in Resources */,
+				5A0F7584979E414FA967CF69 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
+				7B4ECE9081034C3BABEB493E /* SourceSansPro-Italic.ttf in Resources */,
+				8EECEEE02ED8449F9D2EE497 /* SourceSansPro-Light.ttf in Resources */,
+				6A1E067583A7482DA6A08BE5 /* SourceSansPro-LightItalic.ttf in Resources */,
+				B52653F7522745FC86DF8ED7 /* SourceSansPro-Regular.ttf in Resources */,
+				9BB41B5CF948418880734827 /* SourceSansPro-SemiBold.ttf in Resources */,
+				154EAFF4BF6F4E47A0FCBADC /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

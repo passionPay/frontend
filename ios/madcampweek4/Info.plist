@@ -78,6 +78,7 @@
 		<string>Lobster.ttf</string>
 		<string>SedgwickAve.ttf</string>
 
+
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
@@ -94,6 +95,53 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 		<string>Fontisto.ttf</string>
+		<string>kita.otf</string>
+		<string>kita.ttf</string>
+		<string>digital.ttf</string>
+
+		<string>Gowun.ttf</string>
+		<string>nanum.ttf</string>
+		<string>Digital.ttf</string>
+		<string>NotoSansKR-Black.otf</string>
+		<string>NotoSansKR-Light.otf</string>
+		<string>NotoSansKR-Medium.otf</string>
+		<string>NotoSansKR-Regular.otf</string>
+		<string>NotoSansKR-Thin.otf</string>
+		<string>Noto.otf</string>
+		<string>KoPubWorld Dotum Light.ttf</string>
+		<string>KoPub.ttf</string>
+		<string>Dodum.ttf</string>
+		<string>GowunDodum-Regular.ttf</string>
+		<string>NanumHaNaSonGeurSsi.ttf</string>
+		<string>Cafe2.ttf</string>
+		<string>Cafe24.ttf</string>
+		<string>Cafe24Ohsquareair.ttf</string>
+		<string>Cafe24Oneprettynight.ttf</string>
+
+		<string>welcome.ttf</string>
+		<string>LeferiBaseBold.ttf</string>
+		<string>LeferiBaseRegular.ttf</string>
+		<string>LeferiPointBlack.ttf</string>
+		<string>LeferiPointBlackOblique.ttf</string>
+		<string>LeferiPointSpecial.ttf</string>
+		<string>LeferiPointSpecialItalic.ttf</string>
+		<string>LeferiPointWhite.ttf</string>
+		<string>LeferiPointWhiteOblique.ttf</string>
+		<string>Leferi.ttf</string>
+		<string>SourceSansPro-Black.ttf</string>
+		<string>SourceSansPro-BlackItalic.ttf</string>
+		<string>SourceSansPro-Bold.ttf</string>
+		<string>SourceSansPro-BoldItalic.ttf</string>
+		<string>SourceSansPro-ExtraLight.ttf</string>
+		<string>SourceSansPro-ExtraLightItalic.ttf</string>
+		<string>SourceSansPro-Italic.ttf</string>
+		<string>SourceSansPro-Light.ttf</string>
+		<string>SourceSansPro-LightItalic.ttf</string>
+		<string>SourceSansPro-Regular.ttf</string>
+		<string>SourceSansPro-SemiBold.ttf</string>
+		<string>SourceSansPro-SemiBoldItalic.ttf</string>
+		<string>SourceSansPro.ttf</string>
+
 	</array>
 </dict>
 </plist>
