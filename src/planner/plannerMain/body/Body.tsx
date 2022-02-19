@@ -13,9 +13,9 @@ export default function Body({ data }: { data: PlannerDataType }) {
 
 const styles = StyleSheet.create({
     container: {
-        borderTopWidth: 1,
+        borderTopWidth: 0.5,
         marginHorizontal: 20,
-        borderColor: '#aaa',
+        borderColor: '#1F4073',
         flexDirection: 'row',
         marginTop: 10
     }

@@ -120,6 +120,15 @@
 		<string>웰컴체OTF Bold.otf</string>
 		<string>웰컴체OTF Regular.otf</string>
 		<string>welcome.ttf</string>
+		<string>LeferiBaseBold.ttf</string>
+		<string>LeferiBaseRegular.ttf</string>
+		<string>LeferiPointBlack.ttf</string>
+		<string>LeferiPointBlackOblique.ttf</string>
+		<string>LeferiPointSpecial.ttf</string>
+		<string>LeferiPointSpecialItalic.ttf</string>
+		<string>LeferiPointWhite.ttf</string>
+		<string>LeferiPointWhiteOblique.ttf</string>
+		<string>Leferi.ttf</string>
 	</array>
 </dict>
 </plist>

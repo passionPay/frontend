@@ -81,6 +81,15 @@
 		EE2D65995E0342249004820B /* 웰컴체OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A57125FA4E7A4EC5B67EEEA4 /* 웰컴체OTF Bold.otf */; };
 		8852F413E47446DAA65827F5 /* 웰컴체OTF Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B31800CAD21744A1AE27245F /* 웰컴체OTF Regular.otf */; };
 		9895002E733C401693984246 /* welcome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 457F7199A07045C49005FC80 /* welcome.ttf */; };
+		E6E0B9A50C594004A359B107 /* LeferiBaseBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16B1C3A8B55B427F98EB023C /* LeferiBaseBold.ttf */; };
+		8CE925527F6A497ABFF74E50 /* LeferiBaseRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EC799601E514C2B8C1A937E /* LeferiBaseRegular.ttf */; };
+		5C6FF2EB0C3F4A35A294ACC5 /* LeferiPointBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54D371974AE74E799C943443 /* LeferiPointBlack.ttf */; };
+		E9859AA8AEE94D64A01D3D0E /* LeferiPointBlackOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F340F261B6374B119B656386 /* LeferiPointBlackOblique.ttf */; };
+		1CC6772B2702441099040DDC /* LeferiPointSpecial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4766DBD009E4188852E2BEC /* LeferiPointSpecial.ttf */; };
+		D1467C04245A482783F28894 /* LeferiPointSpecialItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0357907E21A4658826B3923 /* LeferiPointSpecialItalic.ttf */; };
+		28DADA1527C44136B35DBDED /* LeferiPointWhite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 664BFBA32BBE4D3E9AA17321 /* LeferiPointWhite.ttf */; };
+		D8980D9473894DE2B25FB811 /* LeferiPointWhiteOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97C0B6F391324F2E823B0647 /* LeferiPointWhiteOblique.ttf */; };
+		BDFDD35D00324632B4D172BD /* Leferi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9DDE2ADCB544041A48926E7 /* Leferi.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +187,15 @@
 		A57125FA4E7A4EC5B67EEEA4 /* 웰컴체OTF Bold.otf */ = {isa = PBXFileReference; name = "웰컴체OTF Bold.otf"; path = "../font/welcome_font/웰컴체OTF Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		B31800CAD21744A1AE27245F /* 웰컴체OTF Regular.otf */ = {isa = PBXFileReference; name = "웰컴체OTF Regular.otf"; path = "../font/welcome_font/웰컴체OTF Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		457F7199A07045C49005FC80 /* welcome.ttf */ = {isa = PBXFileReference; name = "welcome.ttf"; path = "../font/welcome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		16B1C3A8B55B427F98EB023C /* LeferiBaseBold.ttf */ = {isa = PBXFileReference; name = "LeferiBaseBold.ttf"; path = "../font/Leferi_TTF/TTF/LeferiBaseBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9EC799601E514C2B8C1A937E /* LeferiBaseRegular.ttf */ = {isa = PBXFileReference; name = "LeferiBaseRegular.ttf"; path = "../font/Leferi_TTF/TTF/LeferiBaseRegular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		54D371974AE74E799C943443 /* LeferiPointBlack.ttf */ = {isa = PBXFileReference; name = "LeferiPointBlack.ttf"; path = "../font/Leferi_TTF/TTF/LeferiPointBlack.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F340F261B6374B119B656386 /* LeferiPointBlackOblique.ttf */ = {isa = PBXFileReference; name = "LeferiPointBlackOblique.ttf"; path = "../font/Leferi_TTF/TTF/LeferiPointBlackOblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D4766DBD009E4188852E2BEC /* LeferiPointSpecial.ttf */ = {isa = PBXFileReference; name = "LeferiPointSpecial.ttf"; path = "../font/Leferi_TTF/TTF/LeferiPointSpecial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C0357907E21A4658826B3923 /* LeferiPointSpecialItalic.ttf */ = {isa = PBXFileReference; name = "LeferiPointSpecialItalic.ttf"; path = "../font/Leferi_TTF/TTF/LeferiPointSpecialItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		664BFBA32BBE4D3E9AA17321 /* LeferiPointWhite.ttf */ = {isa = PBXFileReference; name = "LeferiPointWhite.ttf"; path = "../font/Leferi_TTF/TTF/LeferiPointWhite.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		97C0B6F391324F2E823B0647 /* LeferiPointWhiteOblique.ttf */ = {isa = PBXFileReference; name = "LeferiPointWhiteOblique.ttf"; path = "../font/Leferi_TTF/TTF/LeferiPointWhiteOblique.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A9DDE2ADCB544041A48926E7 /* Leferi.ttf */ = {isa = PBXFileReference; name = "Leferi.ttf"; path = "../font/Leferi.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +372,15 @@
 				A57125FA4E7A4EC5B67EEEA4 /* 웰컴체OTF Bold.otf */,
 				B31800CAD21744A1AE27245F /* 웰컴체OTF Regular.otf */,
 				457F7199A07045C49005FC80 /* welcome.ttf */,
+				16B1C3A8B55B427F98EB023C /* LeferiBaseBold.ttf */,
+				9EC799601E514C2B8C1A937E /* LeferiBaseRegular.ttf */,
+				54D371974AE74E799C943443 /* LeferiPointBlack.ttf */,
+				F340F261B6374B119B656386 /* LeferiPointBlackOblique.ttf */,
+				D4766DBD009E4188852E2BEC /* LeferiPointSpecial.ttf */,
+				C0357907E21A4658826B3923 /* LeferiPointSpecialItalic.ttf */,
+				664BFBA32BBE4D3E9AA17321 /* LeferiPointWhite.ttf */,
+				97C0B6F391324F2E823B0647 /* LeferiPointWhiteOblique.ttf */,
+				A9DDE2ADCB544041A48926E7 /* Leferi.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -522,6 +549,15 @@
 				EE2D65995E0342249004820B /* 웰컴체OTF Bold.otf in Resources */,
 				8852F413E47446DAA65827F5 /* 웰컴체OTF Regular.otf in Resources */,
 				9895002E733C401693984246 /* welcome.ttf in Resources */,
+				E6E0B9A50C594004A359B107 /* LeferiBaseBold.ttf in Resources */,
+				8CE925527F6A497ABFF74E50 /* LeferiBaseRegular.ttf in Resources */,
+				5C6FF2EB0C3F4A35A294ACC5 /* LeferiPointBlack.ttf in Resources */,
+				E9859AA8AEE94D64A01D3D0E /* LeferiPointBlackOblique.ttf in Resources */,
+				1CC6772B2702441099040DDC /* LeferiPointSpecial.ttf in Resources */,
+				D1467C04245A482783F28894 /* LeferiPointSpecialItalic.ttf in Resources */,
+				28DADA1527C44136B35DBDED /* LeferiPointWhite.ttf in Resources */,
+				D8980D9473894DE2B25FB811 /* LeferiPointWhiteOblique.ttf in Resources */,
+				BDFDD35D00324632B4D172BD /* Leferi.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

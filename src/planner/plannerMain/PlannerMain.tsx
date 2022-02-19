@@ -20,17 +20,14 @@ export default function PlannerMain() {
     const [data, setData] = useState(initState)
     const [modalVisible, setModalVisible] = useState(false)
     return <PlannerProvider>
-        <ImageBackground source={require('../../../images/plannerBack.png')}
-            style={{ flex: 1 }} imageStyle={{ opacity: 0.7 }}>
-            <ScrollView>
-                <Top data={data} />
-                <Header data={data} />
-                <Body data={data} />
-                <View style={{height: 100}}/>
-            </ScrollView>
-            <StartingModal />
-            <StoppingModal />
-        </ImageBackground>
+        <ScrollView style={{backgroundColor: '#fff'}}>
+            <Top data={data} />
+            <Header data={data} />
+            <Body data={data} />
+            <View style={{ height: 100 }} />
+        </ScrollView>
+        <StartingModal />
+        <StoppingModal />
     </PlannerProvider>
 }
 

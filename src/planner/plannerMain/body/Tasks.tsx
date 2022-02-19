@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
     },
     subject: {
         fontSize: 14,
-        borderBottomWidth: 1,
+        borderBottomWidth: 0.66,
         paddingLeft: 5,
         paddingTop: 25,
         paddingBottom: 7,
-        borderColor: '#aaa',
-        fontFamily: 'welcome',
+        borderColor: '#1F4073',
+        fontFamily: 'Leferi',
         marginBottom: 10,
         // backgroundColor: '#ddd',
         // borderRadius: 10
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
         // backgroundColor: 'red'
     },
     taskTitle: {
-        fontSize: 12,
-        fontFamily: 'welcome'
+        fontSize: 10,
+        fontFamily: 'Leferi'
     }
 })
 
