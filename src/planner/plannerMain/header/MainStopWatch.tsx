@@ -12,7 +12,7 @@ export default function MainStopWatch({ initSec }: { initSec: number }) {
     const cont = useContextOfPlanner()
     return <TouchableOpacity style={styles.container}
         onPress={() => { cont.isStart ? cont.setStoppingModalVisible(true) : cont.setStartingModalVisible(true) }}>
-        <Icon name={cont.isStart ? 'pause' : 'play'} size={35} color='#24273E'
+        <Icon name={cont.isStart ? 'pause' : 'play'} size={28} color='#151515'
             style={{ marginRight: 10, marginBottom: 3 }} />
         <Stopwatch laps start={cont.isStart}
             options={options}
@@ -33,13 +33,8 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
-        borderWidth: 1,
-        width: '100%',
-        borderColor: '#24273EAA',
         borderRadius: 20,
-        padding: 20,
         justifyContent: 'center',
-        backgroundColor: '#24273E11'
     }
 })
 
@@ -52,8 +47,8 @@ const options = {
         marginRight: 10
     },
     text: {
-        fontSize: 30,
-        fontFamily: 'GodoM', color: '#24273E',
+        fontSize: 25,
+        fontFamily: 'GodoM', color: '#151515',
         textAlignVertical: 'center',
     }
 }

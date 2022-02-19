@@ -13,7 +13,7 @@ export default function Body({ data }: { data: PlannerDataType }) {
 
 const styles = StyleSheet.create({
     container: {
-        borderTopWidth: 0.5,
+        // borderTopWidth: 0.5,
         marginHorizontal: 20,
         borderColor: '#1F4073',
         flexDirection: 'row',

@@ -7,55 +7,55 @@ import { PlannerDataType } from '../PlannerMain'
 
 export default function Header({ data }: { data: PlannerDataType }) {
     return <View style={styles.container}>
+        <TouchableOpacity style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            alignSelf: 'flex-start'
+        }}>
+            <Icon name='calendar-month' color='#000' size={17} style={{ marginTop: 2 }} />
+            <Text style={{ marginLeft: 10, color: '#000', fontWeight: 'bold' }}>{data.date}</Text>
+        </TouchableOpacity>
         <View style={{
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
             width: '100%',
+            borderTopWidth: 0.5,
+            borderBottomWidth: 0.5,
+            padding: 5,
+            marginVertical: 10
         }}>
-            <TouchableOpacity style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center',
-            }}>
-                <Icon name='calendar-month' color='#000' size={17} style={{marginTop: 2}}/>
-                <Text style={{ marginLeft: 10, color: '#000', fontWeight: 'bold' }}>{data.date}</Text>
-            </TouchableOpacity>
-            <Text style={{ color: '#000', fontWeight: 'bold' }}>
-                {data.dDay == -1 ? '' : 'D-' + data.dDay}</Text>
+            <View style={{ flex: 5, paddingRight: 5 }}>
+                <Text style={styles.tag}>D-DAY</Text>
+                <Text style={ styles.dDay }>
+                    {data.dDay == -1 ? '' : 'D-' + data.dDay}</Text>
+                <Text style={styles.tag}>COMMENT</Text>
+                <Text style={{
+                    fontSize: 11,
+                }}>{data.comment}</Text>
+            </View>
+            <View style={{ flex: 4 }}>
+                <Text style={styles.tag}>TOTAL TIME</Text>
+                <TouchableOpacity style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginVertical: 15,
+                }}>
+                    <MainStopWatch initSec={98765} />
+                </TouchableOpacity>
+            </View>
         </View>
-        <TouchableOpacity style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginVertical: 15,
-        }}>
-            {/* <Icon name='play' size={28} color='#000' style={{marginRight: 10}} /> */}
-            {/* <Text style={{ fontSize: 12, color: '#777' }}>▶</Text> */}
-            {/* <Text style={{
-                alignSelf: 'center',
-                fontSize: 30,
-                alignItems: 'center',
-                marginLeft: 5,
-                marginRight: 15,
-            }}>12:00:11</Text> */}
-            <MainStopWatch initSec={98765} />
-        </TouchableOpacity>
-        {data.comment == '' ? undefined :
-            <Text style={{
-                alignSelf: 'center',
-                marginHorizontal: 10,
-                fontSize: 11,
-                marginBottom: 15,
-                color: '#333',
-                // fontFamily: 'KoPub'
-            }}>{data.comment}</Text>}
     </View>
 }
 
 function Tag(tagName: string, flex: number) {
     return <View style={{ flexDirection: 'row', alignItems: 'center', flex: flex }}>
-        <Text style={styles.tag}>{tagName}</Text>
+        <Text style={{
+            marginRight: 3,
+            fontSize: 8,
+            color: '#999'
+        }}>{tagName}</Text>
         <View style={{
             borderColor: '#aaa',
             borderBottomWidth: 1,
@@ -72,8 +72,16 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     tag: {
-        marginRight: 3,
-        fontSize: 8,
-        color: '#999'
+        fontFamily: 'SourceSansPro-Bold',
+        fontSize: 10,
+        marginVertical: 5
+    },
+    dDay: {
+        color: '#000',
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        // fontSize: 18,
+        fontFamily: 'kita'
+        // marginVertical: 5
     }
 })

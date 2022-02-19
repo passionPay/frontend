@@ -65,13 +65,13 @@ const initState: PlannerDataType = {
     totalTime: 123456789,
     timeRate: 60,
     taskRate: 70,
-    comment: '오늘 각오 또는 명언 또는 플레이리스트 등 최대 30자',
+    comment: '졸지 말고 열심히!',
     tasks: [
         {
             subject: '화법과 작문',
             tasks: [
                 {
-                    title: '윤혜정 선생님 나비효과 6강 복습하기 최대 글자 제한 없음',
+                    title: '윤혜정 선생님 나비효과 6강 복습하기',
                     status: 0,
                     totalTime: 0,
                     taskId: 1

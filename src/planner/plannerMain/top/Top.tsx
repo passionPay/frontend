@@ -8,13 +8,13 @@ export default function Top({ data }: { data: PlannerDataType }) {
     return <View style={styles.container}>
         <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Icon name='heart-outline' size={16} color='#e22822' />
+                <Icon name='heart-outline' size={15} color='#EE4A49' />
                 {/* <Text style={{fontSize: 12}}>🔥</Text> */}
-                <Text style={{ marginLeft: 2, color: '#F73718', fontSize: 12 }}>{data.fireCount}</Text>
+                <Text style={{ marginLeft: 2, color: '#EE4A49', fontSize: 12 }}>{data.fireCount}</Text>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 8 }}>
-                <Icon name='tooltip-text-outline' size={16} color='#08C8E7' />
-                <Text style={{ padding: 3, color: '#08C8E7', fontSize: 12 }}>2</Text>
+                <Icon name='tooltip-text-outline' size={15} color='#1F4073' />
+                <Text style={{ padding: 3, color: '#1F4073', fontSize: 12 }}>2</Text>
             </View>
         </TouchableOpacity>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>

@@ -31,8 +31,7 @@ const options = {
     },
     text: {
         fontSize: 10,
-        fontFamily: 'Leferi',
-        color: '#000',
+        color: '#151515',
         textAlignVertical: 'center'
     }
 }
