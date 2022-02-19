@@ -134,7 +134,7 @@ const MonthChart = ({timeData,style}) =>{
                     position:'absolute',
                     bottom:paddingBottom,
                     left:paddingLeft+idx*chartWidth/dayCount,
-                    width:chartWidth/dayCount*1.05,
+                    width:chartWidth/dayCount*0.95,
                     height:chartHeight*item,
                     backgroundColor:'#0000ff',
                     borderTopLeftRadius:chartWidth/dayCount*0.3,

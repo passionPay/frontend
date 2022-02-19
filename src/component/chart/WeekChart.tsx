@@ -53,15 +53,15 @@ const weekChartDefaultProps = {
         ],
 }
 
-const paddingTop =10
-const paddingBottom = 30
-const paddingLeft = 30
-const paddingRight = 60
+const PADDING_TOP =10
+const PADDING_BOTTOM = 30
+const PADDING_LEFT = 30+10
+const PADDING_RIGHT = 60+10
 
 const WeekChart = ({timeData,axisData,style}) =>{
     style = Object.assign({}, weekChartDefaultProps.style , style)
-    style.height = (style.height<paddingTop+paddingBottom) ? paddingTop+paddingBottom : style.height
-    style.width = (style.width<paddingLeft+paddingRight) ? paddingLeft+paddingRight : style.width
+    style.height = (style.height<PADDING_TOP+PADDING_BOTTOM) ? PADDING_TOP+PADDING_BOTTOM : style.height
+    style.width = (style.width<PADDING_LEFT+PADDING_RIGHT) ? PADDING_LEFT+PADDING_RIGHT : style.width
     // const maxTime = timeData.reduce((prev:any,cur:any)=>(prev.time>cur.time)?prev.time:cur.time,0)
     const maxTime = timeData.reduce((prev:any,cur:any)=>(prev>cur)?prev:cur)
     let scale =24
@@ -75,8 +75,8 @@ const WeekChart = ({timeData,axisData,style}) =>{
     else scale = 24
 
     const chartData = timeData.map((item)=>item/scale)
-    const chartHeight = style.height-(paddingTop+paddingBottom)
-    const chartWidth = style.width-(paddingLeft+paddingRight)
+    const chartHeight = style.height-(PADDING_TOP+PADDING_BOTTOM)
+    const chartWidth = style.width-(PADDING_LEFT+PADDING_RIGHT)
 
 
     return (
@@ -84,7 +84,7 @@ const WeekChart = ({timeData,axisData,style}) =>{
 
             <View style={{
                 position:'absolute',
-                bottom:paddingBottom,
+                bottom:PADDING_BOTTOM,
                 width:style.width,
                 height:1.5,
                 backgroundColor:'#0085FF',
@@ -93,7 +93,7 @@ const WeekChart = ({timeData,axisData,style}) =>{
 
            <View style={{
                 position:'absolute',
-                top:paddingTop-7,
+                top:PADDING_TOP-7,
                 width:'88%',
 
             }}>
@@ -104,7 +104,7 @@ const WeekChart = ({timeData,axisData,style}) =>{
 
             <View style={{
                 position:'absolute',
-                top:paddingTop+chartHeight/2-7,
+                top:PADDING_TOP+chartHeight/2-7,
                 width:'88%',
 
 
@@ -120,14 +120,14 @@ const WeekChart = ({timeData,axisData,style}) =>{
                 fontSize:style.width*0.03,
                 position:'absolute',
                 left:style.width*0.9,
-                top:paddingTop-7,
+                top:PADDING_TOP-7,
                 }} numberOfLines={1} ellipsizeMode='clip'>{`${scale.toString()}시간`}</Text>
             <Text style={{
 
                 fontSize:style.width*0.03,
                 position:'absolute',
                 left:style.width*0.9,
-                top:paddingTop+chartHeight/2-7,
+                top:PADDING_TOP+chartHeight/2-7,
                 }} numberOfLines={1} ellipsizeMode='clip'>{`${(scale/2).toString()}시간`}</Text>
 
 
@@ -136,8 +136,8 @@ const WeekChart = ({timeData,axisData,style}) =>{
                 colors={['#90C8FC','#0085FF']}  
                 style={{
                     position:'absolute',
-                    bottom:paddingBottom,
-                    left:paddingLeft+idx*2*chartWidth/13,
+                    bottom:PADDING_BOTTOM,
+                    left:PADDING_LEFT+idx*2*chartWidth/13,
                     width:chartWidth/13*1.3,
                     height:chartHeight*item,
                     backgroundColor:'#0000ff',
@@ -154,7 +154,7 @@ const WeekChart = ({timeData,axisData,style}) =>{
                     textAlign:'center',
                     fontSize:style.width*0.03,
                     position:'absolute',
-                    left:paddingLeft+idx*2*chartWidth/13-chartWidth*0.008,
+                    left:PADDING_LEFT+idx*2*chartWidth/13-chartWidth*0.008,
                     bottom:0
                     }}  ellipsizeMode='clip'>
                         {axisData[idx]}
