@@ -5,7 +5,7 @@ import moment from 'moment'
 import {DailyHistoryScreen,WeeklyHistoryScreen,MonthlyHistoryScreen} from './component/HistoryScreen'
 
 import WeekCalandar from './component/WeekCalandar'
-import MonthCalandar from './component/MonthCalandar'
+
 import WeekChart from '../component/chart/WeekChart'
 import MonthChart from '../component/chart/MonthChart'
 import ProgressBar from '../component/ProgressBar'

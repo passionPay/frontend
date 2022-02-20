@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useState} from 'react'
 import { TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView,StyleSheet, Text, View } from 'react-native'
 import {  TouchableIcon } from '../component/CustomComponent'
 
@@ -12,10 +12,44 @@ import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
 
+type ProfileDataType = {
+    member:MemberType,
+    date:string,
+
+}
+
+
+type MemberType = {
+    memberImage:string,
+    memberName:string,
+    followingCount:number,
+    followerCount:number,
+    postCount:number,
+    commentCount:number,
+    motto:string,
+}
+const initState :ProfileDataType = {
+    member:{
+        memberImage:'/',
+        memberName:'고달픈승구',
+        followingCount:100,
+        followerCount:1000,
+        postCount:10000,
+        commentCount:100000,
+        motto:'노력하는 자는 즐기는 자를 이기지 못한다.'
+    },
+    date:'2022-02-21',
+}
+
+
+
 
 export default function ProfileV2() {
     const navigation = useNavigation<any>()
     const studyHistory = useCallback(()=>navigation.navigate('StudyHistory'),[])
+    
+    const [data,setData] = useState(initState)
+    
     return (
         <SafeAreaView style={styles.safeContainer}>
 
@@ -28,12 +62,10 @@ export default function ProfileV2() {
                     <TouchableIcon iconProps={{style:[styles.headerIcon,{marginLeft:'auto'}], name:'bell-outline', size:25, color:'black'}}/>
                     <TouchableIcon iconProps={{style:[styles.headerIcon], name:'cog-outline', size:23, color:'black'}}/>
                 </View>
-                
-
-
             </View>
-            <ScrollView style={{flex:1,}} >
 
+
+            <ScrollView style={{flex:1,}} >
                 <View>
                     <View style={{flexDirection:'row',paddingHorizontal:'5%',paddingTop:'3%',paddingBottom:'3%'}}>
                         <View style={styles.profileContainer}>
