@@ -2,10 +2,10 @@ import React, {useCallback,useState} from 'react'
 import { TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView,StyleSheet, Text, View,  } from 'react-native'
 
 
-import MemberIcon from '../component/MemberIcon'
+import MemberIcon from '../../component/MemberIcon'
 
 
-import HistoryTabBar from './component/HistoryTabBar'
+import HistoryTabBar from './HistoryTabBar'
 
 
 import {useNavigation} from '@react-navigation/native'

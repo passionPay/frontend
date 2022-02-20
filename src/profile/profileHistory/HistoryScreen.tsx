@@ -6,9 +6,9 @@ import ProgressBar from '../../component/ProgressBar'
 import WeekChart from '../../component/chart/WeekChart'
 import MonthChart from '../../component/chart/MonthChart'
 
-import WeekCalander from './WeekCalandar'
+import WeekCalander from '../component/WeekCalandar'
 import { getTodayWeekValue } from '../dateManager'
-import {MonthSelectDropdown,WeekSelectDropdown,DateSelectDropdown} from './DateSelectDropdown'
+import {MonthSelectDropdown,WeekSelectDropdown,DateSelectDropdown} from '../component/DateSelectDropdown'
 
 const { width, height } = Dimensions.get('window')
 

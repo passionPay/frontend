@@ -1,8 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
 import Profile from './Profile'
-import ProfileV2 from './ProfileV2'
-import StudyHistory from './StudyHistory'
+import ProfileV2 from './profileMain/ProfileV2'
+import StudyHistory from './profileHistory/StudyHistory'
 
 export default function ProfileNavigator() {
     const Stack = createStackNavigator()
