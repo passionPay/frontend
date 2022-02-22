@@ -6,7 +6,7 @@ import Toast from 'react-native-simple-toast';
 
 
 
-const MissionItem = ({item,onRemove,onEndEditing}) =>{
+const MissionItem = ({item,state,onRemove,onEndEditing,onChangeText}) =>{
 
     const [input,setInput] = useState('')
     
@@ -16,10 +16,9 @@ const MissionItem = ({item,onRemove,onEndEditing}) =>{
         <View style={styles.row} >
             <TextInput 
                 style={styles.info}
-                value={input}
-                onChangeText={setInput}
+                value={state.groupMissions.find((mission)=>mission.id===item.id).value}
+                onChangeText={(text)=>onChangeText(item.id,text)}
                 placeholder ={'미션을 입력해주세요'}
-                onEndEditing={() => {console.log(`onEndEditing ${item.id}`); onEndEditing(item.id,input)}}
             />
             <TouchableIcon 
                 onPress ={()=>onRemove(item,setInput)}
@@ -29,8 +28,9 @@ const MissionItem = ({item,onRemove,onEndEditing}) =>{
     )
 }
 
-const MakeMission = ({missions,dispatch}) => {
+const MakeMission = ({state,dispatch}) => {
     
+
     
     const nextId = useRef(2)
 
@@ -38,20 +38,29 @@ const MakeMission = ({missions,dispatch}) => {
     const onEndEditing = useCallback((id,input)=>{
         dispatch({
             type:'CHANGE_INPUT',
-            name:'missions',
-            value: missions.map(mission =>
+            name:'groupMissions',
+            value: state.groupMissions.map(mission =>
                 mission.id === id ? { ...mission, value: input } : mission
             )
         })
-    },[missions,dispatch])
+    },[state,dispatch])
+    const onChangeText = useCallback((id,text)=>{
+        dispatch({
+            type:'CHANGE_INPUT',
+            name:'groupMissions',
+            value: state.groupMissions.map(mission =>
+                mission.id === id ? { ...mission, value: text } : mission
+            )
+        })
+    },[state,dispatch])
 
     const onCreate = useCallback(()=>{
-        if (missions.length>=5){
+        if (state.groupMissions.length>=5){
             // notifyMessage('미션은 최대 5개까지 생성할 수 있어요')
             Toast.show('미션은 최대 5개까지 생성할 수 있어요',Toast.SHORT)
             return
         }
-        if (missions.some((item)=>item.value==='')){
+        if (state.groupMissions.some((item)=>item.value==='')){
             Toast.show('빈 칸에 미션을 입력한 후 새 미션을 추가해주세요',Toast.SHORT)
             return
         }
@@ -61,36 +70,34 @@ const MakeMission = ({missions,dispatch}) => {
         }
         dispatch({
             type:'CHANGE_INPUT',
-            name:'missions',
-            value:[...missions,newMission]
+            name:'groupMissions',
+            value:[...state.groupMissions,newMission]
         })
         nextId.current+=1
-    },[missions,dispatch])
+    },[state.groupMissions,dispatch])
 
     const onRemove = useCallback((item,setInput)=>{
-        if (missions.length<2){
+        if (state.groupMissions.length<2){
             console.log('cannot delete')
             Toast.show('미션을 하나 이상 입력해주세요')
-
             setInput('')
             return
         }
         dispatch({
             type:'CHANGE_INPUT',
-            name:'missions',
-            value:missions.filter((mission:{id:number,value:string})=> {
+            name:'groupMissions',
+            value:state.groupMissions.filter((mission:{id:number,value:string})=> {
                 return mission.id!==item.id})
         })
-    },[missions,dispatch])
+    },[state,dispatch])
 
-    useEffect(()=>{
-        console.log(missions)
-    },[missions])
+    
+
     return(
         <>
             <Text style={[styles.tag, { paddingTop:50,paddingBottom: 15 }]}>미션</Text>
-            {missions.map((item,idx)=>
-                <MissionItem item={item} key={idx} onRemove = {onRemove} onEndEditing={onEndEditing} />
+            {state.groupMissions.map((item,idx)=>
+                <MissionItem item={item} state={state} key={idx} onRemove = {onRemove} onEndEditing={onEndEditing} onChangeText={onChangeText} />
             )}
             <TouchableIcon 
                 style={{justifyContent:'center'}}

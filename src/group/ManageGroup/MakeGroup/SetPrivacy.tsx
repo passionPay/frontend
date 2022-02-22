@@ -5,13 +5,13 @@ import {ScrollView,TextInput, TouchableOpacity, SafeAreaView,View,Dimensions,Sty
 const { width, height } = Dimensions.get('window')
 
 
-const MakePrivacy = ({privacy,dispatch})=>{
+const MakePrivacy = ({state,dispatch})=>{
 
-    const setPrivacy = useCallback((privacy) =>{
+    const setPrivacy = useCallback((groupPrivacy) =>{
         dispatch({
             type:'CHANGE_INPUT',
-            name:'privacy',
-            value:privacy,
+            name:'groupPrivacy',
+            value:groupPrivacy,
         })
     },[dispatch])
 
@@ -20,23 +20,32 @@ const MakePrivacy = ({privacy,dispatch})=>{
             <Text style={[styles.tag, { paddingTop:20,paddingBottom: 15 }]}>공개 여부</Text>
                 <View style={{flexDirection:'row',justifyContent:'space-around',paddingBottom:15}}>
                     <TouchableOpacity 
-                        style={[styles.selectButton,privacy?{}:{backgroundColor:'#7EBEF9'}]}
-                        onPress ={()=>setPrivacy(false)}>
-                        <Text style={[privacy?{}:{color:'white'}]}>공개</Text>
+                        style={[styles.selectButton,state.groupPrivacy?{}:{backgroundColor:'#7EBEF9'}]}
+                        onPress ={()=>{
+                            setPrivacy(false)
+                            dispatch({
+                                type:'CHANGE_INPUT',
+                                name:'groupPassword',
+                                value:'',
+                            })
+                        }}>
+                        <Text style={[state.groupPrivacy?{}:{color:'white'}]}>공개</Text>
                     </TouchableOpacity>
                     <TouchableOpacity 
-                        style={[styles.selectButton,privacy?{backgroundColor:'#7EBEF9',borderColor:'blue'}:{}]}
+                        style={[styles.selectButton,state.groupPrivacy?{backgroundColor:'#7EBEF9',borderColor:'blue'}:{}]}
                         onPress={()=>setPrivacy(true)}>
-                        <Text style={[privacy?{color:'white'}:{}]}>비공개</Text>
+                        <Text style={[state.groupPrivacy?{color:'white'}:{}]}>비공개</Text>
                     </TouchableOpacity>
                 </View>
-                {privacy&&
+                {state.groupPrivacy &&
                     <View style={styles.row} >
                     <TextInput style={styles.info} keyboardType='numeric'
+                            onChangeText={(text)=>{dispatch({type:'CHANGE_INPUT',name:'groupPassword',value:text})}}
                             placeholder ={'그룹 비밀번호를 설정해주세요.'}
                     />
                     </View>
                 }
+        
         </>
     )
 }

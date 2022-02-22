@@ -31,7 +31,7 @@ const SetTimeGoal = ({state,dispatch})=>{
         }
         dispatch({
             type:'CHANGE_INPUT',
-            name:'timeGoal',
+            name:'groupTimeGoal',
             value:hourValue*60*60*1000+minuteValue*60*1000
         })
     },[hourValue,minuteValue,dispatch])

@@ -1,28 +1,31 @@
-import React, {useCallback,useState,useReducer} from 'react'
+import React, {useCallback,useState,useEffect,useReducer} from 'react'
 import {ScrollView,TextInput, TouchableOpacity, SafeAreaView,View,Dimensions,StyleSheet,Text} from 'react-native'
 import {useNavigation} from '@react-navigation/native'
+import Toast from 'react-native-simple-toast';
 
-import CommonInput from './CommonInput'
+
+import {CommonInput,NumericInput} from './CommonInput'
 import SetTimeGoal from './SetTimeGoal'
 import SetMission from './SetMission'
 import SetPrivacy from './SetPrivacy'
 
-import { State } from 'react-native-gesture-handler'
+
 
 
 const { width, height } = Dimensions.get('window')
 
 type StateType = {
-    title:string,
-    description:string,
-    timeGoal:string,
-    headCount:string,
-    missions:{
+    groupTitle:string,
+    groupDescription:string,
+    groupTimeGoal:number,
+    maxMember:number,
+    groupMissions:{
         value:string,
         id:number,
     }[],
 
-    privacy:boolean,
+    groupPrivacy:boolean,
+    groupPassword:string|undefined,
 }
 type ActionType= {
     type:'CHANGE_INPUT',
@@ -30,17 +33,18 @@ type ActionType= {
     value:any,
 }
 const initState : StateType ={
-    title: '',
-    description:'',
-    timeGoal:'',
-    headCount:'',
-    missions:[
+    groupTitle: '',
+    groupDescription:'',
+    groupTimeGoal:0,
+    maxMember:0,
+    groupMissions:[
         {
             value:'',
             id:1,
         },
     ],
-    privacy:false,
+    groupPrivacy:false,
+    groupPassword:undefined
 }  
 const reducer = (state:StateType,action:ActionType) :StateType => {
     switch (action.type) {
@@ -54,6 +58,40 @@ const reducer = (state:StateType,action:ActionType) :StateType => {
 }
 
 
+const checkValidInput =(state:StateType) : boolean|string =>{
+    if (state.groupTitle===''){
+        return '그룹 이름을 입력해주세요'
+    }
+    if (state.groupDescription===''){
+        return '그룹 소개를 입력해주세요'
+    }
+    if (state.maxMember===0 || isNaN(state.maxMember)){
+        return '인원을 입력해주세요'
+    }else if (state.maxMember<2 || state.maxMember>100){
+        return '2명 ~ 100명 사이의 인원을 입력해주세요'
+    }
+    if (state.groupTimeGoal===0){
+        return '목표 시간을 입력해주세요'
+    }
+    if (state.groupMissions.every((item)=>item.value==='')){
+        return '그룹 미션을 하나 이상 입력해주세요'
+    }
+    if (state.groupPrivacy && (typeof(state.groupPassword) === 'undefined' || state.groupPassword==='')){
+        return '비밀번호를 입력해주세요'
+    }
+
+    return true
+}
+const makeGroupSubmit = (state:StateType) :void=>{
+    const validity = checkValidInput(state)
+    if (validity===true){
+        Toast.show(validity.toString())
+        
+    }else{
+        Toast.show(validity.toString())
+    }
+}
+
 
 const MakeGroup = () => {
 
@@ -61,9 +99,9 @@ const MakeGroup = () => {
     const goBack = useCallback(()=>navigation.goBack(),[])
     
     const [state,dispatch] = useReducer(reducer,initState)
-
-
-
+    useEffect(()=>{
+        console.log(state)
+    },[state])
     return (
     <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
@@ -77,24 +115,23 @@ const MakeGroup = () => {
             <Text style={styles.title}>그룹 만들기</Text>
             <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
                 <View style={{ borderTopLeftRadius: 30, borderTopRightRadius: 30, flex: 1 }}>
-                    <CommonInput state={state} dispatch={dispatch} tagName='그룹 이름' stateName='title'
+                    <CommonInput state={state} dispatch={dispatch} tagName='그룹 이름' stateName='groupTitle'
                         placeholder ={'그룹 이름을 입력해주세요'}
 
                     /> 
-                    <CommonInput state={state} dispatch={dispatch} tagName='그룹 소개' stateName='description'
+                    <CommonInput state={state} dispatch={dispatch} tagName='그룹 소개' stateName='groupDescription'
                         placeholder ={'그룹 소개를 입력해주세요'}
                     />
-                    <CommonInput state={state} dispatch={dispatch} tagName='인원' stateName='headCount' 
-                        placeholder ={'최소 2명 ~ 최대 100명'} keyboardType='numeric'
+                    <NumericInput state={state} dispatch={dispatch} tagName='인원' stateName='maxMember' 
+                        placeholder ={'최소 2명 ~ 최대 100명'} 
                     />
-
                     <SetTimeGoal state={state} dispatch={dispatch} />
-                    <SetMission missions={state.missions} dispatch={dispatch}/>
-                    <SetPrivacy privacy={state.privacy} dispatch={dispatch}/>
+                    <SetMission state={state} dispatch={dispatch}/>
+                    <SetPrivacy state={state} dispatch={dispatch}/>
                     
-                    
-
-                    <TouchableOpacity style={[styles.selectButton,{alignSelf:'center',marginTop:30}]}>
+                    <TouchableOpacity 
+                        onPress={()=>makeGroupSubmit(state)}
+                        style={[styles.selectButton,{alignSelf:'center',marginTop:30}]}>
                             <Text style={{fontSize:14}}>그룹 만들기</Text>
                     </TouchableOpacity>
                 </View>

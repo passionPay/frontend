@@ -1,8 +1,10 @@
+import { DrawerContentScrollView } from '@react-navigation/drawer'
 import React, {useCallback,useEffect,useRef,useState} from 'react'
 import {View,Text,TouchableOpacity,TextInput,Dimensions,StyleSheet} from 'react-native'
 
 //props here is textProps
 const CommonInput = ({state,dispatch,stateName,tagName,...props})=>{
+
     return(
     <>
         <View style={styles.row}>
@@ -15,8 +17,29 @@ const CommonInput = ({state,dispatch,stateName,tagName,...props})=>{
     </>
     )
 }
+const NumericInput = ({state,dispatch,stateName,tagName,...props})=>{
+    
+    const [input,setInput]= useState('')
 
-export default CommonInput
+    useEffect(()=>{
+        dispatch({type:'CHANGE_INPUT',name:stateName,value:parseInt(input)})
+    },[input])
+
+    return(
+    <>
+        <View style={styles.row}>
+            <Text style={styles.tag}>{tagName}</Text>
+            <TextInput style={styles.info} value={input}
+                onChangeText={setInput}
+                keyboardType='numeric'
+                {...props}
+            />
+        </View>
+    </>
+    )
+}
+
+export {CommonInput,NumericInput}
 
 const styles=StyleSheet.create({
     tag: {
