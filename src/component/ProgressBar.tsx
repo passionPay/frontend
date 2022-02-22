@@ -36,17 +36,19 @@ const defaultProps = {
 const ProgressBar = ({style,progress,hasIndicator}) =>{
     style = Object.assign({}, defaultProps.style , style)
     const {width,height,} = style
-    const barWidth = hasIndicator ? width-height*1.5 : width
-
+    style.width = hasIndicator ? width-height*1.5 : width
+    
     
 
     const mainBar = (
-        <View style={{width : barWidth,height,backgroundColor:'#C4C4C4',borderRadius:height/2}}>
-            <LinearGradient start={{x:0,y:1}} end ={{x:1,y:1}} 
-                colors={['#0085FF','#90C8FC',]}  
-                style={{width:barWidth*progress,height,backgroundColor:'#65B5FF',borderRadius:height/2}}
-                >
-            </LinearGradient>
+        <View style={style}>
+            <View style={[{backgroundColor:'#C4C4C4',borderRadius:height/2}]}>
+                <LinearGradient start={{x:0,y:1}} end ={{x:1,y:1}} 
+                    colors={['#0085FF','#90C8FC',]}  
+                    style={{width:style.width*progress,height,backgroundColor:'#65B5FF',borderRadius:height/2}}
+                    >
+                </LinearGradient>
+            </View>
         </View>
     )
     
@@ -55,18 +57,19 @@ const ProgressBar = ({style,progress,hasIndicator}) =>{
         hasIndicator?
         <View style={{width:'100%', alignItems:'center', justifyContent:'center'}}> 
             <View style={{width,height:height*7,position:'relative', justifyContent:'flex-end',paddingBottom:height*2,paddingRight:height*1.5}}>
-                <Triangle width={height*0.75} color = {'#90C8FC'} style= {{position:'absolute', top : height*2,left:barWidth*progress-height, }}/>
+                <Triangle width={height*0.75} color = {'#90C8FC'} style= {{position:'absolute', top : height*2,left:style.width*progress-height, }}/>
                 {mainBar}
-                <Text style={{fontSize:height*1.5, position:'absolute', top:0, left:barWidth*progress-height*2}}>{`${progress*100}%`}</Text>
-                <Text style={{fontSize:height*1.5, position:'absolute', bottom:0, left:barWidth-height*2}}>{`100%`}</Text>
+                <Text style={{fontSize:height*1.2, position:'absolute', top:0, left:style.width*progress-height*1.5}}>{`${progress*100}%`}</Text>
+                <Text style={{fontSize:height*1.2, position:'absolute', bottom:0, left:style.width-height*2}}>{`100%`}</Text>
         
             </View>
         </View>
         
         :
-        <>
-        {mainBar}
-        </>    
+        <View style={{width:'100%', alignItems:'center', justifyContent:'center'}}> 
+            {mainBar}
+        </View>
+        
     )
 }
 

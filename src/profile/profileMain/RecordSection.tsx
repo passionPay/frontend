@@ -26,7 +26,8 @@ const RecordSection= ()=>{
                     style={{
                         marginHorizontal:width*0.05,
                         height:150,
-                        width:width*0.9}}/>
+                        width:width*0.83,
+                        alignSelf:'center'}}/>
             </View>
 
                     

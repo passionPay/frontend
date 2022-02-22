@@ -23,20 +23,24 @@ const styles = StyleSheet.create({
             ios: {
                 shadowColor: "#000",
                 shadowOffset: {
-                    width: 0.1,
-                    height: 0.1,
+                    width: 0,
+                    height: 1,
                 },
-                shadowOpacity: 0.25,
+                shadowOpacity: 0.02,
             },
             android: {
-                elevation: 3, 
+                elevation: 0.05, 
             },
         }
     )
     },
    searchBox:{
         marginHorizontal:5,
-        width: '97%',
+        // width: '97%',
+        width: width*0.85,
+        alignSelf:'center',
+        borderWidth:1.3,
+        borderColor :'#c4c4c4',
         marginTop:height*0.015,
         marginBottom:height*0.005,
         backgroundColor:'#F4FAFF',

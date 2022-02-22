@@ -1,22 +1,55 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import { Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
+import {useNavigation} from '@react-navigation/native'
+
+import MakeGroup from './ManageGroup/MakeGroup/MakeGroup'
 import MyGroupCard from './component/GroupMain/MyGroupCard'
 import OtherGroupCard from './component/GroupMain/OtherGroupCard'
 import SearchBar from './component/SearchBar'
-
+import {TouchableIcon} from '../component/TouchableIcon'
 const { width, height } = Dimensions.get('window')
 
 
 export default function Group() {
+
+    const navigation = useNavigation<any>()
+    const makeGroup = useCallback(()=>navigation.navigate('MakeGroup'),[])
+
     return (
     <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
-            <Text style={styles.title}>함께 공부하기</Text>
+        <View style={styles.header}>
+                <View>
+                    <Text style={styles.titleText}>Study Group</Text>
+                </View>
+                <View style={{flexDirection:'row'}}>
+                    <TouchableIcon 
+                        onPress={makeGroup}
+                        iconProps={{style:[styles.headerIcon,{marginLeft:'auto'}], name:'plus', size:25, color:'black'}}/>
+                    <TouchableIcon iconProps={{style:[styles.headerIcon,{marginLeft:'auto'}], name:'bell-outline', size:25, color:'black'}}/>
+                    <TouchableIcon iconProps={{style:[styles.headerIcon], name:'cog-outline', size:23, color:'black'}}
+                        style={{
+                            marginRight:width*0.03,
+                        }}
+                    />
+                </View>
+        </View>
             
-        <ScrollView> 
+        <ScrollView 
+            style={{
+                // paddingBottom:height*0.5,
+            }}
+            showsVerticalScrollIndicator={false}> 
+
+            
             <View style={styles.myGroups}>
                 <Text style={styles.groupTitle}>내 스터디 그룹</Text>
-                <ScrollView horizontal={true}  showsHorizontalScrollIndicator={false}>
+                <ScrollView 
+                    horizontal={true}  
+                    showsHorizontalScrollIndicator={false}
+                    style={{
+                        paddingLeft:width*0.05,
+                    }}>
                     <MyGroupCard/>
                     <MyGroupCard/>
                     <MyGroupCard/>
@@ -50,13 +83,31 @@ const styles = StyleSheet.create({
     },
 
     container:{
+        flex:1,
         paddingHorizontal: '5%',
-        paddingTop: height*0.05,
+
 
 
     },
+
+    header:{
+        height:60,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between'
+    },
+    titleText: {
+        fontSize: 18,
+        fontFamily: 'GodoM',
+        color: '#000',
+    },
+    headerIcon:{
+        paddingLeft:10,
+    },
+    
+
     title: {
-        fontSize: 24,
+        fontSize: 18,
         fontFamily: 'GodoM',
         color: '#000',
         marginBottom:height*0.02,
@@ -67,10 +118,10 @@ const styles = StyleSheet.create({
 
     },
     groupTitle: {
-        fontSize: 17,
+        fontSize: 15,
         fontFamily: 'GodoM',
         color: '#484848',
-        marginTop: 5,
+        marginTop: 0,
     },
     image: {
         width: 60, height: 60, borderWidth: 1,

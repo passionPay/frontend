@@ -1,7 +1,7 @@
 import React from 'react'
 import { Platform,Dimensions,StyleSheet, View, Image,Text,ScrollView ,TouchableOpacity} from 'react-native'
 
-
+import ProgressBar from '../../../component/ProgressBar';
 const { width, height } = Dimensions.get('window')
 
 
@@ -17,29 +17,27 @@ const OtherGroupCard = () => {
                 {currentData.content}</Text>
             <View>
                 <View style={styles.groupTime}>
-                    <Text style={{fontSize:10, }}>그룹 평균 공부시간</Text>
-                    <Text style={{fontSize:10, fontWeight:'700', marginLeft:15}}>11:22:33</Text>
+                    <Text style={{fontSize:12, }}>그룹 평균 공부시간</Text>
+                    <Text style={{fontSize:12, fontWeight:'700', marginLeft:15}}>11:22:33</Text>
                 </View>
-                <View style={styles.groupTime}>
-                    <Text style={{fontSize:10, }}>그룹 평균 공부시간</Text>
-                    <Text style={{fontSize:10, fontWeight:'700', marginLeft:15}}>11:22:33</Text>
-                </View>
+
             </View>
             <View>
                 <View style={styles.progressBarContainer}>
                     <Text style={styles.progressText}>평균 목표 달성률(시간)</Text>
-                    <View style={styles.progressBar}>
-                    </View>
+                    <ProgressBar hasIndicator={false} style={styles.progressBar}/>
                 </View>
                 <View style={styles.progressBarContainer}>
                     <Text style={styles.progressText}>평균 목표 달성률(미션)</Text>
+                    <ProgressBar hasIndicator={false} style={styles.progressBar}/>
 
-                    <View style={styles.progressBar}>
-                    </View>
                 </View>
             </View>
-            <View>
-                <Text style={styles.mission}>{`${currentData.firstMission} 외 목표 ${currentData.missionCount-1}개`}</Text>
+            <View style={styles.groupMissionContainer}>
+                <View style={{paddingTop:0, paddingRight:3}}>
+                    <Image style={{width:10,height:10}}source={require('../../../../images/group/trophy.png')} />
+                </View>
+                    <Text style={styles.mission}>{`${currentData.firstMission} 외 목표 ${currentData.missionCount-1}개`}</Text>
             </View>
             
         </TouchableOpacity>
@@ -52,53 +50,57 @@ export default OtherGroupCard
 
 const styles = StyleSheet.create({
     cardView: {
-        
-        width: '97%',
-        marginHorizontal:5,
+        width: width*0.85,
+        borderWidth:1.3,
+        borderColor :'#c4c4c4',
         borderRadius: 10, 
-        marginTop:15,
-        borderWidth: 0,
-        backgroundColor:'#f9f9f9',
-        paddingVertical: 30, paddingHorizontal: 20,
+        marginTop:10,
+
+        backgroundColor:'#ffffff',
+        paddingTop: 20, paddingBottom :15, paddingHorizontal: 20,
         flex:1,
-        // backgroundColor:'#E5E5E5',
+        
+        alignSelf:'center',
     },
     shadow:{
         ...Platform.select({
             ios: {
                 shadowColor: "#000",
                 shadowOffset: {
-                    width: 0.1,
-                    height: 0.1,
+                    width: 0,
+                    height: 1,
                 },
-                shadowOpacity: 0.25,
+                shadowOpacity: 0.02,
             },
             android: {
-                elevation: 3, 
+                elevation: 0.05, 
             },
         }
     )
     },
     title:{
-        fontSize: 17, paddingBottom: 5, fontFamily: 'GodoM',
+        fontFamily: 'GodoM',
+        fontSize: 15, paddingBottom: 10, fontWeight: '500',
     },
     content:{
-        fontSize: 14, paddingBottom: 5, marginBottom: 'auto',
+        textAlign:'center',
+        fontWeight: 'normal',
+        fontSize: 12, paddingBottom: 8, marginBottom: 'auto',
     },
     groupTime:{
         flex: 1,
         flexDirection: 'row',
-        paddingTop:10,
+        justifyContent:'center',
+        marginBottom:20,
     },
     progressBarContainer:{
         marginTop:1,
         marginBottom: 3,
     },
     progressBar:{
+        width:width*0.75,
         height:3,
-        
-        // backgroundColor:'#0085FF',
-        backgroundColor:'#000000',
+        backgroundColor:'#0085FF',
     },
     progressText:{
         fontSize: 9,
@@ -106,8 +108,15 @@ const styles = StyleSheet.create({
         alignSelf:'flex-end',
     },
     mission:{
-        fontSize: 10
+        fontFamily: 'GodoM',
+        fontSize: 10,
     },
+    groupMissionContainer:{
+        marginTop:8,
+        paddingTop:3, 
+        flexDirection:'row', 
+        alignItems:'center'
+    }
 })
 
 

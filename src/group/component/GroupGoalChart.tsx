@@ -24,12 +24,12 @@ const GroupGoalChart = () =>{
             <View style={chartStyles.legendContainer}>
                 <View style={{flexDirection:'row'}}>
                     <LinearGradient style={chartStyles.legendBar} start={{ x: 0, y: 1 }} end={{ x: 1, y: 1 }} colors={["#0085FF","#90C8FC", ]}></LinearGradient>
-                    <Text style={{fontSize:13}}>내 목표 달성률</Text>
+                    <Text style={{fontSize:12}}>내 목표 달성률</Text>
                 </View>
                 
                 <View style={{flexDirection:'row'}}>
                     <LinearGradient style={chartStyles.legendBar} start={{ x: 0, y: 1 }} end={{ x: 1, y: 1 }} colors={["#000000","#BCBCBC", ]}></LinearGradient>
-                    <Text style={{fontSize:13}}>그룹 평균 목표 달성률</Text>
+                    <Text style={{fontSize:12}}>그룹 평균 목표 달성률</Text>
                 </View>
             </View>
             <View style={chartStyles.chartContainer}>
@@ -50,8 +50,8 @@ const GroupGoalChart = () =>{
             </View>
 
             <View style={{flexDirection:'row', justifyContent:'space-evenly', paddingTop:5, height:50,}}>
-                <Text style={{fontSize:13,textAlign:'center',flex:1}}>목표달성률{'\n'}(시간)</Text>
-                <Text style={{fontSize:13, textAlign:'center',flex:1}}>목표달성률{'\n'}(미션)</Text>
+                <Text style={{fontSize:11,textAlign:'center',flex:1}}>목표달성률{'\n'}(시간)</Text>
+                <Text style={{fontSize:11, textAlign:'center',flex:1}}>목표달성률{'\n'}(미션)</Text>
             </View>
             
         </View>

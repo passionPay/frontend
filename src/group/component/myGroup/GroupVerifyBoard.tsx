@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native'
 
 
 import VerifyItem from './VerifyItem'
-
+import TitleWithSeeMore from '../../../component/TitleWithSeeMore'
 const { width, height } = Dimensions.get('window')
 
 
@@ -12,23 +12,19 @@ const GroupVerifyBoard = () =>{
     const navigation = useNavigation<any>()
     const myGroupVBoard = useCallback(()=>navigation.navigate('MyGroupVBoard'),[])
 
-    return (<View style={styles.mainContainer}>
-        <View style={styles.subtitleContainer}>
-            <Text style={styles.titleText}>인증게시판</Text>
-            <TouchableOpacity style={{
-                marginLeft:'auto', marginRight:10, marginBottom:2,
-                alignSelf:'flex-end'
-                }}
-                onPress={myGroupVBoard}
-                >
-                <Text style={styles.seeMore}>게시글 더보기 &gt;</Text>
-            </TouchableOpacity>
+    return (
+        <View style={styles.mainContainer}>
+            <TitleWithSeeMore 
+                        style={styles.subtitleContainer}
+                        titleStyle={styles.titleText}
+                        seeMoreStyle={styles.seeMore}
+                        title={'인증게시판'} seeMore={'게시글 더보기 >'} 
+                        seeMoreNavFunc={myGroupVBoard} />
+            
+            <VerifyItem hasPhoto/>
+            <VerifyItem/>
         </View>
-        <VerifyItem hasPhoto/>
-        <VerifyItem/>
-
-
-    </View>)
+    )
 }
 
 export default GroupVerifyBoard
@@ -58,10 +54,11 @@ const styles = StyleSheet.create({
 
     },
     titleText:{
-        fontSize: 20,
+        fontSize: 15,
         fontFamily: 'GodoM',
     },
     seeMore:{
+        fontSize:13,
         color:'#7EBEF9',
         fontFamily:'GodoM',
         fontWeight:'bold',

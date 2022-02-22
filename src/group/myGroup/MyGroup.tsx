@@ -2,8 +2,14 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
-import GroupGoalChart from './component/GroupGoalChart'
-import GroupGoalLineChart from './component/GroupGoalLineChart'
+
+import NoticeBoard from '../component/myGroup/NoticeBoard'
+import GroupOnlineMembers from '../component/myGroup/GroupOnlineMembers'
+import GroupSummary from '../component/myGroup/GroupSummary'
+import GroupTodayKing from '../component/myGroup/GroupTodayKing'
+import GroupVerifyBoard from '../component/myGroup/GroupVerifyBoard'
+
+
 
 const { width, height } = Dimensions.get('window')
 
@@ -21,7 +27,8 @@ const data ={
 }
 
 
-export default function MyGroupStat() {
+export default function MyGroup() {
+
 
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
@@ -31,22 +38,23 @@ export default function MyGroupStat() {
         <View style={styles.container}>
 
             <TouchableOpacity style={styles.header} onPress={goBack}>
-                <Text style={{fontSize: 17,
+                <Text style={{fontSize: 13,
                             fontFamily: 'GodoM',
                             color: '#9F9F9F',
                             // backgroundColor:'#000000'
                             
                             }} >
-                &lt; 3학년 1반 국어스터디 </Text>
-                </TouchableOpacity>
-            <Text style={styles.title}>그룹 통계</Text>
+                &lt; 스터디 그룹 </Text>
+            </TouchableOpacity>
+            <Text style={styles.title}>{data.groupName}</Text>
 
-            <ScrollView showsVerticalScrollIndicator={false}> 
-                <Text style={styles.subtitleText}>일간 리포트</Text>
-                <GroupGoalChart/>
-                <Text style={styles.subtitleText}>주간 리포트</Text>
-
-                <GroupGoalLineChart/>
+            <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}> 
+                <Text style={styles.groupDescription}>{data.groupDescription}</Text>
+                <NoticeBoard/>
+                <GroupOnlineMembers/>
+                <GroupSummary/>
+                <GroupVerifyBoard/>
+                <GroupTodayKing/>
             </ScrollView>
             
         </View>
@@ -74,13 +82,11 @@ const styles = StyleSheet.create({
     )},
     header:{
 
-        height:60,
-
-        // backgroundColor:'#ff0000',
+        height:50,
+        width:100,
         justifyContent:'center',
         alignSelf:'baseline',
-
-
+        // flexDirection:'row',
     },
     safeContainer: {
         flex: 1,
@@ -88,26 +94,25 @@ const styles = StyleSheet.create({
     },
     container:{
         flex:1,
-        paddingHorizontal: '5%',
+        paddingHorizontal: width*0.05,
     },
     title: {
-        fontSize: 24,
+        fontSize: 18,
         fontFamily: 'GodoM',
         color: '#000',
         marginBottom:height*0.02,
         
     },
-
+    myGroups:{
+        paddingTop: height*0.02,
+    },
     groupDescription: {
-        fontSize: 17,
-        fontFamily: 'GodoM',
+        fontSize: 14,
+
         color: '#484848',
-        marginTop: width*0.05,
+
     },
-    subtitleText:{
-        fontSize: 20,
-        fontFamily: 'GodoM',
-    },
+    
 
 })
 

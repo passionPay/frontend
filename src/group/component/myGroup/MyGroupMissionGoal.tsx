@@ -12,17 +12,17 @@ const MissionProgress = ()=>{
         <View style={styles.subContainer}>
             <Text style={(width*0.04<20)?styles.subtitleTextSmall:styles.subtitleText}>5개 중 2개의 미션 완료</Text>
             <View>
-                <ProgressBar style={{width:width*0.82, height:7,paddingHorizontal:width*0.01}} progress={1} hasIndicator/>
+                <ProgressBar style={{width:width*0.82, height:7,paddingHorizontal:width*0.01}} progress={0.5} hasIndicator/>
             </View>
         </View>
     )
 }
 
-const MissionItem = () =>{
+const MissionItem = ({hasCompleted=false}) =>{
     return(
         <TouchableOpacity style={missionItemStyles.mainContainer}>
-            <Image style={{marginLeft:15,width:30,height:30}}source={require('../../../../images/group/trophy.png')} />
-            <Text numberOfLines={2} style={{ marginHorizontal:5, textAlign:'center', flex:1}}> 하루 3시간 이상 국어 공부adddddddddddsdfsdfweafwefeffawfaweasfadsfsaewf하기</Text>
+            <Image style={{marginLeft:15,width:25,height:25}}source={require('../../../../images/group/trophy.png')} />
+            <Text numberOfLines={2} style={{ fontSize:12,marginHorizontal:5, textAlign:'center', flex:1}}> 하루 3시간 이상 국어 공부adddddddddddsdfsdfweafwefeffawfaweasfadsfsaewf하기</Text>
             <TouchableOpacity style={{marginRight:15, width:20,height:20,borderWidth:1,borderRadius:5}}></TouchableOpacity>
         </TouchableOpacity>
     )

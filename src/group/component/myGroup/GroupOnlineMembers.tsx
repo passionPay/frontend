@@ -13,15 +13,15 @@ const Members = () =>{
                 <Text style={styles.memberTitleText}>공부 중인 친구들</Text>
 
                 <ScrollView style={styles.memberScrollContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
-                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
-                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
-                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
-                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
-                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
-                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
-                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
-                    <MemberIcon size={60} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={50} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={50} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={50} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={50} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={50} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={50} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={50} margin={width*0.03} isOnline touchable/>
+                    <MemberIcon size={50} margin={width*0.03} isOnline touchable/>
+
                 </ScrollView>
             </View>
     )
@@ -31,18 +31,24 @@ export default Members
 
 const styles = StyleSheet.create({
     mainContainer:{
-        paddingTop:height*0.04,
+        marginTop:height*0.04,
+
     },
     memberScrollContainer:{
-        paddingTop:height*0.015,
+        marginTop:height*0.01,
+        paddingVertical:height*0.02,
+        backgroundColor:'#f9f9f9',
+        borderRadius:10,
+        borderWidth:0.5,
+        borderColor:'#c4c4c4'
     },
     memberImage:{
-        width: 40, height: 40,
+        width: 35, height: 35,
         borderRadius: 20,
         // backgroundColor: '#ddd',
     },
     memberTitleText:{
-        fontSize: 20,
+        fontSize: 15,
         fontFamily: 'GodoM',
     },
     memberImageContainer:{

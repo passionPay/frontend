@@ -2,6 +2,7 @@ import React, {useCallback} from 'react'
 import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 import RankItem from './RankItem'
+import TitleWithSeeMore from '../../../component/TitleWithSeeMore'
 
 const { width, height } = Dimensions.get('window')
 
@@ -20,16 +21,12 @@ const GroupTodayKing =()=>{
     return (
     <>
         <View style={styles.mainContainer}>
-            <View style={styles.subtitleContainer}>
-                <Text style={styles.titleText}>오늘의 공부왕</Text>
-                <TouchableOpacity style={{
-                    marginLeft:'auto', marginRight:10, marginBottom:2,
-                    alignSelf:'flex-end'
-                    }}
-                    onPress={myGroupRank}>
-                    <Text style={styles.seeMore}>랭킹 더보기 &gt;</Text>
-                </TouchableOpacity>
-            </View>
+            <TitleWithSeeMore 
+                        style={styles.subtitleContainer}
+                        titleStyle={styles.titleText}
+                        seeMoreStyle={styles.seeMore}
+                        title={'오늘의 공부왕'} seeMore={'랭킹 더보기 >'} 
+                        seeMoreNavFunc={myGroupRank} />
             <RankItem data={data}/>
             <RankItem data={data}/>
             <RankItem data={data}/>
@@ -65,10 +62,12 @@ const styles = StyleSheet.create({
         paddingBottom:10,
     },
     titleText:{
-        fontSize: 20,
+        fontSize: 15,
         fontFamily: 'GodoM',
     },
     seeMore:{
+        fontSize: 13,
+
         color:'#7EBEF9',
         fontFamily:'GodoM',
         fontWeight:'bold',

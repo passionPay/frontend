@@ -1,8 +1,12 @@
 import React, {useCallback} from 'react'
 import { Platform,Dimensions,StyleSheet, View, Image,Text,ScrollView ,TouchableOpacity} from 'react-native'
 import {useNavigation} from '@react-navigation/native'
+
 import MemberIcon from '../../../component/MemberIcon';
+import ProgressBar from '../../../component/ProgressBar';
 const currentData = getJSON()[0];
+const { width, height } = Dimensions.get('window')
+
 const MyGroupCard = () => {
 
     const navigation = useNavigation<any>()
@@ -15,7 +19,7 @@ const MyGroupCard = () => {
             <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>
                 {currentData.content}</Text>
             <View>
-                <Text style={styles.memberTitle}>그룹 멤버</Text>
+                <Text style={styles.memberTitle}>Members</Text>
                 <View style={styles.memberContainer}>
                     <MemberIcon size={24} margin={'2%'}/>
                     <MemberIcon size={24} margin={'2%'}/>
@@ -28,14 +32,11 @@ const MyGroupCard = () => {
             <View style={styles.progressContainer}>
                 <View style={styles.progressBarContainer}>
                     <Text style={styles.progressText}>평균 목표 달성률(시간)</Text>
-                    <View style={styles.progressBar}>
-                    </View>
+                    <ProgressBar hasIndicator={false} style={styles.progressBar}/>
                 </View>
                 <View style={styles.progressBarContainer}>
                     <Text style={styles.progressText}>평균 목표 달성률(미션)</Text>
-
-                    <View style={styles.progressBar}>
-                    </View>
+                    <ProgressBar hasIndicator={false} style={styles.progressBar}/>
                 </View>
             </View>
             <View style={styles.groupMissionContainer}>
@@ -59,44 +60,37 @@ const styles = StyleSheet.create({
             ios: {
                 shadowColor: "#000",
                 shadowOffset: {
-                    width: 0.1,
-                    height: 0.1,
+                    width: 0,
+                    height: 1,
                 },
-                shadowOpacity: 0.25,
+                shadowOpacity: 0.02,
             },
             android: {
-                elevation: 3, 
+                elevation: 0.05, 
             },
         }
     )},
     cardView: {
-        width: 240,
+        width: width*0.76,
+        borderWidth:1.3,
+        borderColor :'#c4c4c4',
         borderRadius: 10, 
-        marginLeft:5,
-        marginRight: 15,
-        marginTop:10,
-        marginBottom:10,
+        marginRight:width*0.05,
 
-        borderWidth: 0,
-        backgroundColor:'#f9f9f9',
+        marginTop:10,
+        backgroundColor:'#ffffff',
         paddingVertical: 20, paddingHorizontal: 20,
         flex:1,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.25,
-        // backgroundColor:'#E5E5E5',
     },
     title:{
         fontFamily: 'GodoM',
-        fontSize: 17, paddingBottom: 10, fontWeight: '500',
+        fontSize: 15, paddingBottom: 10, fontWeight: '500',
     },
     content:{
-        fontFamily: 'GodoM',
+        // fontFamily: 'GodoM',
+        textAlign:'center',
         fontWeight: 'normal',
-        fontSize: 14, paddingBottom: 8, marginBottom: 'auto',
+        fontSize: 12, paddingBottom: 8, marginBottom: 'auto',
     },
     memberContainer:{
         flex: 1,
@@ -104,7 +98,8 @@ const styles = StyleSheet.create({
     },
     memberTitle:{
         fontFamily: 'GodoM',
-        fontSize: 12, paddingBottom: 5, marginBottom: 'auto',
+        fontWeight:'bold',
+        fontSize: 10, paddingBottom: 5, marginBottom: 'auto',
     },
     memberImage:{
         width: 24, height: 24, borderWidth: 1,
@@ -120,6 +115,7 @@ const styles = StyleSheet.create({
         marginBottom: 3,
     },
     progressBar:{
+        width:width*0.65,
         height:3,
         backgroundColor:'#0085FF',
     },

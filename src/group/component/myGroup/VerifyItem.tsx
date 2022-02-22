@@ -9,12 +9,9 @@ const VerifyItem = ({hasPhoto}) =>{
 
     const navigation = useNavigation<any>()
     const verifyPost = useCallback(()=>navigation.navigate('VerifyPost'),[])
-
-
     const imageSize = (width/4<100) ?  width/4 :100
-    return(
-        hasPhoto ?
-        <TouchableOpacity onPress={verifyPost} style={[itemStyles.mainContainer,itemStyles.shadow]}>
+    const textContent = 
+        <>
             <View style={itemStyles.itemTextContainer}>
                 <View style={itemStyles.authorContainer}>
                     <View style={itemStyles.memberIconContainer}>
@@ -25,43 +22,31 @@ const VerifyItem = ({hasPhoto}) =>{
                     </View>
                 </View>    
                 <View style={itemStyles.itemContentContainer}>
-                    <Text  numberOfLines={2}>24학점은 기본이죠adddddddddsdfddddddssddddddd</Text>
-                    {/* <Text  >24학점은 </Text> */}
+                    <Text  
+                        style={{
+                            fontSize:12,
+                        }}
+                        numberOfLines={2}>
+                        24학점은 기본이죠adddddddddsdfddddddssddddddd
+                    </Text>
+
                 </View>
                 <View style={itemStyles.itemDetailContainer}>
-                    <Text style={itemStyles.itemDetailText}>좋아요 3 | 댓글 4 | 3시간 전</Text>
+                <Text style={itemStyles.itemDetailText}>좋아요 3 | 댓글 4 | 3시간 전</Text>
                 </View>
             </View>
-            
+        </>   
+    const imageContent = 
+        <View style={itemStyles.itemImageContainer}>
+            <Image style={[itemStyles.itemImage,{width:imageSize,height:imageSize}]} source={require('../../../../images/group/studyImage.jpeg')} />
+        </View>
 
-            <View style={itemStyles.itemImageContainer}>
-                <Image style={[itemStyles.itemImage,{width:imageSize,height:imageSize}]} source={require('../../../../images/group/studyImage.jpeg')} />
-            </View>
-        </TouchableOpacity>
-        :
-        <TouchableOpacity onPress={verifyPost} style={[itemStyles.mainContainer,itemStyles.shadow]}>
-            <View style={itemStyles.itemTextContainer}>
-                <View style={itemStyles.authorContainer}>
-                    <View style={itemStyles.memberIconContainer}>
-                        <MemberIcon size={40} margin={0}/>
-                    </View>
-                    <View style={itemStyles.memberNameContainer}>
-                        <Text>name</Text>
-                    </View>
-                </View>    
-                <View style={itemStyles.itemContentContainer}>
-                    <Text  numberOfLines={2}>24학점은기본이안녕asdf메롱adsfafwefㅁ한글이?끝나기전에wawefawefawfaewfafew죠adddddddddsdfddddddssddddddd</Text>
-                    {/* <Text  >24학점은 </Text> */}
-                </View>
-                <View style={itemStyles.itemDetailContainer}>
-                    <Text style={itemStyles.itemDetailText}>좋아요 3 | 댓글 4 | 3시간 전</Text>
-                </View>
-            </View>
-            
-
-            
-        </TouchableOpacity>
-        )
+    return(
+    <TouchableOpacity onPress={verifyPost} style={[itemStyles.mainContainer]}>
+            {textContent}
+            {hasPhoto && imageContent}
+    </TouchableOpacity>
+    )
 }
 VerifyItem.defaultProps = {
     hasPhoto:false,
@@ -87,12 +72,15 @@ const itemStyles = StyleSheet.create({
     )},
     mainContainer :{
         backgroundColor:'#F9F9F9',
+        // backgroundColor:'#ffffff',
         padding:width*0.01,
         height: 120,
         marginVertical:7,
         marginHorizontal:5,
         borderRadius:10,
         flexDirection:'row',
+        borderWidth:0.5,
+        borderColor:'#c4c4c4'
     },
     itemTextContainer:{
         flex:1,
@@ -130,7 +118,7 @@ const itemStyles = StyleSheet.create({
         justifyContent:'center',
     },
     itemDetailText:{
-        fontSize:12,
+        fontSize:11,
     },
     itemImageContainer:{
         justifyContent:'center',

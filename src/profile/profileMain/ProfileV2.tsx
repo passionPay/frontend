@@ -51,7 +51,7 @@ const initState :ProfileDataType = {
 
 export default function ProfileV2() {
     const navigation = useNavigation<any>()
-    const studyHistory = useCallback(()=>navigation.navigate('StudyHistory'),[])
+    const profileSetting = useCallback(()=>navigation.navigate('ProfileSetting'),[])
     
     const [data,setData] = useState(initState)
     
@@ -59,12 +59,18 @@ export default function ProfileV2() {
         <SafeAreaView style={styles.safeContainer}>
             <View style={styles.header}>
                 <View>
-                    <Text style={styles.titleText}>프로필</Text>
+                    <Text style={styles.titleText}>Profile</Text>
                 </View>
 
                 <View style={{flexDirection:'row'}}>
                     <TouchableIcon iconProps={{style:[styles.headerIcon,{marginLeft:'auto'}], name:'bell-outline', size:25, color:'black'}}/>
-                    <TouchableIcon iconProps={{style:[styles.headerIcon], name:'cog-outline', size:23, color:'black'}}/>
+                    <TouchableIcon 
+                        onPress={profileSetting}
+                        iconProps={{style:[styles.headerIcon], name:'cog-outline', size:23, color:'black'}}
+                        style={{
+                            marginRight:width*0.03,
+                        }}
+                    />
                 </View>
             </View>
 

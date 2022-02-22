@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
-import MemberIcon from '../component/MemberIcon'
+import MemberIcon from '../../component/MemberIcon'
 // import {ReactComponent as CommentIcon}  from '../../images/group/fire.svg'
 
 const { width, height } = Dimensions.get('window')
@@ -26,7 +26,7 @@ const CommentItem =()=>{
                         </View>
                     </View>
                     <View style={{flexDirection:'row',marginLeft:'auto',marginRight:width*0.02}}>
-                        <Text>  <Image style={{width:13,height:13}} source={require('../../images/group/fire.png')}></Image> 3  </Text>
+                        <Text>  <Image style={{width:13,height:13}} source={require('../../../images/group/fire.png')}></Image> 3  </Text>
                     </View>
                 </View>
             <Text style={{marginTop:height*0.01}}>
@@ -72,7 +72,7 @@ export default function VerifyPost() {
                         </View>
                     </View>
                     <View style={{flexDirection:'row',marginLeft:'auto',marginRight:width*0.02}}>
-                        <Text>  <Image style={{width:13,height:13}} source={require('../../images/group/fire.png')}></Image> 3  |</Text>
+                        <Text>  <Image style={{width:13,height:13}} source={require('../../../images/group/fire.png')}></Image> 3  |</Text>
                         
                         {/* <Text>  <CommentIcon width={13} height={13} /> 2  |</Text> */}
                     </View>

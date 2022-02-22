@@ -4,20 +4,15 @@ const { width, height } = Dimensions.get('window')
 
 const TitleWithSeeMoreDefaultProps = {
     style : {
-        marginHorizontal:width*0.05,
+
         flexDirection:'row',
-        paddingBottom:height*0.02,
+
     },
 
     titleStyle:{
         fontSize: 17,
-        fontFamily: 'GodoM',
-        color: '#000',
     },
     seeMoreStyle:{
-        color:'#7EBEF9',
-        fontFamily:'GodoM',
-        fontWeight:'bold',
         fontSize:13,
     }
 }
