@@ -25,6 +25,8 @@ const NumericInput = ({state,dispatch,stateName,tagName,...props})=>{
         dispatch({type:'CHANGE_INPUT',name:stateName,value:parseInt(input)})
     },[input])
 
+    
+
     return(
     <>
         <View style={styles.row}>

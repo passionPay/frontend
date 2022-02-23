@@ -31,6 +31,9 @@ type ActionType= {
     type:'CHANGE_INPUT',
     name:string,
     value:any,
+}|{
+    type:'CHANGE_ALL',
+    value:StateType
 }
 const initState : StateType ={
     groupTitle: '',
@@ -53,6 +56,8 @@ const reducer = (state:StateType,action:ActionType) :StateType => {
                 ...state,
                 [action.name]:action.value
         }
+        case 'CHANGE_ALL':
+            return action.value
     }
     return state
 }
@@ -93,15 +98,26 @@ const makeGroupSubmit = (state:StateType) :void=>{
 }
 
 
-const MakeGroup = () => {
+const MakeGroup = ({route}) => {
 
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
     
     const [state,dispatch] = useReducer(reducer,initState)
+    const [editState,setEditState] = useState(false)
+    
     useEffect(()=>{
-        console.log(state)
-    },[state])
+        if (typeof(route.params) !== 'undefined' && route.params.isEditMode){
+            dispatch({
+                type:'CHANGE_ALL',
+                value:route.params.prevState
+            })
+            setEditState(true)
+        }
+        console.log(route)
+    },[route])
+
+
     return (
     <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
@@ -110,14 +126,13 @@ const MakeGroup = () => {
                                 fontFamily: 'GodoM',
                                 color: '#9F9F9F',
                                 }} >
-                    &lt; Study Group </Text>
+                    {editState?'< 그룹 설정':'< StudyGroup'}</Text>
             </TouchableOpacity>
-            <Text style={styles.title}>그룹 만들기</Text>
+            <Text style={styles.title}>{editState?'그룹 정보 수정' : '그룹 만들기'}</Text>
             <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
                 <View style={{ borderTopLeftRadius: 30, borderTopRightRadius: 30, flex: 1 }}>
                     <CommonInput state={state} dispatch={dispatch} tagName='그룹 이름' stateName='groupTitle'
                         placeholder ={'그룹 이름을 입력해주세요'}
-
                     /> 
                     <CommonInput state={state} dispatch={dispatch} tagName='그룹 소개' stateName='groupDescription'
                         placeholder ={'그룹 소개를 입력해주세요'}
@@ -132,7 +147,7 @@ const MakeGroup = () => {
                     <TouchableOpacity 
                         onPress={()=>makeGroupSubmit(state)}
                         style={[styles.selectButton,{alignSelf:'center',marginTop:30}]}>
-                            <Text style={{fontSize:14}}>그룹 만들기</Text>
+                            <Text style={{fontSize:14}}>{editState?'수정 정보 저장' : '그룹 만들기'}</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>

@@ -131,7 +131,7 @@ const WeekChart = ({timeData,axisData,style}) =>{
                 }} numberOfLines={1} ellipsizeMode='clip'>{`${(scale/2).toString()}시간`}</Text>
 
 
-            {chartData.map((item,idx)=>(<>
+            {chartData.map((item,idx)=>(<React.Fragment key={idx}>
                 <LinearGradient start={{x:0,y:0}} end ={{x:0,y:1}} 
                 colors={['#90C8FC','#0085FF']}  
                 style={{
@@ -145,7 +145,6 @@ const WeekChart = ({timeData,axisData,style}) =>{
                     borderTopRightRadius:chartWidth/13*0.3,
 
                 }}
-                    key={idx}
                 >
                 </LinearGradient>
 
@@ -160,7 +159,7 @@ const WeekChart = ({timeData,axisData,style}) =>{
                         {axisData[idx]}
                 </Text>
             
-            </>))}
+            </React.Fragment>))}
 
         </View>
     )

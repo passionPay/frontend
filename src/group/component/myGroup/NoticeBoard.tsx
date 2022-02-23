@@ -1,6 +1,8 @@
-import React, {useCallback} from 'react'
+import React, {useCallback,useState} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
+import Modal from "react-native-modal";
+import NoticeModal from './NoticeModal';
 
 const { width, height } = Dimensions.get('window')
 const data ={
@@ -22,9 +24,15 @@ const NoticeBoard = () =>{
     const myGroupVBoard = useCallback(()=>navigation.navigate('MyGroupVBoard'),[])
     const myGroupRank = useCallback(()=>navigation.navigate('MyGroupRank'),[])
 
+    const [modalVisible, setModalVisible] = useState<boolean>(false);
+
     return (
         <View style={styles.shadow}>
-            <TouchableOpacity style={styles.noticeContainer}>
+            <TouchableOpacity 
+                onPress={() => {
+                    setModalVisible(true);
+                  }}
+                style={styles.noticeContainer}>
                 <View style={styles.noticeIconContainer}>
                     <Image style={{width:15,height:15}}source={require('../../../../images/group/demostration.png')} />
                 </View>
@@ -59,6 +67,7 @@ const NoticeBoard = () =>{
                 </TouchableOpacity>
             </View>
 
+            <NoticeModal data={[]} modalVisible={modalVisible} setModalVisible={setModalVisible}/>
         </View>
     )
 }
@@ -145,8 +154,6 @@ const styles = StyleSheet.create({
     menuText:{
         fontSize:12,
         paddingTop:5,
-    }
+    },
 
-
-    
 })

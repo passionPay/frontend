@@ -2,7 +2,7 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
-
+import { TouchableIcon } from '../../component/TouchableIcon'
 import NoticeBoard from '../component/myGroup/NoticeBoard'
 import GroupOnlineMembers from '../component/myGroup/GroupOnlineMembers'
 import GroupSummary from '../component/myGroup/GroupSummary'
@@ -31,23 +31,26 @@ export default function MyGroup() {
 
 
     const navigation = useNavigation<any>()
+    const myGroupSetting = useCallback(()=>navigation.navigate('MyGroupSetting',{groupName:'3학년 1 반 국어스터디',isLeader:true}),[])
     const goBack = useCallback(()=>navigation.goBack(),[])
 
     return (
     <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
-
             <TouchableOpacity style={styles.header} onPress={goBack}>
                 <Text style={{fontSize: 13,
                             fontFamily: 'GodoM',
                             color: '#9F9F9F',
-                            // backgroundColor:'#000000'
-                            
-                            }} >
-                &lt; 스터디 그룹 </Text>
+                            }}>
+                &lt; 스터디 그룹</Text>
             </TouchableOpacity>
-            <Text style={styles.title}>{data.groupName}</Text>
-
+            <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+                <Text style={styles.title}>{data.groupName}</Text>
+                <TouchableIcon 
+                    onPress={myGroupSetting}
+                    iconProps={{style:[{paddingLeft:10,marginTop:-2,marginLeft:'auto',marginRight:width*0.03}],
+                    name:'cog-outline', size:23, color:'black'}}/>
+            </View>
             <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}> 
                 <Text style={styles.groupDescription}>{data.groupDescription}</Text>
                 <NoticeBoard/>
@@ -101,7 +104,6 @@ const styles = StyleSheet.create({
         fontFamily: 'GodoM',
         color: '#000',
         marginBottom:height*0.02,
-        
     },
     myGroups:{
         paddingTop: height*0.02,

@@ -109,8 +109,6 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontFamily: 'GodoM',
     },
-    
-
     shadow:{
         ...Platform.select({
             ios: {
@@ -134,10 +132,8 @@ const styles = StyleSheet.create({
         marginBottom:10,
         flexDirection:'row',
         alignItems:'center',
-
         justifyContent:'space-between',
         paddingHorizontal:width*0.01,
-
     }
 })
 

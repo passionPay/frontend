@@ -127,7 +127,7 @@ const MonthChart = ({timeData,style}) =>{
                 }} numberOfLines={1} ellipsizeMode='clip'>{`${(scale/2).toString()}시간`}</Text>
 
 
-            {chartData.map((item,idx)=>(<>
+            {chartData.map((item,idx)=>(<React.Fragment key={idx}>
                 <LinearGradient start={{x:0,y:0}} end ={{x:0,y:1}} 
                 colors={['#90C8FC','#0085FF']}  
                 style={{
@@ -144,7 +144,7 @@ const MonthChart = ({timeData,style}) =>{
                     key={idx}
                 >
                 </LinearGradient>
-            </>))}
+            </React.Fragment>))}
             {axisData.map((item,idx)=>(
                 <Text 
                     style={{

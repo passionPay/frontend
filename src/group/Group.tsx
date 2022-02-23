@@ -14,6 +14,7 @@ export default function Group() {
 
     const navigation = useNavigation<any>()
     const makeGroup = useCallback(()=>navigation.navigate('MakeGroup'),[])
+    const groupSetting = useCallback(()=>navigation.navigate('GroupSetting'),[])
 
     return (
     <SafeAreaView style={styles.safeContainer}>
@@ -27,11 +28,13 @@ export default function Group() {
                         onPress={makeGroup}
                         iconProps={{style:[styles.headerIcon,{marginLeft:'auto'}], name:'plus', size:25, color:'black'}}/>
                     <TouchableIcon iconProps={{style:[styles.headerIcon,{marginLeft:'auto'}], name:'bell-outline', size:25, color:'black'}}/>
-                    <TouchableIcon iconProps={{style:[styles.headerIcon], name:'cog-outline', size:23, color:'black'}}
+                    <TouchableIcon 
+                        onPress={groupSetting}
+                        iconProps={{style:[styles.headerIcon], name:'cog-outline', size:23, color:'black'}}
                         style={{
                             marginRight:width*0.03,
                         }}
-                    />
+                    /> 
                 </View>
         </View>
             
