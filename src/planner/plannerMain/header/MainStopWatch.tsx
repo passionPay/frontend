@@ -23,7 +23,7 @@ export default function MainStopWatch() {
             if (isNextRow(next.timestamps))
                 next.timestamps.push({
                     timestampId: prev.timestamps[prev.timestamps.length - 1].timestampId + 1,
-                    startTime: new Date().toTimeString().substring(0, 8),
+                    startTime: new Date().toTimeString().substring(0, 6) + '00',
                     endTime: new Date().toTimeString().substring(0, 8),
                     color: getTaskColor(cont.currentTaskId, cont.data.tasks)
                 })

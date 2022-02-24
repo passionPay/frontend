@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Animated, Modal, ScrollView, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, Animated, Modal, ScrollView, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
 import { Text, TouchableIcon } from '../../../component/CustomComponent'
 import { PlannerContextType, PlannerDataType, TASKEDITMODAL, TaskType, useContextOfPlanner } from '../../PlannerProvider';
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -59,8 +59,6 @@ export default function TaskEditModal() {
                         else {
                             next.tasks[i].tasks.splice(j, 1)
                             subjectChange = true
-                            console.log('next.tasks[i]')
-                            console.log(next.tasks[i].tasks.length)
                             if (next.tasks[i].tasks.length == 0)
                                 next.tasks.splice(i, 1)
                         }
@@ -89,6 +87,27 @@ export default function TaskEditModal() {
         closeModal()
     }
 
+    function onPressDelete() {
+        Alert.alert('삭제', 'TASK를 삭제하겠습니까?', [{ text: '취소' }, {
+            text: '확인', onPress: () => {
+                cont.setData((prev: PlannerDataType) => {
+                    let next: PlannerDataType = JSON.parse(JSON.stringify(prev))
+                    for (let i = 0; i < prev.tasks.length; ++i)
+                        for (let j = 0; j < prev.tasks[i].tasks.length; ++j)
+                            if (prev.tasks[i].tasks[j].taskId
+                                == cont.TASKEDITMODAL_selectedTask.taskId) {
+                                next.tasks[i].tasks.splice(j, 1)
+                                if (next.tasks[i].tasks.length == 0)
+                                    next.tasks.splice(i, 1)
+                                return next
+                            }
+                    return next // 여기로 안 옴
+                })
+                closeModal()
+            }
+        }])
+    }
+
     return <Modal
         animationType="slide"
         transparent={true}
@@ -97,8 +116,6 @@ export default function TaskEditModal() {
             cont.setCurrentModal(-1);
         }}
         onShow={() => {
-            console.log('TaskEditModal.tsx')
-
             setEditedTaskTitle(cont.TASKEDITMODAL_selectedTask.title)
             setEditedColor(cont.TASKEDITMODAL_selectedTask.color)
             setSelectedSubject(getSubjectOfTask(cont))
@@ -179,7 +196,7 @@ export default function TaskEditModal() {
                         alignItems: 'center'
                     }}>
                         <TouchableIcon iconProps={{ name: 'delete', color: '#DA1212', size: 23 }}
-                            style={{ padding: 5 }} />
+                            style={{ padding: 5 }} onPress={onPressDelete} />
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'center'
