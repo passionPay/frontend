@@ -7,7 +7,7 @@ import MyGroupCard from './MyGroupCard'
 import GroupEmpty from './GroupEmpty'
 import OtherGroupCard from './OtherGroupCard'
 import SearchBar from './SearchBar'
-import {TouchableIcon} from '../../component/TouchableIcon'
+import {TouchableIcon} from '../../component/CustomComponent'
 const { width, height } = Dimensions.get('window')
 
 const currentData = getTempData()

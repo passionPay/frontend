@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native'
 
 import {SettingItem,ModalSettingItem} from './SettingItem'
 import WarningModal from './WarningModal'
-import { TouchableIcon } from '../../../component/TouchableIcon'
+import { TouchableIcon } from '../../../component/CustomComponent'
 
 const { width, height } = Dimensions.get('window')
 

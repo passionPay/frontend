@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 
-import { TouchableIcon } from '../../component/TouchableIcon'
+import { TouchableIcon } from '../../component/CustomComponent'
 import NoticeBoard from './component/myGroup/NoticeBoard'
 import GroupOnlineMembers from './component/myGroup/GroupOnlineMembers'
 import GroupSummary from './component/myGroup/GroupSummary'

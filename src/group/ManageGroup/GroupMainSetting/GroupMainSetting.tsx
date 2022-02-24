@@ -3,7 +3,7 @@ import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollV
 import {useNavigation} from '@react-navigation/native'
 
 import {SettingItem}from '../MyGroupSetting/SettingItem'
-import { TouchableIcon } from '../../../component/TouchableIcon'
+import { TouchableIcon } from '../../../component/CustomComponent'
 
 const { width, height } = Dimensions.get('window')
 
