@@ -25,7 +25,8 @@ export default function TaskEditModal() {
     let editedStatus = cont.TASKEDITMODAL_selectedTask.status
 
     const completeButtonAnimVal = useRef(new Animated.Value(0)).current;
-    completeButtonAnimVal.setValue(editedStatus) // 0이면 완료 전, 1이면 완료
+    useEffect(() => completeButtonAnimVal.setValue(editedStatus), []) // 0이면 완료 전, 1이면 완료
+    // 스톱워치 실행중일 때 setValue가 계속 호출되는 것 같아 useEffect 안에 넣음
 
     const completeButtonAnim = {
         marginLeft: completeButtonAnimVal.interpolate({
