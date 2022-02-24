@@ -77,8 +77,6 @@
 		<string>IBMPlexSansKR-Thin.ttf</string>
 		<string>Lobster.ttf</string>
 		<string>SedgwickAve.ttf</string>
-
-
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
@@ -98,7 +96,6 @@
 		<string>kita.otf</string>
 		<string>kita.ttf</string>
 		<string>digital.ttf</string>
-
 		<string>Gowun.ttf</string>
 		<string>nanum.ttf</string>
 		<string>Digital.ttf</string>
@@ -117,7 +114,6 @@
 		<string>Cafe24.ttf</string>
 		<string>Cafe24Ohsquareair.ttf</string>
 		<string>Cafe24Oneprettynight.ttf</string>
-
 		<string>welcome.ttf</string>
 		<string>LeferiBaseBold.ttf</string>
 		<string>LeferiBaseRegular.ttf</string>
@@ -141,7 +137,6 @@
 		<string>SourceSansPro-SemiBold.ttf</string>
 		<string>SourceSansPro-SemiBoldItalic.ttf</string>
 		<string>SourceSansPro.ttf</string>
-
 	</array>
 </dict>
 </plist>

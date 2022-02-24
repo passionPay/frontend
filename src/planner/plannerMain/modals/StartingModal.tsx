@@ -30,7 +30,8 @@ export default function StartingModal({ }) {
                     items={getFormatted(cont.data.tasks)}
                     containerStyle={{
                         paddingBottom: 0, minHeight: 500,
-                        marginBottom: -428
+                        marginBottom: -428,
+                        zIndex: open ? 1 : 0,
                     }}
                     placeholder='시작할 공부를 선택해주세요'
                 />

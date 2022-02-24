@@ -136,7 +136,8 @@ export default function TaskAddModal() {
                     items={subjects}
                     containerStyle={{
                         paddingBottom: 0, minHeight: 500,
-                        marginBottom: -428
+                        marginBottom: -428,
+                        zIndex: open ? 1 : 0,
                     }}
                     placeholder='과목을 선택해주세요'
                     searchable={true}

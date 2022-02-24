@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dimensions, StyleSheet, View } from 'react-native'
+import { Dimensions, StyleSheet, TextInput, View } from 'react-native'
 import { Text } from '../../../component/CustomComponent'
 import { TimeStampsType, useContextOfPlanner } from '../../PlannerProvider'
 
@@ -21,7 +21,7 @@ export default function TimeBlock() {
         }}>TIME TABLE</Text>
         <View>
             {hours.map((v, i) => <View style={styles.row} key={i}>
-                <Text style={styles.hour}>{v}</Text>
+                <TextInput style={styles.hour} editable={false}>{v}</TextInput>
                 <View style={{ flex: 1, backgroundColor: '#0000' }} />
             </View>)}
             {cont.data.timestamps.map((v, i) => {
@@ -67,5 +67,7 @@ const styles = StyleSheet.create({
         borderRightWidth: 0.5,
         borderColor: '#151515',
         textAlignVertical: 'center',
+        color: '#151515',
+        fontFamily: 'GodoM'
     }
 })
