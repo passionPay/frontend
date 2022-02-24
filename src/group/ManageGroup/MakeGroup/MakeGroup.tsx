@@ -9,9 +9,6 @@ import SetTimeGoal from './SetTimeGoal'
 import SetMission from './SetMission'
 import SetPrivacy from './SetPrivacy'
 
-
-
-
 const { width, height } = Dimensions.get('window')
 
 type StateType = {
@@ -71,7 +68,7 @@ const checkValidInput =(state:StateType) : boolean|string =>{
         return '그룹 소개를 입력해주세요'
     }
     if (state.maxMember===0 || isNaN(state.maxMember)){
-        return '인원을 입력해주세요'
+        return '인원을 올바르게 입력해주세요'
     }else if (state.maxMember<2 || state.maxMember>100){
         return '2명 ~ 100명 사이의 인원을 입력해주세요'
     }
@@ -116,6 +113,9 @@ const MakeGroup = ({route}) => {
         }
         console.log(route)
     },[route])
+    useEffect(()=>{
+        console.log(state)
+    },[state])
 
 
     return (

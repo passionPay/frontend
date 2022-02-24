@@ -3,7 +3,7 @@ import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollV
 
 import GroupGoalChart from '../GroupGoalChart'
 
-import ProgressBar from '../../../component/ProgressBar'
+import ProgressBar from '../../../../component/ProgressBar'
 
 const { width, height } = Dimensions.get('window')
 
@@ -21,7 +21,7 @@ const MissionProgress = ()=>{
 const MissionItem = ({hasCompleted=false}) =>{
     return(
         <TouchableOpacity style={missionItemStyles.mainContainer}>
-            <Image style={{marginLeft:15,width:25,height:25}}source={require('../../../../images/group/trophy.png')} />
+            <Image style={{marginLeft:15,width:25,height:25}}source={require('../../../../../images/group/trophy.png')} />
             <Text numberOfLines={2} style={{ fontSize:12,marginHorizontal:5, textAlign:'center', flex:1}}> 하루 3시간 이상 국어 공부adddddddddddsdfsdfweafwefeffawfaweasfadsfsaewf하기</Text>
             <TouchableOpacity style={{marginRight:15, width:20,height:20,borderWidth:1,borderRadius:5}}></TouchableOpacity>
         </TouchableOpacity>

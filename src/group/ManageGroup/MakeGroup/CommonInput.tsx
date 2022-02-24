@@ -21,6 +21,20 @@ const NumericInput = ({state,dispatch,stateName,tagName,...props})=>{
     
     const [input,setInput]= useState('')
 
+
+
+    const displayText = useCallback((numericState)=>{
+        if (isNaN(numericState)){
+            return ""
+        }else{
+            return numericState.toString()
+        }
+    },[])
+
+    const onChangeText = useCallback((text)=>{
+        dispatch({type:'CHANGE_INPUT',name:stateName,value:parseInt(text)})
+    },[])
+
     useEffect(()=>{
         dispatch({type:'CHANGE_INPUT',name:stateName,value:parseInt(input)})
     },[input])
@@ -31,8 +45,8 @@ const NumericInput = ({state,dispatch,stateName,tagName,...props})=>{
     <>
         <View style={styles.row}>
             <Text style={styles.tag}>{tagName}</Text>
-            <TextInput style={styles.info} value={input}
-                onChangeText={setInput}
+            <TextInput style={styles.info} value={displayText(state[stateName])}
+                onChangeText={onChangeText}
                 keyboardType='numeric'
                 {...props}
             />

@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
-import Group from './Group'
+import Group from './GroupMain/Group'
 import GroupSetting from './ManageGroup/GroupMainSetting/GroupMainSetting'
 import EditNotice from './ManageGroup/MyGroupSetting/EditNotice'
 import ManageMembers from './ManageGroup/MyGroupSetting/ManageMembers/ManageMembers'
@@ -8,13 +8,15 @@ import ManageMembers from './ManageGroup/MyGroupSetting/ManageMembers/ManageMemb
 import MakeGroup from './ManageGroup/MakeGroup/MakeGroup'
 
 
-import MyGroup from './myGroup/MyGroup'
+import MyGroup from './MyGroup/MyGroup'
 import MyGroupSetting from './ManageGroup/MyGroupSetting/MyGroupSetting'
-import MyGroupGoal from './myGroup/MyGroupGoal'
-import MyGroupStat from './myGroup/MyGroupStat'
-import MyGroupVBoard from './myGroup/MyGroupVBoard'
-import MyGroupRank from './myGroup/MyGroupRank'
-import VerifyPost from './myGroup/VeryfyPost'
+import MyGroupGoal from './MyGroup/MyGroupGoal'
+import MyGroupStat from './MyGroup/MyGroupStat'
+import MyGroupVBoard from './MyGroup/MyGroupVBoard'
+import MyGroupRank from './MyGroup/MyGroupRank'
+import VerifyPost from './MyGroup/VeryfyPost'
+
+import OtherGroup from './OtherGroup/OtherGroup'
 
 export default function StudyGroupNavigator() {
     const Stack = createStackNavigator()
@@ -32,5 +34,8 @@ export default function StudyGroupNavigator() {
         <Stack.Screen name='MyGroupVBoard' component={MyGroupVBoard} />
         <Stack.Screen name='MyGroupRank' component={MyGroupRank} />
         <Stack.Screen name='VerifyPost' component={VerifyPost} />
+
+        <Stack.Screen name='OtherGroup' component={OtherGroup}/>
+
     </Stack.Navigator>
 }

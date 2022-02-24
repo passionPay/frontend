@@ -85,6 +85,10 @@ const DateSelectDropdown = ({
     setMonthValue,
     dateValue,
     setDateValue,
+    yearWidth=120,
+    monthWidth=90,
+    dateWidth=90,
+    style={}
   })=> {
   const [yearOpen, setYearOpen] = useState(false)
   const [yearItems, setYearItems] = useState([...Array(11)].map((v,i) => ({label:`${i+2020}년`,value:i+2020})))
@@ -118,7 +122,7 @@ const DateSelectDropdown = ({
 
 
   return (
-      <View style={{
+      <View style={[{
         flexDirection:'row',
         marginHorizontal:width*0.05,
         marginTop:height*0.02,
@@ -126,13 +130,13 @@ const DateSelectDropdown = ({
         marginBottom:-120 +height*0.03,
         zIndex:1,
 
-      }}>
+      },style]}>
         <DropDownPicker
           style={{
             height:35,
           }}
           containerStyle={{
-            width:120,
+            width:yearWidth
           }}
           maxHeight={120}
           autoScroll={true}
@@ -152,7 +156,7 @@ const DateSelectDropdown = ({
           }}
           containerStyle={{
             marginLeft:10,
-            width:90,
+            width:monthWidth,
           }}
           autoScroll={true}
           maxHeight={120}
@@ -172,7 +176,7 @@ const DateSelectDropdown = ({
           }}
           containerStyle={{
             marginLeft:10,
-            width:90,
+            width:dateWidth,
           }}
           autoScroll={true}
           maxHeight={120}

@@ -1,28 +1,11 @@
-import React from 'react'
-import { PixelRatio,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
-import LinearGradient from 'react-native-linear-gradient';
 
-import GroupGoalChart from '../GroupGoalChart';
+import React from 'react'
+import { Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
 
 const { width, height } = Dimensions.get('window')
 
-const chartSize = {
-    height:width*0.3,
-    width:width*0.9,
-    barWidth:width*0.055,
-    barMargin:width*0.004,
-}
 
-const chartData={
-    myTimeProgress:0.4,
-    groupTimeProgress:0.3,
-    myMissionProgress:0.2,
-    groupMissionProgress:0.1,
-}
-
-
-
-const GroupSummaryBoard = ({time}) =>{
+const OtherGroupSummaryBoard = ({style={},time=false,isOtherGroup=false}) =>{
     // const fontSize = (width*0.038>15) ? 15 : width*0.038
     // console.log('dsfd',PixelRatio.getFontScale())
     const fontSize = 12
@@ -38,10 +21,13 @@ const GroupSummaryBoard = ({time}) =>{
                         <Text style={{fontSize:fontSize, }}>그룹 평균 공부시간</Text>
                         <Text style={{fontSize:fontSize+3, fontWeight:'700'}}>11:22:33</Text>
                     </View>
+                    {!isOtherGroup&&
                     <View style={boardStyles.groupTime}>
                         <Text style={{fontSize:fontSize, }}>내 공부시간</Text>
                         <Text style={{fontSize:fontSize+3, fontWeight:'700'}}>11:22:33</Text>
                     </View>
+                    }
+                    
                 </View>
                 
             </View>
@@ -51,20 +37,32 @@ const GroupSummaryBoard = ({time}) =>{
         <>
             <View style={boardStyles.groupSummaryContentContainer}>
                 <View style={boardStyles.groupEachMissionContainer}>
-                        <Image style={{width:15,height:15,marginRight:5}}source={require('../../../../images/group/trophy.png')} />
+                        <Image style={{width:15,height:15,marginRight:5}}source={require('../../../images/group/trophy.png')} />
                         <Text numberOfLines={2} style={boardStyles.missionText}>{`1시간 이상 국s어 공부하기`}</Text>
                 </View>
                 <View style={boardStyles.groupEachMissionContainer}>
                     <View style={{paddingTop:0, paddingRight:3}}>
-                        <Image style={{width:15,height:15}}source={require('../../../../images/group/trophy.png')} />
+                        <Image style={{width:15,height:15}}source={require('../../../images/group/trophy.png')} />
                     </View>
                         <Text numberOfLines={2} style={boardStyles.missionText}>{`외 목표개`}</Text>
                 </View>
                 <View style={boardStyles.groupEachMissionContainer}>
                     <View style={{paddingTop:0, paddingRight:3}}>
-                        <Image style={{width:15,height:15}}source={require('../../../../images/group/trophy.png')} />
+                        <Image style={{width:15,height:15}}source={require('../../../images/group/trophy.png')} />
                     </View>
                         <Text numberOfLines={2} style={boardStyles.missionText}>{`외 목표개`}</Text>
+                </View>
+                <View style={boardStyles.groupEachMissionContainer}>
+                    <View style={{paddingTop:0, paddingRight:3}}>
+                        <Image style={{width:15,height:15}}source={require('../../../images/group/trophy.png')} />
+                    </View>
+                        <Text numberOfLines={2} style={boardStyles.missionText}>{`외 목표개`}</Text>
+                </View>
+                <View style={boardStyles.groupEachMissionContainer}>
+                    <View style={{paddingTop:0, paddingRight:3}}>
+                        <Image style={{width:15,height:15}}source={require('../../../images/group/trophy.png')} />
+                    </View>
+                        <Text numberOfLines={2} style={boardStyles.missionText}>{`1시간 이상 국s어 공부하기asdfwfwasdfasfaweadsfweaweafwe`}</Text>
                 </View>
 
                 
@@ -74,7 +72,7 @@ const GroupSummaryBoard = ({time}) =>{
     )
     
     return (
-        <View style={boardStyles.groupSummaryBoard}>
+        <View style={[boardStyles.groupSummaryBoard,style]}>
             {content}
             <View style={boardStyles.groupSummaryTitleContainer}>
                     <Text style={{fontSize:fontSize,fontWeight:'700'}}>
@@ -86,56 +84,7 @@ const GroupSummaryBoard = ({time}) =>{
     )
 }
 
-
-const GroupSummary =() =>{
-    return (
-    <View style={styles.mainContainer}>
-        <Text style={styles.titleText}>그룹 목표</Text>
-        <GroupGoalChart/>
-        <View style={styles.boardContainer}>
-            <GroupSummaryBoard time></GroupSummaryBoard>
-            <GroupSummaryBoard time={false}></GroupSummaryBoard>
-        </View>
-    </View>
-    )
-}
-
-export default GroupSummary
-
-
-
-const styles = StyleSheet.create({
-    titleText:{
-        fontSize: 15,
-        fontFamily: 'GodoM',
-    },
-    shadow:{
-        ...Platform.select({
-            ios: {
-                shadowColor: "#000",
-                shadowOffset: {
-                    width: 0,
-                    height: 0.1,
-                },
-                shadowOpacity: 0.05,
-            },
-            android: {
-                elevation: 3, 
-            },
-        }
-        ),
-    },
-    mainContainer:{
-        paddingTop:height*0.04,
-    },
-    boardContainer:{
-        marginBottom:10,
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'space-between',
-        paddingHorizontal:width*0.01,
-    }
-})
+export default OtherGroupSummaryBoard
 
 const boardStyles = StyleSheet.create({
     groupSummaryBoard :{

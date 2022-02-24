@@ -24,6 +24,7 @@ const SetTimeGoal = ({state,dispatch})=>{
 
     useEffect(()=>{
         if (hourValue===24){
+            setMinuteValue(0)
             setMinuteItems([...Array(1)].map((v,i) => ({label:`${i*10}분`,value:i*10})))
         } 
         else {
@@ -36,6 +37,9 @@ const SetTimeGoal = ({state,dispatch})=>{
         })
     },[hourValue,minuteValue,dispatch])
 
+    useEffect(()=>{
+        console.log("1")
+    },[state])
     return (
     <>
         <View style={styles.row}>

@@ -1,43 +1,56 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import { Platform,Dimensions,StyleSheet, View, Image,Text,ScrollView ,TouchableOpacity} from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import ProgressBar from '../../../component/ProgressBar';
+import {useNavigation} from '@react-navigation/native'
+
+
+import ProgressBar from '../../component/ProgressBar';
 const { width, height } = Dimensions.get('window')
 
 
-const currentData = getJSON()[0];
+const currentData = getTempData();
 const OtherGroupCard = () => {
+    const {groupName,groupMember,groupMissions,groupDescription,groupPrivacy,maxMember} = currentData
+    const navigation = useNavigation<any>()
+    const otherGroup = useCallback(()=>navigation.navigate('OtherGroup'),[])
     return (
-
-        <TouchableOpacity style={[styles.cardView,styles.shadow]} onPress={() => {
-
-        }}>
-            <Text style={styles.title}>{currentData.title}</Text>
+        
+        <TouchableOpacity style={[styles.cardView,styles.shadow]} onPress={otherGroup}>
+            <View style={{flexDirection:'row'}}>
+                {groupPrivacy&&<Icon style={{marginTop:1,marginRight:3,}} name='lock-outline' size={15} color='black'/>}
+                <Text style={styles.title}>{groupName}</Text>
+                <View style={styles.headCountContainer}>
+                    <Ionicon style={{marginTop:0,marginRight:1,}} name='people-outline' size={16} color='black'/>
+                    <Text style={{fontSize:13,}}>{`${groupMember.length}/${maxMember}`}</Text>
+                </View>
+            </View>
             <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>
-                {currentData.content}</Text>
+                {groupDescription}</Text>
             <View>
                 <View style={styles.groupTime}>
-                    <Text style={{fontSize:12, }}>그룹 평균 공부시간</Text>
+                    <Text style={{fontSize:12, }}>오늘 평균 공부시간</Text>
                     <Text style={{fontSize:12, fontWeight:'700', marginLeft:15}}>11:22:33</Text>
                 </View>
 
             </View>
             <View>
                 <View style={styles.progressBarContainer}>
-                    <Text style={styles.progressText}>평균 목표 달성률(시간)</Text>
+                    <Text style={styles.progressText}>오늘 평균 목표 달성률(시간)</Text>
                     <ProgressBar hasIndicator={false} style={styles.progressBar}/>
                 </View>
                 <View style={styles.progressBarContainer}>
-                    <Text style={styles.progressText}>평균 목표 달성률(미션)</Text>
+                    <Text style={styles.progressText}>오늘 평균 목표 달성률(미션)</Text>
                     <ProgressBar hasIndicator={false} style={styles.progressBar}/>
 
                 </View>
             </View>
             <View style={styles.groupMissionContainer}>
                 <View style={{paddingTop:0, paddingRight:3}}>
-                    <Image style={{width:10,height:10}}source={require('../../../../images/group/trophy.png')} />
+                    <Image style={{width:10,height:10}}source={require('../../../images/group/trophy.png')} />
                 </View>
-                    <Text style={styles.mission}>{`${currentData.firstMission} 외 목표 ${currentData.missionCount-1}개`}</Text>
+                    <Text style={styles.mission}>{`${groupMissions[0].missionName} 외 목표 ${groupMissions.length-1}개`}</Text>
             </View>
             
         </TouchableOpacity>
@@ -81,6 +94,7 @@ const styles = StyleSheet.create({
     title:{
         fontFamily: 'GodoM',
         fontSize: 15, paddingBottom: 10, fontWeight: '500',
+        flex:1,
     },
     content:{
         textAlign:'center',
@@ -116,6 +130,9 @@ const styles = StyleSheet.create({
         paddingTop:3, 
         flexDirection:'row', 
         alignItems:'center'
+    },
+    headCountContainer:{
+        flexDirection:'row'
     }
 })
 
@@ -124,47 +141,18 @@ const styles = StyleSheet.create({
 
 
 
-function getJSON() {
-    return [
+function getTempData() {
+    return (
         {
-            _id: '0',
-            title: "3학년 1반 국어 스터디",
-            content: "1학기 매일 공부할 사람만~",
-            timeProgress: 40,
-            missonProgress:40,
-            firstMission :"하루 3시간 이상 국어 공부하기",
-            missionCount:3,
-        },
-        {
-            _id: '1',
-            title: "3학년 1반 국어 스터디",
-            content: "1학기 매일 공부할 사람만~",
-            timeProgress: 40,
-            missonProgress:40,
-            firstMission :"하루 3시간 이상 국어 공부하기",
-            missionCount:3,
-
-        },
-        {
-            _id: '2',
-            title: "3학년 1반 국어 스터디",
-            content: "1학기 매일 공부할 사람만~",
-            timeProgress: 40,
-            missonProgress:40,
-            firstMission :"하루 3시간 이상 국어 공부하기",
-            missionCount:3,
-
-        },
-        {
-            _id: '3',
-            title: "3학년 1반 국어 스터디",
-            content: "1학기 매일 공부할 사람만~",
-            timeProgress: 40,
-            missonProgress:40,
-            firstMission :"하루 3시간 이상 국어 공부하기",
-            missionCount:3,
-
-        },
-
-    ]
+            groupName:'3학년 1반 국어 스터디',
+            groupMember:[{photoUrl:''},{photoUrl:''}],
+            groupMissions:[ {
+                "groupMissionId": 6,
+                "missionName": "배고팡"
+            }],
+            groupDescription:'매일 공부할 사람만!',
+            groupPrivacy:true,
+            maxMember:10,
+        }
+    )
 }

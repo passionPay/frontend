@@ -7,7 +7,7 @@ import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
 
-const WarningModal= ({modalVisible,setModalVisible,data,option={}}) =>{
+const WarningModal= ({modalVisible,setModalVisible,data}) =>{
     
     /*option에서 onPRess 를 받아오든지 해야할듯
     navigation??
@@ -38,7 +38,8 @@ const WarningModal= ({modalVisible,setModalVisible,data,option={}}) =>{
                     marginVertical:10,
                     marginHorizontal:width*0.1,
                     fontSize:15,
-                    alignSelf:'center'
+                    alignSelf:'center',
+                    textAlign:'center'
                 }}>{data.content}</Text>
 
                 <View style={{

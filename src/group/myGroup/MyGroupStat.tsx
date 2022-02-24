@@ -2,8 +2,8 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
-import GroupGoalChart from '../component/GroupGoalChart'
-import GroupGoalLineChart from '../component/GroupGoalLineChart'
+import GroupGoalChart from './component/GroupGoalChart'
+import GroupGoalLineChart from './component/GroupGoalLineChart'
 
 const { width, height } = Dimensions.get('window')
 

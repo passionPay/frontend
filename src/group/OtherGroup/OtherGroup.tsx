@@ -3,14 +3,8 @@ import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollV
 import {useNavigation} from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-
-import { TouchableIcon } from '../../component/TouchableIcon'
-import NoticeBoard from './component/myGroup/NoticeBoard'
-import GroupOnlineMembers from './component/myGroup/GroupOnlineMembers'
-import GroupSummary from './component/myGroup/GroupSummary'
-import GroupTodayKing from './component/myGroup/GroupTodayKing'
-import GroupVerifyBoard from './component/myGroup/GroupVerifyBoard'
-
+import Notice from './Notice'
+import OtherGroupSummary from './OtherGroupSummary'
 
 
 const { width, height } = Dimensions.get('window')
@@ -29,7 +23,7 @@ const data ={
 }
 
 
-export default function MyGroup() {
+export default function OtherGroup() {
 
 
     const navigation = useNavigation<any>()
@@ -54,19 +48,17 @@ export default function MyGroup() {
                         <Text style={{fontSize:13,}}>{`${3}/${5}`}</Text>
                     </View>
                 </View>
-                    
-                <TouchableIcon 
-                    onPress={myGroupSetting}
-                    iconProps={{style:[{paddingLeft:10,marginTop:-2,marginLeft:'auto',marginRight:width*0.03}],
-                    name:'cog-outline', size:23, color:'black'}}/>
+
             </View>
             <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}> 
                 <Text style={styles.groupDescription}>{data.groupDescription}</Text>
-                <NoticeBoard/>
-                <GroupOnlineMembers/>
-                <GroupSummary/>
-                <GroupVerifyBoard/>
-                <GroupTodayKing/>
+                
+                <Notice/>
+                <OtherGroupSummary/>
+
+
+                
+                
             </ScrollView>
             
         </View>
@@ -113,7 +105,6 @@ const styles = StyleSheet.create({
         fontFamily: 'GodoM',
         color: '#000',
         marginBottom:height*0.02,
-
     },
     myGroups:{
         paddingTop: height*0.02,
@@ -129,7 +120,8 @@ const styles = StyleSheet.create({
         marginTop:1,
         marginLeft:10,
         // borderWidth:1,
-    }
+    },
+    
 
 })
 

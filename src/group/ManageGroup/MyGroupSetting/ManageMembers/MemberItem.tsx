@@ -27,7 +27,7 @@ const MemberItem = ({data}) =>{
                     </Text>
                 </View>
         </TouchableOpacity>
-        <MemberModal modalVisible={modalVisible} setModalVisible={setModalVisible} data={{}}/>
+        <MemberModal modalVisible={modalVisible} setModalVisible={setModalVisible} isLeader={true}/>
     </>
     
     )

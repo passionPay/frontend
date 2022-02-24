@@ -1,42 +1,33 @@
-import React, {useCallback} from 'react'
+import React ,{useCallback} from 'react'
 import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
-import RankItem from './RankItem'
-import TitleWithSeeMore from '../../../component/TitleWithSeeMore'
 
+
+import VerifyItem from '../VerifyItem'
+import TitleWithSeeMore from '../../../../component/TitleWithSeeMore'
 const { width, height } = Dimensions.get('window')
 
-const data = {
-    rank:1,
-    name:'윤예슬',
-    talk:'24학점은 기본이죠 윙가르디움 레비오우사 ㅁㅇㄴㄹㄴㅇ',
-    time:'22시간 30분'
-}
 
-
-const GroupTodayKing =()=>{
+const GroupVerifyBoard = () =>{
     const navigation = useNavigation<any>()
-    const myGroupRank = useCallback(()=>navigation.navigate('MyGroupRank'),[])
+    const myGroupVBoard = useCallback(()=>navigation.navigate('MyGroupVBoard'),[])
 
     return (
-    <>
         <View style={styles.mainContainer}>
             <TitleWithSeeMore 
                         style={styles.subtitleContainer}
                         titleStyle={styles.titleText}
                         seeMoreStyle={styles.seeMore}
-                        title={'오늘의 공부왕'} seeMore={'랭킹 더보기 >'} 
-                        seeMoreNavFunc={myGroupRank} />
-            <RankItem data={data}/>
-            <RankItem data={data}/>
-            <RankItem data={data}/>
+                        title={'인증게시판'} seeMore={'게시글 더보기 >'} 
+                        seeMoreNavFunc={myGroupVBoard} />
+            
+            <VerifyItem hasPhoto/>
+            <VerifyItem/>
         </View>
-    
-    </>
     )
 }
 
-export default GroupTodayKing
+export default GroupVerifyBoard
 
 const styles = StyleSheet.create({
     shadow:{
@@ -60,20 +51,17 @@ const styles = StyleSheet.create({
     subtitleContainer:{
         flexDirection:'row',
         paddingBottom:10,
+
     },
     titleText:{
         fontSize: 15,
         fontFamily: 'GodoM',
     },
     seeMore:{
-        fontSize: 13,
-
+        fontSize:13,
         color:'#7EBEF9',
         fontFamily:'GodoM',
         fontWeight:'bold',
-
-    },
-
-
+    }
 })
 

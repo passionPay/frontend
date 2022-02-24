@@ -2,7 +2,7 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
-import MyGroupMissionGoal from '../component/myGroup/MyGroupMissionGoal'
+import MyGroupMissionGoal from './component/myGroup/MyGroupMissionGoal'
 
 const { width, height } = Dimensions.get('window')
 
@@ -23,7 +23,7 @@ export default function MyGroupGoal() {
                                 }} >
                     &lt; 3학년 1반 국어스터디 </Text>
                 </TouchableOpacity>
-                <Text style={styles.title}>그룹 목표</Text>
+                <Text style={styles.title}>오늘 공부 현황</Text>
 
             <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}> 
                 <MyGroupMissionGoal/>

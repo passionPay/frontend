@@ -3,6 +3,7 @@ import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollV
 import {useNavigation} from '@react-navigation/native'
 import Modal from "react-native-modal";
 import NoticeModal from './NoticeModal';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const { width, height } = Dimensions.get('window')
 const data ={
@@ -33,35 +34,39 @@ const NoticeBoard = () =>{
                     setModalVisible(true);
                   }}
                 style={styles.noticeContainer}>
-                <View style={styles.noticeIconContainer}>
-                    <Image style={{width:15,height:15}}source={require('../../../../images/group/demostration.png')} />
-                </View>
-                    
-                    <Text style={{fontSize: 12,
-                                }}>
-                        {data.groupNoticeTitle}
-                    </Text>
+                {/* <View style={styles.noticeIconContainer}>
+                    <Image style={{width:15,height:15}}source={require('../../../../../images/group/demostration.png')} />
+                </View> */}
+                <Icon style={{
+                        marginTop:0,
+                        marginLeft:20,
+                        marginRight:5,
+                    }} name='bullhorn-outline' size={20} color='black'/>    
+                <Text style={{fontSize: 12,
+                            }}>
+                    {data.groupNoticeTitle}
+                </Text>
             </TouchableOpacity>
             <View style={styles.groupMenuContainer}>
                 
 
                 <TouchableOpacity style={styles.groupMenu} onPress={myGroupGoal}>
-                    <Image style={{width:30,height:30}}source={require('../../../../images/group/trophy.png')} />
+                    <Image style={{width:30,height:30}}source={require('../../../../../images/group/trophy.png')} />
                     
                     <Text style={styles.menuText} >그룹목표</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.groupMenu} onPress={myGroupStat}>
-                    <Image style={{width:30,height:30}}source={require('../../../../images/group/analysis.png')} />
+                    <Image style={{width:30,height:30}}source={require('../../../../../images/group/analysis.png')} />
                     
                     <Text style={styles.menuText}>그룹통계</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.groupMenu} onPress={myGroupVBoard}>
-                    <Image style={{width:30,height:30}}source={require('../../../../images/group/notebook.png')} />
+                    <Image style={{width:30,height:30}}source={require('../../../../../images/group/notebook.png')} />
                     
                     <Text style={styles.menuText}>인증게시판</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.groupMenu} onPress={myGroupRank}>
-                    <Image style={{width:30,height:30}}source={require('../../../../images/group/achievement.png')} />
+                    <Image style={{width:30,height:30}}source={require('../../../../../images/group/achievement.png')} />
                     
                     <Text style={styles.menuText}>그룹랭킹</Text>
                 </TouchableOpacity>

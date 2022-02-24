@@ -2,13 +2,15 @@ import React, {useCallback} from 'react'
 import { Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
-import MakeGroup from './ManageGroup/MakeGroup/MakeGroup'
-import MyGroupCard from './component/GroupMain/MyGroupCard'
-import OtherGroupCard from './component/GroupMain/OtherGroupCard'
-import SearchBar from './component/SearchBar'
-import {TouchableIcon} from '../component/TouchableIcon'
+import MakeGroup from '../ManageGroup/MakeGroup/MakeGroup'
+import MyGroupCard from './MyGroupCard'
+import GroupEmpty from './GroupEmpty'
+import OtherGroupCard from './OtherGroupCard'
+import SearchBar from './SearchBar'
+import {TouchableIcon} from '../../component/TouchableIcon'
 const { width, height } = Dimensions.get('window')
 
+const currentData = getTempData()
 
 export default function Group() {
 
@@ -16,6 +18,7 @@ export default function Group() {
     const makeGroup = useCallback(()=>navigation.navigate('MakeGroup'),[])
     const groupSetting = useCallback(()=>navigation.navigate('GroupSetting'),[])
 
+    const {myGroups,otherGroups} = currentData
     return (
     <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
@@ -47,27 +50,35 @@ export default function Group() {
             
             <View style={styles.myGroups}>
                 <Text style={styles.groupTitle}>내 스터디 그룹</Text>
+                {myGroups.length===0?<GroupEmpty isMine/>:
                 <ScrollView 
-                    horizontal={true}  
-                    showsHorizontalScrollIndicator={false}
-                    style={{
-                        paddingLeft:width*0.05,
-                    }}>
+                horizontal={true}  
+                showsHorizontalScrollIndicator={false}
+                style={{
+                    paddingLeft:width*0.05,
+                }}>
                     <MyGroupCard/>
                     <MyGroupCard/>
                     <MyGroupCard/>
-                </ScrollView>
+                </ScrollView> 
+                }
             </View>
             <View style={styles.otherGroups}>
                 <Text style={styles.groupTitle}>둘러보기</Text>
-                <SearchBar/>
-                <OtherGroupCard/>
-                <OtherGroupCard/>
-                <OtherGroupCard/>
-                <OtherGroupCard/>
-                <OtherGroupCard/>
-                <OtherGroupCard/>
-                <OtherGroupCard/>
+                
+                {otherGroups.length===0?<GroupEmpty isMine={false}/>:
+                <>
+                    <SearchBar/>
+                    <OtherGroupCard/>
+                    <OtherGroupCard/>
+                    <OtherGroupCard/>
+                    <OtherGroupCard/>
+                    <OtherGroupCard/>
+                    <OtherGroupCard/>
+                    <OtherGroupCard/>
+                </>
+                }
+                
             </View>
         </ScrollView>
         </View>
@@ -136,3 +147,13 @@ const styles = StyleSheet.create({
     
 })
 
+
+function getTempData() {
+    return (
+        {
+            myGroups:[1],
+            otherGroups:[2]
+        }
+    )
+    
+}

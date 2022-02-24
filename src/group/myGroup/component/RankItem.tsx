@@ -2,6 +2,7 @@ import React, {useCallback} from 'react'
 import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 import MemberIcon from '../../../component/MemberIcon'
+
 import CrownIcon from '../../../../svgs/CronwIcon'
 const { width, height } = Dimensions.get('window')
 
