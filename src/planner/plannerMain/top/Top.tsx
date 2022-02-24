@@ -2,9 +2,11 @@ import React from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Text, TouchableIcon } from '../../../component/CustomComponent'
-import { PlannerDataType } from '../PlannerMain'
+import { useContextOfPlanner } from '../../PlannerProvider'
 
-export default function Top({ data }: { data: PlannerDataType }) {
+export default function Top() {
+    const cont = useContextOfPlanner()
+    const data = cont.data
     return <View style={styles.container}>
         <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>

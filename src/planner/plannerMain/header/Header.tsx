@@ -2,47 +2,54 @@ import React from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Text, TouchableIcon } from '../../../component/CustomComponent'
+import { useContextOfPlanner } from '../../PlannerProvider'
 import MainStopWatch from './MainStopWatch'
-import { PlannerDataType } from '../PlannerMain'
 
-export default function Header({ data }: { data: PlannerDataType }) {
+export default function Header() {
+    const cont = useContextOfPlanner()
+    const data = cont.data
     return <View style={styles.container}>
-        <TouchableOpacity style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            alignSelf: 'flex-start'
-        }}>
-            <Icon name='calendar-month' color='#000' size={17} style={{ marginTop: 2 }} />
-            <Text style={{ marginLeft: 10, color: '#000', fontWeight: 'bold' }}>{data.date}</Text>
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}>
+            <TouchableOpacity style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+            }}>
+                <Icon name='calendar-month' color='#151515' size={17} />
+                <Text style={{ marginLeft: 10 }}>{data.date}</Text>
+            </TouchableOpacity>
+            <Text style={styles.dDay}>
+                {data.dDay < 0 ? ' ' : 'D-' + data.dDay}</Text>
+        </View>
         <View style={{
-            flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
             width: '100%',
             borderTopWidth: 0.5,
             borderBottomWidth: 0.5,
-            padding: 5,
-            marginVertical: 10
+            paddingHorizontal: 5,
+            marginVertical: 10,
+            paddingTop: 10,
+            // paddingBottom: 15,
+            borderColor: '#151515'
         }}>
-            <View style={{ flex: 5, paddingRight: 5 }}>
-                <Text style={styles.tag}>D-DAY</Text>
-                <Text style={ styles.dDay }>
-                    {data.dDay == -1 ? '' : 'D-' + data.dDay}</Text>
-                <Text style={styles.tag}>COMMENT</Text>
-                <Text style={{
-                    fontSize: 11,
-                }}>{data.comment}</Text>
+            <View style={{ flexDirection: 'row' }}>
+                <Text style={[styles.tag, { flex: 3 }]}>COMMENT</Text>
+                <Text style={[styles.tag, { flex: 2 }]}>TOTAL TIME</Text>
             </View>
-            <View style={{ flex: 4 }}>
-                <Text style={styles.tag}>TOTAL TIME</Text>
+            <View style={{ flexDirection: 'row' }}>
+                <View style={{flex: 3}}>
+                    <Text style={{
+                        fontSize: 11,
+                        marginRight: 30,
+                        paddingTop: 11,
+                    }}>{data.comment}</Text>
+                </View>
                 <TouchableOpacity style={{
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginVertical: 15,
+                    flex: 2,
+                    paddingTop: 10,
+                    paddingBottom: 15
                 }}>
-                    <MainStopWatch initSec={98765} />
+                    <MainStopWatch />
                 </TouchableOpacity>
             </View>
         </View>
@@ -73,15 +80,12 @@ const styles = StyleSheet.create({
     },
     tag: {
         fontFamily: 'SourceSansPro-Bold',
-        fontSize: 10,
-        marginVertical: 5
+        fontSize: 12,
+        marginTop: 5,
+        // marginBottom: 10,
     },
     dDay: {
-        color: '#000',
-        fontWeight: 'bold',
-        alignSelf: 'center',
-        // fontSize: 18,
-        fontFamily: 'kita'
-        // marginVertical: 5
+        // alignSelf: 'center',
+        color: '#151515'
     }
 })

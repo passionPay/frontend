@@ -8,11 +8,11 @@ import { Text as RNText, TextProps } from 'react-native'
 //     return <RNText />
 // }
 
-export const Text: FC<TextProps> = (props: TextProps) => {
-    return <RNText {...props}
-        style={[{ fontFamily: 'GodoM', color: '#000' }, props.style]}>
-        {props.children}</RNText>
-}
+// export const Text: FC<TextProps> = (props: TextProps) => {
+//     return <RNText {...props}
+//         style={[{ fontFamily: 'GodoM', color: '#000' }, props.style]}>
+//         {props.children}</RNText>
+// }
 
 
 // export const MyText = ({ }) => {
