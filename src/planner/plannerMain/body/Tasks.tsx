@@ -82,22 +82,4 @@ const styles = StyleSheet.create({
 function StatusIcon({ status }) {
     return <Icon name={status == 0 ? 'checkbox-blank-outline' : 'checkbox-marked'}
         size={18} color={status == 0 ? '#494949' : '#1E96FC'} style={{ marginLeft: 20 }} />
-    // switch (status) {
-    //     case 1: return <Icon name='close' size={16} color='#151515'
-    //         style={{ marginRight: 5, marginLeft: 20 }} />
-    //     case 2: return <Icon name='triangle-outline' size={16} color='#151515'
-    //         style={{ marginRight: 5, marginLeft: 20 }} />
-    //     case 3: return <Icon name='circle-outline' size={16} color='#151515'
-    //         style={{ marginRight: 5, marginLeft: 20 }} />
-    // }
-    // return <View style={{
-    //     width: 16,
-    //     height: 16,
-    //     borderWidth: 1,
-    //     borderRadius: 2,
-    //     marginRight: 5,
-    //     marginLeft: 20,
-    //     // backgroundColor: '#eee',
-    //     borderColor: '#888688'
-    // }} />
 }

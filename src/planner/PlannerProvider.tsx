@@ -24,8 +24,8 @@ export type PlannerContextType = {
     setData,
     currentTaskId: number,
     setCurrentTaskId,
-    totalTime: number,
-    taskTotalTime: number,
+    currentStopwatchIncrementTime: number,
+    setCurrentStopwatchIncrementTime,
     TASKEDITMODAL_selectedTask: TaskType,
     setTASKEDITMODAL_selectedTask
 }
@@ -39,6 +39,8 @@ const defaultContext = {
     setData: undefined,
     currentTaskId: -1,
     setCurrentTaskId: undefined,
+    currentStopwatchIncrementTime: 0,
+    setCurrentStopwatchIncrementTime: undefined,
     totalTime: 0,
     taskTotalTime: 0,
     TASKEDITMODAL_selectedTask: {
@@ -67,10 +69,10 @@ export const PlannerProvider: FC<{}> = ({ children }) => {
         taskId: 0,
         color: '#000'
     })
-    let totalTime = 0, taskTotalTime = 0
+    const [currentStopwatchIncrementTime, setCurrentStopwatchIncrementTime] = useState(0)
     const value = {
         isStart, setStart, currentModal, setCurrentModal, data, setData,
-        currentTaskId, setCurrentTaskId, totalTime, taskTotalTime,
+        currentTaskId, setCurrentTaskId, currentStopwatchIncrementTime, setCurrentStopwatchIncrementTime,
         TASKEDITMODAL_selectedTask, setTASKEDITMODAL_selectedTask
     }
     return <ContextOfPlanner.Provider value={value}>

@@ -11,7 +11,7 @@ export default function TaskStopWatch({ initSec, isRunning }
     const [min, setMin] = useState(Math.floor(initSec / 60) % 60)
     const [sec, setSec] = useState(initSec % 60)
     const interval = useRef<any>(null)
-    let totalTime = initSec
+
     useEffect(() => {
         if (!isRunning) {// 종료하려는 경우
             if (interval.current)
@@ -19,8 +19,6 @@ export default function TaskStopWatch({ initSec, isRunning }
         }
         else { // 시작하려는 경우
             interval.current = setInterval(() => {
-                cont.totalTime = totalTime++
-                // console.log(hour, min, sec)
                 setSec((prevSec: number) => {
                     if (prevSec != 59)
                         return prevSec + 1
@@ -55,7 +53,8 @@ export default function TaskStopWatch({ initSec, isRunning }
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 3
     }
 })
 

@@ -11,8 +11,6 @@ export default function MainStopWatch() {
     const [sec, setSec] = useState(cont.data.totalTime % 60)
     const interval = useRef<any>(null)
 
-    let totalTime = cont.data.totalTime
-
     useEffect(() => {
         setHour(Math.floor(cont.data.totalTime / 3600))
         setMin(Math.floor(cont.data.totalTime / 60) % 60)
@@ -39,12 +37,13 @@ export default function MainStopWatch() {
     useEffect(() => {
         // if (cont.data.totalTime < 0) return // 아직 데이터 안 불러온 경우
         if (!cont.isStart) {// 종료하려는 경우
+            cont.setCurrentStopwatchIncrementTime(0)
             if (interval.current)
                 clearInterval(interval.current)
         }
         else { // 시작하려는 경우
             interval.current = setInterval(() => {
-                cont.totalTime = totalTime++
+                cont.setCurrentStopwatchIncrementTime((prev) => prev + 1)
                 // console.log(hour, min, sec)
                 setSec((prevSec: number) => {
                     if (prevSec != 59)

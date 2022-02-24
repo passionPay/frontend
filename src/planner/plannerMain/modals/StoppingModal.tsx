@@ -12,11 +12,11 @@ export default function StoppingModal({ }) {
         cont.setStart(false)
         cont.setData((prev: PlannerDataType) => {
             let next: PlannerDataType = JSON.parse(JSON.stringify(prev))
-            next.totalTime = cont.totalTime
+            next.totalTime += cont.currentStopwatchIncrementTime
             for (let i = 0; i < next.tasks.length; ++i)
                 for (let j = 0; j < next.tasks[i].tasks.length; ++j)
                     if (next.tasks[i].tasks[j].taskId == cont.currentTaskId)
-                        next.tasks[i].tasks[j].totalTime = cont.taskTotalTime
+                        next.tasks[i].tasks[j].totalTime += cont.currentStopwatchIncrementTime
             next.timestamps = [...cont.data.timestamps]
             AsyncStorage.setItem('Planner' + new Date().toISOString().slice(0, 10),
                 JSON.stringify(next))
