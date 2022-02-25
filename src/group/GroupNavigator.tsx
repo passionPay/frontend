@@ -10,7 +10,7 @@ import MakeGroup from './ManageGroup/MakeGroup/MakeGroup'
 
 import MyGroup from './MyGroup/MyGroup'
 import MyGroupSetting from './ManageGroup/MyGroupSetting/MyGroupSetting'
-import MyGroupGoal from './MyGroup/MyGroupGoal'
+import MyGroupGoal from './MyGroup/MyGroupGoal/MyGroupGoal'
 import MyGroupStat from './MyGroup/MyGroupStat'
 import MyGroupVBoard from './MyGroup/MyGroupVBoard'
 import MyGroupRank from './MyGroup/MyGroupRank'

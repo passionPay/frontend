@@ -33,7 +33,6 @@ const dateNumbers = [31,28,31,30,31,30,31,31,30,31,30,31]
         height:120,
         marginBottom:-120 +height*0.03,
         zIndex:1,
-
       }}>
         <DropDownPicker
           style={{
@@ -126,8 +125,8 @@ const DateSelectDropdown = ({
         flexDirection:'row',
         marginHorizontal:width*0.05,
         marginTop:height*0.02,
-        height:120,
-        marginBottom:-120 +height*0.03,
+        height:155,
+        marginBottom:-155 +height*0.04,
         zIndex:1,
 
       },style]}>

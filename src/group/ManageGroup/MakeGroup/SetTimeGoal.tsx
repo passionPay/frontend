@@ -46,8 +46,8 @@ const SetTimeGoal = ({ state, dispatch }) => {
                 <Text style={styles.tag}>하루 목표 시간</Text>
                 <View style={{
                     flexDirection: 'row',
-                    height:120,
-                    marginBottom:-85,
+                    // height:120,
+                    // marginBottom:-85,
                 }}>
                     <DropDownPicker
                         style={{
@@ -55,8 +55,8 @@ const SetTimeGoal = ({ state, dispatch }) => {
                         }}
                         containerStyle={{
                             width: 100,
-                            height:170,
-                            zIndex:hourOpen?1:0
+                            // height:170,
+                            // zIndex:hourOpen?1:0
 
                         }}
                         maxHeight={120}
@@ -78,8 +78,8 @@ const SetTimeGoal = ({ state, dispatch }) => {
                         containerStyle={{
                             marginLeft: 10,
                             width: 100,
-                            height:170,
-                            zIndex:hourOpen?1:0
+                            // height:170,
+                            // zIndex:hourOpen?1:0
 
                         }}
                         maxHeight={120}

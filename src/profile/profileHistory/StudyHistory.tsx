@@ -9,7 +9,7 @@ import HistoryTabBar from './HistoryTabBar'
 
 
 import {useNavigation} from '@react-navigation/native'
-import HistoryScreen from './HistoryScreenNavigator'
+import HistoryScreenNavigator from './HistoryScreenNavigator'
 
 const { width, height } = Dimensions.get('window')
 
@@ -44,7 +44,7 @@ const StudyHistory = () => {
                 </View>
                 <HistoryTabBar tabNumber={tabNumber} setTabNumber={setTabNumber} />
             <ScrollView style={{flex:1,}} bounces={false}>
-                <HistoryScreen tabNumber={tabNumber}/>
+                <HistoryScreenNavigator tabNumber={tabNumber}/>
             </ScrollView>
         </SafeAreaView>
     )

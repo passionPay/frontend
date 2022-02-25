@@ -1,8 +1,10 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import { Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import DropDownPicker from 'react-native-dropdown-picker'
 
-import MyGroupMissionGoal from './component/myGroup/MyGroupMissionGoal'
+import MyGroupMissionGoal from './MissionGoalScreen'
+import GoalScreenNavigator from './GoalScreenNavigator'
 
 const { width, height } = Dimensions.get('window')
 
@@ -11,6 +13,11 @@ const { width, height } = Dimensions.get('window')
 export default function MyGroupGoal() {
     const navigation = useNavigation<any>()
     const goBack = useCallback(() => navigation.goBack(), [])
+
+    const [tabValue, setTabValue] = useState(0)
+    const [tabOpen, setTabOpen] = useState(false)
+    const [tabItems, setTabItems] = useState([{ label: '미션', value: 0 }, { label: '시간', value: 1 }])
+
     return (
         <SafeAreaView style={styles.safeContainer}>
             <View style={styles.container}>
@@ -26,9 +33,34 @@ export default function MyGroupGoal() {
                 </TouchableOpacity>
                 <Text style={styles.title}>오늘 공부 현황</Text>
 
-                <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
-                    <MyGroupMissionGoal />
 
+
+                <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+
+                    <View style={{
+                        height: 115, marginBottom: -80, zIndex: 1,
+                    }}>
+                        <DropDownPicker
+                            style={{
+
+                                height: 35,
+                            }}
+                            containerStyle={{
+                                // marginTop: 10,
+                                width: 80,
+                            }}
+                            maxHeight={80}
+                            autoScroll={true}
+                            open={tabOpen}
+                            value={tabValue}
+                            items={tabItems}
+                            setOpen={setTabOpen}
+                            setValue={setTabValue}
+                            setItems={setTabItems}
+                            listMode="SCROLLVIEW"
+                        />
+                    </View>
+                    <GoalScreenNavigator tabNumber={tabValue} />
                 </ScrollView>
             </View>
         </SafeAreaView>
@@ -70,7 +102,8 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontFamily: 'GodoM',
         color: '#000',
-        marginBottom: height * 0.02,
+        paddingBottom:15,
+
 
     },
     subContainer: {

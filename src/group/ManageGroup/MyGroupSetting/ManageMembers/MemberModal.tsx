@@ -9,7 +9,12 @@ import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
 
-const MemberModal= ({modalVisible,setModalVisible,isLeader}) =>{
+type MemberModalProps ={
+    modalVisible:boolean,
+    setModalVisible:React.Dispatch<React.SetStateAction<boolean>>
+    isLeader:boolean
+}
+const MemberModal= ({modalVisible,setModalVisible,isLeader}:MemberModalProps) =>{
     
     /*option에서 onPRess 를 받아오든지 해야할듯
     navigation??
@@ -84,6 +89,9 @@ const MemberModal= ({modalVisible,setModalVisible,isLeader}) =>{
 
 export default MemberModal
 
+MemberModal.defaultProps={
+    isLeader:false,
+}
 const styles= StyleSheet.create({
     modalContainer:{
         // backgroundColor:'#ffffff',

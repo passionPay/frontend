@@ -19,7 +19,7 @@ const Screen = ({tabNumber})=>{
     }
 }
 
-const HistoryScreen = ({tabNumber=0})=>{
+const HistoryScreenNavigator = ({tabNumber=0})=>{
 
     return (
     <>
@@ -36,7 +36,7 @@ const HistoryScreen = ({tabNumber=0})=>{
     )
 }
 
-export default HistoryScreen
+export default HistoryScreenNavigator
 
 const styles = StyleSheet.create({
     timeCard:{

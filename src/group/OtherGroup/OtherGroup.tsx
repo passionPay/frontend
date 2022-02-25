@@ -16,12 +16,17 @@ const data = {
     groupNoticeTitle: '[필독] 지켜야 할 사항',
     groupMissions: ['하루 3시간 이상 국어 공부하기',
         '하루 1시간 바보',
-        '저녁은 언제먹지',],
+        '저녁은 언제먹지',
+        '저녁은 언제먹지',
+        '저녁은 언제먹adfsdfsdfs지',],
     groupTimes: {
         goal: '14:00:00',
         avg: '9:20:03',
-        my: '1:38:34',
     },
+    groupGoalProgresses:{
+        mission: 0.0059,
+        time:0.5,
+    }
 }
 
 
@@ -44,7 +49,10 @@ export default function OtherGroup() {
                         &lt; 스터디 그룹
                     </Text>
                 </TouchableOpacity>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View style={{
+                    flexDirection: 'row', justifyContent: 'space-between',
+                    marginBottom: height * 0.02,
+                }}>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start' }}>
                         <Text style={styles.title}>{data.groupName}</Text>
                         <View style={styles.headCountContainer}>
@@ -52,13 +60,23 @@ export default function OtherGroup() {
                             <Text style={{ fontSize: 13, }}>{`${3}/${5}`}</Text>
                         </View>
                     </View>
+                    <TouchableOpacity style={styles.joinButton}>
+                        <Text style={{
+                            color:'white',
+                            textAlign:'center',
+                            fontSize:14,
+                            fontWeight:'700'
+                        }}>
+                            가입하기
+                        </Text>
+                    </TouchableOpacity>
 
                 </View>
                 <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
                     <Text style={styles.groupDescription}>{data.groupDescription}</Text>
 
                     <Notice />
-                    <OtherGroupSummary />
+                    <OtherGroupSummary data={data}/>
 
 
 
@@ -106,10 +124,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: width * 0.05,
     },
     title: {
+        flex:1,
         fontSize: 18,
         fontFamily: 'GodoM',
         color: '#000',
-        marginBottom: height * 0.02,
+        alignSelf:'center',
     },
     myGroups: {
         paddingTop: height * 0.02,
@@ -121,11 +140,21 @@ const styles = StyleSheet.create({
 
     },
     headCountContainer: {
+        alignSelf:'center',
         flexDirection: 'row',
-        marginTop: 1,
+        marginTop: -2,
         marginLeft: 10,
         // borderWidth:1,
     },
+    joinButton: {
+        width: 80,
+        height: 30,
+        marginLeft: 10,
+        borderRadius:10,
+        alignSelf: 'center',
+        backgroundColor: '#7EBEF9',
+        justifyContent:'center',
+    }
 
 
 })

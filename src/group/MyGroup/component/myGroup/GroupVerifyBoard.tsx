@@ -1,5 +1,5 @@
 import React ,{useCallback} from 'react'
-import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
+import { Alert,TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
 

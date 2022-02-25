@@ -47,7 +47,7 @@ export default function MyGroup() {
                         fontFamily: 'GodoM',
                         color: '#9F9F9F',
                     }}>
-                        &lt; 스터디 그룹</Text>
+                        {'<'} Study Group</Text>
                 </TouchableOpacity>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start' }}>

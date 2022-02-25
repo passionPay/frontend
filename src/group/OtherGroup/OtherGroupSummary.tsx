@@ -1,12 +1,13 @@
 import React from 'react'
 import { Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView } from 'react-native'
 
-import OtherGroupSummaryBoard from './OtherGroupSummaryBoards'
+import OtherGroupSummaryBoard from './OtherGroupSummaryBoard'
 import OtherGroupProgressBar from './OtherGroupProgressBar'
 
 const { width, height } = Dimensions.get('window')
 
-const OtherGroupSummary = () => {
+const OtherGroupSummary = ({data}) => {
+    const {groupTimes,groupMissions,groupGoalProgresses}=data
     return (
         <>
             <Text style={{
@@ -17,11 +18,11 @@ const OtherGroupSummary = () => {
             }}>
                 오늘 그룹 공부 현황
             </Text>
-            <OtherGroupProgressBar />
+            <OtherGroupProgressBar groupGoalProgresses={groupGoalProgresses} />
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                <OtherGroupSummaryBoard isOtherGroup time></OtherGroupSummaryBoard>
-                <OtherGroupSummaryBoard></OtherGroupSummaryBoard>
+                <OtherGroupSummaryBoard isOtherGroup time data={groupTimes}/>
+                <OtherGroupSummaryBoard data={groupMissions}/>
             </View>
         </>
 
