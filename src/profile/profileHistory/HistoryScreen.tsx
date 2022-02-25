@@ -39,8 +39,7 @@ const DailyHistoryScreen = ()=>{
             setMonthValue={setMonthValue}
             dateValue={dateValue}
             setDateValue={setDateValue}
-        />  
-        {/* <WeekCalander date={date} setDate={setDate}/>                */}
+        /> 
         <View style={{marginVertical:height*0.02, flexDirection:'row',justifyContent:'space-between', marginHorizontal:width*0.05, height:width*0.3}}>
             <View style={styles.timeCard}>
                 <Text style={{fontSize:14}}>{getCardText(0)[0]}</Text>

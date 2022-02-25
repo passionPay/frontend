@@ -3,12 +3,6 @@ import {View,Text,TouchableOpacity,StyleSheet,Dimensions} from 'react-native'
 
 import {DailyHistoryScreen,WeeklyHistoryScreen,MonthlyHistoryScreen} from './HistoryScreen'
 
-import WeekCalandar from '../component/WeekCalandar'
-
-import WeekChart from '../../component/chart/WeekChart'
-import MonthChart from '../../component/chart/MonthChart'
-import ProgressBar from '../../component/ProgressBar'
-
 const { width, height } = Dimensions.get('window')
 
 

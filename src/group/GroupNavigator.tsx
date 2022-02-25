@@ -26,8 +26,8 @@ export default function StudyGroupNavigator() {
         <Stack.Screen name='EditNotice' component={EditNotice} />
         <Stack.Screen name='ManageMembers' component={ManageMembers} />
 
-        <Stack.Screen name='MakeGroup' component={MakeGroup}/>
-        <Stack.Screen name='MyGroup' component={MyGroup}/>
+        <Stack.Screen name='MakeGroup' component={MakeGroup} />
+        <Stack.Screen name='MyGroup' component={MyGroup} />
         <Stack.Screen name='MyGroupSetting' component={MyGroupSetting} />
         <Stack.Screen name='MyGroupGoal' component={MyGroupGoal} />
         <Stack.Screen name='MyGroupStat' component={MyGroupStat} />
@@ -35,7 +35,7 @@ export default function StudyGroupNavigator() {
         <Stack.Screen name='MyGroupRank' component={MyGroupRank} />
         <Stack.Screen name='VerifyPost' component={VerifyPost} />
 
-        <Stack.Screen name='OtherGroup' component={OtherGroup}/>
+        <Stack.Screen name='OtherGroup' component={OtherGroup} />
 
     </Stack.Navigator>
 }

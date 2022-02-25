@@ -25,8 +25,9 @@ const HistoryTabBar = ({tabNumber,setTabNumber})=>{
                 paddingTop:height*0.02,
                 paddingBottom:height*0.01,
             }}>
-                {[{tab:0,name:'일간'},{tab:1,name:'주간'},{tab:2,name:'월간'}].map((v, i) => 
+                {[{tab:0,name:'일간'},{tab:1,name:'주간'},{tab:2,name:'월간'}].map((v, idx) => 
                 <TouchableOpacity
+                    key={idx}
                     style={styles.historyTab}
                     onPress = {useCallback(() => {
                         Animated.timing(tabBarAnimVal, {
