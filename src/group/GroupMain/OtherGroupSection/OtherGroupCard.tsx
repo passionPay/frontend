@@ -2,11 +2,11 @@ import React, { useCallback, useState } from 'react'
 import { Platform, Dimensions, StyleSheet, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Ionicon from 'react-native-vector-icons/Ionicons'
-import PrivateGroupEnteringModal from './PrivateGroupEnteringModal'
+import PrivateGroupEnteringModal from '../PrivateGroupEnteringModal'
 import { useNavigation } from '@react-navigation/native'
 
 
-import ProgressBar from '../../component/ProgressBar';
+import ProgressBar from '../../../component/ProgressBar';
 const { width, height } = Dimensions.get('window')
 
 
@@ -52,7 +52,7 @@ const OtherGroupCard = () => {
                 </View>
                 <View style={styles.groupMissionContainer}>
                     <View style={{ paddingTop: 0, paddingRight: 3 }}>
-                        <Image style={{ width: 10, height: 10 }} source={require('../../../images/group/trophy.png')} />
+                        <Image style={{ width: 10, height: 10 }} source={require('../../../../images/group/trophy.png')} />
                     </View>
                     <Text style={styles.mission}>{`${groupMissions[0].missionName} 외 목표 ${groupMissions.length - 1}개`}</Text>
                 </View>

@@ -4,8 +4,8 @@ import {useNavigation} from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
-import MemberIcon from '../../component/MemberIcon';
-import ProgressBar from '../../component/ProgressBar';
+import MemberIcon from '../../../component/MemberIcon';
+import ProgressBar from '../../../component/ProgressBar';
 const currentData = getTempData()
 const { width, height } = Dimensions.get('window')
 
@@ -32,12 +32,12 @@ const MyGroupCard = () => {
             <View>
                 <Text style={styles.memberTitle}>Members</Text>
                 <View style={styles.memberContainer}>
-                    <MemberIcon size={24} margin={'2%'}/>
-                    <MemberIcon size={24} margin={'2%'}/>
-                    <MemberIcon size={24} margin={'2%'}/>
-                    <MemberIcon size={24} margin={'2%'}/>
-                    <MemberIcon size={24} margin={'2%'}/>
-                    <MemberIcon size={24} margin={'2%'}/>
+                    <MemberIcon size={24} style={{marginHorizontal:width*0.005}}/>
+                    <MemberIcon size={24} style={{marginHorizontal:width*0.005}}/>
+                    <MemberIcon size={24} style={{marginHorizontal:width*0.005}}/>
+                    <MemberIcon size={24} style={{marginHorizontal:width*0.005}}/>
+                    <MemberIcon size={24} style={{marginHorizontal:width*0.005}}/>
+                    <MemberIcon size={24} style={{marginHorizontal:width*0.005}}/>
                 </View>
             </View>
             <View style={styles.progressContainer}>
@@ -52,7 +52,7 @@ const MyGroupCard = () => {
             </View>
             <View style={styles.groupMissionContainer}>
                 <View style={{paddingTop:0, paddingRight:3}}>
-                    <Image style={{width:10,height:10}}source={require('../../../images/group/trophy.png')} />
+                    <Image style={{width:10,height:10}}source={require('../../../../images/group/trophy.png')} />
                 </View>
                     <Text style={styles.mission}>{`${groupMissions[0].missionName} 외 목표 ${groupMissions.length-1}개`}</Text>
             </View>

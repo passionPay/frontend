@@ -1,35 +1,51 @@
 import React, {useCallback,useEffect,useState} from 'react'
 import { TextInput,Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
-import { State } from 'react-native-gesture-handler'
+
+import MemberItem from './MemberItem'
 
 
 const { width, height } = Dimensions.get('window')
 
-type StateType = {
-    noticeTitle:string,
-    noticeContent:string,
-}
-const initState:StateType = { 
-    noticeTitle:'',
-    noticeContent:'',
+type RankDataType ={
+    name: string,
+    rank: number,
+    time : string,
 }
 
+const datas : RankDataType[] = [
+    {
+        rank:1,
+        name:'윤예슬',
+        time:'22시간 30분'
+    },
+    {
+        rank:2,
+        name:'고달픈승구',
+        time:'22시간 30분'
+    },
+    {
+        rank:3,
+        name:'바보',
+        time:'22시간 30분'
+    },
+    {
+        rank:4,
+        name:'ghghgghhghhghghghghghghghghghghghghghghghghghghghghghgh',
+        time:'22시간 30분'
+    },
+    {
+        rank:5,
+        name:'윤예슬',
+        time:'22시간 30분'
+    },
+]
 
-const EditNotice = ({route})=>{
+const GroupMembers = ({route})=>{
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
 
-    const [state,setState] = useState(initState)
-    const [editState,setEditState] = useState(false)
-
-    useEffect(()=>{
-        if (typeof(route.params) !== 'undefined' && route.params.isEditMode){
-            setState(route.params.prevState)
-            setEditState(true)
-        }
-        console.log(route)
-    },[route])
+    
 
     return (
         <SafeAreaView style={styles.safeContainer}>
@@ -42,38 +58,18 @@ const EditNotice = ({route})=>{
                                 }}>
                     {`< 그룹 설정`}</Text>
                 </TouchableOpacity>
-                <Text style={styles.title}>{'공지사항 설정'}</Text>
-                <View style={styles.noticeTitleContainer}>
-                    <Text style={{
-                        alignSelf:'center'
-                    }}>제목
-                    </Text>
-                    <TextInput style={styles.info} value={state.noticeTitle}
-                    onChangeText={(text)=>{setState({...state,noticeTitle:text})}}
-                    placeholder='제목을 입력해주세요'
-                    />
-                </View>
-                <View>
-                    <View style={styles.noticeContentContainer}>
-                        <Text style={{
-                            alignSelf:'flex-start',
-                            marginTop:10,
-                        }}>내용
-                        </Text>
-                        <TextInput 
-                        multiline
-                        style={styles.contentInfo} value={state.noticeContent}
-                        onChangeText={(text)=>{setState({...state,noticeContent:text})}}
-                        placeholder='내용을 입력해주세요'
-                        />
-                    </View>
-                </View>
+                <Text style={styles.title}>{(route.params && route.params.isManaging)?'그룹 멤버 관리':'그룹 멤버'}</Text>
+                <ScrollView>
+                    {datas.map((item,idx)=>(
+                        <MemberItem data={item} key={idx} isManaging={(route.params && route.params.isManaging)}/>
+                    ))}
+                </ScrollView>
             </View>
         </SafeAreaView>
     )
 }
 
-export default EditNotice
+export default GroupMembers
 
 const styles=StyleSheet.create({
     safeContainer: {
@@ -109,7 +105,7 @@ const styles=StyleSheet.create({
         paddingHorizontal: 10, 
         marginHorizontal: 20, flex: 1
     },
-    contentInfo: {
+    info2: {
         fontSize: 15,
 
         paddingTop:10,

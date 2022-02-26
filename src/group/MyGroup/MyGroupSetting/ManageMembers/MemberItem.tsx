@@ -3,15 +3,16 @@ import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Im
 import {useNavigation} from '@react-navigation/native'
 import MemberIcon from '../../../../component/MemberIcon'
 
-import MemberModal from './MemberModal';
+import MemberModal from '../../../commonComponent/MemberModal';
 
 
 const { width, height } = Dimensions.get('window')
 
 
-const MemberItem = ({data}) =>{
+const MemberItem = ({data,isManaging}) =>{
     
     const [modalVisible,setModalVisible]= useState(false)
+    
     return(
         <>
         <TouchableOpacity 
@@ -27,7 +28,7 @@ const MemberItem = ({data}) =>{
                     </Text>
                 </View>
         </TouchableOpacity>
-        <MemberModal modalVisible={modalVisible} setModalVisible={setModalVisible} isLeader={true}/>
+        <MemberModal modalVisible={modalVisible} setModalVisible={setModalVisible} isManaging={isManaging}/>
     </>
     
     )
@@ -60,7 +61,7 @@ const itemStyles = StyleSheet.create({
         padding:width*0.01,
         paddingLeft:width*0.03,
         height: 70,
-        marginVertical:5,
+        marginVertical:2,
         marginHorizontal:5,
         borderRadius:10,
         flexDirection:'row',

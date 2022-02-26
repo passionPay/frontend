@@ -40,6 +40,7 @@ const MakePrivacy = ({state,dispatch})=>{
                 {state.groupPrivacy &&
                     <View style={styles.row} >
                     <TextInput style={styles.info} keyboardType='numeric'
+                            secureTextEntry
                             onChangeText={(text)=>{dispatch({type:'CHANGE_INPUT',name:'groupPassword',value:text})}}
                             placeholder ={'그룹 비밀번호를 설정해주세요.'}
                     />

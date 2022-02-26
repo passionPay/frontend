@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: width * 0.05,
     },
     title: {
-        flex:1,
+        // flex:1,
         fontSize: 18,
         fontFamily: 'GodoM',
         color: '#000',

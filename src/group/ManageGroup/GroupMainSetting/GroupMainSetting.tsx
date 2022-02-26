@@ -2,7 +2,7 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
-import {SettingItem}from '../MyGroupSetting/SettingItem'
+import {SettingItem}from '../../MyGroup/MyGroupSetting/SettingItem'
 import { TouchableIcon } from '../../../component/CustomComponent'
 
 const { width, height } = Dimensions.get('window')

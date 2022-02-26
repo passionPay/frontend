@@ -1,53 +1,36 @@
 import React, { useCallback } from 'react'
 import { Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import RankItem from './component/RankItem'
+
+import VerifyItem from '../component/VerifyItem'
+import { TouchableIcon } from '../../../component/CustomComponent'
 
 const { width, height } = Dimensions.get('window')
-type RankDataType = {
-    name: string,
-    rank: number,
-    time: string,
-}
 
-const datas: RankDataType[] = [
-    {
-        rank: 1,
-        name: '윤예슬',
-        time: '22시간 30분'
+
+const data = {
+    groupName: '3학년 1반 국어 스터디',
+    groupDescription: '1학기 매일 공부할 사람만~',
+    groupNoticeTitle: '[필독] 지켜야 할 사항',
+    groupMissions: [
+        '하루 3시간 이상 국어 공부하기',
+        '하루 1시간 바보',
+        '저녁은 언제먹지',
+    ],
+    groupTimes: {
+        goal: '14:00:00',
+        avg: '9:20:03',
+        my: '1:38:34',
     },
-    {
-        rank: 2,
-        name: '고달픈승구',
-        time: '22시간 30분'
-    },
-    {
-        rank: 3,
-        name: '바보',
-        time: '22시간 30분'
-    },
-    {
-        rank: 4,
-        name: 'ghghgghhghhghghghghghghghghghghghghghghghghghghghghghgh',
-        time: '22시간 30분'
-    },
-    {
-        rank: 5,
-        name: '윤예슬',
-        time: '22시간 30분'
-    },
-]
-const data: RankDataType = {
-    rank: 1,
-    name: '윤예슬',
-    time: '22시간 30분'
 }
 
 
-export default function MyGroupGoal() {
+export default function MyGroupVBoard() {
 
     const navigation = useNavigation<any>()
     const goBack = useCallback(() => navigation.goBack(), [])
+    const writeVerifyPost = useCallback(()=>navigation.navigate('WriteVerifyPost'),[])
+    
     return (
         <SafeAreaView style={styles.safeContainer}>
             <View style={styles.container}>
@@ -62,18 +45,32 @@ export default function MyGroupGoal() {
                     }} >
                         &lt; 3학년 1반 국어스터디 </Text>
                 </TouchableOpacity>
-                <Text style={styles.title}>그룹 랭킹</Text>
+
+                <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+                    <Text style={[styles.title]}>인증게시판</Text>
+                    <TouchableIcon
+                        onPress={writeVerifyPost}
+                        iconProps={{
+                            style: [{ paddingLeft: 10, marginTop: -3, marginLeft: 'auto', marginRight: width * 0.03 }],
+                            name: 'plus', size: 23, color: 'black'
+                        }} />
+                </View>
+
 
                 <ScrollView showsVerticalScrollIndicator={false}>
+                    <View style={{}}>
+                        <VerifyItem hasPhoto />
+                        <VerifyItem />
+                        <VerifyItem hasPhoto />
+                        <VerifyItem hasPhoto />
+                        <VerifyItem />
+                        <VerifyItem />
+                    </View>
 
-                    {datas.map((item, idx) => (
-                        <RankItem data={item} key={idx} />
-                    ))}
 
                 </ScrollView>
 
             </View>
-
         </SafeAreaView>
     )
 
@@ -98,10 +95,7 @@ const styles = StyleSheet.create({
         )
     },
     header: {
-
-        height: 60,
-
-        // backgroundColor:'#ff0000',
+        height: 50,
         justifyContent: 'center',
         alignSelf: 'baseline',
 
@@ -112,6 +106,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     container: {
+        flex: 1,
         paddingHorizontal: '5%',
     },
     title: {
@@ -119,7 +114,6 @@ const styles = StyleSheet.create({
         fontFamily: 'GodoM',
         color: '#000',
         marginBottom: height * 0.02,
-
     },
 
     groupDescription: {

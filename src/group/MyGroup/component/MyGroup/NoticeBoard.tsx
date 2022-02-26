@@ -3,6 +3,8 @@ import { Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, Scro
 import { useNavigation } from '@react-navigation/native'
 import Modal from "react-native-modal";
 import NoticeModal from '../../../commonComponent/NoticeModal';
+import MemberModal from '../../../commonComponent/MemberModal';
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const { width, height } = Dimensions.get('window')
@@ -29,6 +31,9 @@ const NoticeBoard = () => {
     const myGroupStat = useCallback(() => navigation.navigate('MyGroupStat'), [])
     const myGroupVBoard = useCallback(() => navigation.navigate('MyGroupVBoard'), [])
     const myGroupRank = useCallback(() => navigation.navigate('MyGroupRank'), [])
+
+
+    const [memberModalVisible,setMemberModalVisible] = useState<boolean>(false);
 
     const [modalVisible, setModalVisible] = useState<boolean>(false);
 
@@ -61,10 +66,11 @@ const NoticeBoard = () => {
 
                     <Text style={styles.menuText} >그룹목표</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.groupMenu} onPress={myGroupStat}>
+                {/* <TouchableOpacity style={styles.groupMenu} onPress={myGroupStat}> */}
+                <TouchableOpacity style={styles.groupMenu} onPress={()=>setMemberModalVisible(true)}>
                     <Image style={{ width: 30, height: 30 }} source={require('../../../../../images/group/analysis.png')} />
 
-                    <Text style={styles.menuText}>그룹통계</Text>
+                    <Text style={styles.menuText}>공부기록</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.groupMenu} onPress={myGroupVBoard}>
                     <Image style={{ width: 30, height: 30 }} source={require('../../../../../images/group/notebook.png')} />
@@ -79,6 +85,7 @@ const NoticeBoard = () => {
             </View>
 
             <NoticeModal data={data.groupNotice} modalVisible={modalVisible} setModalVisible={setModalVisible} />
+            <MemberModal isMine modalVisible={memberModalVisible} setModalVisible={setMemberModalVisible}/>
         </View>
     )
 }

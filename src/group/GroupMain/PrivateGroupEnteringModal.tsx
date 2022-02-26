@@ -38,7 +38,7 @@ const PrivateGroupEnteringModal = ({ modalVisible, setModalVisible, data, navFun
                     <Text style={styles.titleText}>비공개 그룹</Text>
                     <Text>비밀번호를 입력해주세요</Text>
                     <TextInput 
-                        style={{marginTop: 15,height: 30,borderBottomWidth: 1,}}
+                        style={{marginTop: 15,height: 30,padding:0,borderBottomWidth: 1,}}
                         value={input} onChangeText={setInput}
                         placeholder='비밀번호'
                         secureTextEntry={true}

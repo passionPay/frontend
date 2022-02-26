@@ -126,7 +126,7 @@ const MakeGroup = ({route}) => {
                                 fontFamily: 'GodoM',
                                 color: '#9F9F9F',
                                 }} >
-                    {editState?'< 그룹 설정':'< StudyGroup'}</Text>
+                    {editState?'< 그룹 설정':'< Study Group'}</Text>
             </TouchableOpacity>
             <Text style={styles.title}>{editState?'그룹 정보 수정' : '그룹 만들기'}</Text>
             <ScrollView bounces={false} showsVerticalScrollIndicator={false}>

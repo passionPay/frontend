@@ -49,9 +49,9 @@ const NumericInput = ({ state, dispatch, stateName, tagName, ...props }) => {
                 <Text style={styles.tag}>{tagName}</Text>
                 <TextInput
                     style={styles.info}
+                    keyboardType='numeric'
                     value={displayText(state[stateName])}
                     onChangeText={onChangeText}
-                    keyboardType='numeric'
                     {...props}
                 />
             </View>

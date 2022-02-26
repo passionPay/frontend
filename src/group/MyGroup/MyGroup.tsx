@@ -5,11 +5,11 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 
 import { TouchableIcon } from '../../component/CustomComponent'
-import NoticeBoard from './component/myGroup/NoticeBoard'
-import GroupOnlineMembers from './component/myGroup/GroupOnlineMembers'
-import GroupSummary from './component/myGroup/GroupSummary'
-import GroupTodayKing from './component/myGroup/GroupTodayKing'
-import GroupVerifyBoard from './component/myGroup/GroupVerifyBoard'
+import NoticeBoard from './component/MyGroup/NoticeBoard'
+import GroupOnlineMembers from './component/MyGroup/GroupOnlineMembers'
+import GroupSummary from './component/MyGroup/GroupSummary'
+import GroupTodayKing from './component/MyGroup/GroupTodayKing'
+import GroupVerifyBoard from './component/MyGroup/GroupVerifyBoard'
 
 
 
@@ -35,7 +35,7 @@ export default function MyGroup() {
 
 
     const navigation = useNavigation<any>()
-    const myGroupSetting = useCallback(() => navigation.navigate('MyGroupSetting', { groupName: '3학년 1 반 국어스터디', isLeader: true }), [])
+    const myGroupSetting = useCallback(() => navigation.navigate('MyGroupSetting', { groupName: '3학년 1반 국어스터디', isManaging: false }), [])
     const goBack = useCallback(() => navigation.goBack(), [])
 
     return (

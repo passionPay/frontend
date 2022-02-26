@@ -6,10 +6,6 @@ import {useNavigation} from '@react-navigation/native'
 const { width, height } = Dimensions.get('window')
 
 
-
-
-
-
 export const ModalSettingItem = ({tag,option})=>{
     const [modalVisible,setModalVisible] = useState(false)
     return(
@@ -41,7 +37,7 @@ export const ModalSettingItem = ({tag,option})=>{
 
 const getOnPress= (type,option,navigation)=>{
     switch(type){
-        case 'navigatorWithState':
+        case 'navigatorWithParams':
             const navFunctionWithState = useCallback(()=>navigation.navigate(option.navigatorName,option.params),[])
             return navFunctionWithState
         case 'navigator':
@@ -51,11 +47,11 @@ const getOnPress= (type,option,navigation)=>{
     return useCallback(()=>{
     },[])
 }
+
+
 export const SettingItem=({tag,type,option})=> {
-    
     const navigation = useNavigation<any>()
     const onPress = getOnPress(type,option,navigation)
-    
     
     return (
     <>

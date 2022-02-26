@@ -1,22 +1,29 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import DropDownPicker from 'react-native-dropdown-picker'
 
 import MyGroupMissionGoal from './MissionGoalScreen'
 import GoalScreenNavigator from './GoalScreenNavigator'
+import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace'
 
 const { width, height } = Dimensions.get('window')
 
 
 
-export default function MyGroupGoal() {
+export default function MyGroupGoal({route}) {
     const navigation = useNavigation<any>()
     const goBack = useCallback(() => navigation.goBack(), [])
 
     const [tabValue, setTabValue] = useState(0)
     const [tabOpen, setTabOpen] = useState(false)
     const [tabItems, setTabItems] = useState([{ label: '미션', value: 0 }, { label: '시간', value: 1 }])
+
+    useEffect(()=>{
+        if (typeof(route.params) !== 'undefined') {
+            setTabValue(route.params)
+        }
+    },[route])
 
     return (
         <SafeAreaView style={styles.safeContainer}>

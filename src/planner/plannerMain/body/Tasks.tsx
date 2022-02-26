@@ -12,7 +12,7 @@ export default function Tasks() {
         cont.setTASKEDITMODAL_selectedTask(selectedTask)
         cont.setCurrentModal(TASKEDITMODAL)
     }
-
+    
     return <View style={styles.container}>
         <Text style={{
             borderBottomWidth: 0.5,

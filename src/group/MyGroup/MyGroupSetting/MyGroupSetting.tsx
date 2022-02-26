@@ -34,14 +34,18 @@ const breakGroupModalData = {
     content:'그룹을 해체하면 그동안 기록 되었던 그룹 정보, 공부 기록 등 데이터들이 사라집니다. 한번 그룹을 해체하면 다시는 데이터를 복구할 수 없습니다. \n정말로 해체하시겠습니까?',
     buttonText:'그룹 해체하기'
 }
-
+const quitGroupModalData = {
+    title:'그룹 탈퇴하기',
+    content:'그룹을 해체하면 그동안 기록 되었던 그룹 내 나의 정보, 공부 기록 등 데이터들이 사라집니다. 한번 그룹을 탈퇴하면 다시는 데이터를 복구할 수 없습니다. \n정말로 탈퇴하시겠습니까?',
+    buttonText:'그룹 탈퇴하기'
+}
 
 const leaderSettingItems = [
     {
         tag:'공지사항 설정',
-        type:'navigatorWithState',
+        type:'navigatorWithParams',
         option:{
-            navigatorName:'EditNotice',
+            navigatorName:'SetNotice',
             params:{
                 prevState:noticePrevState,
                 isEditMode:true,
@@ -50,7 +54,7 @@ const leaderSettingItems = [
     },
     {
         tag:'그룹 정보 수정',
-        type:'navigatorWithState',
+        type:'navigatorWithParams',
         option:{
             navigatorName:'MakeGroup',
             params:{
@@ -61,9 +65,12 @@ const leaderSettingItems = [
     },
     {
         tag:'그룹 멤버 관리',
-        type:'navigator',
+        type:'navigatorWithParams',
         option:{
-            navigatorName:'ManageMembers'
+            navigatorName:'GroupMembers',
+            params:{
+                isManaging:true,
+            }
         }
     },
     {
@@ -79,16 +86,17 @@ const leaderSettingItems = [
 const memberSettingItems = [
     {
         tag:'그룹 멤버 보기',
-        type:'navigatorWithState',
+        type:'navigator',
         option:{
-            navigatorName:'EditNotice'
+            navigatorName:'GroupMembers'
         }
     },
     {
         tag:'그룹 탈퇴하기',
-        type:'navigatorWithState',
+        type:'modal',
         option:{
-            navigatorName:'EditNotice'
+            modal:WarningModal,
+            modalData:quitGroupModalData,
         }
     },
 ]
@@ -112,7 +120,7 @@ const MyGroupSetting=({route})=> {
             </TouchableOpacity>
             <Text style={styles.title}>{'그룹 설정'}</Text>
             <ScrollView>
-                {route.params.isLeader?
+                {route.params.isManaging?
                 leaderSettingItems.map((item,idx)=>{
                     if (item.type==='modal'){
                         return <ModalSettingItem {...item} key={idx}/>
@@ -122,9 +130,14 @@ const MyGroupSetting=({route})=> {
                 }
                     )
                 :
-                memberSettingItems.map((item,idx)=>
-                <SettingItem {...item} key={idx}/>)
+                memberSettingItems.map((item,idx)=>{
+                    if (item.type==='modal'){
+                        return <ModalSettingItem {...item} key={idx}/>
+                    }else{
+                        return <SettingItem {...item} key={idx}/>
+                    }
                 }
+                )}
             </ScrollView>
         </View>
     </SafeAreaView>
