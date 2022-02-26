@@ -12,6 +12,7 @@ const WarningModal= ({modalVisible,setModalVisible,data}) =>{
     /*option에서 onPRess 를 받아오든지 해야할듯
     navigation??
     */
+
     const navigation = useNavigation<any>()
     const onPress = useCallback(()=>navigation.pop(2),[])
     return(

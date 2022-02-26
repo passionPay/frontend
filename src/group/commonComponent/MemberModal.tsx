@@ -35,7 +35,7 @@ const MemberModal = ({ modalVisible, setModalVisible, isManaging, isMine }: Memb
                 { text: "네", onPress: () => setModalVisible(false) }, //버튼 제목// 이벤트 발생시 로그를 찍는다
             ],
             { cancelable: false }
-        );
+        )
 
 
     return (

@@ -6,6 +6,15 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 const { width, height } = Dimensions.get('window')
 
 
+type CommonModalPropsType = {
+    modalVisible:boolean,
+    setModalVisible:React.Dispatch<React.SetStateAction<boolean>>,
+    data:{
+        title:string,
+        content:string,
+    }
+}
+
 const defaultProps = {
     data: {
         title: '',
@@ -13,7 +22,7 @@ const defaultProps = {
     }
 }
 
-const CommonModal = ({ modalVisible, setModalVisible, data }) => {
+const CommonModal = ({ modalVisible, setModalVisible, data }:CommonModalPropsType) => {
     data = Object.assign({}, defaultProps.data, data)
 
     return (
@@ -24,7 +33,7 @@ const CommonModal = ({ modalVisible, setModalVisible, data }) => {
             style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
             <View style={styles.modalContainer}>
-                <Text style={styles.titleText}>{data.title}</Text>
+                {data.title!==""&&<Text style={styles.titleText}>{data.title}</Text>}
                 <Text style={styles.contentText}>{data.content}</Text>
                 <View style={{
                     flexDirection: 'row', justifyContent: 'center'
@@ -54,15 +63,15 @@ const styles = StyleSheet.create({
     modalContainer: {
         backgroundColor: '#F9F9F9',
         paddingHorizontal: 20,
+        paddingTop:30,
+        paddingBottom:20,
         width: width * 0.85,
         borderRadius: 20,
     },
     titleText: {
         fontSize: 17,
         fontWeight: '600',
-        marginTop: 13,
-        marginBottom: 5,
-
+        marginBottom: 10,
         textAlign: 'center',
 
     },
@@ -71,7 +80,7 @@ const styles = StyleSheet.create({
     },
     confirmButton: {
         marginTop: 20,
-        marginBottom: 15,
+
         width: 85,
         marginLeft: 5,
         alignSelf: 'center',

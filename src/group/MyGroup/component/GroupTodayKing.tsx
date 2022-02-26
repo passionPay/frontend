@@ -1,8 +1,8 @@
 import React, {useCallback} from 'react'
 import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
-import RankItem from '../RankItem'
-import TitleWithSeeMore from '../../../../component/TitleWithSeeMore'
+import RankItem from './RankItem'
+import TitleWithSeeMore from '../../../component/TitleWithSeeMore'
 
 const { width, height } = Dimensions.get('window')
 

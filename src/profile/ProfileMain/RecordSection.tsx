@@ -12,16 +12,16 @@ const { width, height } = Dimensions.get('window')
 const RecordSection= ()=>{
 
     const navigation = useNavigation<any>()
-    const studyHistory = useCallback(()=>navigation.navigate('StudyHistory'),[])
+    const profileHistory = useCallback(()=>navigation.navigate('ProfileHistory'),[])
 
     return(
         <>
             <View style={{paddingTop : height*0.05, paddingBottom:height*0.02}}>
                 <TitleWithSeeMore 
                     style={{marginHorizontal:width*0.05,flexDirection:'row',paddingBottom:height*0.02,}}
-                    titleStyle={{fontSize: 17,fontFamily: 'GodoM',color: '#000',}}
+                    titleStyle={{fontSize: 15,fontFamily: 'GodoM',color: '#000',}}
                     seeMoreStyle={{color:'#7EBEF9',fontFamily:'GodoM',fontWeight:'bold',fontSize:13,}}
-                    title={'공부기록'} seeMore={'공부기록 더보기 >'} seeMoreNavFunc={studyHistory} />
+                    title={'공부기록'} seeMore={'공부기록 더보기 >'} seeMoreNavFunc={profileHistory} />
                 <WeekChart 
                     style={{
                         marginHorizontal:width*0.05,

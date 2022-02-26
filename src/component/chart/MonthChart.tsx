@@ -146,7 +146,8 @@ const MonthChart = ({timeData,style}) =>{
                 </LinearGradient>
             </React.Fragment>))}
             {axisData.map((item,idx)=>(
-                <Text 
+                <Text
+                    key={idx} 
                     style={{
 
                     textAlign:'center',

@@ -1,6 +1,7 @@
-import React, {useCallback, useState} from 'react'
-import { TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView,StyleSheet, Text, View } from 'react-native'
-import {  TouchableIcon } from '../../component/CustomComponent'
+import React, { useCallback, useState } from 'react'
+import { TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { TouchableIcon } from '../../component/CustomComponent'
+import { useNavigation } from '@react-navigation/native'
 
 import LinearGradient from 'react-native-linear-gradient'
 
@@ -13,37 +14,36 @@ import MemberIcon from '../../component/MemberIcon'
 import WeekChart from '../../component/chart/WeekChart'
 import MonthChart from '../../component/chart/MonthChart'
 import ProgressBar from '../../component/ProgressBar'
-import {useNavigation} from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
 
 type ProfileDataType = {
-    memberProfile:MemberProfileType,
-    date:string,
+    memberProfile: MemberProfileType,
+    date: string,
 
 }
 
 
 type MemberProfileType = {
-    memberImage:string,
-    memberName:string,
-    followingCount:number,
-    followerCount:number,
-    postCount:number,
-    commentPostCount:number,
-    motto:string,
+    memberImage: string,
+    memberName: string,
+    followingCount: number,
+    followerCount: number,
+    postCount: number,
+    commentPostCount: number,
+    motto: string,
 }
-const initState :ProfileDataType = {
-    memberProfile:{
-        memberImage:'/',
-        memberName:'고달픈승구',
-        followingCount:100,
-        followerCount:1000,
-        postCount:10000,
-        commentPostCount:100000,
-        motto:'노력하는 자는 즐기는 자를 이기지 못한다. ㅁㄴㅇㄹ'
+const initState: ProfileDataType = {
+    memberProfile: {
+        memberImage: '/',
+        memberName: '고달픈승구',
+        followingCount: 100,
+        followerCount: 1000,
+        postCount: 10000,
+        commentPostCount: 100000,
+        motto: '노력하는 자는 즐기는 자를 이기지 못한다. ㅁㄴㅇㄹ'
     },
-    date:'2022-02-21',
+    date: '2022-02-21',
 }
 
 
@@ -51,10 +51,10 @@ const initState :ProfileDataType = {
 
 export default function ProfileV2() {
     const navigation = useNavigation<any>()
-    const profileSetting = useCallback(()=>navigation.navigate('ProfileSetting'),[])
-    
-    const [data,setData] = useState(initState)
-    
+    const setting = useCallback(() => navigation.navigate('Setting'), [])
+    const publicProfile = useCallback(() => navigation.navigate('PublicProfile'), [])
+    const [data, setData] = useState(initState)
+
     return (
         <SafeAreaView style={styles.safeContainer}>
             <View style={styles.header}>
@@ -62,28 +62,30 @@ export default function ProfileV2() {
                     <Text style={styles.titleText}>Profile</Text>
                 </View>
 
-                <View style={{flexDirection:'row'}}>
-                    <TouchableIcon iconProps={{style:[styles.headerIcon,{marginLeft:'auto'}], name:'bell-outline', size:25, color:'black'}}/>
-                    <TouchableIcon 
-                        onPress={profileSetting}
-                        iconProps={{style:[styles.headerIcon], name:'cog-outline', size:23, color:'black'}}
+                <View style={{ flexDirection: 'row' }}>
+                    <TouchableIcon
+                        onPress={publicProfile}
+                        iconProps={{ style: [styles.headerIcon, { marginLeft: 'auto' }], name: 'bell-outline', size: 25, color: 'black' }} />
+                    <TouchableIcon
+                        onPress={setting}
+                        iconProps={{ style: [styles.headerIcon], name: 'cog-outline', size: 23, color: 'black' }}
                         style={{
-                            marginRight:width*0.03,
+                            marginRight: width * 0.03,
                         }}
                     />
                 </View>
             </View>
 
-            <ScrollView style={{flex:1,}} >
-                <ProfileSection profileData={data.memberProfile}/>
-                <RecordSection/>
+            <ScrollView style={{ flex: 1, }} >
+                <ProfileSection profileData={data.memberProfile} />
+                <RecordSection />
                 <TouchableOpacity style={styles.plannerButton}>
-                        <Text style={{fontSize:14}}>플래너 보러가기</Text>
+                    <Text style={{ fontSize: 14 }}>플래너 보러가기</Text>
                 </TouchableOpacity>
             </ScrollView>
         </SafeAreaView>
     )
-    
+
 
 }
 
@@ -92,12 +94,12 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    header:{
-        paddingHorizontal:'5%',
-        height:60,
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'space-between'
+    header: {
+        paddingHorizontal: '5%',
+        height: 60,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
         // backgroundColor:'#ff00ff'
     },
     titleText: {
@@ -105,30 +107,30 @@ const styles = StyleSheet.create({
         fontFamily: 'GodoM',
         color: '#000',
     },
-    headerIcon:{
-        paddingLeft:10,
+    headerIcon: {
+        paddingLeft: 10,
     },
-    
-    timeCard:{
-        width:width*0.43,
-        borderWidth:1,
-        borderRadius:10,
-        borderColor:'grey',
-        alignItems:'center',
-        justifyContent:'center'
-        
+
+    timeCard: {
+        width: width * 0.43,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: 'grey',
+        alignItems: 'center',
+        justifyContent: 'center'
+
     },
-    plannerButton:{
-        marginTop:height*0.02,
-        marginBottom:height*0.04,
-        width:width*0.5,
-        height:40,
-        borderWidth:1,
-        borderRadius:10,
-        borderColor:'grey',
-        alignSelf:'center',
-        justifyContent:'center',
-        alignItems:'center'
+    plannerButton: {
+        marginTop: height * 0.02,
+        marginBottom: height * 0.04,
+        width: width * 0.5,
+        height: 40,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: 'grey',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 
 })

@@ -3,8 +3,8 @@ import { Alert,TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, Vi
 import {useNavigation} from '@react-navigation/native'
 
 
-import VerifyItem from '../VerifyItem'
-import TitleWithSeeMore from '../../../../component/TitleWithSeeMore'
+import VerifyItem from './VerifyItem'
+import TitleWithSeeMore from '../../../component/TitleWithSeeMore'
 const { width, height } = Dimensions.get('window')
 
 

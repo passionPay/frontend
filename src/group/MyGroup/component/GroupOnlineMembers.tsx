@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView } from 'react-native'
 
-import MemberIcon from '../../../../component/MemberIcon'
-import MemberModal from '../../../commonComponent/MemberModal'
+import MemberIcon from '../../../component/MemberIcon'
+import MemberModal from '../../commonComponent/MemberModal'
 
 const { width, height } = Dimensions.get('window')
 

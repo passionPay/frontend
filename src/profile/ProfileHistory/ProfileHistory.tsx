@@ -13,7 +13,7 @@ import HistoryScreenNavigator from './HistoryScreenNavigator'
 
 const { width, height } = Dimensions.get('window')
 
-const StudyHistory = () => {
+const ProfileHistory = () => {
     const navigation = useNavigation<any>()
     const goBack = useCallback(()=>navigation.goBack(),[])
     const [tabNumber,setTabNumber] = useState(0)
@@ -21,13 +21,13 @@ const StudyHistory = () => {
         <SafeAreaView style={styles.safeContainer}>
 
             <TouchableOpacity style={styles.header} onPress={goBack}>
-                <Text style={{fontSize: 16,
+                <Text style={{fontSize: 13,
                             fontFamily: 'GodoM',
                             color: '#9F9F9F',
                             // backgroundColor:'#000000'
                             
                             }} >
-                &lt; 프로필 </Text>
+                {'<'} Profile </Text>
             </TouchableOpacity>
             <Text style={{
                     marginHorizontal:width*0.05,
@@ -35,7 +35,7 @@ const StudyHistory = () => {
                     fontFamily: 'GodoM',
                 }}>공부기록</Text>
                 <View style={{alignItems:'center'}}>
-                    <MemberIcon touchable size={width*0.9/4}/>
+                    <MemberIcon size={width*0.9/4}/>
                     <Text style={{
                         marginVertical:height*0.01,
                         fontSize: 16,
@@ -52,7 +52,7 @@ const StudyHistory = () => {
 
 }
 
-export default StudyHistory
+export default ProfileHistory
 
 const styles = StyleSheet.create({
     safeContainer: {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
     header:{
         paddingHorizontal:'5%',
-        height:60,
+        height:50,
         flexDirection:'row',
         alignItems:'center',
         // backgroundColor:'#ff00ff'

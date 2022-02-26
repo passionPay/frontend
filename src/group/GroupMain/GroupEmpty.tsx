@@ -8,7 +8,7 @@ const { width, height } = Dimensions.get('window')
 
 const GroupEmpty =({isMine}) =>{
     return (
-    <View style={styles.cardView}>
+    <View style={styles.container}>
         <View style={{height:100,}}>
             <LottieView
                     source={require("../../../images/group/MyGroupEmptyAnimation.json")}
@@ -33,7 +33,7 @@ const GroupEmpty =({isMine}) =>{
 
 export default GroupEmpty
 const styles=StyleSheet.create({
-    cardView: {
+    container: {
         paddingHorizontal:width*0.15,
         width: width*0.85,
         height:160,

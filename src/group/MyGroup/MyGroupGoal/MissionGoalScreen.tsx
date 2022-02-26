@@ -76,7 +76,7 @@ const Missions = ({ hasDone, missions }) => {
                     mission={item}
                 />))}
             <CommonModal modalVisible={modalVisible} setModalVisible={setModalVisible}
-                data={{ content: '미션을 터치하여 완료 상태를 변경할 수 있어요' }}
+                data={{ title:'',content: '미션을 터치하여 완료 상태를 변경할 수 있어요' }}
             />
         </View>
     )

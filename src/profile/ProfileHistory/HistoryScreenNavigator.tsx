@@ -26,7 +26,7 @@ const HistoryScreenNavigator = ({tabNumber=0})=>{
         <Text style={{
                 marginTop:height*0.02,
                 marginHorizontal:width*0.05,
-                fontSize: 17,
+                fontSize: 15,
                 fontFamily: 'GodoM',
                 color: '#000',
             }}>히스토리

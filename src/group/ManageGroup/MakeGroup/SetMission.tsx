@@ -95,7 +95,7 @@ const MakeMission = ({ state, dispatch }) => {
 
     return (
         <View style={{ zIndex: -1, elevation: -1 }}>
-            <Text style={[styles.tag, { marginTop: 50, marginBottom: 15, backgroundColor: 'blue' }]}>미션</Text>
+            <Text style={[styles.tag, { marginTop: 50, marginBottom: 15, backgroundColor: 'white' }]}>미션</Text>
             {state.groupMissions.map((item, idx) =>
                 <MissionItem item={item} state={state} key={idx} onRemove={onRemove} onEndEditing={onEndEditing} onChangeText={onChangeText} />
             )}

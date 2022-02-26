@@ -131,6 +131,7 @@ const DateSelectDropdown = ({
 
       },style]}>
         <DropDownPicker
+          placeholder=""
           style={{
             height:35,
           }}
@@ -150,6 +151,7 @@ const DateSelectDropdown = ({
 
         />
         <DropDownPicker
+          placeholder=""
           style={{
               height:35,
           }}
@@ -170,6 +172,7 @@ const DateSelectDropdown = ({
         />
 
         <DropDownPicker
+          placeholder=""
           style={{
               height:35,
           }}
@@ -259,6 +262,7 @@ const WeekSelectDropdown = ({
 
         />
         <DropDownPicker
+          placeholder=""
           style={{
               height:35,
           }}
@@ -279,6 +283,7 @@ const WeekSelectDropdown = ({
         />
 
         <DropDownPicker
+          placeholder=""
           style={{
               height:35,
           }}

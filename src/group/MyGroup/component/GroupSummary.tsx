@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 import { LogBox } from "react-native";
 LogBox.ignoreLogs(["EventEmitter.removeListener"]);
 
-import GroupGoalChart from '../GroupGoalChart';
+import GroupGoalChart from './GroupGoalChart';
 
 const { width, height } = Dimensions.get('window')
 
@@ -89,9 +89,11 @@ const GroupSummaryBoard = ({ time }) => {
             <>
                 <View style={boardStyles.groupSummaryContentContainer}>
                     {currentMissions.map((item, idx) => (
-                        <View style={boardStyles.groupEachMissionContainer}>
+                        <View
+                            key={idx} 
+                            style={boardStyles.groupEachMissionContainer}>
                             <View style={{ paddingTop: 0, paddingRight: 3 }}>
-                                <Image style={{ width: 15, height: 15 }} source={require('../../../../../images/group/trophy.png')} />
+                                <Image style={{ width: 15, height: 15 }} source={require('../../../../images/group/trophy.png')} />
                             </View>
                             <Text numberOfLines={2} style={boardStyles.missionText}>{item.missionName}</Text>
                         </View>
