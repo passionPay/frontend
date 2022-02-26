@@ -52,7 +52,7 @@ const initState: ProfileDataType = {
 export default function ProfileV2() {
     const navigation = useNavigation<any>()
     const setting = useCallback(() => navigation.navigate('Setting'), [])
-    const publicProfile = useCallback(() => navigation.navigate('PublicProfile'), [])
+    const publicProfile = useCallback(() => navigation.navigate('PublicProfileNavigator'), [])
     const [data, setData] = useState(initState)
 
     return (

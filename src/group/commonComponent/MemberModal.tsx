@@ -24,15 +24,15 @@ const MemberModal = ({ modalVisible, setModalVisible, isManaging, isMine }: Memb
     const navigation = useNavigation<any>()
 
     const goAlert = () =>
-        Alert.alert(                    // 말그대로 Alert를 띄운다
-            '정말 강퇴하시겠습니까?',                    // 첫번째 text: 타이틀 제목
-            '멤버를 강제 퇴장 시킬 시 그룹에 저장된 멤버의 데이터는 모두 사라지며, 복구할 수 없습니다. 그래도 강퇴하시겠습니까?',// 두번째 text: 그 밑에 작은 제목
-            [                              // 버튼 배열
+        Alert.alert(                    
+            '정말 강퇴하시겠습니까?',                    
+            '멤버를 강제 퇴장 시킬 시 그룹에 저장된 멤버의 데이터는 모두 사라지며, 복구할 수 없습니다. 그래도 강퇴하시겠습니까?',
+            [
                 {
-                    text: "아니요",                              // 버튼 제목
+                    text: "아니요",
                     style: "cancel"
                 },
-                { text: "네", onPress: () => setModalVisible(false) }, //버튼 제목// 이벤트 발생시 로그를 찍는다
+                { text: "네", onPress: () => setModalVisible(false) },
             ],
             { cancelable: false }
         )

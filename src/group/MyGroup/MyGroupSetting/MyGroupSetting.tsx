@@ -2,7 +2,7 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
-import {SettingItem,ModalSettingItem} from './SettingItem'
+import {SettingItem} from '../../../component/SettingItem'
 import WarningModal from './WarningModal'
 import { TouchableIcon } from '../../../component/CustomComponent'
 
@@ -43,7 +43,7 @@ const quitGroupModalData = {
 const leaderSettingItems = [
     {
         tag:'공지사항 설정',
-        type:'navigatorWithParams',
+        type:'navigator',
         option:{
             navigatorName:'SetNotice',
             params:{
@@ -54,7 +54,7 @@ const leaderSettingItems = [
     },
     {
         tag:'그룹 정보 수정',
-        type:'navigatorWithParams',
+        type:'navigator',
         option:{
             navigatorName:'MakeGroup',
             params:{
@@ -65,7 +65,7 @@ const leaderSettingItems = [
     },
     {
         tag:'그룹 멤버 관리',
-        type:'navigatorWithParams',
+        type:'navigator',
         option:{
             navigatorName:'GroupMembers',
             params:{
@@ -121,23 +121,11 @@ const MyGroupSetting=({route})=> {
             <Text style={styles.title}>{'그룹 설정'}</Text>
             <ScrollView>
                 {route.params.isManaging?
-                leaderSettingItems.map((item,idx)=>{
-                    if (item.type==='modal'){
-                        return <ModalSettingItem {...item} key={idx}/>
-                    }else{
-                        return <SettingItem {...item} key={idx}/>
-                    }
-                }
-                    )
+                leaderSettingItems.map((item,idx)=><SettingItem {...item} key={idx}/>)
+
                 :
-                memberSettingItems.map((item,idx)=>{
-                    if (item.type==='modal'){
-                        return <ModalSettingItem {...item} key={idx}/>
-                    }else{
-                        return <SettingItem {...item} key={idx}/>
-                    }
+                memberSettingItems.map((item,idx)=><SettingItem {...item} key={idx}/>)
                 }
-                )}
             </ScrollView>
         </View>
     </SafeAreaView>

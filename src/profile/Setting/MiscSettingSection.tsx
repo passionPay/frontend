@@ -1,10 +1,10 @@
 
 import React, { useCallback } from 'react'
-import { Platform, TextInput, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { Alert, TextInput, Dimensions, StyleSheet, View,} from 'react-native'
 
 const { width, height } = Dimensions.get('window')
 
-import { SettingItem, ModalSettingItem } from '../../group/MyGroup/MyGroupSetting/SettingItem'
+import { SettingItem } from '../../component/SettingItem'
 import WarningModal from '../../group/MyGroup/MyGroupSetting/WarningModal'
 
 
@@ -17,23 +17,41 @@ const breakGroupModalData = {
 const miscSettingItems = [
     {
         tag: '로그아웃하기',
-        type: 'navigatorWithParams',
+        type: 'custom',
         option: {
-            navigatorName: 'SetNotice',
-            params: {
-                // prevState: noticePrevState,
-                isEditMode: true,
+            onPress:()=>{
+                Alert.alert(                    
+                    '정말 로그아웃하시겠습니까?',                    
+                    '',
+                    [
+                        {
+                            text: "아니요",
+                            style: "cancel"
+                        },
+                        { text: "네", onPress: () => console.log('log-outted') },
+                    ],
+                    { cancelable: false }
+                )
             }
         }
     },
     {//회원가입 정보들,
         tag: '회원 탈퇴하기',
-        type: 'navigatorWithParams',
+        type: 'custom',
         option: {
-            navigatorName: 'MakeGroup',
-            params: {
-                // prevState: groupPrevState,
-                isEditMode: true,
+            onPress:()=>{
+                Alert.alert(                    
+                    '정말 탈퇴하시겠습니까?',                    
+                    '',
+                    [
+                        {
+                            text: "아니요",
+                            style: "cancel"
+                        },
+                        { text: "네", onPress: () => console.log('quitted membership') },
+                    ],
+                    { cancelable: false }
+                )
             }
         }
     },
@@ -59,7 +77,7 @@ export default MiskSettingSection
 
 const styles = StyleSheet.create({
     container:{
-        marginBottom:20,
+        marginBottom:0,
     },
     sectionTitleText: {
         backgroundColor:'white',

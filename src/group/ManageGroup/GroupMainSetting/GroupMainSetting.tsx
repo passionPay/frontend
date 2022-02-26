@@ -2,7 +2,7 @@ import React, {useCallback} from 'react'
 import { Platform, Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView, TouchableOpacity } from 'react-native'
 import {useNavigation} from '@react-navigation/native'
 
-import {SettingItem}from '../../MyGroup/MyGroupSetting/SettingItem'
+import {SettingItem}from '../../../component/SettingItem'
 import { TouchableIcon } from '../../../component/CustomComponent'
 
 const { width, height } = Dimensions.get('window')
@@ -10,14 +10,14 @@ const { width, height } = Dimensions.get('window')
 const settingItems = [
     {
         tag:'내가 만든 그룹',
-        type:'navigatorWithState',
+        type:'navigator',
         option:{
             navigatorName:'EditNotice'
         }
     },
     {
         tag:'내가 소속된 그룹',
-        type:'navigatorWithState',
+        type:'navigator',
         option:{
             navigatorName:'EditNotice'
         }

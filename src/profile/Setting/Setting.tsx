@@ -2,11 +2,11 @@ import React, { useCallback } from 'react'
 import { Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-import { SettingItem, ModalSettingItem } from '../../group/MyGroup/MyGroupSetting/SettingItem'
+import { SettingItem } from '../../component/SettingItem'
 import WarningModal from '../../group/MyGroup/MyGroupSetting/WarningModal'
 import { TouchableIcon } from '../../component/CustomComponent'
-import ProfileSettingSection from './ProfileSettingSection'
-import UserInfoSettingSection from './UserInfoSettingSection'
+import ProfileSettingSection from './ProfileSettingSection/ProfileSettingSection'
+import UserInfoSettingSection from './UserInfoSettingSection/UserInfoSettingSection'
 import MiscSettingSection from './MiscSettingSection'
 
 const { width, height } = Dimensions.get('window')
@@ -42,7 +42,7 @@ const breakGroupModalData = {
 const profileSettingItems = [
     {
         tag: '닉네임 설정',
-        type: 'navigatorWithParams',
+        type: 'navigator',
         option: {
             navigatorName: 'SetNotice',
             params: {
@@ -53,7 +53,7 @@ const profileSettingItems = [
     },
     {//회원가입 정보들,
         tag: '프로필 사진 설정',
-        type: 'navigatorWithParams',
+        type: 'navigator',
         option: {
             navigatorName: 'MakeGroup',
             params: {
@@ -64,7 +64,7 @@ const profileSettingItems = [
     },
     {
         tag: '각오 한마디 설정',
-        type: 'navigatorWithParams',
+        type: 'navigator',
         option: {
             navigatorName: 'GroupMembers',
             params: {
