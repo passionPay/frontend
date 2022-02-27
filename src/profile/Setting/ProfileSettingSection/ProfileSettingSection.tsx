@@ -6,6 +6,7 @@ const { width, height } = Dimensions.get('window')
 
 import { SettingItem} from '../../../component/SettingItem'
 import WarningModal from '../../../group/MyGroup/MyGroupSetting/WarningModal'
+import SetPrivacyModal from './SetPrivacyModal'
 
 
 const breakGroupModalData = {
@@ -44,7 +45,7 @@ const profileSettingItems = [
         tag: '공개 여부 설정',
         type: 'modal',
         option: {
-            modal: WarningModal,
+            modal: SetPrivacyModal,
             modalData: breakGroupModalData
         }
     },

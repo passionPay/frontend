@@ -5,23 +5,14 @@ import { Alert, TextInput, Dimensions, StyleSheet, View,} from 'react-native'
 const { width, height } = Dimensions.get('window')
 
 import { SettingItem } from '../../component/SettingItem'
-import WarningModal from '../../group/MyGroup/MyGroupSetting/WarningModal'
 
-
-const breakGroupModalData = {
-    title: '그룹 해체하기',
-    content: '그룹을 해체하면 그동안 기록 되었던 그룹 정보, 공부 기록 등 데이터들이 사라집니다. 한번 그룹을 해체하면 다시는 데이터를 복구할 수 없습니다. \n정말로 해체하시겠습니까?',
-    buttonText: '그룹 해체하기'
-}
-//프로필 사진, 닉네임, 각오, 공개 설정
 const miscSettingItems = [
     {
         tag: '로그아웃하기',
         type: 'custom',
         option: {
             onPress:()=>{
-                Alert.alert(                    
-                    '정말 로그아웃하시겠습니까?',                    
+                Alert.alert('정말 로그아웃하시겠습니까?',                    
                     '',
                     [
                         {
@@ -35,7 +26,7 @@ const miscSettingItems = [
             }
         }
     },
-    {//회원가입 정보들,
+    {
         tag: '회원 탈퇴하기',
         type: 'custom',
         option: {

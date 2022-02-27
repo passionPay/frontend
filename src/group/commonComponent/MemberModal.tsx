@@ -18,14 +18,14 @@ type MemberModalProps = {
 }
 const MemberModal = ({ modalVisible, setModalVisible, isManaging, isMine }: MemberModalProps) => {
 
-    /*option에서 onPRess 를 받아오든지 해야할듯
+    /*option에서 onPress 를 받아오든지 해야할듯
     navigation??
     */
     const navigation = useNavigation<any>()
 
     const goAlert = () =>
-        Alert.alert(                    
-            '정말 강퇴하시겠습니까?',                    
+        Alert.alert(
+            '정말 강퇴하시겠습니까?',
             '멤버를 강제 퇴장 시킬 시 그룹에 저장된 멤버의 데이터는 모두 사라지며, 복구할 수 없습니다. 그래도 강퇴하시겠습니까?',
             [
                 {
@@ -48,13 +48,9 @@ const MemberModal = ({ modalVisible, setModalVisible, isManaging, isMine }: Memb
             >
                 <View style={styles.modalContainer}>
                     <MemberIcon
-                        style={{
-                            marginTop: 15,
-                            alignSelf: 'center',
-                        }}
+                        style={{ marginTop: 15, alignSelf: 'center', }}
                         size={90}
                     />
-
                     <Text style={styles.memberNameText}>고달픈승구</Text>
                     <MemberHistory />
                     {!isMine &&
@@ -62,9 +58,7 @@ const MemberModal = ({ modalVisible, setModalVisible, isManaging, isMine }: Memb
                             style={styles.button}
                             onPress={() => setModalVisible(false)}>
                             <Text style={{
-                                color: '#ffffff',
-                                fontWeight: 'bold',
-                                fontSize: 17,
+                                color: '#ffffff', fontWeight: 'bold', fontSize: 17,
                                 textAlign: 'center'
                             }}>프로필 보기</Text>
                         </TouchableOpacity>
@@ -77,25 +71,14 @@ const MemberModal = ({ modalVisible, setModalVisible, isManaging, isMine }: Memb
 
                             }}>
                             <Text style={{
-                                color: '#ffffff',
-                                fontWeight: 'bold',
-                                fontSize: 17,
+                                color: '#ffffff', fontWeight: 'bold', fontSize: 17,
                                 textAlign: 'center'
-
                             }}>멤버 강퇴하기</Text>
                         </TouchableOpacity>
                     }
                     <TouchableIcon
-                        iconProps={{
-                            name: 'close',
-                            size: 23,
-                            color:'#949494'
-                        }}
-                        style={{
-                            position: 'absolute',
-                            right: 20,
-                            top: 15,
-                        }}
+                        iconProps={{ name: 'close', size: 23, color: '#949494' }}
+                        style={{ position: 'absolute', right: 20, top: 15, }}
                         onPress={() => setModalVisible(false)}
                     >
                     </TouchableIcon>
@@ -113,41 +96,33 @@ MemberModal.defaultProps = {
 }
 const styles = StyleSheet.create({
     modalContainer: {
-        // backgroundColor:'#ffffff',
-        backgroundColor: '#F9F9F9',
-
         width: width * 0.85,
-        // height:height*0.6,
-        borderRadius: 20,
         paddingBottom: 20,
-
+        backgroundColor: '#F9F9F9',
+        borderRadius: 20,
     },
     memberNameText: {
         marginTop: 10,
         alignSelf: 'center',
-        fontSize: 17,
-        fontFamily: 'GodoM'
+        fontSize: 17, fontFamily: 'GodoM'
     },
     button: {
-        alignSelf: 'center',
-        marginBottom: 10,
-        marginTop: 10,
-        justifyContent: 'center',
+        justifyContent: 'center', alignSelf: 'center',
+        width: width * 0.7,
+        marginBottom: 10, marginTop: 10,
+        paddingVertical: 10,
         borderRadius: 15,
         backgroundColor: '#8AC8FF',
-        width: width * 0.7,
         zIndex: -1,
-        paddingVertical: 10,
 
     },
     outButton: {
-        alignSelf: 'center',
-        justifyContent: 'center',
+        alignSelf: 'center', justifyContent: 'center',
+        width: width * 0.7,
+        paddingVertical: 10,
         borderRadius: 15,
         backgroundColor: '#FF4141',
-        width: width * 0.7,
         zIndex: -1,
-        paddingVertical: 10,
 
     }
 })
