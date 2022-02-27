@@ -1,53 +1,54 @@
-import React, {useCallback} from 'react'
-import { TouchableOpacity,Platform,Dimensions,StyleSheet, SafeAreaView, View, Image,Text,ScrollView } from 'react-native'
-import {useNavigation} from '@react-navigation/native'
+import React, { useState } from 'react'
+import { TouchableOpacity, Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import MemberIcon from '../../../component/MemberIcon'
+import MemberModal from '../../commonComponent/MemberModal'
 
 import CrownIcon from '../../../../svgs/CronwIcon'
 const { width, height } = Dimensions.get('window')
 
 
-type RankDataType ={
+type RankDataType = {
     name: string,
     rank: number,
-    time : string,
+    time: string,
 }
 
-const RankItem = ({data}) =>{
-    return(
-    <TouchableOpacity style={[itemStyles.mainContainer]}>
-            <View style={itemStyles.memberRankContainer}>
-                <Text style={itemStyles.titleText}>1</Text>
-                {/* <CrownIcon width={'100%'} height={'100%'} color={'gold'} /> */}
-            </View>
-            <View style={itemStyles.memberContainer}>
-                <MemberIcon size={45}/>
-                <Text style={itemStyles.memberNameText}>{data.name}</Text>
+const RankItem = ({ data }) => {
+    const [modalVisible, setModalVisible] = useState<boolean>(false)
 
-            </View>
-            {/* <View style={itemStyles.memberTalkContainer}>
-                <Text style={itemStyles.memberTalkText}>
-                    24학점은 기본이죠 윙가르디움 레비오우사 ㅁㅇㄴㄹㄴㅇasdfwefewfawefewafewfwaefweaewfaefwef
-                </Text>
-            </View> */}
-            <View style={itemStyles.memberTimeContainer}>
-                <Text style={itemStyles.memberTimeText}>
-                    22:30:13
-                </Text>
-            </View>
+    return (
+        <>
+            <TouchableOpacity
+                onPress={()=>setModalVisible(true)}
+                style={[itemStyles.mainContainer]}>
+                <View style={itemStyles.memberRankContainer}>
+                    <Text style={itemStyles.titleText}>1</Text>
+                </View>
+                <View style={itemStyles.memberContainer}>
+                    <MemberIcon size={45} />
+                    <Text style={itemStyles.memberNameText}>{data.name}</Text>
 
-    </TouchableOpacity>
+                </View>
+                <View style={itemStyles.memberTimeContainer}>
+                    <Text style={itemStyles.memberTimeText}>
+                        22:30:13
+                    </Text>
+                </View>
+            </TouchableOpacity>
+            <MemberModal modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+        </>
     )
 }
 
 export default RankItem
 
 const itemStyles = StyleSheet.create({
-    titleText:{
+    titleText: {
         fontSize: 20,
         fontFamily: 'GodoM',
     },
-    shadow:{
+    shadow: {
         ...Platform.select({
             ios: {
                 shadowColor: "#000",
@@ -58,57 +59,58 @@ const itemStyles = StyleSheet.create({
                 shadowOpacity: 0.25,
             },
             android: {
-                elevation: 3, 
+                elevation: 3,
             },
         }
-    )},
-    mainContainer :{
-        backgroundColor:'#F9F9F9',
-        padding:width*0.01,
-        paddingLeft:width*0.03,
+        )
+    },
+    mainContainer: {
+        backgroundColor: '#F9F9F9',
+        padding: width * 0.01,
+        paddingLeft: width * 0.03,
         height: 70,
-        marginVertical:5,
-        marginHorizontal:5,
-        borderRadius:10,
-        flexDirection:'row',
-        borderWidth:0.5,
-        borderColor:'#c4c4c4',
+        marginVertical: 2,
+        marginHorizontal: 5,
+        borderRadius: 10,
+        flexDirection: 'row',
+        borderWidth: 0.5,
+        borderColor: '#c4c4c4',
     },
-    
-    memberRankContainer:{
-        flex:1,
+
+    memberRankContainer: {
+        flex: 1,
         // backgroundColor:'#ff0000',
-        alignItems:'center',
-        justifyContent:'center',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    memberContainer:{
-        flex:3,
+    memberContainer: {
+        flex: 3,
         // backgroundColor:'#ffff00',
 
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'flex-start',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
     },
-    memberNameText:{
-        fontSize:14,
-        fontFamily:'GodoM',
-        marginLeft:width*0.02,
-        flex:1,
+    memberNameText: {
+        fontSize: 14,
+        fontFamily: 'GodoM',
+        marginLeft: width * 0.02,
+        flex: 1,
     },
-    memberTalkText:{
-        fontSize:12,
+    memberTalkText: {
+        fontSize: 12,
     },
-    memberTimeContainer:{
+    memberTimeContainer: {
 
         // backgroundColor:'#00ff00',
-        alignItems:'center',
-        justifyContent:'center',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    memberTimeText:{
-        marginRight:20,
-        marginLeft:15,
-        fontSize:20,
-        fontFamily:'GodoM',
+    memberTimeText: {
+        marginRight: 20,
+        marginLeft: 15,
+        fontSize: 20,
+        fontFamily: 'GodoM',
 
     },
 

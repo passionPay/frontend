@@ -38,7 +38,7 @@ const ProgressBar = ({style,progress,hasIndicator}) =>{
     const {width,height,} = style
     style.width = hasIndicator ? width-height*1.5 : width
     
-    
+    progress=Math.round(progress*10000) / 10000
 
     const mainBar = (
         <View style={style}>
@@ -59,7 +59,7 @@ const ProgressBar = ({style,progress,hasIndicator}) =>{
             <View style={{width,height:height*7,position:'relative', justifyContent:'flex-end',paddingBottom:height*2,paddingRight:height*1.5}}>
                 <Triangle width={height*0.75} color = {'#90C8FC'} style= {{position:'absolute', top : height*2,left:style.width*progress-height, }}/>
                 {mainBar}
-                <Text style={{fontSize:height*1.2, position:'absolute', top:0, left:style.width*progress-height*1.5}}>{`${progress*100}%`}</Text>
+                <Text style={{fontSize:height*1.2, position:'absolute', top:0, left:style.width*progress-height*1.5}}>{`${ Math.round(progress*100*100)/100}%`}</Text>
                 <Text style={{fontSize:height*1.2, position:'absolute', bottom:0, left:style.width-height*2}}>{`100%`}</Text>
         
             </View>

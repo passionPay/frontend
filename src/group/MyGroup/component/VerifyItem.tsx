@@ -15,7 +15,7 @@ const VerifyItem = ({hasPhoto}) =>{
             <View style={itemStyles.itemTextContainer}>
                 <View style={itemStyles.authorContainer}>
                     <View style={itemStyles.memberIconContainer}>
-                        <MemberIcon isOnline size={40} margin={0}/>
+                        <MemberIcon isOnline size={40}/>
                     </View>
                     <View style={itemStyles.memberNameContainer}>
                         <Text>name</Text>
@@ -72,10 +72,9 @@ const itemStyles = StyleSheet.create({
     )},
     mainContainer :{
         backgroundColor:'#F9F9F9',
-        // backgroundColor:'#ffffff',
         padding:width*0.01,
         height: 120,
-        marginVertical:7,
+        marginBottom:7,
         marginHorizontal:5,
         borderRadius:10,
         flexDirection:'row',
