@@ -9,23 +9,29 @@ export const Text: FC<TextProps> = (props: TextProps) => {
     const brw = props.style ? props.style['borderRightWidth'] : undefined
     const blw = props.style ? props.style['borderLeftWidth'] : undefined
     const btw = props.style ? props.style['borderTopWidth'] : undefined
-    const myTextComponent = <RNText {...props}
+    // if (bbw || brw || blw || btw)
+    //     return <View style={{
+    //         borderBottomWidth: bbw,
+    //         borderRightWidth: brw,
+    //         borderLeftWidth: blw,
+    //         borderTopWidth: btw,
+    //         borderColor: props.style ? props.style['borderColor'] : '#000'
+    //     }}>
+    //         <RNText {...props}
+    //             style={[{
+    //                 fontFamily: 'GodoM',
+    //                 color: '#151515',
+    //                 fontSize: 14
+    //             }, props.style, { borderBottomWidth: 0, borderRightWidth: 0, borderLeftWidth: 0, borderTopWidth: 0 }]}>
+    //             {props.children}</RNText>
+    //     </View>
+    return <RNText {...props}
         style={[{
             fontFamily: 'GodoM',
             color: '#151515',
             fontSize: 14
         }, props.style]}>
         {props.children}</RNText>
-    if (bbw || brw || blw || btw)
-        return <View style={{
-            borderBottomWidth: bbw,
-            borderRightWidth: brw,
-            borderLeftWidth: blw,
-            borderTopWidth: btw
-        }}>
-            {myTextComponent}
-        </View>
-    return myTextComponent
 }
 
 type TouchableIconProps = TouchableOpacityProps & {

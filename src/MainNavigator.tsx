@@ -27,7 +27,7 @@ const screenOptions = ({ route }: { route: RouteProp<ParamListBase, string> }) =
       return <Icon name={icons[name]} size={focused ? size + 6 : size} color={color} />
     },
     headerShown: false,
-    tabBarShowLabel: true,
+    tabBarShowLabel: false,
   }
 }
 

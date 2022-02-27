@@ -63,17 +63,17 @@ export default function StartingModal({ }) {
                 </TouchableOpacity>
             </View>
         </View>
-    </Modal> // setStart
+    </Modal>
 }
 
-function getFormattedTime(msec: number) {
-    let h = Math.floor(msec / (1000 * 60 * 60))
+function getFormattedTime(sec: number) {
+    let h = Math.floor(sec / (60 * 60))
     let hour = h < 10 ? '0' + h : h.toString()
-    let m = Math.floor(msec / (1000 * 60)) % 60
+    let m = Math.floor(sec / (60)) % 60
     let min = m < 10 ? '0' + m : m.toString()
-    let s = Math.floor(msec / 1000) % 60
-    let sec = s < 10 ? '0' + s : s.toString()
-    return hour + ':' + min + ':' + sec
+    let s = Math.floor(sec) % 60
+    let second = s < 10 ? '0' + s : s.toString()
+    return hour + ':' + min + ':' + second
 }
 
 function getFormatted(tasks: TasksType) {

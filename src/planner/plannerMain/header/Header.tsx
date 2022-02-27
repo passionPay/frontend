@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { Text, TouchableIcon } from '../../../component/CustomComponent'
+import { Text } from '../../../component/CustomComponent'
 import { useContextOfPlanner } from '../../PlannerProvider'
 import MainStopWatch from './MainStopWatch'
 
@@ -29,7 +29,6 @@ export default function Header() {
             paddingHorizontal: 5,
             marginVertical: 10,
             paddingTop: 10,
-            // paddingBottom: 15,
             borderColor: '#151515'
         }}>
             <View style={{ flexDirection: 'row' }}>

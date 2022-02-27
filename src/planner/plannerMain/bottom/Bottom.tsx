@@ -24,13 +24,8 @@ export default function Bottom() {
             <Chart rate={20} />
             <Text style={{ marginLeft: 10, fontSize: 12 }}>20%</Text>
         </View>
-        {/* <View style={{
-        borderTopWidth: 0.5,
-        borderBottomWidth: 0.5, width: '100%', paddingVertical: 10, paddingBottom: 15,
-        marginTop: 20}}> */}
         <Text style={ styles.tag }>FEEDBACK</Text>
         <Text style={{fontSize: 12}}>{cont.data.evaluation}</Text>
-        {/* </View> */}
     </View>
     </>
 }
