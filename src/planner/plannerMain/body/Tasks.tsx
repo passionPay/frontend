@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
         marginTop: 25,
         borderColor: '#494949',
         marginBottom: 10,
-        borderBottomWidth: 0.5,
-        paddingBottom: 4
+        // borderBottomWidth: 0.5,
+        // paddingBottom: 4
     },
     taskView: {
         justifyContent: 'space-between',

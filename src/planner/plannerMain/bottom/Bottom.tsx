@@ -20,9 +20,9 @@ export default function Bottom() {
         marginBottom: 20
     }}>
         <Text style={ styles.tag }>ACHIEVEMENT</Text>
-        <View style={{ flexDirection: 'row', marginBottom: 15 }}>
-            <Chart rate={20} />
-            <Text style={{ marginLeft: 10, fontSize: 12 }}>20%</Text>
+        <View style={{ flexDirection: 'row', marginBottom: 15, alignItems: 'center' }}>
+            <Chart rate={cont.data.taskRate} />
+            <Text style={{ marginLeft: 12 }}>{cont.data.taskRate}% </Text>
         </View>
         <Text style={ styles.tag }>FEEDBACK</Text>
         <Text style={{fontSize: 12}}>{cont.data.evaluation}</Text>
@@ -32,7 +32,7 @@ export default function Bottom() {
 
 function Chart({ rate }) {
     return <LinearGradient colors={['#CACED5', '#D0D2D8', '#E3E5EC']} start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }}
-        style={{ borderRadius: 10, height: 18, borderWidth: 0, flex: 1, alignSelf: 'center' }}>
+        style={{ borderRadius: 10, height: 20, borderWidth: 0, flex: 1, alignSelf: 'center' }}>
         <LinearGradient colors={['#2152f0', '#40c0dc']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
             style={[{
                 backgroundColor: "#6667AB66", borderRadius: 10, height: '100%', width: rate + '%',

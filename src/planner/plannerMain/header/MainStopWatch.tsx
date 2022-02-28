@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { StyleSheet, TouchableOpacity } from 'react-native';
-import { Stopwatch } from 'react-native-stopwatch-timer'
-import { Text } from '../../../component/CustomComponent';
-import { PlannerDataType, STARTINGMODAL, STOPPINGMODAL, TasksType, TimeStampsType, useContextOfPlanner } from '../../PlannerProvider';
+import { StyleSheet, TouchableOpacity } from 'react-native'
+import { Text } from '../../../component/CustomComponent'
+import { PlannerDataType, STARTINGMODAL, STOPPINGMODAL, TasksType, TimeStampsType, useContextOfPlanner } from '../../PlannerProvider'
 
 export default function MainStopWatch() {
     const cont = useContextOfPlanner()
@@ -71,39 +70,12 @@ export default function MainStopWatch() {
         onPress={() => { cont.isStart ? cont.setCurrentModal(STOPPINGMODAL) : cont.setCurrentModal(STARTINGMODAL) }}>
         <Text style={{ fontSize: 27 }}>
             {hour < 10 ? '0' + hour : hour}:{min < 10 ? '0' + min : min}:{sec < 10 ? '0' + sec : sec}</Text>
-        {/* <Stopwatch laps start={cont.isStart}
-            options={options}
-            getMsecs={(time) => {
-                cont.totalTime = time
-                if (cont.isStart && isAMinuteLater(cont.data.timestamps)) {
-                    cont.setData((prev: PlannerDataType) => {
-                        const next: PlannerDataType = JSON.parse(JSON.stringify(prev))
-                        if (isNextRow(next.timestamps))
-                            next.timestamps.push({
-                                timestampId: prev.timestamps[prev.timestamps.length - 1].timestampId + 1,
-                                startTime: new Date().toTimeString().substring(0, 8),
-                                endTime: new Date().toTimeString().substring(0, 8),
-                                color: getTaskColor(cont.currentTaskId, cont.data.tasks)
-                            })
-                        else
-                            next.timestamps[prev.timestamps.length - 1].endTime
-                                = new Date().toTimeString().substring(0, 8)
-                        return next
-                    })
-                }
-            }}
-            startTime={cont.data.totalTime} /> */}
     </TouchableOpacity>
 }
 
 function isNextRow(timestamps: TimeStampsType) {
     const prev = timestamps[timestamps.length - 1].startTime.substring(0, 2)
     return prev != new Date().toTimeString().substring(0, 2)
-}
-
-function isAMinuteLater(timestamps: TimeStampsType) {
-    const prev = timestamps[timestamps.length - 1].endTime.substring(3, 5)
-    return prev != new Date().toTimeString().substring(3, 5)
 }
 
 function getTaskColor(taskId: number, tasks: TasksType) {

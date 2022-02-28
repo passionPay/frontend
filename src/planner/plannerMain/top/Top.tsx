@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -6,6 +7,7 @@ import { useContextOfPlanner } from '../../PlannerProvider'
 
 export default function Top() {
     const cont = useContextOfPlanner()
+    const navi = useNavigation<any>()
     const data = cont.data
     return <View style={styles.container}>
         <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -20,7 +22,8 @@ export default function Top() {
             </View>
         </TouchableOpacity>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <TouchableIcon iconProps={{ name: 'pencil-outline', size: 25, color: '#000' }} />
+            <TouchableIcon iconProps={{ name: 'pencil-outline', size: 25, color: '#000' }}
+            onPress={() => navi.navigate('PlannerEdit')} />
             {/* <TouchableIcon iconProps={{ name: 'cog-outline', size: 25, color: '#000' }}
                 style={{ marginLeft: 20 }} /> */}
         </View>
@@ -33,6 +36,5 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingHorizontal: 20,
         paddingVertical: 20,
-        // backgroundColor: 'green'
     }
 })

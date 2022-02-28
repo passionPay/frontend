@@ -87,8 +87,16 @@ export default function TaskAddModal() {
                     tasks: [nextTask]
                 })
             }
-            AsyncStorage.setItem('Planner' + new Date().toISOString().slice(0, 10),
-                JSON.stringify(next))
+            let taskCnt = 0, completedTaskCnt = 0
+            next.tasks.forEach((i) => {
+                i.tasks.forEach((j) => {
+                    ++taskCnt
+                    if (j.status == 1)
+                        ++completedTaskCnt
+                })
+            })
+            next.taskRate = Math.floor(completedTaskCnt / taskCnt * 100)
+            AsyncStorage.setItem('Planner' + next.date, JSON.stringify(next))
             return next
         })
         closeModal()

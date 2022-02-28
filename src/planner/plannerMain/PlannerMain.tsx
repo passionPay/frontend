@@ -16,23 +16,23 @@ import TaskEditModal from './modals/TaskEditModal'
 export default function PlannerMain() {
     const cont = useContextOfPlanner()
     useEffect(() => {
+        let next: PlannerDataType = initPlannerState
         AsyncStorage.getItem('Planner' + new Date().toISOString().slice(0, 10))
             .then(todayPlannerData => {
                 if (todayPlannerData !== null)
-                    cont.setData(JSON.parse(todayPlannerData))
-                else {
+                    next = JSON.parse(todayPlannerData)
+                else
                     AsyncStorage.setItem('Planner' + new Date().toISOString().slice(0, 10),
                         JSON.stringify(initPlannerState))
-                    cont.setData(initPlannerState)
-                }
+                AsyncStorage.getItem('PlannerDday')
+                    .then(dDay => {
+                        if (dDay !== null) {
+                            const diff = new Date(dDay).getTime() - new Date().getTime()
+                            next.dDay = Math.floor(diff / (1000 * 3600 * 24))
+                        }
+                        cont.setData(next)
+                    })
             })
-        // AsyncStorage.getItem('PlannerDday')
-        //     .then(dDay => {
-        //         if (dDay !== null) {
-        //             const diff = new Date(dDay).getTime() - new Date().getTime()
-        //             ret.dDay = diff / (1000 * 3600 * 24)
-        //         }
-        //     })
     }, [])
     return <SafeAreaView>
         <ScrollView style={{ backgroundColor: '#fff' }}>

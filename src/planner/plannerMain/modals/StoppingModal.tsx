@@ -18,8 +18,7 @@ export default function StoppingModal({ }) {
                     if (next.tasks[i].tasks[j].taskId == cont.currentTaskId)
                         next.tasks[i].tasks[j].totalTime += cont.currentStopwatchIncrementTime
             next.timestamps = [...cont.data.timestamps]
-            AsyncStorage.setItem('Planner' + new Date().toISOString().slice(0, 10),
-                JSON.stringify(next))
+            AsyncStorage.setItem('Planner' + next.date, JSON.stringify(next))
             return next
         })
         cont.setCurrentTaskId(-1) /* 정보 저장하고 이거 호출하는 이유: task.totalTime == 0 이면 스톱워치 undefined. (Tasks.tsx)

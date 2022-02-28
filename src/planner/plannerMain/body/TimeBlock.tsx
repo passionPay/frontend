@@ -1,11 +1,11 @@
 import React from 'react'
 import { Dimensions, StyleSheet, TextInput, View } from 'react-native'
 import { Text } from '../../../component/CustomComponent'
-import { TimeStampsType, useContextOfPlanner } from '../../PlannerProvider'
+import { useContextOfPlanner } from '../../PlannerProvider'
 
 const borderWidth = 0.5
 const hourViewWidth = 23, hourViewHeight = 24
-const {width, height} = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 const rowWidth = (width - 47) * 2 / 5 - hourViewWidth
 
 export default function TimeBlock() {
@@ -21,14 +21,15 @@ export default function TimeBlock() {
         }}>TIME TABLE</Text>
         <View>
             {hours.map((v, i) => <View style={styles.row} key={i}>
-                <TextInput style={styles.hour} editable={false} value={v.toString()}/>
+                <TextInput style={styles.hour} editable={false} value={v.toString()}
+                    multiline={true} numberOfLines={1} />
                 <View style={{ flex: 1, backgroundColor: '#0000' }} />
             </View>)}
             {cont.data.timestamps.map((v, i) => {
                 return <View key={i} style={{
                     position: 'absolute',
                     backgroundColor: v.color,
-                    height: hourViewHeight + borderWidth,
+                    height: hourViewHeight - borderWidth,
                     top: getTopPosition(v.startTime),
                     left: getLeftPosition(v.startTime),
                     width: getBlockWidth(v.startTime, v.endTime)
@@ -39,7 +40,7 @@ export default function TimeBlock() {
 }
 
 function getTopPosition(startTime: string) {
-    return ((Number(startTime.substring(0, 2)) + 19) % 24) * (hourViewHeight + borderWidth)
+    return ((Number(startTime.substring(0, 2)) + 19) % 24) * (hourViewHeight + borderWidth) + borderWidth
 }
 
 function getLeftPosition(startTime: string) {

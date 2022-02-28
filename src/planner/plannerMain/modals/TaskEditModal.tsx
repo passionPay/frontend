@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Alert, Animated, Modal, ScrollView, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
 import { Text, TouchableIcon } from '../../../component/CustomComponent'
-import { PlannerContextType, PlannerDataType, TASKEDITMODAL, TaskType, useContextOfPlanner } from '../../PlannerProvider';
+import { PlannerContextType, PlannerDataType, TASKEDITMODAL, useContextOfPlanner } from '../../PlannerProvider';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -13,6 +13,7 @@ export default function TaskEditModal() {
     const [selectedSubject, setSelectedSubject] = useState<string>('getSubjectOfTask(cont)');
     const [editedTaskTitle, setEditedTaskTitle] = useState(cont.TASKEDITMODAL_selectedTask.title)
     const [editedColor, setEditedColor] = useState<string>(cont.TASKEDITMODAL_selectedTask.color)
+    const [editedStatus, setEditedStatus] = useState(cont.TASKEDITMODAL_selectedTask.status)
     const [subjects, setSubjects] = useState<{ label: string; value: string; }[]>([])
     useEffect(() => {
         AsyncStorage.getItem('PlannerSubjects')
@@ -21,8 +22,6 @@ export default function TaskEditModal() {
                     setSubjects(JSON.parse(res))
             })
     }, []) // 의존성에 subjects 있어야 하지 않을까? TaskAddModal.tsx 에서 추가, 삭제 가능하므로
-
-    let editedStatus = cont.TASKEDITMODAL_selectedTask.status
 
     const completeButtonAnimVal = useRef(new Animated.Value(0)).current;
     useEffect(() => completeButtonAnimVal.setValue(editedStatus), [editedStatus]) // 0이면 완료 전, 1이면 완료
@@ -81,8 +80,16 @@ export default function TaskEditModal() {
                     })
                 }
             }
-            AsyncStorage.setItem('Planner' + new Date().toISOString().slice(0, 10),
-                JSON.stringify(next))
+            let taskCnt = 0, completedTaskCnt = 0
+            next.tasks.forEach((i) => {
+                i.tasks.forEach((j) => {
+                    ++taskCnt
+                    if (j.status == 1)
+                        ++completedTaskCnt
+                })
+            })
+            next.taskRate = Math.floor(completedTaskCnt / taskCnt * 100)
+            AsyncStorage.setItem('Planner' + next.date, JSON.stringify(next))
             return next
         })
         closeModal()
@@ -93,16 +100,23 @@ export default function TaskEditModal() {
             text: '확인', onPress: () => {
                 cont.setData((prev: PlannerDataType) => {
                     let next: PlannerDataType = JSON.parse(JSON.stringify(prev))
+                    let taskCnt = 0, completedTaskCnt = 0
                     for (let i = 0; i < prev.tasks.length; ++i)
-                        for (let j = 0; j < prev.tasks[i].tasks.length; ++j)
+                        for (let j = 0; j < prev.tasks[i].tasks.length; ++j) {
                             if (prev.tasks[i].tasks[j].taskId
                                 == cont.TASKEDITMODAL_selectedTask.taskId) {
                                 next.tasks[i].tasks.splice(j, 1)
                                 if (next.tasks[i].tasks.length == 0)
                                     next.tasks.splice(i, 1)
-                                return next
+                                continue // 삭제되는 task 제외하고 taskCnt 세줘야 함.
                             }
-                    return next // 여기로 안 옴
+                            else if (prev.tasks[i].tasks[j].status == 1)
+                                ++completedTaskCnt
+                            ++taskCnt
+                        }
+                    next.taskRate = Math.floor(completedTaskCnt / taskCnt * 100)
+                    AsyncStorage.setItem('Planner' + next.date, JSON.stringify(next))
+                    return next
                 })
                 closeModal()
             }
@@ -120,7 +134,7 @@ export default function TaskEditModal() {
             setEditedTaskTitle(cont.TASKEDITMODAL_selectedTask.title)
             setEditedColor(cont.TASKEDITMODAL_selectedTask.color)
             setSelectedSubject(getSubjectOfTask(cont))
-
+            setEditedStatus(cont.TASKEDITMODAL_selectedTask.status)
         }}
     >
         <View style={styles.centeredView}>
@@ -178,7 +192,7 @@ export default function TaskEditModal() {
                             onPress={() => {
                                 Animated.timing(completeButtonAnimVal, {
                                     toValue: 0, useNativeDriver: false, duration: 100
-                                }).start(() => { editedStatus = 0 })
+                                }).start(() => { setEditedStatus(0) })
                             }}>
                             <Text style={{ textAlign: 'center', color: '#1B262C' }}>완료 전</Text>
                         </TouchableOpacity>
@@ -186,7 +200,7 @@ export default function TaskEditModal() {
                             onPress={() => {
                                 Animated.timing(completeButtonAnimVal, {
                                     toValue: 1, useNativeDriver: false, duration: 100
-                                }).start(() => { editedStatus = 1 })
+                                }).start(() => { setEditedStatus(1) })
                             }}>
                             <Text style={{ textAlign: 'center', color: '#1B262C' }}>완료</Text>
                         </TouchableOpacity>

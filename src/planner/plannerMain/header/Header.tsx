@@ -1,24 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Text } from '../../../component/CustomComponent'
-import { useContextOfPlanner } from '../../PlannerProvider'
+import { initPlannerState, PlannerDataType, useContextOfPlanner } from '../../PlannerProvider'
 import MainStopWatch from './MainStopWatch'
+import DatePicker from 'react-native-date-picker'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function Header() {
     const cont = useContextOfPlanner()
-    const data = cont.data
+    const [date, setDate] = useState(new Date(cont.data.date))
+    const [open, setOpen] = useState(false)
     return <View style={styles.container}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}>
             <TouchableOpacity style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-            }}>
+            }} onPress={() => setOpen(true)}>
                 <Icon name='calendar-month' color='#151515' size={17} />
-                <Text style={{ marginLeft: 10 }}>{data.date}</Text>
+                <Text style={{ marginLeft: 10 }}>{cont.data.date}</Text>
             </TouchableOpacity>
             <Text style={styles.dDay}>
-                {data.dDay < 0 ? ' ' : 'D-' + data.dDay}</Text>
+                {cont.data.dDay < 0 ? ' ' : (cont.data.dDay == 0 ? 'D-DAY' : 'D-' + cont.data.dDay)}</Text>
         </View>
         <View style={{
             alignItems: 'center',
@@ -36,12 +39,12 @@ export default function Header() {
                 <Text style={[styles.tag, { flex: 2 }]}>TOTAL TIME</Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
-                <View style={{flex: 3}}>
+                <View style={{ flex: 3 }}>
                     <Text style={{
                         fontSize: 11,
                         marginRight: 30,
                         paddingTop: 11,
-                    }}>{data.comment}</Text>
+                    }}>{cont.data.comment}</Text>
                 </View>
                 <TouchableOpacity style={{
                     flex: 2,
@@ -52,23 +55,34 @@ export default function Header() {
                 </TouchableOpacity>
             </View>
         </View>
-    </View>
-}
-
-function Tag(tagName: string, flex: number) {
-    return <View style={{ flexDirection: 'row', alignItems: 'center', flex: flex }}>
-        <Text style={{
-            marginRight: 3,
-            fontSize: 8,
-            color: '#999'
-        }}>{tagName}</Text>
-        <View style={{
-            borderColor: '#aaa',
-            borderBottomWidth: 1,
-            height: 0,
-            flex: 1,
-            marginRight: flex == 3 ? 7 : 0
-        }} />
+        <DatePicker
+            modal
+            open={open}
+            date={date ? date : new Date()}
+            onConfirm={(date) => {
+                setOpen(false)
+                setDate(date)
+                let next: PlannerDataType = initPlannerState
+                AsyncStorage.getItem('Planner' + date.toISOString().slice(0, 10))
+                    .then(todayPlannerData => {
+                        if (todayPlannerData !== null)
+                            next = JSON.parse(todayPlannerData)
+                        next.date = date.toISOString().slice(0, 10)
+                        AsyncStorage.getItem('PlannerDday')
+                            .then(dDay => {
+                                if (dDay !== null) {
+                                    const diff = new Date(dDay).getTime() - date.getTime()
+                                    next.dDay = Math.floor(diff / (1000 * 3600 * 24))
+                                }
+                                cont.setData(next)
+                            })
+                    })
+            }}
+            onCancel={() => {
+                setOpen(false)
+            }}
+            mode='date'
+        />
     </View>
 }
 
@@ -81,10 +95,8 @@ const styles = StyleSheet.create({
         fontFamily: 'SourceSansPro-Bold',
         fontSize: 12,
         marginTop: 5,
-        // marginBottom: 10,
     },
     dDay: {
-        // alignSelf: 'center',
         color: '#151515'
     }
 })
