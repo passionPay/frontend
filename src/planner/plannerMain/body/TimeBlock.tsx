@@ -29,7 +29,7 @@ export default function TimeBlock() {
                 return <View key={i} style={{
                     position: 'absolute',
                     backgroundColor: v.color,
-                    height: hourViewHeight - borderWidth,
+                    height: hourViewHeight,
                     top: getTopPosition(v.startTime),
                     left: getLeftPosition(v.startTime),
                     width: getBlockWidth(v.startTime, v.endTime)
@@ -40,7 +40,7 @@ export default function TimeBlock() {
 }
 
 function getTopPosition(startTime: string) {
-    return ((Number(startTime.substring(0, 2)) + 19) % 24) * (hourViewHeight + borderWidth) + borderWidth
+    return ((Number(startTime.substring(0, 2)) + 19) % 24) * (hourViewHeight + borderWidth)
 }
 
 function getLeftPosition(startTime: string) {
