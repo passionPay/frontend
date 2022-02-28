@@ -21,7 +21,7 @@ export default function MainStopWatch() {
             const next: PlannerDataType = JSON.parse(JSON.stringify(prev))
             if (isNextRow(next.timestamps)) {
                 next.timestamps.length > 0 ? next.timestamps[next.timestamps.length - 1].endTime
-                    = next.timestamps[next.timestamps.length - 1].endTime.slice(6) + '59' : undefined
+                    = next.timestamps[next.timestamps.length - 1].endTime.substr(0, 6) + '59' : undefined
                 next.timestamps.push({
                         timestampId: prev.timestamps[prev.timestamps.length - 1].timestampId + 1,
                         startTime: new Date().toTimeString().substring(0, 6) + '00',
