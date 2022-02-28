@@ -17,7 +17,7 @@ import MyGroupRank from './MyGroup/MyGroupRank'
 import VerifyPost from './MyGroup/MyGroupVBoard/VerifyPost/VerifyPost'
 
 import OtherGroup from './OtherGroup/OtherGroup'
-import WriteVerifyPost from './MyGroup/MyGroupVBoard/WriteVerifyPost'
+import WriteVerifyPost from './MyGroup/MyGroupVBoard/WritePost/WriteVerifyPost'
 
 export default function StudyGroupNavigator() {
     const Stack = createStackNavigator()

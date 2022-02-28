@@ -7,27 +7,27 @@ const { width, height } = Dimensions.get('window')
 const PostWriteForm = ({ state, setState }) => {
     return (
         <View>
-            <View style={styles.noticeTitleContainer}>
+            <View style={styles.inputTitleContainer}>
                 <Text style={{
                     marginBottom:10,
                 }}>제목
                 </Text>
                 <TextInput style={styles.titleInfo} 
-                    value={state.noticeTitle}
-                    onChangeText={(text) => { setState({ ...state, noticeTitle: text }) }}
+                    value={state.inputTitle}
+                    onChangeText={(text) => { setState({ ...state, inputTitle: text }) }}
                     placeholder='제목을 입력해주세요'
                 />
             </View>
             <View>
-                <View style={styles.noticeContentContainer}>
+                <View style={styles.inputContentContainer}>
                     <Text style={{
                         marginVertical: 10,
                     }}>내용
                     </Text>
                     <TextInput
                         multiline
-                        style={styles.contentInfo} value={state.noticeContent}
-                        onChangeText={(text) => { setState({ ...state, noticeContent: text }) }}
+                        style={styles.contentInfo} value={state.inputContent}
+                        onChangeText={(text) => { setState({ ...state, inputContent: text }) }}
                         placeholder='내용을 입력해주세요'
                     />
                 </View>
@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
 
     },
-    noticeTitleContainer: {
+    inputTitleContainer: {
         // flexDirection: 'row',
         marginTop: 10,
     },
-    noticeContentContainer: {
+    inputContentContainer: {
 
         marginTop: 10,
     }

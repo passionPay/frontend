@@ -12,10 +12,13 @@ target 'madcampweek4' do
     :hermes_enabled => false
   )
 
+  # Permission setting following react-native-permission library docs
 
+  permissions_path = '../node_modules/react-native-permissions/ios'
 
-
-
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+  pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications"
+  pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary"
 
 
 

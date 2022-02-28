@@ -27,11 +27,7 @@ const profileSettingItems = [
         tag: '프로필 사진 설정',
         type: 'navigator',
         option: {
-            navigatorName: 'MakeGroup',
-            params: {
-                // prevState: groupPrevState,
-                isEditMode: true,
-            }
+            navigatorName: 'SetProfileImage',
         }
     },
     {
@@ -51,10 +47,9 @@ const profileSettingItems = [
     },
     {
         tag: '내 공부 신분 설정',
-        type: 'modal',
+        type: 'navigator',
         option: {
-            modal: WarningModal,
-            modalData: breakGroupModalData
+            navigatorName : 'SetUserStatus',
         }
     },
 ]

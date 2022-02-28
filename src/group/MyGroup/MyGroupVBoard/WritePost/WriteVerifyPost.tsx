@@ -2,18 +2,25 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { TextInput, Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-import PostWriteForm from '../../commonComponent/PostWriteForm'
+import PostWriteForm from '../../../commonComponent/PostWriteForm'
+import ImageUploadSection from './ImageUploadSection'
 
 
 const { width, height } = Dimensions.get('window')
 
 type StateType = {
-    noticeTitle: string,
-    noticeContent: string,
+    inputTitle: string,
+    inputContent: string,
+    inputPhotos:{
+        name:string,
+        type:string,
+        uri:string
+    }[],
 }
 const initState: StateType = {
-    noticeTitle: '',
-    noticeContent: '',
+    inputTitle: '',
+    inputContent: '',
+    inputPhotos:[],
 }
 
 
@@ -32,9 +39,12 @@ const WriteVerifyPost = ({ route }) => {
         if (route.params && route.params.isEditMode) {
             setState(route.params.prevState)
         }
-        // console.log(route)
+
     }, [route])
 
+    // useEffect(()=>{
+    //     console.log(state)
+    // },[state])
     return (
         <SafeAreaView style={styles.safeContainer}>
             <View style={styles.container}>
@@ -64,8 +74,9 @@ const WriteVerifyPost = ({ route }) => {
                         </Text>
                     </TouchableOpacity>
                 </View>
-
                 <PostWriteForm state={state} setState={setState} />
+                <ImageUploadSection state={state} setState={setState}/>
+                
             </View>
         </SafeAreaView>
     )
@@ -109,11 +120,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         marginHorizontal: 20, flex: 1
     },
-    noticeTitleContainer: {
+    inputTitleContainer: {
         flexDirection: 'row',
         marginTop: 10,
     },
-    noticeContentContainer: {
+    inputContentContainer: {
         flexDirection: 'row',
         marginTop: 30,
     },

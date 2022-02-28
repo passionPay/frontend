@@ -8,12 +8,12 @@ import PostWriteForm from '../../commonComponent/PostWriteForm'
 const { width, height } = Dimensions.get('window')
 
 type StateType = {
-    noticeTitle: string,
-    noticeContent: string,
+    inputTitle: string,
+    inputContent: string,
 }
 const initState: StateType = {
-    noticeTitle: '',
-    noticeContent: '',
+    inputTitle: '',
+    inputContent: '',
 }
 
 
@@ -109,11 +109,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         marginHorizontal: 20, flex: 1
     },
-    noticeTitleContainer: {
+    inputTitleContainer: {
         flexDirection: 'row',
         marginTop: 10,
     },
-    noticeContentContainer: {
+    inputContentContainer: {
         flexDirection: 'row',
         marginTop: 30,
     },

@@ -10,6 +10,7 @@ type MemberIconProps = {
     isOnline: boolean,
     touchable: boolean,
     onPress?: () => void
+    source?
 }
 
 const defaultProps:MemberIconProps = {
@@ -20,9 +21,10 @@ const defaultProps:MemberIconProps = {
     },
     touchable: false,
     isOnline: false,
+    source :''
 }
 
-const MemberIcon = ({ size,touchable, style, backgroundColor, isOnline, onPress }:MemberIconProps) => {
+const MemberIcon = ({ size,touchable, style, backgroundColor, isOnline, onPress, source }:MemberIconProps) => {
     style = Object.assign({}, defaultProps.style , style)
     const borderWidth = size * 0.03
     const iconDiameter = size - borderWidth
@@ -37,9 +39,10 @@ const MemberIcon = ({ size,touchable, style, backgroundColor, isOnline, onPress 
             }}></View>
         </>
     )
+    if ( source.uri==='' )  source = require('../../images/5.png')
 
     const coreImage = (
-        <Image source={require('../../images/5.png')} style={[styles.memberImage, { width: iconDiameter, height: iconDiameter, backgroundColor: backgroundColor, borderRadius: iconDiameter / 2 }]} />
+        <Image source={source} style={[styles.memberImage, { width: iconDiameter, height: iconDiameter, backgroundColor: backgroundColor, borderRadius: iconDiameter / 2 }]} />
     )
     
     const coreItem = (

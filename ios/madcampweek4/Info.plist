@@ -138,5 +138,10 @@
 		<string>SourceSansPro-SemiBoldItalic.ttf</string>
 		<string>SourceSansPro.ttf</string>
 	</array>
+
+	<key>NSCameraUsageDescription</key>
+  	<string>YOUR TEXT</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+  	<string>YOUR TEXT</string>
 </dict>
 </plist>
