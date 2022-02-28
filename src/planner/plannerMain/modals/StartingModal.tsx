@@ -47,7 +47,8 @@ export default function StartingModal({ }) {
                         next.timestamps.push({
                             timestampId: prev.timestamps.length > 0 ?
                                 prev.timestamps[prev.timestamps.length - 1].timestampId + 1 : 1,
-                            startTime: new Date().toTimeString().substring(0, 8),
+                            startTime: new Date().toTimeString().substring(3, 5) == '59' ?
+                                new Date().toTimeString().substring(0, 6) + '00' : new Date().toTimeString().substring(0, 8),
                             endTime: new Date().toTimeString().substring(0, 8),
                             color: getTaskColor(Number(value), cont.data.tasks)
                         })
