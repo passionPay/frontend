@@ -1,14 +1,16 @@
 import React, { useCallback, useState } from 'react'
 import { Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { TouchableIcon } from '../../../../component/CustomComponent'
 
+import CommentMenuModal from './CommentMenuModal'
 import MemberIcon from '../../../../component/MemberIcon'
 const { width, height } = Dimensions.get('window')
 
 
-const CommentItem = ({ data,idx=1 }) => {
-
+const CommentItem = ({ data, idx = 1 }) => {
+    const [modalVisible,setModalVisible] = useState(false)
     return (
-        <View style={{ borderTopWidth:idx===0?0: 0.5, borderColor: '#c4c4c4', paddingVertical: height * 0.02, paddingHorizontal: width * 0.07 }}>
+        <View style={{ borderTopWidth: idx === 0 ? 0 : 0.5, borderColor: '#c4c4c4', paddingVertical: height * 0.02, paddingHorizontal: width * 0.07 }}>
             <View style={{ flexDirection: 'row', }}>
                 <View style={{ flexDirection: 'row', }}>
                     <MemberIcon size={35} isOnline />
@@ -18,20 +20,31 @@ const CommentItem = ({ data,idx=1 }) => {
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row', marginLeft: 'auto', marginRight: width * 0.02 }}>
-                    <TouchableOpacity>
+                    
+                    <TouchableIcon
+                        onPress={() => setModalVisible(true)}
+                        iconProps={{
+                            style: [{ marginTop:5, }],
+                            name: 'dots-horizontal', size: 15, color: 'black'
+                        }} />
+                </View>
+            </View>
+            <Text style={{ marginTop: 15 }}>
+                {'댓글댓글'.repeat(10)}
+            </Text>
+            <TouchableOpacity>
                         <Text style={{
-                            flexDirection: 'row', marginRight: width * 0, marginTop: 5,
+                            flexDirection: 'row', marginRight: width * 0, marginTop: 10,
                             fontSize: 12,
                             // color:'#7EBEF9'
                         }}>
                             좋아요 3
                         </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-            <Text style={{ marginTop: height * 0.01 }}>
-                {'댓글댓글'.repeat(10)}
-            </Text>
+            </TouchableOpacity>
+
+            <CommentMenuModal modalVisible={modalVisible} setModalVisible={setModalVisible} 
+                isAuthor
+            />
         </View>
 
     )
@@ -77,7 +90,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: width * 0.05,
         borderTopRightRadius: width * 0.05,
         paddingTop: width * 0.02,
-        paddingBottom:height*0.5,
-        marginBottom:-height*0.5,
+        paddingBottom: height * 0.5,
+        marginBottom: -height * 0.5,
     }
 })

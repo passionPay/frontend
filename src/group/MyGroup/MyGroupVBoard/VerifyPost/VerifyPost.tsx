@@ -1,16 +1,20 @@
 import React, { useCallback, useState } from 'react'
 import { Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+
+
 import PostSection from './PostSection'
-import CommentSection from './CommenSection'
+import CommentSection from './CommentSection'
 import CommentInput from './CommentInput'
 import MemberModal from '../../../commonComponent/MemberModal'
+
 
 const { width, height } = Dimensions.get('window')
 
 const data = {
     author: '김승구',
     content: '202020202020 공부완료',
+    photos:[1,2,3,4,5],
     createdAt: '3분 전',
 }
 
@@ -37,7 +41,7 @@ export default function VerifyPost() {
                     }} >
                         &lt; 인증게시판 </Text>
                 </TouchableOpacity>
-                <ScrollView style={{flex:1}}showsVerticalScrollIndicator={false}>
+                <ScrollView style={{flex:1}} showsVerticalScrollIndicator={false}>
                     <PostSection data={data} />
                     <CommentSection data={data} />
                 </ScrollView>

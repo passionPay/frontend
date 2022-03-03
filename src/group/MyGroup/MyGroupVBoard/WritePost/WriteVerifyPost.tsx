@@ -9,42 +9,39 @@ import ImageUploadSection from './ImageUploadSection'
 const { width, height } = Dimensions.get('window')
 
 type StateType = {
-    inputTitle: string,
-    inputContent: string,
-    inputPhotos:{
-        name:string,
-        type:string,
-        uri:string
+    content: string,
+    photos: {
+        name: string,
+        type: string,
+        uri: string
     }[],
 }
 const initState: StateType = {
-    inputTitle: '',
-    inputContent: '',
-    inputPhotos:[],
+    content: '',
+    photos: [],
 }
 
 
 const WriteVerifyPost = ({ route }) => {
     const navigation = useNavigation<any>()
     const goBack = useCallback(() => navigation.goBack(), [])
-
     const [state, setState] = useState<StateType>(initState)
-    
+
     const onSubmit = useCallback(() => {
         console.log(state)
         goBack()
     }, [state])
 
     useEffect(() => {
-        if (route.params && route.params.isEditMode) {
+        if (route.params && route.params.prevState) {
             setState(route.params.prevState)
         }
-
     }, [route])
 
     // useEffect(()=>{
     //     console.log(state)
     // },[state])
+
     return (
         <SafeAreaView style={styles.safeContainer}>
             <View style={styles.container}>
@@ -54,13 +51,14 @@ const WriteVerifyPost = ({ route }) => {
                         fontFamily: 'GodoM',
                         color: '#9F9F9F',
                     }}>
-                        {`< 그룹 설정`}</Text>
+                        {`< 그룹 설정`}
+                    </Text>
                 </TouchableOpacity>
                 <View style={{
                     flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
                     marginBottom: height * 0.02,
                 }}>
-                    <Text style={styles.title}>{(route.params && route.params.isEditMode)?'글 수정하기':'글 작성하기'}</Text>
+                    <Text style={styles.title}>{(route.params && route.params.prevState) ? '글 수정하기' : '글 작성하기'}</Text>
                     <TouchableOpacity
                         onPress={onSubmit}
                         style={styles.submitButton}>
@@ -70,13 +68,13 @@ const WriteVerifyPost = ({ route }) => {
                             fontSize: 14,
                             fontWeight: '700'
                         }}>
-                            {(route.params && route.params.isEditMode)?'수정완료':'작성완료'}
+                            {(route.params && route.params.prevState) ? '수정완료' : '작성완료'}
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <PostWriteForm state={state} setState={setState} />
-                <ImageUploadSection state={state} setState={setState}/>
-                
+                <PostWriteForm hasTitle={false} state={state} setState={setState} />
+                <ImageUploadSection state={state} setState={setState} />
+
             </View>
         </SafeAreaView>
     )
@@ -133,7 +131,7 @@ const styles = StyleSheet.create({
         height: 30,
         marginLeft: 10,
         borderRadius: 10,
-        marginTop:-5,
+        marginTop: -5,
         backgroundColor: '#7EBEF9',
         justifyContent: 'center',
     }

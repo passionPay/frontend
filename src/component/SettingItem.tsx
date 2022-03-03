@@ -10,7 +10,7 @@ const { width, height } = Dimensions.get('window')
 
 
 type option={
-
+    
 }
 
 export const SettingItem = ({ tag, type, option }) => {
@@ -27,7 +27,30 @@ export const SettingItem = ({ tag, type, option }) => {
 }
 
 
+const ModalSettingItem = ({ tag, option }) => {
+    const [modalVisible, setModalVisible] = useState(false)
+    return (
+        <>
+            <SettingItemBasicStructure tag={tag} onPress={()=>setModalVisible(true)}/>
+            <option.modal modalVisible={modalVisible} setModalVisible={setModalVisible} data={option.modalData} />
+        </>
+    )
+}
+const NavSettingItem =({tag,option})=>{
+    const navigation = useNavigation<any>()
+    const navFunction = 
+        option.params ? 
+            useCallback(() => navigation.navigate(option.navigatorName, option.params), [])
+            :
+            useCallback(() => navigation.navigate(option.navigatorName), [])
+    return (
+        <SettingItemBasicStructure tag={tag} onPress={navFunction}/>
+    )
 
+}
+NavSettingItem.defaultProps = {
+    option:{}
+}
 
 
 
@@ -56,31 +79,4 @@ const SettingItemBasicStructure = ({onPress,tag}) =>{
             </TouchableOpacity>
         </>
     )
-}
-
-const ModalSettingItem = ({ tag, option }) => {
-    const [modalVisible, setModalVisible] = useState(false)
-    return (
-        <>
-            <SettingItemBasicStructure tag={tag} onPress={()=>setModalVisible(true)}/>
-            <option.modal modalVisible={modalVisible} setModalVisible={setModalVisible} data={option.modalData} />
-        </>
-    )
-}
-
-
-const NavSettingItem =({tag,option})=>{
-    const navigation = useNavigation<any>()
-    const navFunction = 
-        option.params ? 
-            useCallback(() => navigation.navigate(option.navigatorName, option.params), [])
-            :
-            useCallback(() => navigation.navigate(option.navigatorName), [])
-    return (
-        <SettingItemBasicStructure tag={tag} onPress={navFunction}/>
-    )
-
-}
-NavSettingItem.defaultProps = {
-    option:{}
 }

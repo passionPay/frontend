@@ -22,6 +22,7 @@ const MemberModal = ({ modalVisible, setModalVisible, isManaging, isMine }: Memb
     navigation??
     */
     const navigation = useNavigation<any>()
+    const publicProfile = useCallback(()=>navigation.navigate('PublicProfileNavigator'),[])
 
     const goAlert = () =>
         Alert.alert(
@@ -56,7 +57,10 @@ const MemberModal = ({ modalVisible, setModalVisible, isManaging, isMine }: Memb
                     {!isMine &&
                         <TouchableOpacity
                             style={styles.button}
-                            onPress={() => setModalVisible(false)}>
+                            onPress={() => {
+                                setModalVisible(false)
+                                publicProfile()
+                            }}>
                             <Text style={{
                                 color: '#ffffff', fontWeight: 'bold', fontSize: 17,
                                 textAlign: 'center'

@@ -7,7 +7,6 @@ import { TouchableIcon } from '../../../component/CustomComponent'
 
 const { width, height } = Dimensions.get('window')
 
-
 const data = {
     groupName: '3학년 1반 국어 스터디',
     groupDescription: '1학기 매일 공부할 사람만~',
@@ -34,26 +33,24 @@ export default function MyGroupVBoard() {
     return (
         <SafeAreaView style={styles.safeContainer}>
             <View style={styles.container}>
-
                 <TouchableOpacity style={styles.header} onPress={goBack}>
                     <Text style={{
                         fontSize: 13,
                         fontFamily: 'GodoM',
                         color: '#9F9F9F',
-                        // backgroundColor:'#000000'
-
                     }} >
                         &lt; 3학년 1반 국어스터디 </Text>
                 </TouchableOpacity>
-
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
                     <Text style={[styles.title]}>인증게시판</Text>
                     <TouchableIcon
                         onPress={writeVerifyPost}
                         iconProps={{
                             style: [{ paddingLeft: 10, marginTop: -3, marginLeft: 'auto', marginRight: width * 0.03 }],
-                            name: 'plus', size: 23, color: 'black'
+                            name: 'pencil-outline', size: 23, color: 'black'
                         }} />
+
+                    
                 </View>
 
 

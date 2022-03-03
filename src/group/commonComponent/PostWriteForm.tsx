@@ -4,20 +4,22 @@ import { View, Text, Dimensions, StyleSheet, TextInput } from 'react-native'
 const { width, height } = Dimensions.get('window')
 
 
-const PostWriteForm = ({ state, setState }) => {
+const PostWriteForm = ({ state, setState, hasTitle = true }) => {
     return (
         <View>
-            <View style={styles.inputTitleContainer}>
-                <Text style={{
-                    marginBottom:10,
-                }}>제목
-                </Text>
-                <TextInput style={styles.titleInfo} 
-                    value={state.inputTitle}
-                    onChangeText={(text) => { setState({ ...state, inputTitle: text }) }}
-                    placeholder='제목을 입력해주세요'
-                />
-            </View>
+            {hasTitle &&
+                <View style={styles.inputTitleContainer}>
+                    <Text style={{
+                        marginBottom: 10,
+                    }}>제목
+                    </Text>
+                    <TextInput style={styles.titleInfo}
+                        value={state.title}
+                        onChangeText={(text) => { setState({ ...state, title: text }) }}
+                        placeholder='제목을 입력해주세요'
+                    />
+                </View>
+            }
             <View>
                 <View style={styles.inputContentContainer}>
                     <Text style={{
@@ -26,8 +28,8 @@ const PostWriteForm = ({ state, setState }) => {
                     </Text>
                     <TextInput
                         multiline
-                        style={styles.contentInfo} value={state.inputContent}
-                        onChangeText={(text) => { setState({ ...state, inputContent: text }) }}
+                        style={styles.contentInfo} value={state.content}
+                        onChangeText={(text) => { setState({ ...state, content: text }) }}
                         placeholder='내용을 입력해주세요'
                     />
                 </View>
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     titleInfo: {
         fontSize: 15,
         paddingVertical: 10,
-        backgroundColor:'#f9f9f9',
+        backgroundColor: '#f9f9f9',
         borderBottomWidth: 0.4,
         paddingHorizontal: 10,
         // marginHorizontal: 20, 
@@ -52,8 +54,8 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 10,
         minHeight: 200,
-        maxHeight:height-400,
-        backgroundColor:'#f9f9f9',
+        maxHeight: height - 400,
+        backgroundColor: '#f9f9f9',
         borderBottomWidth: 0.4,
         paddingHorizontal: 10,
 

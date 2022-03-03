@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     inputContainer:{
         flexDirection:'row',
         paddingHorizontal:width*0.05,
-        paddingVertical:10,
+        // paddingVertical:10,
         backgroundColor:'#ffffff',
         minHeight:50,
         maxHeight:100,

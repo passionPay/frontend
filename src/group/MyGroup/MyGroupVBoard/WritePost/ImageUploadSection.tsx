@@ -12,14 +12,14 @@ const { width, height } = Dimensions.get('window')
 
 const ImageUploadSection = ({state,setState}) => {
     const setDatas = useCallback((datas)=>{
-        setState({...state,inputPhotos:datas})
+        setState({...state,photos:datas})
     },[setState,state])
     return (
         <>
             <NewPhotoItem style={{ marginVertical: 20, }} setDatas={setDatas} />
             <View style={{ height: 140 }}>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} >
-                    {state.inputPhotos.map((item: any, idx:number) => {
+                    {state.photos.map((item: any, idx:number) => {
                         return (
                             <PhotoItem key={idx} source={{ uri: item.uri }} />
                         )

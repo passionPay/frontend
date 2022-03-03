@@ -10,7 +10,7 @@ type MemberIconProps = {
     isOnline: boolean,
     touchable: boolean,
     onPress?: () => void
-    source?
+    source?:any
 }
 
 const defaultProps:MemberIconProps = {
@@ -21,7 +21,7 @@ const defaultProps:MemberIconProps = {
     },
     touchable: false,
     isOnline: false,
-    source :''
+    source :{uri:''}
 }
 
 const MemberIcon = ({ size,touchable, style, backgroundColor, isOnline, onPress, source }:MemberIconProps) => {
