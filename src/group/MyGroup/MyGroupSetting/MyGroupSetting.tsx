@@ -56,10 +56,15 @@ const leaderSettingItems = [
         tag:'그룹 정보 수정',
         type:'navigator',
         option:{
-            navigatorName:'MakeGroup',
+            navigatorName:'EditGroup',
+        }
+    },
+    {
+        tag:'그룹 공개 설정',
+        type:'navigator',
+        option:{
+            navigatorName:'SetPrivacy',
             params:{
-                prevState:groupPrevState,
-                isEditMode:true,
             }
         }
     },

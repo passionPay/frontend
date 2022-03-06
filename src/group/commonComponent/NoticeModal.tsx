@@ -1,10 +1,14 @@
 import React, { useCallback, useState } from 'react'
 import { Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import Modal from "react-native-modal";
+import { useGroupState } from '../MyGroup/MyGroupContext';
 
 const { width, height } = Dimensions.get('window')
 
-const NoticeModal = ({ modalVisible, setModalVisible, data }) => {
+const NoticeModal = ({ modalVisible, setModalVisible}) => {
+    const groupState = useGroupState()
+
+
 
     return (
         <Modal
@@ -15,10 +19,10 @@ const NoticeModal = ({ modalVisible, setModalVisible, data }) => {
         >
             <View style={styles.modalContainer}>
                 <View style={styles.titleContainer}>
-                    <Text>{data.title}</Text>
+                    <Text>{groupState.groupNotice.title}</Text>
                 </View>
                 <ScrollView style={styles.contentContainer}>
-                    <Text>{data.content}</Text>
+                    <Text>{groupState.groupNotice.content===''?  '아직 작성된 공지사항이 없습니다.':groupState.groupNotice.content}</Text>
                 </ScrollView>
                 <TouchableOpacity
                     style={styles.confirmButton}

@@ -7,6 +7,8 @@ import { LogBox } from "react-native";
 LogBox.ignoreLogs(["EventEmitter.removeListener"]);
 
 import GroupGoalChart from './GroupGoalChart';
+import { useGroupState } from '../MyGroupContext';
+import { getFormattedTime } from '../timeManager';
 
 const { width, height } = Dimensions.get('window')
 
@@ -59,10 +61,28 @@ const currentMissions: MissionsType = [
 ]
 
 
+const GroupSummary = () => {
+    return (
+        <View style={styles.mainContainer}>
+            <Text style={styles.titleText}>오늘 공부 현황</Text>
+            <GroupGoalChart />
+            <View style={styles.boardContainer}>
+                <GroupSummaryBoard time></GroupSummaryBoard>
+                <GroupSummaryBoard time={false}></GroupSummaryBoard>
+            </View>
+        </View>
+    )
+}
+
+export default GroupSummary
+
 
 const GroupSummaryBoard = ({ time }) => {
     const navigation = useNavigation<any>()
     const myGroupGoal = useCallback(() => navigation.navigate('MyGroupGoal',time?1:0), [])
+
+    const groupState = useGroupState();
+
     const fontSize = 12
     const content = time ? (
         <>
@@ -70,15 +90,15 @@ const GroupSummaryBoard = ({ time }) => {
                 <View style={{ paddingTop: 5 }}>
                     <View style={boardStyles.groupTime}>
                         <Text style={{ fontSize: fontSize, }}>그룹 목표 공부시간</Text>
-                        <Text style={{ fontSize: fontSize + 3, fontWeight: '700' }}>11:22:33</Text>
+                        <Text style={{ fontSize: fontSize + 3, fontWeight: '700' }}>{getFormattedTime(groupState.groupTimeGoal)}</Text>
                     </View>
                     <View style={boardStyles.groupTime}>
                         <Text style={{ fontSize: fontSize, }}>그룹 평균 공부시간</Text>
-                        <Text style={{ fontSize: fontSize + 3, fontWeight: '700' }}>11:22:33</Text>
+                        <Text style={{ fontSize: fontSize + 3, fontWeight: '700' }}>{getFormattedTime(groupState.groupAvgStudyTime)}</Text>
                     </View>
                     <View style={boardStyles.groupTime}>
                         <Text style={{ fontSize: fontSize, }}>내 공부시간</Text>
-                        <Text style={{ fontSize: fontSize + 3, fontWeight: '700' }}>11:22:33</Text>
+                        <Text style={{ fontSize: fontSize + 3, fontWeight: '700' }}>{getFormattedTime(groupState.myStudyTime)}</Text>
                     </View>
                 </View>
 
@@ -88,14 +108,14 @@ const GroupSummaryBoard = ({ time }) => {
         : (
             <>
                 <View style={boardStyles.groupSummaryContentContainer}>
-                    {currentMissions.map((item, idx) => (
+                    {groupState.groupMissions.map((item, idx) => (
                         <View
                             key={idx} 
                             style={boardStyles.groupEachMissionContainer}>
                             <View style={{ paddingTop: 0, paddingRight: 3 }}>
                                 <Image style={{ width: 15, height: 15 }} source={require('../../../../images/group/trophy.png')} />
                             </View>
-                            <Text numberOfLines={2} style={boardStyles.missionText}>{item.missionName}</Text>
+                            <Text numberOfLines={2} style={boardStyles.missionText}>{item.value}</Text>
                         </View>
                     ))}
 
@@ -121,20 +141,7 @@ const GroupSummaryBoard = ({ time }) => {
 }
 
 
-const GroupSummary = () => {
-    return (
-        <View style={styles.mainContainer}>
-            <Text style={styles.titleText}>오늘 공부 현황</Text>
-            <GroupGoalChart />
-            <View style={styles.boardContainer}>
-                <GroupSummaryBoard time></GroupSummaryBoard>
-                <GroupSummaryBoard time={false}></GroupSummaryBoard>
-            </View>
-        </View>
-    )
-}
 
-export default GroupSummary
 
 
 

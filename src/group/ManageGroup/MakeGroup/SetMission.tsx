@@ -31,7 +31,7 @@ const MakeMission = ({ state, dispatch }) => {
 
 
 
-    const nextId = useRef(2)
+    const nextId = useRef(5)
 
     //for edit missions state only when endEditing
     const onEndEditing = useCallback((id, input) => {

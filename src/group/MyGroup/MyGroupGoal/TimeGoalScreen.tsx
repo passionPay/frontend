@@ -6,6 +6,7 @@ import CommonModal from '../../commonComponent/CommonModal'
 
 
 import ProgressBar from '../../../component/ProgressBar'
+import { getFormattedTime } from '../timeManager'
 
 const { width, height } = Dimensions.get('window')
 
@@ -22,7 +23,7 @@ const TimeProgress = ({ myStudyTime, groupTimeGoal }: TimeProgressProps) => {
         <View style={[styles.subContainer, { paddingTop: height * 0.03, }]}>
             <View style={{ flexDirection: 'row' }}>
                 <Icon name={'clock-time-four-outline'} size={18} style={{ marginLeft: 0, marginRight: 5, }} />
-                <Text style={[(width * 0.04 < 20) ? styles.subtitleTextSmall : styles.subtitleText,{marginBottom:10}]}>
+                <Text style={[(width * 0.04 < 20) ? styles.subtitleTextSmall : styles.subtitleText, { marginBottom: 10 }]}>
                     {`${myHour}:${myMin.toString().padStart(2, '0')}:${mySec.toString().padStart(2, '0')}/${groupHour}:${groupMin.toString().padStart(2, '0')}:00`}
                 </Text>
             </View>
@@ -36,12 +37,11 @@ const TimeProgress = ({ myStudyTime, groupTimeGoal }: TimeProgressProps) => {
 
 
 
-const StudyTime = ({myStudyTime,groupAvgStudyTime,groupTimeGoal}) => {
-    const [myHour, myMin, mySec] = [Math.floor(myStudyTime / 1000 / 60 / 60), Math.floor(myStudyTime / 1000 / 60 % 60), Math.floor(myStudyTime / 1000 % 60)]
-    const [groupAvgHour, groupAvgMin, groupAvgSec] = [Math.floor(groupAvgStudyTime / 1000 / 60 / 60), Math.floor(groupAvgStudyTime / 1000 / 60 % 60), Math.floor(groupAvgStudyTime / 1000 % 60)]
-    const [groupHour, groupMin] = [Math.floor(groupTimeGoal / 1000 / 60 / 60), Math.floor(groupTimeGoal / 1000 / 60 % 60)]
-    const [modalVisible,setModalVisible] = useState(false)
-    
+const StudyTime = ({ myStudyTime, groupAvgStudyTime, groupTimeGoal }) => {
+
+
+    const [modalVisible, setModalVisible] = useState(false)
+
 
     return (
         <View style={styles.subContainer}>
@@ -50,31 +50,31 @@ const StudyTime = ({myStudyTime,groupAvgStudyTime,groupTimeGoal}) => {
                     공부시간을 확인하세요
                 </Text>
                 <TouchableIcon
-                    onPress={()=>setModalVisible(true)}
+                    onPress={() => setModalVisible(true)}
                     iconProps={{ size: 17, name: 'information-outline', color: '#65b5ff' }} />
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: height * 0.01, }}>
                 <View style={{ alignItems: 'center', flex: 0.85 }}>
-                    <Text style={{ fontSize: 14, marginBottom: 3, }}>내 공부시간</Text>
+                    <Text style={{ fontSize: 13, marginBottom: 3, }}>내 공부시간</Text>
                     <Text style={{ fontSize: 16, fontWeight: '600' }}>
-                        {`${myHour}:${myMin.toString().padStart(2, '0')}:${mySec.toString().padStart(2, '0')}`}
+                        {getFormattedTime(myStudyTime)}
                     </Text>
                 </View>
                 <View style={{ alignItems: 'center', flex: 1, borderColor: '#61B8F6', borderRightWidth: 1, borderLeftWidth: 1, }}>
-                    <Text style={{ fontSize: 14, marginBottom: 3, }}>그룹 평균 공부시간</Text>
+                    <Text style={{ fontSize: 13, marginBottom: 3, }}>그룹 평균 공부시간</Text>
                     <Text style={{ fontSize: 16, fontWeight: '600' }}>
-                        {`${groupAvgHour}:${groupAvgMin.toString().padStart(2, '0')}:${groupAvgSec.toString().padStart(2, '0')}`}
+                        {getFormattedTime(groupAvgStudyTime)}
                     </Text>
                 </View>
                 <View style={{ alignItems: 'center', flex: 1 }}>
-                    <Text style={{ fontSize: 14, marginBottom: 3, }}>그룹 목표 공부시간</Text>
+                    <Text style={{ fontSize: 13, marginBottom: 3, }}>그룹 목표 공부시간</Text>
                     <Text style={{ fontSize: 16, fontWeight: '600' }}>
-                        {`${groupHour}:${groupMin.toString().padStart(2, '0')}:00`}
+                        {getFormattedTime(groupTimeGoal)}
                     </Text>
                 </View>
             </View>
             <CommonModal modalVisible={modalVisible} setModalVisible={setModalVisible}
-                data={{content:'플래너의 타이머를 이용해 공부 시간을 측정해 주세요'}}
+                data={{ title: '', content: '플래너의 타이머를 이용해 공부 시간을 측정해 주세요. 타이머가 끝난 후에 정보가 업데이트 됩니다.' }}
             />
         </View>
     )
@@ -111,12 +111,12 @@ const styles = StyleSheet.create({
 
 type TimeGoalScreenDataType = {
     myStudyTime: number,
-    groupAvgStudyTime:number,
+    groupAvgStudyTime: number,
     groupTimeGoal: number,
 }
 const initState: TimeGoalScreenDataType = {
     myStudyTime: 7200000,
-    groupAvgStudyTime:62022000,
+    groupAvgStudyTime: 62022000,
     groupTimeGoal: 21600000,
 
 }
@@ -125,7 +125,7 @@ const TimeGoalScreen = () => {
     return (
         <>
             <TimeProgress {...data} />
-            <StudyTime {...data}/>
+            <StudyTime {...data} />
         </>
     )
 }

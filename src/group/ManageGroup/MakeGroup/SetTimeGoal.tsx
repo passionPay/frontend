@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { View, Text, TouchableOpacity, TextInput, Dimensions, StyleSheet } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker'
+import { getParsedTime } from '../../MyGroup/timeManager'
 
 const { width, height } = Dimensions.get('window')
 
@@ -13,6 +14,7 @@ const SetTimeGoal = ({ state, dispatch }) => {
     const [minuteOpen, setMinuteOpen] = useState(false)
     const [minuteItems, setMinuteItems] = useState([...Array(6)].map((v, i) => ({ label: `${i * 10}분`, value: i * 10 })));
 
+
     const onHourOpen = useCallback(() => {
         setMinuteOpen(false)
     }, [])
@@ -22,6 +24,11 @@ const SetTimeGoal = ({ state, dispatch }) => {
     }, [])
 
 
+    useEffect(() => {
+        const { hour, min } = getParsedTime(state.groupTimeGoal)
+        setHourValue(hour)
+        setMinuteValue(min)
+    }, [])
     useEffect(() => {
         if (hourValue === 24) {
             setMinuteValue(0)
@@ -37,9 +44,9 @@ const SetTimeGoal = ({ state, dispatch }) => {
         })
     }, [hourValue, minuteValue, dispatch])
 
-    useEffect(() => {
-        console.log("setTimeGoal state changed")
-    }, [state])
+    // useEffect(() => {
+    //     console.log("setTimeGoal state changed")
+    // }, [state])
     return (
         <>
             <View style={[styles.row,]}>
@@ -59,6 +66,7 @@ const SetTimeGoal = ({ state, dispatch }) => {
                             // zIndex:hourOpen?1:0
 
                         }}
+                        placeholder=""
                         maxHeight={120}
                         autoScroll={true}
                         open={hourOpen}
@@ -82,6 +90,7 @@ const SetTimeGoal = ({ state, dispatch }) => {
                             // zIndex:hourOpen?1:0
 
                         }}
+                        placeholder=""
                         maxHeight={120}
                         autoScroll={true}
                         open={minuteOpen}

@@ -5,7 +5,7 @@ import {ScrollView,TextInput, TouchableOpacity, SafeAreaView,View,Dimensions,Sty
 const { width, height } = Dimensions.get('window')
 
 
-const MakePrivacy = ({state,dispatch})=>{
+const SetPrivacy = ({state,dispatch})=>{
 
     const setPrivacy = useCallback((groupPrivacy) =>{
         dispatch({
@@ -51,7 +51,7 @@ const MakePrivacy = ({state,dispatch})=>{
     )
 }
 
-export default MakePrivacy
+export default SetPrivacy
 
 const styles = StyleSheet.create({
     tag: {

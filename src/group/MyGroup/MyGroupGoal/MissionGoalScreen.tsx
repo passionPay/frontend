@@ -34,7 +34,6 @@ const MissionItem = ({ mission }) => {
             <Image style={{ marginLeft: 15, width: 25, height: 25 }} source={require('../../../../images/group/trophy.png')} />
             <Text numberOfLines={2} style={{ fontSize: 12, marginHorizontal: 5, textAlign: 'center', flex: 1 }}>{missionName}</Text>
             <Icon name={mission.done ? 'checkbox-marked' : 'checkbox-blank-outline'}
-
                 color={mission.done ? '#494949' : '#494949'}
                 size={25} style={{ marginRight: 15, }}
             />
@@ -76,7 +75,7 @@ const Missions = ({ hasDone, missions }) => {
                     mission={item}
                 />))}
             <CommonModal modalVisible={modalVisible} setModalVisible={setModalVisible}
-                data={{ title:'',content: '미션을 터치하여 완료 상태를 변경할 수 있어요' }}
+                data={{ title: '', content: '미션을 터치하여 완료 상태를 변경할 수 있어요' }}
             />
         </View>
     )

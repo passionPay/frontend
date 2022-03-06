@@ -3,11 +3,13 @@ import { Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView } f
 
 import MemberIcon from '../../../component/MemberIcon'
 import MemberModal from '../../commonComponent/MemberModal'
+import { useGroupState } from '../MyGroupContext'
 
 const { width, height } = Dimensions.get('window')
 
 const Members = () => {
     const [modalVisible, setModalVisible] = useState<boolean>(false)
+    const groupState = useGroupState();
 
     return (
 
@@ -15,22 +17,18 @@ const Members = () => {
             <Text style={styles.memberTitleText}>공부 중인 친구들</Text>
 
             <ScrollView style={styles.memberScrollContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
-                <MemberIcon size={50} style={{ marginHorizontal: width * 0.02 }}
-                    isOnline touchable
-                    onPress={() => setModalVisible(true)}
-                />
-                <MemberIcon size={50} style={{ marginHorizontal: width * 0.02 }}
-                    isOnline touchable
-                    onPress={() => setModalVisible(true)}
-                />
-                <MemberIcon size={50} style={{ marginHorizontal: width * 0.02 }}
-                    isOnline touchable
-                    onPress={() => setModalVisible(true)}
-                />
-                <MemberIcon size={50} style={{ marginHorizontal: width * 0.02 }}
-                    isOnline touchable
-                    onPress={() => setModalVisible(true)}
-                />
+
+                {groupState.groupMembers.map((item, idx) => (
+                    <MemberIcon 
+                        key={idx}
+                        size={50} style={{ marginHorizontal: width * 0.02 }}
+                        isOnline touchable
+                        source={{uri:item.uri}}
+                        onPress={() => setModalVisible(true)}
+                    />
+                ))}
+
+                
             </ScrollView>
             <MemberModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
         </View>

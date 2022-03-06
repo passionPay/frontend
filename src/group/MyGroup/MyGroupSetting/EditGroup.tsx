@@ -4,15 +4,16 @@ import { useNavigation } from '@react-navigation/native'
 import Toast from 'react-native-simple-toast';
 
 
-import { CommonInput, NumericInput } from './CommonInput'
-import SetTimeGoal from './SetTimeGoal'
-import SetMission from './SetMission'
-import SetPrivacy from './SetPrivacy'
+import { CommonInput, NumericInput } from '../../ManageGroup/MakeGroup/CommonInput'
+import SetTimeGoal from '../../ManageGroup/MakeGroup/SetTimeGoal';
+import SetMission from '../../ManageGroup/MakeGroup/SetMission';
+import SetPrivacy from '../../ManageGroup/MakeGroup/SetPrivacy'
+import { useGroupDispatch, useGroupState } from '../MyGroupContext';
 
 const { width, height } = Dimensions.get('window')
 
 type StateType = {
-    groupTitle: string,
+    groupName: string,
     groupDescription: string,
     groupTimeGoal: number,
     maxMember: number,
@@ -22,7 +23,7 @@ type StateType = {
     }[],
 
     groupPrivacy: boolean,
-    groupPassword: string | undefined,
+
 }
 
 
@@ -35,10 +36,10 @@ type ActionType = {
     value: StateType
 }
 const initState: StateType = {
-    groupTitle: '',
+    groupName: '',
     groupDescription: '',
     groupTimeGoal: 0,
-    maxMember: NaN,
+    maxMember: 0,
     groupMissions: [
         {
             value: '',
@@ -46,7 +47,6 @@ const initState: StateType = {
         },
     ],
     groupPrivacy: false,
-    groupPassword: undefined
 }
 const reducer = (state: StateType, action: ActionType): StateType => {
     switch (action.type) {
@@ -63,7 +63,7 @@ const reducer = (state: StateType, action: ActionType): StateType => {
 
 
 const checkValidInput = (state: StateType): boolean | string => {
-    if (state.groupTitle === '') {
+    if (state.groupName === '') {
         return '그룹 이름을 입력해주세요'
     }
     if (state.groupDescription === '') {
@@ -80,13 +80,10 @@ const checkValidInput = (state: StateType): boolean | string => {
     if (state.groupMissions.every((item) => item.value === '')) {
         return '그룹 미션을 하나 이상 입력해주세요'
     }
-    if (state.groupPrivacy && (typeof (state.groupPassword) === 'undefined' || state.groupPassword === '')) {
-        return '비밀번호를 입력해주세요'
-    }
 
     return true
 }
-const makeGroupSubmit = (state: StateType): void => {
+const editGroupSubmit = (state: StateType): void => {
     const validity = checkValidInput(state)
     if (validity === true) {
         Toast.show(validity.toString())
@@ -97,27 +94,33 @@ const makeGroupSubmit = (state: StateType): void => {
 }
 
 
-const MakeGroup = ({ route }) => {
+const EditGroup = ({ route }) => {
 
     const navigation = useNavigation<any>()
     const goBack = useCallback(() => navigation.goBack(), [])
 
     const [state, dispatch] = useReducer(reducer, initState)
-    const [editState, setEditState] = useState(false)
+    const groupState = useGroupState();
+    const groupDispatch = useGroupDispatch();
 
     useEffect(() => {
-        if (typeof (route.params) !== 'undefined' && route.params.isEditMode) {
-            dispatch({
-                type: 'CHANGE_ALL',
-                value: route.params.prevState
-            })
-            setEditState(true)
-        }
-        console.log(route)
-    }, [route])
-    useEffect(() => {
-        console.log(state)
-    }, [state])
+        dispatch({
+            type: 'CHANGE_ALL',
+            value: {
+                groupName: groupState.groupName,
+                groupDescription: groupState.groupDescription,
+                groupTimeGoal: groupState.groupTimeGoal,
+                maxMember: groupState.maxMember,
+                groupMissions: groupState.groupMissions,
+                groupPrivacy: groupState.groupPrivacy,
+            }
+        })
+        console.log(groupState)
+    }, [groupState])
+
+    // useEffect(() => {
+    //     console.log(state)
+    // }, [state])
 
 
     return (
@@ -129,28 +132,26 @@ const MakeGroup = ({ route }) => {
                         fontFamily: 'GodoM',
                         color: '#9F9F9F',
                     }} >
-                        {editState ? '< 그룹 설정' : '< Study Group'}</Text>
+                        {'< 그룹 설정'}</Text>
                 </TouchableOpacity>
-                <Text style={styles.title}>{editState ? '그룹 정보 수정' : '그룹 만들기'}</Text>
+                <Text style={styles.title}>{ '그룹 정보 수정'}</Text>
                 <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
                     <View style={{ borderTopLeftRadius: 30, borderTopRightRadius: 30, flex: 1 }}>
-                        <CommonInput state={state} dispatch={dispatch} tagName='그룹 이름' stateName='groupTitle'
+                        <CommonInput state={groupState} dispatch={groupDispatch} tagName='그룹 이름' stateName='groupName'
                             placeholder={'그룹 이름을 입력해주세요'}
                         />
-                        <CommonInput state={state} dispatch={dispatch} tagName='그룹 소개' stateName='groupDescription'
+                        <CommonInput state={groupState} dispatch={groupDispatch} tagName='그룹 소개' stateName='groupDescription'
                             placeholder={'그룹 소개를 입력해주세요'}
                         />
-                        <NumericInput state={state} dispatch={dispatch} tagName='인원' stateName='maxMember'
+                        <NumericInput state={groupState} dispatch={groupDispatch} tagName='인원' stateName='maxMember'
                             placeholder={'최소 2명 ~ 최대 100명'}
                         />
-                        <SetTimeGoal state={state} dispatch={dispatch} />
-                        <SetMission state={state} dispatch={dispatch} />
-                        {!editState && <SetPrivacy state={state} dispatch={dispatch} />}
-
+                        <SetTimeGoal state={groupState} dispatch={groupDispatch} />
+                        <SetMission state={groupState} dispatch={groupDispatch} />
                         <TouchableOpacity
-                            onPress={() => makeGroupSubmit(state)}
+                            onPress={() => editGroupSubmit(state)}
                             style={[styles.selectButton, { alignSelf: 'center', marginTop: 30 }]}>
-                            <Text style={{ fontSize: 14 }}>{editState ? '수정 정보 저장' : '그룹 만들기'}</Text>
+                            <Text style={{ fontSize: 14 }}>{'수정 정보 저장'}</Text>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
@@ -161,7 +162,7 @@ const MakeGroup = ({ route }) => {
 
 }
 
-export default MakeGroup
+export default EditGroup
 
 const styles = StyleSheet.create({
     safeContainer: {

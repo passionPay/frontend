@@ -21,8 +21,6 @@ const CommonInput = ({ state, dispatch, stateName, tagName, ...props }) => {
 }
 const NumericInput = ({ state, dispatch, stateName, tagName, ...props }) => {
 
-    const [input, setInput] = useState('')
-
 
 
     const displayText = useCallback((numericState) => {
@@ -37,9 +35,6 @@ const NumericInput = ({ state, dispatch, stateName, tagName, ...props }) => {
         dispatch({ type: 'CHANGE_INPUT', name: stateName, value: parseInt(text) })
     }, [])
 
-    useEffect(() => {
-        dispatch({ type: 'CHANGE_INPUT', name: stateName, value: parseInt(input) })
-    }, [input])
 
 
 

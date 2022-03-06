@@ -1,9 +1,14 @@
 import React, { useCallback, useState } from 'react'
 import { Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+
+import { useGroupState } from '../MyGroupContext';
+
 import Modal from "react-native-modal";
 import NoticeModal from '../../commonComponent/NoticeModal';
 import MemberModal from '../../commonComponent/MemberModal';
+
+
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -32,6 +37,7 @@ const NoticeBoard = () => {
     const myGroupVBoard = useCallback(() => navigation.navigate('MyGroupVBoard'), [])
     const myGroupRank = useCallback(() => navigation.navigate('MyGroupRank'), [])
 
+    const groupState = useGroupState();
 
     const [memberModalVisible,setMemberModalVisible] = useState<boolean>(false);
 
@@ -44,9 +50,6 @@ const NoticeBoard = () => {
                     setModalVisible(true)
                 }}
                 style={styles.noticeContainer}>
-                {/* <View style={styles.noticeIconContainer}>
-                    <Image style={{width:15,height:15}}source={require('../../../../../images/group/demostration.png')} />
-                </View> */}
                 <Icon style={{
                     marginTop: 0,
                     marginLeft: 20,
@@ -55,7 +58,7 @@ const NoticeBoard = () => {
                 <Text style={{
                     fontSize: 12,
                 }}>
-                    {data.groupNotice.title}
+                    {groupState.groupNotice.title}
                 </Text>
             </TouchableOpacity>
             <View style={styles.groupMenuContainer}>
@@ -84,7 +87,7 @@ const NoticeBoard = () => {
                 </TouchableOpacity>
             </View>
 
-            <NoticeModal data={data.groupNotice} modalVisible={modalVisible} setModalVisible={setModalVisible} />
+            <NoticeModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
             <MemberModal isMine modalVisible={memberModalVisible} setModalVisible={setMemberModalVisible}/>
         </View>
     )

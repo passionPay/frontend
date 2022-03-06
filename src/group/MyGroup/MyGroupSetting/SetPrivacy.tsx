@@ -1,29 +1,56 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState,useReducer } from 'react'
 import { TextInput, Platform, Dimensions, StyleSheet, SafeAreaView, View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
+import SetPrivacySection from '../../ManageGroup/MakeGroup/SetPrivacy'
 import PostWriteForm from '../../commonComponent/PostWriteForm'
-import { useGroupState } from '../MyGroupContext'
+import { useGroupDispatch, useGroupState } from '../MyGroupContext'
 
 
 const { width, height } = Dimensions.get('window')
 
 type StateType = {
-    title: string,
-    content: string,
+    groupPrivacy: boolean,
+    groupPassword: string | undefined,
 }
+type ActionType = {
+    type: 'CHANGE_INPUT',
+    name:'groupPassword'
+    value: string | undefined
+}|
+{
+    type: 'CHANGE_INPUT',
+    name:'groupPrivacy'
+    value: boolean
+}|
+{
+    type: 'CHANGE_ALL',
+    value: StateType
+}
+
 const initState: StateType = {
-    title: '',
-    content: '',
+    groupPrivacy: false,
+    groupPassword: undefined,
 }
 
 
-const SetNotice = ({ route }) => {
+const reducer = (state: StateType, action: ActionType) => {
+    switch (action.type) {
+        case 'CHANGE_INPUT':
+            return {...state, [action.name]:action.value}
+        case 'CHANGE_ALL':
+            return action.value
+        default:
+            return state;
+    }
+}
+
+const SetPrivacy = ({ route }) => {
     const navigation = useNavigation<any>()
     const goBack = useCallback(() => navigation.goBack(), [])
+    const [state,dispatch] = useReducer(reducer,initState)
     const groupState = useGroupState()
-    const [state, setState] = useState<StateType>(initState)
-
+    const groupDispatch=useGroupDispatch()
 
     const onSubmit = useCallback(() => {
         console.log(state)
@@ -31,10 +58,14 @@ const SetNotice = ({ route }) => {
     }, [state])
 
     useEffect(() => {
-            setState(groupState.groupNotice)
-    }, [groupState])
-
-  
+        if (route.params && route.params.isEditMode) {
+            dispatch({type:'CHANGE_ALL',value:{
+                groupPrivacy:groupState.groupPrivacy,
+                groupPassword:groupState.groupPrivacy?'':undefined
+            }})
+            
+        }
+    }, [route,groupState])
 
     return (
         <SafeAreaView style={styles.safeContainer}>
@@ -51,7 +82,7 @@ const SetNotice = ({ route }) => {
                     flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
                     marginBottom: height * 0.02,
                 }}>
-                    <Text style={styles.title}>{'공지사항 설정'}</Text>
+                    <Text style={styles.title}>{'그룹 공개 설정'}</Text>
                     <TouchableOpacity
                         onPress={onSubmit}
                         style={styles.submitButton}>
@@ -66,13 +97,13 @@ const SetNotice = ({ route }) => {
                     </TouchableOpacity>
                 </View>
 
-                <PostWriteForm state={state} setState={setState} />
+                <SetPrivacySection state={state} dispatch={dispatch} />
             </View>
         </SafeAreaView>
     )
 }
 
-export default SetNotice
+export default SetPrivacy
 
 const styles = StyleSheet.create({
     safeContainer: {
